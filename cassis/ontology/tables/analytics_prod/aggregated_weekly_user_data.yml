@@ -197,7 +197,7 @@ columns:
   source: manual
 description: 'Panel longitudinal hebdomadaire : dépenses cumulées, score de diversification, visites app, niveau d''engagement
   (power/core/casual/dead) et état du cycle de vie (new/current/dormant/resurrected/churned).'
-domain_path: core/beneficiaires/engagement
+domain_path: core/beneficiaires/engagements
 grain:
 - Une ligne par crédit × semaine d'activité (deposit_id, active_week)
 schema_name: analytics_prod
