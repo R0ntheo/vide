@@ -1,0 +1,13 @@
+description: Montant moyen des réservations validées des bénéficiaires à l'expiration de leur crédit 18-20 ans.
+display_name: Montant moyen dépensé à expiration du crédit
+domain_path: core/beneficiaires
+expression: SAFE_DIVIDE(SUM(total_actual_amount_spent), COUNT(DISTINCT user_id))
+filters: last_deposit_expiration_date < CURRENT_DATE('Europe/Paris')
+name: montant_moyen_depense_expiration
+notes: Réservations sur l'ensemble des crédits octroyés (15-20 ans). Agrégé par date d'expiration du crédit 18-20 ans.
+synonyms:
+- dépense moyenne
+- montant moyen consommé
+table_name: global_user_beneficiary
+table_schema: analytics_prod
+unit: €

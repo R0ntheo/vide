@@ -1,0 +1,44 @@
+columns:
+- data_type: date
+  description: Premier jour du mois auquel le KPI se réfère.
+  name: partition_month
+  ordinal: 0
+- data_type: datetime
+  description: Date effective du dernier rafraîchissement des données.
+  name: updated_at
+  ordinal: 1
+- data_type: string
+  description: 'Agrégation géographique du KPI : National, Régional ou Départemental.'
+  name: dimension_name
+  ordinal: 2
+- data_type: string
+  description: Nom de l'agrégation géographique du KPI (nom de région, nom de département).
+  name: dimension_value
+  ordinal: 3
+- data_type: string
+  description: |-
+    Valeurs possibles de kpi_name :
+    - taux_participation_eac_jeunes — taux de participation des jeunes au volet collectif EAC
+  name: kpi_name
+  ordinal: 4
+- data_type: number
+  description: Numérateur du KPI calculé.
+  name: numerator
+  ordinal: 5
+- data_type: number
+  description: Dénominateur du KPI calculé.
+  name: denominator
+  ordinal: 6
+- data_type: number
+  description: Valeur du KPI, égale au numérateur divisé par le dénominateur.
+  name: kpi
+  ordinal: 7
+description: KPIs couverture EAC au format pivot — taux d'activation des établissements par dimension géographique.
+domain_path: reporting/institutionnel/eac
+grain:
+- Une ligne par mois × dimension × KPI (partition_month, dimension_name, kpi_name)
+schema_name: analytics_prod
+synonyms:
+- KPI couverture EAC
+- taux participation EAC
+table_name: external_reporting_eac_coverage

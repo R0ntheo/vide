@@ -1,0 +1,13 @@
+description: Part des sessions ayant affiché un module d'accueil et ayant cliqué dessus.
+display_name: Taux de clic des modules d'accueil
+domain_path: tracking/natif/parcours-decouverte
+expression: SAFE_DIVIDE(SUM(total_session_with_click), SUM(total_session_display))
+name: taux_clic_module_home
+notes: Segmentable par module_type, entry_name (nom du home), et home_audience. Agrégé par module_displayed_date.
+synonyms:
+- CTR module home
+- click-through rate accueil
+- taux de clic accueil
+table_name: native_daily_home_module_conversion
+table_schema: analytics_prod
+unit: '%'

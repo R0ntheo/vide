@@ -1,0 +1,11 @@
+description: Montant total remboursé aux partenaires culturels.
+display_name: Montant remboursé
+domain_path: core/reservations
+expression: SUM(total_reimbursed_amount)
+name: montant_rembourse
+synonyms:
+- remboursements
+- reimbursed amount
+table_name: finance_reimbursement
+table_schema: analytics_prod
+unit: €

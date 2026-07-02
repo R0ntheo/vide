@@ -1,0 +1,47 @@
+columns:
+- data_type: string
+  description: Identifiant unique du critère.
+  name: criterion_id
+  ordinal: 0
+- data_type: string
+  description: Nom du critère.
+  name: tag_name
+  ordinal: 1
+- data_type: string
+  description: Description du critère.
+  name: description
+  ordinal: 2
+- data_type: string
+  description: Libellé de catégorie du critère, précisant son objectif (process interne, éditorialisation, etc.).
+  name: criterion_category_label
+  ordinal: 3
+- data_type: date
+  description: Date de début de validité du critère.
+  name: criterion_beginning_date
+  ordinal: 4
+- data_type: date
+  description: Date de fin de validité du critère.
+  name: criterion_ending_date
+  ordinal: 5
+- data_type: string
+  description: Identifiant unique de l'offre.
+  name: offer_id
+  ordinal: 6
+- data_type: string
+  description: Nom de l'offre tel qu'il apparaît dans l'application.
+  name: offer_name
+  ordinal: 7
+- data_type: string
+  description: Identifiant unique du temps de valorisation thématique.
+  name: highlight_id
+  ordinal: 8
+description: Critères de mise en avant associés aux offres (labels éditoriaux, sélections thématiques).
+domain_path: core/offre-et-catalogue
+grain:
+- Une ligne par criterion (criterion_id)
+schema_name: analytics_prod
+synonyms:
+- critère offre
+- tag offre
+- label offre
+table_name: global_offer_criterion

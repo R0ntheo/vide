@@ -1,0 +1,93 @@
+columns:
+- data_type: date
+  description: Mois d'expiration du crédit du bénéficiaire.
+  name: deposit_expiration_month
+  ordinal: 1
+  source: manual
+- data_type: string
+  description: Nom de la région de résidence.
+  name: region_name
+  ordinal: 2
+  source: manual
+- data_type: number
+  description: Code de la région de résidence.
+  name: region_code
+  ordinal: 3
+  source: manual
+- data_type: string
+  description: Nom du département de résidence.
+  name: department_name
+  ordinal: 4
+  source: manual
+- data_type: string
+  description: Code du département de résidence.
+  name: department_code
+  ordinal: 5
+  source: manual
+- data_type: string
+  description: Nom de l'EPCI de résidence.
+  name: epci_name
+  ordinal: 6
+  source: manual
+- data_type: string
+  description: Code de l'EPCI de résidence.
+  name: epci_code
+  ordinal: 7
+  source: manual
+- data_type: string
+  description: Nom de la commune de résidence.
+  name: city_name
+  ordinal: 8
+  source: manual
+- data_type: string
+  description: Code de la commune de résidence.
+  name: city_code
+  ordinal: 9
+  source: manual
+- data_type: boolean
+  description: Indique si le bénéficiaire réside en Quartier Prioritaire de la Ville.
+  name: is_in_qpv
+  ordinal: 10
+  source: manual
+- data_type: string
+  description: Niveau de densité macro (urbain, rural).
+  name: macro_density_label
+  ordinal: 11
+  source: manual
+- data_type: string
+  description: Niveau de densité micro (détaillé).
+  name: micro_density_label
+  ordinal: 12
+  source: manual
+- data_type: number
+  description: Bénéficiaires ayant réservé dans 3+ catégories (numérateur diversité). Perturbé.
+  name: total_3plus_category_booked_beneficiaries
+  ordinal: 13
+  source: manual
+- data_type: number
+  description: Bénéficiaires dont le crédit a expiré (dénominateur diversité). Perturbé.
+  name: total_expired_credit_beneficiaries
+  ordinal: 14
+  source: manual
+- data_type: number
+  description: Clé de perturbation pour total_3plus_category_booked_beneficiaries.
+  name: cell_key_3plus
+  ordinal: 15
+  source: manual
+- data_type: number
+  description: Clé de perturbation pour total_expired_credit_beneficiaries.
+  name: cell_key_expired
+  ordinal: 16
+  source: manual
+description: 'Taux de diversité : bénéficiaires ayant réservé dans 3+ catégories à l''expiration de leur crédit 18 ans, ventilé
+  par géographie, QPV et densité. Numérateur et dénominateur pré-calculés.'
+domain_path: reporting/indicateurs-cles
+grain:
+- Une ligne par mois d'expiration × région × département × EPCI × commune × QPV × densité (deposit_expiration_month, region_name,
+  department_code, is_in_qpv, macro_density_label)
+schema_name: metrics_prod
+synonyms:
+- diversité culturelle
+- KPI 3 catégories
+- taux diversification
+table_name: metrics_diversity

@@ -1,0 +1,98 @@
+columns:
+- data_type: date
+  description: Date d'affichage du module de recommandation sur l'accueil.
+  name: module_displayed_date
+  ordinal: 0
+- data_type: string
+  description: Identifiant de l'appel au moteur de recommandation.
+  name: reco_call_id
+  ordinal: 1
+- data_type: string
+  description: Origine de la playlist (algorithmique, éditoriale, etc.).
+  name: playlist_origin
+  ordinal: 2
+- data_type: string
+  description: Contexte de la recommandation (type de page, position).
+  name: context
+  ordinal: 3
+- data_type: string
+  description: Identifiant unique de l'utilisateur.
+  name: user_id
+  ordinal: 4
+- data_type: string
+  description: Identifiant unique de l'offre recommandée.
+  name: offer_id
+  ordinal: 5
+- data_type: number
+  description: Position d'affichage de l'offre dans le module de recommandation.
+  name: offer_display_order
+  ordinal: 6
+- data_type: string
+  description: Type de localisation utilisée (GPS, adresse déclarée, etc.).
+  name: user_location_type
+  ordinal: 7
+- data_type: string
+  description: Identifiant de la page d'accueil (home).
+  name: entry_id
+  ordinal: 8
+- data_type: string
+  description: Nom de la page d'accueil.
+  name: entry_name
+  ordinal: 9
+- data_type: string
+  description: Identifiant du module d'accueil.
+  name: module_id
+  ordinal: 10
+- data_type: string
+  description: Nom du module d'accueil.
+  name: module_name
+  ordinal: 11
+- data_type: string
+  description: Identifiant du module parent dans la hiérarchie d'accueil.
+  name: parent_module_id
+  ordinal: 12
+- data_type: string
+  description: Type du module parent.
+  name: parent_module_type
+  ordinal: 13
+- data_type: string
+  description: Identifiant de la page parent.
+  name: parent_entry_id
+  ordinal: 14
+- data_type: string
+  description: Type de la page d'accueil parente.
+  name: parent_home_type
+  ordinal: 15
+- data_type: string
+  description: Type de module (playlist, recommandation, thématique, etc.).
+  name: module_type
+  ordinal: 16
+- data_type: string
+  description: Identifiant unique de la session Firebase.
+  name: unique_session_id
+  ordinal: 17
+- data_type: string
+  description: Identifiant de la réservation issue de cette recommandation.
+  name: booking_id
+  ordinal: 18
+- data_type: datetime
+  description: Horodatage de la consultation de la fiche offre.
+  name: consult_offer_timestamp
+  ordinal: 19
+- data_type: datetime
+  description: Horodatage de la réservation.
+  name: booking_timestamp
+  ordinal: 20
+- data_type: datetime
+  description: Horodatage de l'ajout en favoris.
+  name: fav_timestamp
+  ordinal: 21
+description: Offres recommandées par l'algorithme sur la page d'accueil de l'app native, agrégées par jour.
+domain_path: tracking/natif
+grain:
+- Une ligne par recommandation × utilisateur × jour (module_displayed_date, user_id, offer_id)
+schema_name: analytics_prod
+synonyms:
+- recommandation accueil
+- reco home
+table_name: native_daily_home_recommendation_offer

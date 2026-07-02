@@ -1,0 +1,13 @@
+description: Montant total engagé sur les réservations collectives validées.
+display_name: Montant engagé collectif
+domain_path: core/eac
+expression: SUM(booking_amount)
+filters: collective_booking_status != 'CANCELLED'
+name: montant_engage_collectif
+precomputed_in: external_reporting_eac
+synonyms:
+- montant EAC
+- total engagé collectif
+table_name: global_collective_booking
+table_schema: analytics_prod
+unit: €

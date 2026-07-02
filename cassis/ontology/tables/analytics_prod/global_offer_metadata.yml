@@ -1,0 +1,108 @@
+columns:
+- data_type: string
+  description: Identifiant unique de l'offre.
+  name: offer_id
+  nullable: false
+  ordinal: 0
+- data_type: date
+  description: Date de creation de l'offre.
+  name: offer_creation_date
+  ordinal: 1
+- data_type: string
+  description: Identifiant de la sous-categorie de l'offre, choisi par le partenaire culturel dans une liste predeterminee.
+  name: offer_subcategory_id
+  nullable: false
+  ordinal: 2
+- data_type: string
+  description: Identifiant de la catégorie de l'offre, choisi par le partenaire culturel dans une liste predeterminee.
+  name: offer_category_id
+  ordinal: 3
+- data_type: string
+  description: 'Obsolete : catégorie affichee dans l''application.'
+  name: search_group_name
+  ordinal: 4
+- data_type: string
+  description: 'Deprecie : type de catégorie de l''offre (BOOK, MUSIC, SHOW ou MOVIE).'
+  name: offer_type_domain
+  ordinal: 5
+- data_type: string
+  description: Nom de l'offre tel qu'il apparait dans l'application.
+  name: offer_name
+  ordinal: 6
+- data_type: string
+  description: Description de l'offre (synopsis, details sur le spectacle) fournie par le partenaire culturel et affichee
+    dans l'application.
+  name: offer_description
+  ordinal: 7
+- data_type: string
+  description: URL de l'image affichee sur passculture.app, si disponible.
+  name: image_url
+  ordinal: 8
+- data_type: string
+  description: 'Deprecie : identifiant unique du type de l''offre (genre musical ou type de spectacle).'
+  name: offer_type_id
+  ordinal: 9
+- data_type: string
+  description: 'Deprecated: Legacy identifier. Prefer using GTL.'
+  name: offer_sub_type_id
+  ordinal: 10
+- data_type: string
+  description: The offer's author (a book's author, a music's singer, a movie's director).
+  name: author
+  ordinal: 11
+- data_type: string
+  description: Artistes ou interpretes impliques dans cette offre.
+  name: performer
+  ordinal: 12
+- data_type: string
+  description: Identifiant unique du Genre Tite Live (GTL) associé a cette offre.
+  name: titelive_gtl_id
+  ordinal: 13
+- data_type: string
+  description: Type de GTL associé a cette offre (BOOK ou MUSIC).
+  name: gtl_type
+  ordinal: 14
+- data_type: string
+  description: 'Libelle du GTL de niveau 1 associé a cette offre (ex : Litterature pour un livre, Pop pour la musique).'
+  name: gtl_label_level_1
+  ordinal: 15
+- data_type: string
+  description: 'Libelle du GTL de niveau 2 associé a cette offre (ex : Poesie pour un livre, Brit Pop pour la musique).'
+  name: gtl_label_level_2
+  ordinal: 16
+- data_type: string
+  description: 'Libelle du GTL de niveau 3 associé a cette offre (ex : Haiku pour un livre) ; disponible uniquement pour les
+    livres.'
+  name: gtl_label_level_3
+  ordinal: 17
+- data_type: string
+  description: Libelle du GTL de niveau 4 associé a cette offre ; disponible uniquement pour les livres.
+  name: gtl_label_level_4
+  ordinal: 18
+- data_type: string
+  description: 'Deprecie : genre de l''offre pour la musique, les livres et les films ; type de spectacle pour les spectacles.'
+  name: offer_type_label
+  ordinal: 19
+- data_type: string
+  description: 'Deprecie : sous-genre de l''offre pour la musique, les livres et les films ; sous-type de spectacle pour les
+    spectacles.'
+  name: offer_sub_type_label
+  ordinal: 20
+- data_type: string
+  description: URL de la video de l'offre téléchargée par le partenaire culturel lors de la creation.
+  name: offer_video_url
+  ordinal: 21
+- data_type: string
+  description: 'Deprecated: Legacy identifier. Prefer using GTL.'
+  name: offer_type_labels
+  ordinal: 22
+description: Métadonnées enrichies des offres — classification GTL, catégorisation, auteur, interprète, image, vidéo.
+domain_path: core/offre-et-catalogue
+grain:
+- Une ligne par offre (offer_id)
+schema_name: analytics_prod
+synonyms:
+- métadonnées offre
+- EAN
+- ISBN
+table_name: global_offer_metadata

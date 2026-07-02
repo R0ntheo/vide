@@ -1,0 +1,91 @@
+columns:
+- data_type: date
+  description: Date d'installation de l'application.
+  name: app_install_date
+  ordinal: 0
+- data_type: string
+  description: Système d'exploitation de l'appareil de l'utilisateur (android, ios).
+  name: app_os
+  ordinal: 1
+- data_type: string
+  description: 'Entité responsable de l''affichage des publicités (ex : Facebook, Google Ads).'
+  name: acquisition_media_source
+  ordinal: 2
+- data_type: string
+  description: Nom de la campagne publicitaire.
+  name: acquisition_campaign
+  ordinal: 3
+- data_type: string
+  description: Nom du groupe d'annonces au sein d'une campagne.
+  name: acquisition_adset
+  ordinal: 4
+- data_type: string
+  description: Titre ou identifiant de l'annonce individuelle au sein d'une campagne.
+  name: acquisition_ad
+  ordinal: 5
+- data_type: number
+  description: Coût total de la campagne publicitaire suivi par AppsFlyer.
+  name: total_costs
+  ordinal: 6
+- data_type: number
+  description: Nombre total d'installations de l'application enregistrées par AppsFlyer.
+  name: total_installs
+  ordinal: 7
+- data_type: number
+  description: Nombre total d'inscriptions enregistrées par AppsFlyer.
+  name: total_registrations
+  ordinal: 8
+- data_type: number
+  description: Nombre total de bénéficiaires suivi par AppsFlyer.
+  name: total_beneficiaries
+  ordinal: 9
+- data_type: number
+  description: Nombre total de bénéficiaires mineurs par tranche d'âge, suivi par AppsFlyer.
+  name: total_beneficiaries_underage
+  ordinal: 10
+- data_type: number
+  description: Nombre total de bénéficiaires de 18 ans suivi par AppsFlyer.
+  name: total_beneficiaries_18
+  ordinal: 11
+- data_type: number
+  description: Nombre total de bénéficiaires de 17 ans suivi par AppsFlyer.
+  name: total_beneficiaries_17
+  ordinal: 12
+- data_type: number
+  description: Nombre total de bénéficiaires de 16 ans suivi par AppsFlyer.
+  name: total_beneficiaries_16
+  ordinal: 13
+- data_type: number
+  description: Nombre total de bénéficiaires de 15 ans suivi par AppsFlyer.
+  name: total_beneficiaries_15
+  ordinal: 14
+- data_type: number
+  description: Nombre total d'inscriptions de 15 ans suivi par AppsFlyer.
+  name: total_registrations_15
+  ordinal: 15
+- data_type: number
+  description: Nombre total d'inscriptions de 16 ans suivi par AppsFlyer.
+  name: total_registrations_16
+  ordinal: 16
+- data_type: number
+  description: Nombre total d'inscriptions de 17 ans suivi par AppsFlyer.
+  name: total_registrations_17
+  ordinal: 17
+- data_type: number
+  description: Nombre total d'inscriptions de 18 ans suivi par AppsFlyer.
+  name: total_registrations_18
+  ordinal: 18
+- data_type: number
+  description: Nombre total d'inscriptions d'utilisateurs de 19 ans et plus suivi par AppsFlyer.
+  name: total_registrations_19_plus
+  ordinal: 19
+description: Campagnes d'acquisition d'installations de l'app native par jour — attribution AppsFlyer, coûts, conversions.
+domain_path: tracking/marketing
+grain:
+- Une ligne par combinaison (app_install_date, app_os, acquisition_media_source, acquisition_campaign)
+schema_name: analytics_prod
+synonyms:
+- acquisition
+- campagne install
+- AppsFlyer
+table_name: marketing_daily_install_acquisition_campaign

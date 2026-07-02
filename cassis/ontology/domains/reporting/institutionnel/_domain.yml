@@ -1,0 +1,17 @@
+context_md: |-
+  Ce domaine regroupe les tables de reporting destinées au Ministère de la Culture et aux DRAC.
+
+  Toutes les tables external_reporting_* suivent un schéma pivot commun :
+  - partition_month : mois de référence
+  - dimension_name ∈ {NAT, REG, DEP, EPCI, COM} : échelle d'agrégation
+  - dimension_value : valeur dans l'échelle (ex : « Île-de-France » pour REG)
+  - kpi_name : nom de l'indicateur
+  - numerator, denominator, kpi : valeurs calculées
+
+  La table external_reporting_individual union les 7 segments individuels (beneficiary, coverage, cultural_partner, deposit_usage, diversity, finance, booking).
+
+  Les tables top_* sont des classements pré-agrégés (Top-50 offres, lieux, catégories…) destinés aux tableaux de bord.
+
+  Règle : pour toute question agrégée, chercher d'abord dans les metrics_*, puis dans external_reporting_*, puis descendre au grain fin dans les tables global_*.
+description: KPIs agrégés pour le Ministère de la Culture — bénéficiaires, couverture, diversité, tops et indicateurs pivot.
+display_name: Reporting institutionnel

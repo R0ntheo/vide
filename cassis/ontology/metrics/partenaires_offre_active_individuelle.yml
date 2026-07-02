@@ -1,0 +1,13 @@
+description: Nombre de partenaires ayant eu une offre individuelle réservable dans les 365 derniers jours.
+display_name: Partenaires avec offre active individuelle
+domain_path: core/partenaires-culturels
+expression: COUNT(DISTINCT partner_id)
+filters: is_active_last_30days OR is_active_current_year
+name: partenaires_offre_active_individuelle
+precomputed_in: external_reporting_individual
+synonyms:
+- partenaires actifs
+- active partners
+table_name: global_cultural_partner
+table_schema: analytics_prod
+unit: count

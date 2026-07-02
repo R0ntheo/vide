@@ -1,0 +1,217 @@
+columns:
+- data_type: string
+  description: Identifiant de l'établissement scolaire.
+  name: institution_id
+  ordinal: 0
+- data_type: string
+  description: Identifiant externe de l'établissement scolaire.
+  name: institution_external_id
+  ordinal: 1
+- data_type: string
+  description: Nom de l'établissement scolaire.
+  name: institution_name
+  ordinal: 2
+- data_type: string
+  description: Ville où se situe l'établissement scolaire.
+  name: institution_city
+  ordinal: 3
+- data_type: string
+  description: Code de la ville où se situe l'établissement scolaire.
+  name: institution_city_code
+  ordinal: 4
+- data_type: string
+  description: Code du département de l'établissement scolaire.
+  name: institution_department_code
+  ordinal: 5
+- data_type: string
+  description: Nom de la région de l'établissement scolaire.
+  name: institution_region_name
+  ordinal: 6
+- data_type: string
+  description: Nom de l'académie de l'établissement scolaire.
+  name: institution_academy_name
+  ordinal: 7
+- data_type: string
+  description: Nom de l'EPCI de l'établissement scolaire.
+  name: institution_epci
+  ordinal: 8
+- data_type: string
+  description: Code de l'EPCI de l'établissement scolaire.
+  name: institution_epci_code
+  ordinal: 9
+- data_type: string
+  description: Ministère de rattachement de l'établissement scolaire (AGRICULTURE, EDUCATION_NATIONALE, MER).
+  name: ministry
+  ordinal: 10
+- data_type: string
+  description: Type d'établissement scolaire.
+  name: institution_type
+  ordinal: 11
+- data_type: string
+  description: Type macro d'établissement scolaire (COLLEGE, ECOLE, LYCEE).
+  name: macro_institution_type
+  ordinal: 12
+- data_type: string
+  description: Nom du programme de l'établissement scolaire.
+  name: institution_program_name
+  ordinal: 13
+- data_type: string
+  description: 'Catégorie de densité de l''établissement scolaire : rural ou urbain.'
+  name: institution_macro_density_label
+  ordinal: 14
+- data_type: string
+  description: Année scolaire du crédit EAC.
+  name: scholar_year
+  ordinal: 15
+- data_type: number
+  description: Montant du crédit de la période sept-déc — uniquement pour les établissements et années scolaires avec un crédit
+    fractionné.
+  name: sept_dec_deposit
+  ordinal: 16
+- data_type: number
+  description: Montant du crédit de la période jan-août — uniquement pour les établissements et années scolaires avec un crédit
+    fractionné.
+  name: jan_aug_deposit
+  ordinal: 17
+- data_type: number
+  description: Total des réservations collectives non annulées sur la période sept-déc — uniquement pour les établissements
+    et années scolaires avec un crédit fractionné.
+  name: sept_dec_total_theoric_bookings
+  ordinal: 18
+- data_type: number
+  description: Total des réservations collectives non annulées sur la période jan-août — uniquement pour les établissements
+    et années scolaires avec un crédit fractionné.
+  name: jan_aug_total_theoric_bookings
+  ordinal: 19
+- data_type: number
+  description: Montant total associé aux réservations collectives non annulées sur la période sept-déc — uniquement pour les
+    établissements et années scolaires avec un crédit fractionné.
+  name: sept_dec_theoric_amount_spent
+  ordinal: 20
+- data_type: number
+  description: Montant total associé aux réservations collectives non annulées sur la période jan-août — uniquement pour les
+    établissements et années scolaires avec un crédit fractionné.
+  name: jan_aug_theoric_amount_spent
+  ordinal: 21
+- data_type: number
+  description: Total des réservations collectives confirmées, utilisées et remboursées sur la période sept-déc — uniquement
+    pour les établissements et années scolaires avec un crédit fractionné.
+  name: sept_dec_total_confirmed_bookings
+  ordinal: 22
+- data_type: number
+  description: Total des réservations collectives confirmées, utilisées et remboursées sur la période jan-août — uniquement
+    pour les établissements et années scolaires avec un crédit fractionné.
+  name: jan_aug_total_confirmed_bookings
+  ordinal: 23
+- data_type: number
+  description: Montant total associé aux réservations collectives utilisées et remboursées sur la période sept-déc — uniquement
+    pour les établissements et années scolaires avec un crédit fractionné.
+  name: sept_dec_real_amount_spent
+  ordinal: 24
+- data_type: number
+  description: Montant total associé aux réservations collectives utilisées et remboursées sur la période jan-août — uniquement
+    pour les établissements et années scolaires avec un crédit fractionné.
+  name: jan_aug_real_amount_spent
+  ordinal: 25
+- data_type: number
+  description: Montant total remboursé sur la période sept-déc — uniquement pour les établissements et années scolaires avec
+    un crédit fractionné.
+  name: sept_dec_reimbursed_amount
+  ordinal: 26
+- data_type: number
+  description: Montant total remboursé sur la période jan-août — uniquement pour les établissements et années scolaires avec
+    un crédit fractionné.
+  name: jan_aug_reimbursed_amount
+  ordinal: 27
+- data_type: number
+  description: Effectif total d'élèves de l'établissement scolaire.
+  name: total_students
+  ordinal: 28
+- data_type: number
+  description: Montant total du crédit EAC pour l'année scolaire (somme des périodes sept-déc et jan-août si le crédit est
+    fractionné).
+  name: total_scholar_year_deposit
+  ordinal: 29
+- data_type: boolean
+  description: Booléen indiquant si l'année scolaire comporte deux crédits distincts (sept-déc + jan-août) au lieu d'un crédit
+    unique annuel. Quand TRUE, les colonnes sept_dec_* et jan_aug_* sont toutes deux renseignées ; quand FALSE, seule la période
+    unique est renseignée. Lié à la politique de fractionnement du crédit EAC décidée au niveau national.
+  name: is_split_deposit
+  ordinal: 30
+- data_type: number
+  description: Total des réservations collectives non annulées sur l'année scolaire (somme des périodes si crédit fractionné).
+  name: all_year_total_theoric_bookings
+  ordinal: 31
+- data_type: number
+  description: Montant total associé aux réservations collectives non annulées sur l'année scolaire (somme des périodes si
+    crédit fractionné).
+  name: all_year_theoric_amount_spent
+  ordinal: 32
+- data_type: number
+  description: All year theoric amount spent / all year deposit.
+  name: pct_all_year_theoric_amount_spent
+  ordinal: 33
+- data_type: number
+  description: Montant théorique dépensé sept-déc / crédit sept-déc (uniquement pour les établissements et années scolaires
+    avec un crédit fractionné).
+  name: pct_sept_dec_theoric_amount_spent
+  ordinal: 34
+- data_type: number
+  description: Montant théorique dépensé jan-août / crédit jan-août (uniquement pour les établissements et années scolaires
+    avec un crédit fractionné).
+  name: pct_jan_aug_theoric_amount_spent
+  ordinal: 35
+- data_type: number
+  description: Total des réservations collectives confirmées, utilisées et remboursées sur l'année scolaire (somme des périodes
+    si crédit fractionné).
+  name: all_year_total_confirmed_bookings
+  ordinal: 36
+- data_type: number
+  description: Montant total associé aux réservations collectives utilisées et remboursées sur l'année scolaire (somme des
+    périodes si crédit fractionné).
+  name: all_year_real_amount_spent
+  ordinal: 37
+- data_type: number
+  description: Montant réel dépensé sept-déc / crédit sept-déc (uniquement pour les établissements et années scolaires avec
+    un crédit fractionné).
+  name: pct_sept_dec_real_amount_spent
+  ordinal: 38
+- data_type: number
+  description: Montant réel dépensé jan-août / crédit jan-août (uniquement pour les établissements et années scolaires avec
+    un crédit fractionné).
+  name: pct_jan_aug_real_amount_spent
+  ordinal: 39
+- data_type: number
+  description: Montant réel dépensé sur l'année scolaire / crédit total de l'année scolaire (somme des périodes si crédit
+    fractionné).
+  name: pct_all_year_real_amount_spent
+  ordinal: 40
+- data_type: number
+  description: Montant total remboursé sur l'année scolaire (somme des périodes si crédit fractionné).
+  name: all_year_reimbursed_amount
+  ordinal: 41
+- data_type: number
+  description: Montant remboursé sept-déc / crédit sept-déc (uniquement pour les établissements et années scolaires avec un
+    crédit fractionné).
+  name: pct_sept_dec_reimbursed_amount_spent
+  ordinal: 42
+- data_type: number
+  description: Montant remboursé jan-août / crédit jan-août (uniquement pour les établissements et années scolaires avec un
+    crédit fractionné).
+  name: pct_jan_aug_reimbursed_amount_spent
+  ordinal: 43
+- data_type: number
+  description: Montant remboursé sur l'année scolaire / crédit total de l'année scolaire (somme des périodes si crédit fractionné).
+  name: pct_all_year_reimbursed_amount_spent
+  ordinal: 44
+description: Vue agrégée par établissement scolaire et année scolaire — dépôts, réservations, montants engagés et consommés
+  par période (sept-déc / jan-août).
+domain_path: core/eac/etablissements
+grain:
+- Une ligne par combinaison (institution_id, institution_external_id, institution_name, institution_city)
+schema_name: analytics_prod
+synonyms:
+- EPLE agrégé
+- établissement scolaire agrégé
+- stats EPLE
+table_name: collective_eple_aggregated

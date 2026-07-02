@@ -1,0 +1,164 @@
+columns:
+- data_type: string
+  description: Code INSEE officiel identifiant l'IRIS (Îlots Regroupés pour l'Information Statistique).
+  name: iris_code
+  nullable: false
+  ordinal: 0
+- data_type: string
+  description: Identifiant interne de la zone IRIS dans le système.
+  name: iris_internal_id
+  ordinal: 1
+- data_type: string
+  description: Nom ou libellé descriptif de la zone IRIS.
+  name: iris_label
+  ordinal: 2
+- data_type: string
+  description: Code INSEE officiel de la commune contenant la zone IRIS.
+  name: city_code
+  ordinal: 3
+- data_type: string
+  description: Nom de la commune contenant la zone IRIS.
+  name: city_label
+  ordinal: 4
+- data_type: string
+  description: Code officiel de la collectivité territoriale contenant la zone IRIS.
+  name: territorial_authority_code
+  ordinal: 5
+- data_type: string
+  description: Code officiel de l'EPCI (Établissement Public de Coopération Intercommunale) contenant la zone IRIS.
+  name: epci_code
+  ordinal: 6
+- data_type: string
+  description: Nom de l'EPCI contenant la zone IRIS.
+  name: epci_label
+  ordinal: 7
+- data_type: string
+  description: Code officiel du département contenant la zone IRIS.
+  name: department_code
+  ordinal: 8
+- data_type: string
+  description: Nom officiel du département contenant la zone IRIS.
+  name: department_name
+  ordinal: 9
+- data_type: string
+  description: Nom officiel de la région contenant la zone IRIS.
+  name: region_name
+  ordinal: 10
+- data_type: string
+  description: Nom de l'académie associée à la zone IRIS.
+  name: academy_name
+  ordinal: 11
+- data_type: string
+  description: Nom de la collectivité territoriale contenant la zone IRIS.
+  name: territorial_authority_label
+  ordinal: 12
+- data_type: number
+  description: Niveau numérique de densité de population de la zone IRIS.
+  name: density_level
+  ordinal: 13
+- data_type: string
+  description: Libellé descriptif du niveau de densité de population de la zone IRIS.
+  name: density_label
+  ordinal: 14
+- data_type: string
+  description: Catégorie macro de densité de population de la zone IRIS.
+  name: density_macro_level
+  ordinal: 15
+- data_type: string
+  description: Code géographique unique identifiant la zone IRIS.
+  name: geo_code
+  ordinal: 16
+- data_type: string
+  description: Classification du type de commune (rural, urbain, etc.) contenant la zone IRIS.
+  name: rural_city_type
+  ordinal: 17
+- data_type: number
+  description: Superficie de la zone IRIS en kilomètres carrés.
+  name: iris_area_sq_km
+  ordinal: 18
+- data_type: number
+  description: Nombre total de lieux distincts situés dans un rayon de 20 km autour du centroïde de la zone IRIS.
+  name: total_venue_20_km
+  ordinal: 19
+- data_type: number
+  description: Nombre total de lieux distincts situés dans un rayon de 5 km autour du centroïde de la zone IRIS.
+  name: total_venue_5_km
+  ordinal: 20
+- data_type: number
+  description: Population totale française.
+  name: total_population
+  ordinal: 21
+- data_type: number
+  description: Population totale de 15 ans ou plus résidant dans la zone IRIS.
+  name: total_population_15_years_or_more
+  ordinal: 22
+- data_type: number
+  description: Population totale âgée de 11 à 17 ans résidant dans la zone IRIS.
+  name: total_population_11_17_years
+  ordinal: 23
+- data_type: number
+  description: Population totale âgée de 18 à 24 ans résidant dans la zone IRIS.
+  name: total_population_18_24_years
+  ordinal: 24
+- data_type: number
+  description: '10e percentile de revenu de la zone IRIS : revenu en dessous duquel se situent 10 % de la population.'
+  name: total_revenue_10_decile
+  ordinal: 25
+- data_type: number
+  description: '50e percentile de revenu de la zone IRIS : revenu médian.'
+  name: total_revenue_50_decile
+  ordinal: 26
+- data_type: number
+  description: '90e percentile de revenu de la zone IRIS : revenu en dessous duquel se situent 90 % de la population.'
+  name: total_revenue_90_decile
+  ordinal: 27
+- data_type: number
+  description: Part de la population de 15 ans ou plus appartenant à la CSP 1 — Agriculteurs exploitants.
+  name: pct_csp_1
+  ordinal: 28
+- data_type: number
+  description: Part de la population de 15 ans ou plus appartenant à la CSP 2 — Artisans, commerçants, chefs d'entreprise.
+  name: pct_csp_2
+  ordinal: 29
+- data_type: number
+  description: Part de la population de 15 ans ou plus appartenant à la CSP 3 — Cadres et professions intellectuelles supérieures.
+  name: pct_csp_3
+  ordinal: 30
+- data_type: number
+  description: Part de la population de 15 ans ou plus appartenant à la CSP 4 — Professions intermédiaires.
+  name: pct_csp_4
+  ordinal: 31
+- data_type: number
+  description: Part de la population de 15 ans ou plus appartenant à la CSP 5 — Employés.
+  name: pct_csp_5
+  ordinal: 32
+- data_type: number
+  description: Part de la population de 15 ans ou plus appartenant à la CSP 6 — Ouvriers.
+  name: pct_csp_6
+  ordinal: 33
+- data_type: number
+  description: Part de la population de 15 ans ou plus appartenant à la CSP 7 — Retraités.
+  name: pct_csp_7
+  ordinal: 34
+- data_type: number
+  description: Part de la population de 15 ans ou plus appartenant à la CSP 8 — Autres personnes sans activité professionnelle.
+  name: pct_csp_8
+  ordinal: 35
+- data_type: number
+  description: Part de la population de nationalité française, tous âges confondus.
+  name: pct_french_population
+  ordinal: 36
+- data_type: number
+  description: Part de la population de nationalité étrangère, tous âges confondus.
+  name: pct_foreign_population
+  ordinal: 37
+description: Données socio-démographiques INSEE à la maille IRIS (~2 000 habitants) — population, revenus, densité, précarité.
+domain_path: reporting/geographie
+grain:
+- Une ligne par iris_code (iris_code)
+schema_name: analytics_prod
+synonyms:
+- IRIS
+- données sociodémographiques
+- INSEE IRIS
+table_name: global_iris_socio_demographics

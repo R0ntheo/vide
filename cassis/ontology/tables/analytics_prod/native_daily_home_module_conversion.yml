@@ -1,0 +1,138 @@
+columns:
+- data_type: date
+  description: Date à laquelle le module a été affiché à l'utilisateur.
+  name: module_displayed_date
+  ordinal: 0
+- data_type: string
+  description: Identifiant du module associé à la consultation.
+  name: module_id
+  ordinal: 1
+- data_type: string
+  description: Nom du module dans lequel l'entrée est affichée.
+  name: module_name
+  ordinal: 2
+- data_type: string
+  description: Type du module dans lequel l'entrée est affichée (algolia, recommendation, video, etc.).
+  name: module_type
+  ordinal: 3
+- data_type: string
+  description: Identifiant de l'entrée associée à la consultation.
+  name: entry_id
+  ordinal: 4
+- data_type: string
+  description: Nom de l'entrée affichée à l'utilisateur.
+  name: entry_name
+  ordinal: 5
+- data_type: string
+  description: Identifiant du module parent du module courant.
+  name: parent_module_id
+  ordinal: 6
+- data_type: string
+  description: Type du module parent.
+  name: parent_module_type
+  ordinal: 7
+- data_type: string
+  description: Identifiant de l'entrée parente de l'entrée courante.
+  name: parent_entry_id
+  ordinal: 8
+- data_type: string
+  description: Version de l'application dans laquelle l'événement a été enregistré.
+  name: app_version
+  ordinal: 9
+- data_type: string
+  description: Type de home associé à l'entrée parente.
+  name: parent_home_type
+  ordinal: 10
+- data_type: string
+  description: Type d'audience de la home.
+  name: home_audience
+  ordinal: 11
+- data_type: string
+  description: Stade du cycle de vie de l'utilisateur par rapport à la home.
+  name: user_lifecycle_home
+  ordinal: 12
+- data_type: string
+  description: Type de home associé à l'entrée.
+  name: home_type
+  ordinal: 13
+- data_type: string
+  description: Type de playlist associé à l'entrée.
+  name: playlist_type
+  ordinal: 14
+- data_type: string
+  description: Identifiant de la catégorie de l'offre, défini par le partenaire culturel via une liste de choix prédéfinis.
+  name: offer_category
+  ordinal: 15
+- data_type: string
+  description: Portée de la playlist associée à l'entrée.
+  name: playlist_reach
+  ordinal: 16
+- data_type: string
+  description: Fréquence de récurrence de la playlist.
+  name: playlist_recurrence
+  ordinal: 17
+- data_type: string
+  description: Rôle attribué à l'utilisateur (GRANT_18, GRANT_15_17, PRO, ADMIN).
+  name: user_role
+  ordinal: 18
+- data_type: number
+  description: Nombre total de sessions avec affichage d'un objet spécifique (module_id ou offer_id).
+  name: total_session_display
+  ordinal: 19
+- data_type: number
+  description: Nombre total de sessions avec un clic sur un objet spécifique (module_id ou offer_id).
+  name: total_session_with_click
+  ordinal: 20
+- data_type: number
+  description: Nombre total de sessions avec une consultation liée à un objet spécifique (module_id ou offer_id).
+  name: total_sesh_consult_offer
+  ordinal: 21
+- data_type: number
+  description: Nombre total de sessions ayant mis une offre en favori, liées à un objet spécifique (module_id ou offer_id).
+  name: total_session_fav
+  ordinal: 22
+- data_type: number
+  description: Nombre total de sessions avec une consultation vidéo, liées à un module_id spécifique.
+  name: total_session_with_consult_video
+  ordinal: 23
+- data_type: number
+  description: Nombre total de consultations d'offres.
+  name: total_consult_offer
+  ordinal: 24
+- data_type: number
+  description: Nombre total d'ajouts en favori.
+  name: total_fav
+  ordinal: 25
+- data_type: number
+  description: Nombre total de sessions ayant effectué une réservation.
+  name: total_session_with_booking
+  ordinal: 26
+- data_type: number
+  description: Nombre total de réservations, individuelles et collectives.
+  name: total_bookings
+  ordinal: 27
+- data_type: number
+  description: Nombre total de réservations non annulées, individuelles et collectives.
+  name: total_non_cancelled_bookings
+  ordinal: 28
+- data_type: number
+  description: Total du score de diversité incrémenté par les réservations associées.
+  name: total_diversification
+  ordinal: 29
+- data_type: number
+  description: Nombre total de clics sur un objet spécifique (module_id ou offer_id).
+  name: total_click
+  ordinal: 30
+- data_type: string
+  description: Identifiant Typeform unique lié à un identifiant d'événement spécial, utilisé pour relier les données Contentful.
+  name: typeform_id
+  ordinal: 31
+description: Conversion des modules de la page d'accueil — affichages, clics, réservations par module et par jour.
+domain_path: tracking/natif
+grain:
+- Une ligne par jour × module × page d'accueil (module_displayed_date, module_id, entry_id)
+schema_name: analytics_prod
+synonyms:
+- conversion module accueil
+- CTR home
+table_name: native_daily_home_module_conversion

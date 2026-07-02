@@ -1,0 +1,11 @@
+context_md: |-
+  Ce domaine regroupe toutes les tables décrivant ce qui est proposé aux bénéficiaires et aux établissements scolaires.
+
+  Une offre (offer) est un bien ou service culturel proposé par un partenaire. Elle est rattachée à un lieu (venue) et classée par catégorie (offer_category_id) et sous-catégorie (offer_subcategory_id). Chaque offre peut avoir un ou plusieurs stocks (stock) définissant le prix, la quantité disponible et les dates.
+
+  Les offres collectives (collective_offer) sont destinées aux établissements scolaires via la plateforme Adage, avec un format spécifique (atelier, spectacle, visite…) et un domaine artistique.
+
+  Tables de référence associées : artistes (artist), métadonnées enrichies (offer_metadata), critères de mise en avant (offer_criterion), favoris des bénéficiaires (favorite), domaines artistiques des lieux (mapping_venue_domain).
+description: Catalogue des offres culturelles proposées par les partenaires — offres individuelles, collectives, stocks, métadonnées,
+  artistes et événements.
+display_name: Offre & Catalogue

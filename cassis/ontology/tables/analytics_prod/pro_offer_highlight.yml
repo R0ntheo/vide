@@ -1,0 +1,55 @@
+columns:
+- data_type: string
+  description: Identifiant unique de la demande de mise en avant.
+  name: highlight_request_id
+  ordinal: 0
+- data_type: string
+  description: Identifiant unique de l'offre.
+  name: offer_id
+  ordinal: 1
+- data_type: string
+  description: Identifiant unique de la mise en avant elle-même (« temps de valorisation thématique »).
+  name: highlight_id
+  ordinal: 2
+- data_type: string
+  description: Identifiant du visuel ou de l'image représentant la mise en avant.
+  name: highlight_image_id
+  ordinal: 3
+- data_type: string
+  description: Libellé de la mise en avant.
+  name: highlight_name
+  ordinal: 4
+- data_type: string
+  description: Description détaillée du contenu ou de l'objectif de la mise en avant.
+  name: highlight_description
+  ordinal: 5
+- data_type: date
+  description: Date de début d'affichage actif de la mise en avant aux utilisateurs dans l'application.
+  name: highlight_beginning_date
+  ordinal: 6
+- data_type: date
+  description: Date de fin d'affichage actif de la mise en avant aux utilisateurs dans l'application.
+  name: highlight_ending_date
+  ordinal: 7
+- data_type: date
+  description: Date de début de la période de candidature des partenaires culturels pour la sélection de la mise en avant.
+  name: highlight_availability_beginning_date
+  ordinal: 8
+- data_type: date
+  description: Date de fin de la période de candidature des partenaires culturels pour la sélection de la mise en avant.
+  name: highlight_availability_ending_date
+  ordinal: 9
+- data_type: date
+  description: Date à laquelle le partenaire culturel est notifié de la sélection ou non de sa soumission pour la mise en
+    avant.
+  name: highlight_communication_date
+  ordinal: 10
+description: Offres mises en avant par l'équipe éditoriale — dates de communication, disponibilité, description.
+domain_path: tracking/pro
+grain:
+- Une ligne par mise en avant d'offre (offer_id)
+schema_name: analytics_prod
+synonyms:
+- offre mise en avant
+- offre à la une
+table_name: pro_offer_highlight

@@ -1,0 +1,42 @@
+columns:
+- data_type: date
+  description: Premier jour du mois auquel se rapporte le KPI.
+  name: partition_month
+  ordinal: 0
+- data_type: datetime
+  description: Date effective d'exécution du rafraîchissement des données.
+  name: updated_at
+  ordinal: 1
+- data_type: string
+  description: Agrégation géographique du KPI (National, Régional ou Départemental).
+  name: dimension_name
+  ordinal: 2
+- data_type: string
+  description: Nom de l'agrégation géographique du KPI, si elle existe (nom de région, nom de département).
+  name: dimension_value
+  ordinal: 3
+- data_type: string
+  description: Liste des différents formats culturels de l'offre collective.
+  name: collective_offer_format
+  ordinal: 4
+- data_type: number
+  description: Montant total généré par les réservations.
+  name: total_booking_amount
+  ordinal: 5
+- data_type: number
+  description: Nombre total de billets réservés dans le cadre des réservations collectives.
+  name: total_number_of_tickets
+  ordinal: 6
+- data_type: number
+  description: Rang du montant total généré par les réservations, par rapport aux autres catégories réservées.
+  name: total_booking_amount_ranked
+  ordinal: 7
+description: Classement Top 50 des formats d'intervention EAC (atelier, spectacle, visite, etc.) par nombre de réservations.
+domain_path: reporting/institutionnel/classements
+grain:
+- Une ligne par entrée du classement (partition_month, dimension_name, dimension_value)
+schema_name: analytics_prod
+synonyms:
+- top formats
+- classement formats EAC
+table_name: external_reporting_top_format

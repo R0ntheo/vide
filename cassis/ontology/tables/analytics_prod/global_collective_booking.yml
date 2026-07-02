@@ -1,0 +1,362 @@
+columns:
+- data_type: string
+  description: Identifiant unique de la réservation collective.
+  name: collective_booking_id
+  nullable: false
+  ordinal: 0
+  source: manual
+- data_type: string
+  description: Identifiant du stock collectif associé à la réservation.
+  name: collective_stock_id
+  ordinal: 1
+  source: manual
+- data_type: string
+  description: Identifiant du crédit éducatif (dépôt) utilisé pour cette réservation.
+  name: educational_deposit_id
+  ordinal: 2
+  source: manual
+- data_type: boolean
+  description: Indiqué si la réservation collective a été utilisée, c'est-à-dire si la sortie culturelle a bien eu lieu.
+  name: is_used_collective_booking
+  ordinal: 3
+  source: manual
+- data_type: string
+  description: Identifiant de l'offre collective associée à la réservation.
+  name: collective_offer_id
+  ordinal: 4
+  source: manual
+- data_type: string
+  description: Nom de l'offre collective réservée.
+  name: collective_offer_name
+  ordinal: 5
+  source: manual
+- data_type: string
+  description: Format culturel de l'offre collective (atelier, spectacle, visite, etc.).
+  name: collective_offer_format
+  ordinal: 6
+  source: manual
+  synonyms:
+  - format culturel
+- data_type: string
+  description: Identifiant unique du lieu culturel où se déroule l'offre.
+  name: venue_id
+  ordinal: 7
+  source: manual
+- data_type: string
+  description: Nom du lieu culturel.
+  name: venue_name
+  ordinal: 8
+  source: manual
+- data_type: string
+  description: Code du département du lieu culturel.
+  name: venue_department_code
+  ordinal: 9
+  source: manual
+- data_type: string
+  description: Nom du département du lieu culturel.
+  name: venue_department_name
+  ordinal: 10
+  source: manual
+- data_type: string
+  description: Nom de la région du lieu culturel.
+  name: venue_region_name
+  ordinal: 11
+  source: manual
+- data_type: string
+  description: Identifiant unique de la structure (offreur) proposant l'offre.
+  name: offerer_id
+  ordinal: 12
+  source: manual
+- data_type: string
+  description: Identifiant unique du partenaire culturel.
+  name: partner_id
+  ordinal: 13
+  source: manual
+- data_type: string
+  description: Nom de la structure (offreur) proposant l'offre.
+  name: offerer_name
+  ordinal: 14
+  source: manual
+- data_type: string
+  description: Identifiant IRIS interne pour le lieu (maille infra-communale INSEE).
+  name: venue_iris_internal_id
+  ordinal: 15
+  source: manual
+- data_type: number
+  description: Montant total de la réservation collective (prix du stock collectif).
+  name: booking_amount
+  ordinal: 16
+  source: manual
+  unit: €
+- data_type: number
+  description: Nombre de places (tickets) disponibles dans le stock collectif.
+  name: collective_stock_number_of_tickets
+  ordinal: 17
+  source: manual
+  synonyms:
+  - nombre d'élèves
+- data_type: datetime
+  description: Date et heure prévues du début de la sortie collective.
+  name: collective_stock_beginning_date_time
+  ordinal: 18
+  source: manual
+- data_type: datetime
+  description: Date et heure prévues de fin de la sortie collective. La sortie peut se dérouler sur plusieurs jours.
+  name: collective_stock_end_date_time
+  ordinal: 19
+  source: manual
+- data_type: string
+  description: Identifiant de l'établissement scolaire ayant effectué la réservation.
+  name: educational_institution_id
+  ordinal: 20
+  source: manual
+- data_type: string
+  description: Identifiant de l'année scolaire associée à la réservation.
+  name: educational_year_id
+  ordinal: 21
+  source: manual
+- data_type: string
+  description: Identifiant du rédacteur pédagogique (enseignant) ayant effectué la réservation.
+  name: educational_redactor_id
+  ordinal: 22
+  source: manual
+  synonyms:
+  - enseignant
+- data_type: string
+  description: Nom du programme EAC auquel l'établissement participe.
+  name: institution_program_name
+  ordinal: 23
+  source: manual
+- data_type: string
+  description: Identifiant IRIS interne pour l'établissement scolaire.
+  name: institution_internal_iris_id
+  ordinal: 24
+  source: manual
+- data_type: string
+  description: Nom de l'établissement scolaire ayant effectué la réservation.
+  name: institution_name
+  ordinal: 25
+  source: manual
+- data_type: string
+  description: Ministère de tutelle de l'établissement scolaire.
+  name: ministry
+  ordinal: 26
+  source: manual
+- data_type: string
+  description: Nom de l'académie de l'établissement scolaire.
+  name: institution_academy_name
+  ordinal: 27
+  source: manual
+- data_type: string
+  description: Nom de la région de l'établissement scolaire.
+  name: institution_region_name
+  ordinal: 28
+  source: manual
+- data_type: string
+  description: Code du département de l'établissement scolaire.
+  name: institution_department_code
+  ordinal: 29
+  source: manual
+- data_type: string
+  description: Nom du département de l'établissement scolaire.
+  name: institution_department_name
+  ordinal: 30
+  source: manual
+- data_type: string
+  description: Code postal de l'établissement scolaire.
+  name: institution_postal_code
+  ordinal: 31
+  source: manual
+- data_type: string
+  description: Commune de l'établissement scolaire.
+  name: institution_city
+  ordinal: 32
+  source: manual
+- data_type: string
+  description: Code INSEE de la commune de l'établissement scolaire.
+  name: institution_city_code
+  ordinal: 33
+  source: manual
+- data_type: string
+  description: Nom de l'EPCI (intercommunalité) de l'établissement scolaire.
+  name: institution_epci
+  ordinal: 34
+  source: manual
+- data_type: string
+  description: Code de l'EPCI de l'établissement scolaire.
+  name: institution_epci_code
+  ordinal: 35
+  source: manual
+- data_type: string
+  description: Libellé détaillé de la densité de la zone de l'établissement.
+  name: institution_density_label
+  ordinal: 36
+  source: manual
+- data_type: string
+  description: 'Densité macro de la zone de l''établissement : rural ou urbain.'
+  name: institution_macro_density_label
+  ordinal: 37
+  source: manual
+- data_type: number
+  description: Niveau numérique de densité de la zone de l'établissement.
+  name: institution_density_level
+  ordinal: 38
+  source: manual
+- data_type: string
+  description: Commune où se situe le lieu culturel.
+  name: venue_city
+  ordinal: 39
+  source: manual
+- data_type: string
+  description: Code INSEE de la commune du lieu culturel.
+  name: venue_city_code
+  ordinal: 40
+  source: manual
+- data_type: string
+  description: Nom de l'EPCI (intercommunalité) du lieu culturel.
+  name: venue_epci
+  ordinal: 41
+  source: manual
+- data_type: string
+  description: Code de l'EPCI du lieu culturel.
+  name: venue_epci_code
+  ordinal: 42
+  source: manual
+- data_type: string
+  description: Nom de l'académie du lieu culturel.
+  name: venue_academy_name
+  ordinal: 43
+  source: manual
+- data_type: string
+  description: Libellé détaillé de la densité de la zone du lieu culturel.
+  name: venue_density_label
+  ordinal: 44
+  source: manual
+- data_type: string
+  description: 'Densité macro de la zone du lieu : urbain ou rural.'
+  name: venue_macro_density_label
+  ordinal: 45
+  source: manual
+- data_type: number
+  description: Niveau numérique de densité de la zone du lieu.
+  name: venue_density_level
+  ordinal: 46
+  source: manual
+- data_type: string
+  description: Code postal du lieu culturel.
+  name: venue_postal_code
+  ordinal: 47
+  source: manual
+- data_type: boolean
+  description: Indiqué si la structure (offreur) est une collectivité territoriale.
+  name: is_local_authority
+  ordinal: 48
+  source: manual
+- data_type: string
+  description: Type du lieu culturel (Musée, Cinéma, Librairie, etc.), sélectionné par le partenaire lors de son inscription.
+  name: venue_type_label
+  ordinal: 49
+  source: manual
+- data_type: boolean
+  description: Indiqué si le lieu est permanent, c'est-à-dire un lieu pouvant accueillir du public en permanence et proposer
+    des offres (ex. bibliothèque, cinéma).
+  name: venue_is_permanent
+  ordinal: 50
+  source: manual
+- data_type: date
+  description: Date à laquelle la réservation collective a été créée.
+  name: collective_booking_creation_date
+  ordinal: 51
+  source: manual
+- data_type: datetime
+  description: Date d'annulation de la réservation collective.
+  name: collective_booking_cancellation_date
+  ordinal: 52
+  source: manual
+- data_type: boolean
+  description: Indiqué si la réservation collective a été annulée.
+  name: collective_booking_is_cancelled
+  ordinal: 53
+  source: manual
+- data_type: string
+  description: Statut courant de la réservation collective.
+  name: collective_booking_status
+  ordinal: 54
+  source: manual
+- data_type: string
+  description: Motif de l'annulation de la réservation collective.
+  name: collective_booking_cancellation_reason
+  ordinal: 55
+  source: manual
+- data_type: datetime
+  description: Date à laquelle la réservation a été confirmée par le chef d'établissement.
+  name: collective_booking_confirmation_date
+  ordinal: 56
+  source: manual
+- data_type: datetime
+  description: Date limite pour la confirmation de la réservation par le chef d'établissement.
+  name: collective_booking_confirmation_limit_date
+  ordinal: 57
+  source: manual
+- data_type: datetime
+  description: Date à laquelle la réservation collective a été marquée comme utilisée (la sortie culturelle a eu lieu).
+  name: collective_booking_used_date
+  ordinal: 58
+  source: manual
+- data_type: datetime
+  description: Date de remboursement du partenaire pour cette réservation collective.
+  name: collective_booking_reimbursement_date
+  ordinal: 59
+  source: manual
+- data_type: number
+  description: Rang de la réservation dans l'historique de l'établissement, du plus ancien au plus récent.
+  name: collective_booking_rank_asc
+  ordinal: 60
+  source: manual
+- data_type: number
+  description: Rang de la réservation dans l'historique de l'établissement, du plus récent au plus ancien.
+  name: collective_booking_rank_desc
+  ordinal: 61
+  source: manual
+- data_type: string
+  description: Identifiant de l'image associée à l'offre collective.
+  name: collective_offer_image_id
+  ordinal: 62
+  source: manual
+- data_type: string
+  description: 'Indiqué où se déroule l''offre collective : à l''école, chez le partenaire, ou dans un autre lieu.'
+  name: collective_offer_location_type
+  ordinal: 63
+  source: manual
+- data_type: boolean
+  description: Indiqué si la réservation est associée au crédit (dépôt) en cours.
+  name: is_current_deposit_booking
+  ordinal: 64
+  source: manual
+- data_type: string
+  description: Année scolaire associée à la réservation (ex. '2024-2025').
+  name: scholar_year
+  ordinal: 65
+  source: manual
+  synonyms:
+  - année scolaire
+- data_type: boolean
+  description: Indiqué si la réservation est associée à l'année scolaire en cours (du 1er septembre au 31 août).
+  name: is_current_scholar_year_booking
+  ordinal: 66
+  source: manual
+- data_type: boolean
+  description: Indiqué si la réservation a été créée pendant l'année civile en cours (du 1er janvier au 31 décembre).
+  name: is_current_calendar_year_booking
+  ordinal: 67
+  source: manual
+description: Chaque réservation lie un établissement scolaire à une offre collective via un stock.
+domain_path: core/reservations
+grain:
+- Une ligne par collective_booking_id (collective_booking_id)
+schema_name: analytics_prod
+synonyms:
+- pré-réservation collective
+- booking collectif
+- réservation EAC
+table_name: global_collective_booking

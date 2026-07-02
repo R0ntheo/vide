@@ -1,0 +1,197 @@
+columns:
+- data_type: number
+  description: Identifiant de session Firebase.
+  name: session_id
+  ordinal: 0
+  source: manual
+- data_type: string
+  description: Identifiant pseudonyme Firebase.
+  name: user_pseudo_id
+  ordinal: 1
+  source: manual
+- data_type: string
+  description: Identifiant unique de la session.
+  name: unique_session_id
+  ordinal: 2
+  source: manual
+- data_type: string
+  description: Plateforme (android, ios, web).
+  name: platform
+  ordinal: 3
+  source: manual
+- data_type: string
+  description: Version de l'application.
+  name: app_version
+  ordinal: 4
+  source: manual
+- data_type: number
+  description: Numéro de session pour cet utilisateur.
+  name: session_number
+  ordinal: 5
+  source: manual
+- data_type: string
+  description: Identifiant du bénéficiaire (si connecté).
+  name: user_id
+  ordinal: 6
+  source: manual
+- data_type: datetime
+  description: Horodatage du premier événement de la session.
+  name: first_event_timestamp
+  ordinal: 7
+  source: manual
+- data_type: date
+  description: Date du premier événement.
+  name: first_event_date
+  ordinal: 8
+  source: manual
+- data_type: string
+  description: Campagne marketing source de la session.
+  name: traffic_campaign
+  ordinal: 9
+  source: manual
+- data_type: string
+  description: Medium marketing source.
+  name: traffic_medium
+  ordinal: 10
+  source: manual
+- data_type: string
+  description: Source marketing.
+  name: traffic_source
+  ordinal: 11
+  source: manual
+- data_type: string
+  description: Type de génération du trafic.
+  name: traffic_gen
+  ordinal: 12
+  source: manual
+- data_type: string
+  description: Contenu marketing.
+  name: traffic_content
+  ordinal: 13
+  source: manual
+- data_type: datetime
+  description: Horodatage du dernier événement.
+  name: last_event_timestamp
+  ordinal: 14
+  source: manual
+- data_type: number
+  description: Nombre de consultations d'offres.
+  name: nb_consult_offer
+  ordinal: 15
+  source: manual
+- data_type: number
+  description: Confirmations de réservation.
+  name: nb_booking_confirmation
+  ordinal: 16
+  source: manual
+- data_type: number
+  description: Ajouts aux favoris.
+  name: nb_add_to_favorites
+  ordinal: 17
+  source: manual
+- data_type: number
+  description: Partages.
+  name: nb_share
+  ordinal: 18
+  source: manual
+- data_type: number
+  description: Nombre de captures d'écran dans la session.
+  name: nb_screenshot
+  ordinal: 19
+  source: manual
+- data_type: number
+  description: Nombre de changements de localisation dans la session.
+  name: nb_set_location
+  ordinal: 20
+  source: manual
+- data_type: number
+  description: Consultations de vidéos.
+  name: nb_consult_video
+  ordinal: 21
+  source: manual
+- data_type: number
+  description: Consultations de pages lieu.
+  name: nb_consult_venue
+  ordinal: 22
+  source: manual
+- data_type: number
+  description: Consultations de la carte des lieux.
+  name: nb_consult_venue_map
+  ordinal: 23
+  source: manual
+- data_type: number
+  description: Nombre total de vues d'écran.
+  name: nb_screen_view
+  ordinal: 24
+  source: manual
+- data_type: number
+  description: Vues de la page d'accueil.
+  name: nb_screen_view_home
+  ordinal: 25
+  source: manual
+- data_type: number
+  description: Vues de la page recherche.
+  name: nb_screen_view_search
+  ordinal: 26
+  source: manual
+- data_type: number
+  description: Vues de pages offre.
+  name: nb_screen_view_offer
+  ordinal: 27
+  source: manual
+- data_type: number
+  description: Vues du profil.
+  name: nb_screen_view_profile
+  ordinal: 28
+  source: manual
+- data_type: number
+  description: Vues des favoris.
+  name: nb_screen_view_favorites
+  ordinal: 29
+  source: manual
+- data_type: number
+  description: Vues de la page réservations.
+  name: nb_screen_view_bookings
+  ordinal: 30
+  source: manual
+- data_type: number
+  description: Inscriptions finalisées dans la session.
+  name: nb_signup_completed
+  ordinal: 31
+  source: manual
+- data_type: number
+  description: Demandes de crédit envoyées.
+  name: nb_benef_request_sent
+  ordinal: 32
+  source: manual
+- data_type: number
+  description: Nombre de connexions dans la session.
+  name: nb_login
+  ordinal: 33
+  source: manual
+- data_type: number
+  description: Durée totale de la session en secondes.
+  name: visit_duration_seconds
+  ordinal: 34
+  source: manual
+  unit: s
+- data_type: number
+  description: Consultations de pages artiste.
+  name: nb_consult_artist
+  ordinal: 35
+  source: manual
+- data_type: string
+  description: Thème de l'application (clair/sombre) pendant la session.
+  name: theme_setting
+  ordinal: 36
+  source: manual
+description: 'Agrégation par session des événements Firebase : durée, vues d''écrans par section (home, recherche, offre,
+  profil, favoris), compteurs d''actions (consultation, réservation, favori, partage, inscription).'
+domain_path: tracking/natif
+grain:
+- Une ligne par session de visite (unique_session_id)
+schema_name: analytics_prod
+synonyms:
+- session app
+- visite app
+table_name: firebase_visits

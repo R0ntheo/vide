@@ -1,0 +1,64 @@
+context_md: |-
+  # Parcours de découverte natif
+
+  ## Architecture de la page d'accueil
+
+  L'app native présente aux bénéficiaires une page d'accueil composée de **modules** — blocs de contenu personnalisés :
+
+  - Modules de recommandation (offres suggérées par l'algorithme).
+  - Modules éditoriaux (sélections thématiques par l'équipe éditoriale).
+  - Modules vidéo (contenus vidéo promotionnels).
+  - Module carte des lieux (venue map).
+
+  ### Tables de suivi
+
+  - `native_daily_user_home_module` : quels modules sont affichés à quels utilisateurs.
+  - `native_daily_home_module_conversion` : taux de conversion par module (affiché → cliqué → réservé).
+  - `native_daily_home_offer_displayed` : offres affichées dans les modules.
+  - `native_daily_home_recommendation_offer` : offres recommandées par l'algorithme.
+  - `native_daily_video_module_conversion` : conversion des modules vidéo.
+  - `native_daily_venue_map_conversion` : conversion de la carte des lieux.
+
+  ## Funnel de découverte
+
+  ```
+  Page d'accueil (module affiché)
+    → Clic sur un module / une offre
+      → Consultation de l'offre (fiche détaillée)
+        → Réservation
+          → Utilisation
+  ```
+
+  ### Consultation (`native_consultation`)
+
+  Chaque consultation d'une offre par un bénéficiaire est enregistrée avec :
+  - L'offre consultée (`offer_id`).
+  - Le parcours de découverte (`from` : search, home, recommendation, etc.).
+  - Le contexte utilisateur.
+
+  ### Événements bruts (`native_event`)
+
+  Table la plus granulaire. Chaque action in-app est un événement :
+  - Recherche, navigation, consultation, réservation, scroll, clic.
+  - Contexte technique (device, OS, version app).
+
+  ## Métriques d'engagement
+
+  ### Couverture mensuelle (`native_monthly_beneficiary_coverage`)
+
+  Part des bénéficiaires actifs ayant ouvert l'app dans le mois.
+
+  ### NPS (`native_nps_beneficiary`)
+
+  Score Net Promoter Score issu d'enquêtes Qualtrics in-app.
+
+  ### Cohortes de sortie (`native_outgoing_cohort`)
+
+  Bénéficiaires dont le crédit arrive à expiration. Permet d'analyser le comportement de fin de crédit (accélération des dépenses, types d'offres privilégiées).
+
+  ### Badges (`native_achievement`)
+
+  Accomplissements in-app liés aux réservations (premier concert, 5 livres lus, etc.). Jointure via `booking_id`.
+description: Fonctionnement de la découverte d'offres dans l'app native — modules home, consultation, conversion et funnel
+  de réservation.
+display_name: Parcours de découverte natif

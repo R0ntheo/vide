@@ -1,0 +1,47 @@
+columns:
+- data_type: date
+  description: Premier jour du mois auquel se rapporte le KPI.
+  name: partition_month
+  ordinal: 0
+- data_type: datetime
+  description: Date effective du rafraichissement des donnees.
+  name: updated_at
+  ordinal: 1
+- data_type: string
+  description: 'Agregation geographique du KPI : national, regional ou departemental.'
+  name: dimension_name
+  ordinal: 2
+- data_type: string
+  description: Nom de l'agregation geographique (nom de la region ou du département), si applicable.
+  name: dimension_value
+  ordinal: 3
+- data_type: string
+  description: |-
+    Valeurs possibles de kpi_name :
+    - taux_couverture_15 — taux de couverture du pass Culture à 15 ans révolus
+    - taux_couverture_16 — taux de couverture à 16 ans révolus
+    - taux_couverture_17 — taux de couverture à 17 ans révolus
+    - taux_couverture_18 — taux de couverture à 18 ans révolus
+  name: kpi_name
+  ordinal: 4
+- data_type: number
+  description: Numerateur du KPI calculé.
+  name: numerator
+  ordinal: 5
+- data_type: number
+  description: Denominateur du KPI calculé.
+  name: denominator
+  ordinal: 6
+- data_type: number
+  description: Valeur du KPI, egale au numerateur divise par le denominateur.
+  name: kpi
+  ordinal: 7
+description: KPIs couverture de la population éligible au format pivot — taux d'activation par dimension géographique.
+domain_path: reporting/institutionnel/individuel
+grain:
+- Une ligne par mois × dimension × KPI (partition_month, dimension_name, kpi_name)
+schema_name: analytics_prod
+synonyms:
+- KPI couverture
+- taux de couverture
+table_name: external_reporting_coverage

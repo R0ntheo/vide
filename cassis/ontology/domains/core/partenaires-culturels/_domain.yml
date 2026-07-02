@@ -1,0 +1,12 @@
+context_md: |-
+  Ce domaine couvre le côté offre du pass Culture : qui propose la culture.
+
+  Hiérarchie : Structure (offerer, SIREN) → Lieu (venue, SIRET) → Offres. Un offerer est une entité juridique. Un venue est un espace physique (bibliothèque, cinéma, théâtre) ou virtuel (plateforme numérique) rattaché à une structure.
+
+  Le partenaire culturel (cultural_partner) est une vue consolidée : un acteur culturel inscrit au programme. Un SIREN peut porter plusieurs partenaires (SIRET).
+
+  Partenaire activé = a publié au moins une offre validée. Partenaire actif = offre réservable dans les 365 derniers jours. Partenaire deux volets = actif sur individuel ET collectif.
+
+  Les tags (offerer_tag, venue_tag) portent des labels ministériels (CCN, CDN, Scène nationale…) et des classifications internes. Les venue_provider indiquent les fournisseurs de données synchronisés (Allociné, Fnac, etc.).
+description: Structures, lieux et partenaires qui proposent des offres culturelles sur le pass Culture.
+display_name: Partenaires culturels

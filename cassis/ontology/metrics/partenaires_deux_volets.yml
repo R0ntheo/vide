@@ -1,0 +1,13 @@
+description: Nombre de partenaires actifs à la fois sur le volet individuel et le volet collectif (EAC).
+display_name: Partenaires actifs deux volets
+domain_path: core/partenaires-culturels
+expression: COUNT(DISTINCT partner_id)
+filters: is_individual_active_current_year = TRUE AND is_collective_active_current_year = TRUE
+name: partenaires_deux_volets
+precomputed_in: external_reporting_individual
+synonyms:
+- deux volets
+- two-sided partners
+table_name: global_cultural_partner
+table_schema: analytics_prod
+unit: count

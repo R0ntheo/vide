@@ -1,0 +1,46 @@
+columns:
+- data_type: date
+  description: Premier jour du mois auquel le KPI se réfère.
+  name: partition_month
+  ordinal: 0
+- data_type: datetime
+  description: Date effective du dernier rafraîchissement des données.
+  name: updated_at
+  ordinal: 1
+- data_type: string
+  description: 'Agrégation géographique du KPI : National, Régional ou Départemental.'
+  name: dimension_name
+  ordinal: 2
+- data_type: string
+  description: Nom de l'agrégation géographique du KPI (nom de région, nom de département).
+  name: dimension_value
+  ordinal: 3
+- data_type: string
+  description: |-
+    Valeurs possibles de kpi_name :
+    - nombre_total_cumule_de_partenaires_actives_individuel / _collectif / _deux_volets — nombre cumulé de partenaires activés par volet
+    - nombre_total_de_partenaire_actif_individuel / _collectif / _deux_volets — nombre de partenaires actifs par volet
+    - total_entite_epn — nombre total d'EPN (Établissements Publics Nationaux)
+  name: kpi_name
+  ordinal: 4
+- data_type: number
+  description: Numérateur du KPI calculé.
+  name: numerator
+  ordinal: 5
+- data_type: number
+  description: Dénominateur du KPI calculé.
+  name: denominator
+  ordinal: 6
+- data_type: number
+  description: Valeur du KPI, égale au numérateur divisé par le dénominateur.
+  name: kpi
+  ordinal: 7
+description: KPIs partenaires culturels au format pivot — partenaires actifs, offres créées par dimension géographique.
+domain_path: reporting/institutionnel/individuel
+grain:
+- Une ligne par mois × dimension × KPI (partition_month, dimension_name, kpi_name)
+schema_name: analytics_prod
+synonyms:
+- KPI partenaires
+- reporting partenaires
+table_name: external_reporting_cultural_partner

@@ -1,0 +1,132 @@
+columns:
+- data_type: date
+  description: Date d'extraction des metriques de la publication depuis la plateforme.
+  name: publication_export_date
+  ordinal: 0
+- data_type: string
+  description: 'Identifiant du compte ayant publie le contenu, prefixe par le nom de la plateforme (ex : instagram_, tiktok_).'
+  name: publication_account_name
+  ordinal: 1
+- data_type: string
+  description: Identifiant unique de la publication ; format variable selon la plateforme (numérique pour Instagram, alphanumerique
+    pour TikTok).
+  name: publication_id
+  ordinal: 2
+- data_type: date
+  description: Date de publication initiale du contenu sur le réseau social.
+  name: publication_creation_date
+  ordinal: 3
+- data_type: number
+  description: Nombre de comptes uniques ayant vu la publication au moins une fois.
+  name: publication_reach
+  ordinal: 4
+- data_type: number
+  description: Nombre total de lectures de la video ; applicable uniquement aux contenus video.
+  name: publication_video_views
+  ordinal: 5
+- data_type: number
+  description: Nombre de comptes uniques ayant aime la publication.
+  name: publication_likes
+  ordinal: 6
+- data_type: number
+  description: Nombre de partages de la publication vers des stories ou d'autres utilisateurs.
+  name: publication_shares
+  ordinal: 7
+- data_type: number
+  description: Nombre total de commentaires recus sur la publication.
+  name: publication_comments
+  ordinal: 8
+- data_type: number
+  description: Ratio des interactions totales (likes + commentaires + partages) sur la portee.
+  name: publication_engagement_rate
+  ordinal: 9
+- data_type: string
+  description: Texte accompagnant la publication, incluant hashtags, mentions et emojis.
+  name: publication_caption
+  ordinal: 10
+- data_type: string
+  description: URL permanente permettant d'acceder directement a la publication sur le réseau social.
+  name: publication_link
+  ordinal: 11
+- data_type: boolean
+  description: Indiqué si la publication fait partie d'une campagne tracee (TRUE/FALSE).
+  name: is_publication_tagged
+  ordinal: 12
+- data_type: string
+  description: Format du contenu Instagram (PHOTO, VIDEO, CAROUSEL_ALBUM).
+  name: instagram_publication_media_type
+  ordinal: 13
+- data_type: string
+  description: Identifiant unique attribue a la publication a des fins de suivi de campagne.
+  name: publication_tag_post_name
+  ordinal: 14
+- data_type: string
+  description: Objectif marketing de haut niveau de la publication.
+  name: publication_tag_macro_objective
+  ordinal: 15
+- data_type: string
+  description: Objectif marketing spécifique de la publication.
+  name: publication_tag_micro_objective
+  ordinal: 16
+- data_type: string
+  description: Catégorie de l'offre associée a la publication.
+  name: publication_tag_offer_category
+  ordinal: 17
+- data_type: string
+  description: Region associée a la publication.
+  name: publication_tag_region_name
+  ordinal: 18
+- data_type: string
+  description: Nom de l'evenement associé a la publication.
+  name: publication_tag_event_name
+  ordinal: 19
+- data_type: number
+  description: Somme de toutes les interactions sur la publication (likes, commentaires, partages, sauvegardes, vues video).
+  name: total_instagram_publication_interactions
+  ordinal: 20
+- data_type: number
+  description: Nombre de fois que la publication a ete sauvegardee par des utilisateurs.
+  name: instagram_publication_saved
+  ordinal: 21
+- data_type: number
+  description: Nombre total de fois que la publication a ete affichee.
+  name: instagram_publication_impressions
+  ordinal: 22
+- data_type: number
+  description: Nombre de nouveaux abonnes acquis directement via cette publication.
+  name: instagram_publication_follows
+  ordinal: 23
+- data_type: number
+  description: Nombre de visites du profil generees par cette publication.
+  name: instagram_publication_profile_visits
+  ordinal: 24
+- data_type: number
+  description: Nombre total d'actions effectuees sur le profil depuis cette publication (clics site web, email…).
+  name: instagram_publication_profile_activity
+  ordinal: 25
+- data_type: number
+  description: Durée moyenne (en secondes) passee par les spectateurs a regarder la video.
+  name: average_tiktok_publication_time_watched
+  ordinal: 26
+- data_type: number
+  description: Temps total cumule (en secondes) passe par l'ensemble des spectateurs a regarder la video.
+  name: total_tiktok_publication_time_watched
+  ordinal: 27
+- data_type: number
+  description: Durée totale de la video en secondes.
+  name: tiktok_publication_video_duration
+  ordinal: 28
+- data_type: number
+  description: Pourcentage de spectateurs ayant regarde la video en entier.
+  name: tiktok_publication_full_video_watched_rate
+  ordinal: 29
+description: Publications sur les réseaux sociaux (Instagram, TikTok) — métriques d'engagement (likes, commentaires, vues,
+  portée).
+domain_path: tracking/marketing
+grain:
+- Une ligne par combinaison (publication_export_date, publication_account_name, publication_id, publication_creation_date)
+schema_name: analytics_prod
+synonyms:
+- publication réseaux sociaux
+- post Instagram/TikTok
+table_name: marketing_social_network_publication

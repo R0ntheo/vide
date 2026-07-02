@@ -1,0 +1,7 @@
+context_md: |-
+  Sous-domaine regroupant les données d'interaction avec la plateforme Adage.
+
+  collective_adage_log : événements tracés sur Adage (recherches, consultations, clics, réservations).
+  global_collective_offer_domain : association offre collective ↔ domaine éducatif (arts visuels, spectacle vivant, etc.).
+description: Logs de la plateforme Adage et domaines artistiques des offres collectives.
+display_name: Adage & domaines

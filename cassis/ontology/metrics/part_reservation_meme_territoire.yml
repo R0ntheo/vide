@@ -1,0 +1,13 @@
+description: Part des réservations collectives effectuées dans le même département que l'établissement scolaire.
+display_name: Part des réservations sur le même territoire
+domain_path: core/eac
+expression: SAFE_DIVIDE(COUNTIF(venue_department_code = institution_department_code), COUNT(DISTINCT collective_booking_id))
+filters: collective_booking_status != 'CANCELLED'
+name: part_reservation_meme_territoire
+precomputed_in: external_reporting_eac
+synonyms:
+- proximité territoriale
+- same territory bookings
+table_name: global_collective_booking
+table_schema: analytics_prod
+unit: '%'

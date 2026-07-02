@@ -1,0 +1,38 @@
+columns:
+- data_type: string
+  description: Tag de l'e-mail transactionnel Brevo permettant d'identifier le type de message.
+  name: brevo_tag
+  ordinal: 0
+- data_type: number
+  description: Brevo template id
+  name: brevo_template_id
+  ordinal: 1
+- data_type: string
+  description: Identifiant unique de la structure.
+  name: offerer_id
+  ordinal: 2
+- data_type: date
+  description: Date de l'événement, utilisée pour le partitionnement des données.
+  name: event_date
+  ordinal: 3
+- data_type: boolean
+  description: 'Booléen : vrai si l''e-mail a été délivré.'
+  name: email_is_delivered
+  ordinal: 4
+- data_type: boolean
+  description: 'Booléen : vrai si l''e-mail a été ouvert.'
+  name: email_is_opened
+  ordinal: 5
+- data_type: boolean
+  description: 'Booléen : vrai si l''e-mail a conduit l''utilisateur à se désabonner.'
+  name: user_has_unsubscribed
+  ordinal: 6
+description: Emails transactionnels envoyés aux partenaires via Brevo — taux d'ouverture, clics, désabonnements.
+domain_path: tracking/marketing
+grain:
+- Une ligne par combinaison (brevo_tag, brevo_template_id, offerer_id, event_date)
+schema_name: analytics_prod
+synonyms:
+- emails transactionnels pro
+- Brevo pro
+table_name: marketing_transactional_pro

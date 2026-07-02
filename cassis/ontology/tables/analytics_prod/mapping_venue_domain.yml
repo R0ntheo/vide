@@ -1,0 +1,24 @@
+columns:
+- data_type: string
+  description: Identifiant unique du domaine éducatif de l'offre collective ou du lieu (une offre ou un lieu peut avoir plusieurs
+    domaines éducatifs).
+  name: educational_domain_id
+  nullable: false
+  ordinal: 0
+- data_type: string
+  description: Identifiant unique du lieu.
+  name: venue_id
+  ordinal: 1
+- data_type: string
+  description: Nom du domaine éducatif correspondant à l'identifiant.
+  name: educational_domain_name
+  ordinal: 2
+description: Association entre lieu et domaine culturel (spectacle vivant, arts visuels, etc.).
+domain_path: core/partenaires-culturels
+grain:
+- Une ligne par combinaison (educational_domain_id, venue_id, educational_domain_name)
+schema_name: analytics_prod
+synonyms:
+- correspondance lieu-domaine
+- mapping domaine artistique
+table_name: mapping_venue_domain

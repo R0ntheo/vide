@@ -1,0 +1,194 @@
+columns:
+- data_type: string
+  description: Identifiant unique du favori. Une même offre peut être sauvegardée plusieurs fois en favori.
+  name: favorite_id
+  nullable: false
+  ordinal: 0
+- data_type: date
+  description: Date de création du favori.
+  name: favorite_creation_date
+  ordinal: 1
+- data_type: datetime
+  description: Horodatage de création du favori.
+  name: favorite_created_at
+  ordinal: 2
+- data_type: string
+  description: Identifiant unique du bénéficiaire.
+  name: user_id
+  ordinal: 3
+- data_type: string
+  description: Identifiant unique de l'offre.
+  name: offer_id
+  ordinal: 4
+- data_type: string
+  description: Nom de l'offre tel qu'affiché dans l'application.
+  name: offer_name
+  ordinal: 5
+- data_type: string
+  description: Identifiant de la catégorie de l'offre, sélectionnée par le partenaire culturel dans une liste déroulante.
+  name: offer_category_id
+  ordinal: 6
+- data_type: date
+  description: Date de création de l'offre.
+  name: offer_creation_date
+  ordinal: 7
+- data_type: string
+  description: Identifiant de la sous-catégorie de l'offre, sélectionnée par le partenaire culturel dans une liste déroulante.
+  name: offer_subcategory_id
+  ordinal: 8
+- data_type: string
+  description: Identifiant unique du lieu.
+  name: venue_id
+  ordinal: 9
+- data_type: string
+  description: Nom du lieu.
+  name: venue_name
+  ordinal: 10
+- data_type: string
+  description: Label du lieu, attribué par le Ministère comme distinction de qualité dans sa catégorie.
+  name: venue_label
+  ordinal: 11
+- data_type: string
+  description: Identifiant unique du partenaire culturel.
+  name: partner_id
+  ordinal: 12
+- data_type: string
+  description: Identifiant unique de la structure.
+  name: offerer_id
+  ordinal: 13
+- data_type: string
+  description: Nom de la structure.
+  name: offerer_name
+  ordinal: 14
+- data_type: string
+  description: Type du lieu ('Musée', 'Cinéma', 'Librairie', etc.), sélectionné par le partenaire lors de l'inscription.
+  name: venue_type_label
+  ordinal: 15
+- data_type: string
+  description: Nom de la région où se situe le lieu.
+  name: venue_region_name
+  ordinal: 16
+- data_type: string
+  description: Code du département où se situe le lieu.
+  name: venue_department_code
+  ordinal: 17
+- data_type: string
+  description: Nom du département où se situe le lieu.
+  name: venue_department_name
+  ordinal: 18
+- data_type: string
+  description: Code postal du lieu.
+  name: venue_postal_code
+  ordinal: 19
+- data_type: string
+  description: Ville où se situe le lieu.
+  name: venue_city
+  ordinal: 20
+- data_type: string
+  description: Académie de rattachement du lieu.
+  name: venue_academy_name
+  ordinal: 21
+- data_type: string
+  description: Libellé de densité détaillé de la localisation du lieu.
+  name: venue_density_label
+  ordinal: 22
+- data_type: string
+  description: Libellé de densité macro de la localisation du lieu (urbain, rural).
+  name: venue_macro_density_label
+  ordinal: 23
+- data_type: number
+  description: Identifiant du niveau de densité du lieu (cf. venue_density_label).
+  name: venue_density_level
+  ordinal: 24
+- data_type: string
+  description: Code du département de l'adresse déclarée du bénéficiaire.
+  name: user_department_code
+  ordinal: 25
+- data_type: string
+  description: Nom du département de l'adresse déclarée du bénéficiaire.
+  name: user_department_name
+  ordinal: 26
+- data_type: string
+  description: Code postal de l'adresse déclarée du bénéficiaire.
+  name: user_postal_code
+  ordinal: 27
+- data_type: string
+  description: Ville de l'adresse déclarée du bénéficiaire.
+  name: user_city
+  ordinal: 28
+- data_type: string
+  description: Activité déclarée du bénéficiaire (lycéen, apprenti, sans emploi, etc.), renseignée lors du premier crédit
+    et mise à jour à l'octroi du GRANT_18.
+  name: user_activity
+  ordinal: 29
+- data_type: string
+  description: Civilité déclarée du bénéficiaire (M./Mme.), collectée lors de l'inscription.
+  name: user_civility
+  ordinal: 30
+- data_type: number
+  description: Âge actuel de l'utilisateur, recalculé quotidiennement par le pipeline dbt. Change chaque jour — ne pas utiliser
+    pour analyser l'âge au moment d'un événement (utiliser user_age_at_booking pour les réservations, ou calculer manuellement
+    avec user_birth_date).
+  name: user_age
+  ordinal: 31
+- data_type: boolean
+  description: Booléen indiquant si le bénéficiaire est considéré comme public prioritaire du pass Culture (résidant en zone
+    rurale, en QPV ou non scolarisé).
+  name: user_is_priority_public
+  ordinal: 32
+- data_type: boolean
+  description: Booléen indiquant si le bénéficiaire est sans emploi selon son activité déclarée.
+  name: user_is_unemployed
+  ordinal: 33
+- data_type: boolean
+  description: Booléen indiquant si le bénéficiaire est scolarisé selon son activité déclarée (collégien, lycéen, étudiant,
+    apprenti ou alternant selon la définition INSEE).
+  name: user_is_in_education
+  ordinal: 34
+- data_type: boolean
+  description: Booléen indiquant si l'adresse déclarée du bénéficiaire se situe en QPV (Quartier Prioritaire de la Politique
+    de la Ville).
+  name: user_is_in_qpv
+  ordinal: 35
+- data_type: string
+  description: Type du crédit actuel du bénéficiaire.
+  name: current_deposit_type
+  ordinal: 36
+- data_type: string
+  description: Catégorie de réforme du crédit actuel du bénéficiaire.
+  name: user_current_deposit_reform_category
+  ordinal: 37
+- data_type: string
+  description: Code EPCI de l'adresse déclarée du bénéficiaire (établissement public de coopération intercommunale).
+  name: user_epci
+  ordinal: 38
+- data_type: string
+  description: Libellé de densité (urbain, rural) de l'adresse déclarée du bénéficiaire.
+  name: user_density_label
+  ordinal: 39
+- data_type: string
+  description: Code INSEE de la commune de l'adresse déclarée du bénéficiaire.
+  name: user_city_code
+  ordinal: 40
+- data_type: string
+  description: Libellé de densité macro de l'adresse déclarée du bénéficiaire.
+  name: user_macro_density_label
+  ordinal: 41
+- data_type: string
+  description: Nom de la région de l'adresse déclarée du bénéficiaire.
+  name: user_region_name
+  ordinal: 42
+- data_type: string
+  description: Nom de l'académie de l'adresse déclarée du bénéficiaire.
+  name: user_academy_name
+  ordinal: 43
+description: Offres mises en favoris par les bénéficiaires — lien utilisateur-offre avec date d'ajout.
+domain_path: core/offre-et-catalogue
+grain:
+- Une ligne par favori (favorite_id)
+schema_name: analytics_prod
+synonyms:
+- favori
+- coup de cœur
+- liste de souhaits
+table_name: global_favorite

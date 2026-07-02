@@ -1,0 +1,49 @@
+columns:
+- data_type: date
+  description: Premier jour du mois auquel se rapporte le KPI.
+  name: partition_month
+  ordinal: 0
+- data_type: datetime
+  description: Date effective du rafraichissement des donnees.
+  name: updated_at
+  ordinal: 1
+- data_type: string
+  description: 'Agregation geographique du KPI : national, regional ou departemental.'
+  name: dimension_name
+  ordinal: 2
+- data_type: string
+  description: Nom de l'agregation geographique (nom de la region ou du département), si applicable.
+  name: dimension_value
+  ordinal: 3
+- data_type: string
+  description: |-
+    Valeurs possibles de kpi_name (pour chacun des 17 domaines artistiques EAC) :
+    - total_reservation_{domaine} — nombre de réservations
+    - total_montant_depense_{domaine} — montant dépensé
+    - total_tickets_generes_{domaine} — nombre de places générées
+    - total_eple_impliquees_{domaine} — nombre d'EPLE impliqués
+    - pct_reservations_labelisees_{domaine} — % de réservations dans des lieux labellisés
+    Domaines : {architecture, arts_du_cirque_et_de_la_rue, arts_numeriques, arts_visuels_plastiques_appliques, bande_dessinee, cinema_audiovisuel, culture_scientifique_technique_industrielle, danse, design, developpement_durable, musique, media_et_information, memoire, patrimoine, photographie, theatre, livre_lecture_ecriture}
+  name: kpi_name
+  ordinal: 4
+- data_type: number
+  description: Numerateur du KPI calculé.
+  name: numerator
+  ordinal: 5
+- data_type: number
+  description: Denominateur du KPI calculé.
+  name: denominator
+  ordinal: 6
+- data_type: number
+  description: Valeur du KPI, egale au numerateur divise par le denominateur.
+  name: kpi
+  ordinal: 7
+description: KPIs par domaine éducatif EAC au format pivot — réservations et offres par domaine artistique et dimension géographique.
+domain_path: reporting/institutionnel/eac
+grain:
+- Une ligne par mois × dimension × KPI (partition_month, dimension_name, kpi_name)
+schema_name: analytics_prod
+synonyms:
+- KPI domaines EAC
+- répartition domaines artistiques
+table_name: external_reporting_eac_domain

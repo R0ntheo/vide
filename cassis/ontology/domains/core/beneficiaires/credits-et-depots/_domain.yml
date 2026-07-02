@@ -1,0 +1,63 @@
+context_md: |-
+  # Crédits & dépôts
+
+  ## Types de crédit (`deposit_type`)
+
+  | Type | Population | Montant | Expiration |
+  |------|-----------|---------|------------|
+  | GRANT_15_17 | Pré-réforme, 15-17 ans | 20€ (15 ans) + 30€ (16 ans) + 30€ (17 ans) | Veille des 18 ans |
+  | GRANT_18 | Pré-réforme, 18 ans | 300€ | 24 mois après activation |
+  | GRANT_17_18 | Post-réforme mars 2025 | 50€ (17 ans) + 150€ recrédit (18 ans) | Veille des 21 ans |
+  | GRANT_FREE | Crédits spéciaux | Variable | Variable |
+
+  **GRANT_FREE** doit être **exclu** de tous les KPIs standards (comptage de bénéficiaires, montant moyen, etc.).
+
+  ## Dépôt (`global_deposit`)
+
+  Un dépôt = une allocation de crédit à un bénéficiaire.
+
+  ### Colonnes de montant
+
+  - `deposit_amount` : montant initial du crédit.
+  - `total_actual_amount_spent` : montant réellement dépensé (réservations utilisées).
+  - `total_theoretical_amount_spent` : montant engagé (réservations non annulées, utilisées ou non).
+  - `total_theoretical_amount_spent_in_digital_goods` : part dépensée en biens numériques.
+
+  ### Recrédit
+
+  - `total_recredit` : nombre de recrédits reçus.
+  - `total_recredit_amount` : montant total des recrédits.
+  - `last_recredit_date` : date du dernier recrédit.
+
+  Post-réforme, le recrédit de 150€ à 18 ans est ajouté au même dépôt GRANT_17_18.
+
+  ### Source de vérification d'identité
+
+  - `deposit_source` : méthode utilisée pour vérifier l'identité (ubble, educonnect, jouve, etc.). Pertinent pour analyser les canaux d'inscription.
+
+  ## Bénéficiaire (`global_user_beneficiary`)
+
+  ### Indicateurs de crédit
+
+  - `total_deposit_amount` : somme de tous les crédits reçus (tous dépôts confondus).
+  - `total_actual_amount_spent` : total dépensé (réservations utilisées).
+  - `total_theoretical_remaining_credit` : crédit restant théorique.
+  - `current_deposit_type` : type du crédit actif.
+
+  ### Statut
+
+  - `user_is_current_beneficiary` : TRUE = le crédit n'est ni expiré ni épuisé. C'est le filtre standard pour « bénéficiaires actuels ».
+  - `user_is_active` : TRUE = compte non suspendu.
+  - `user_seniority` : ancienneté dans le dispositif.
+
+  ### Diversité culturelle
+
+  - `total_diversity_score` : score de diversité basé sur la variété des sous-catégories réservées (0 à 1).
+  - `total_grant_15_17_subcategory_booked` / `total_grant_18_subcategory_booked` : nombre de sous-catégories distinctes réservées par type de crédit.
+
+  ## Piège : dépôts vs bénéficiaires
+
+  Un bénéficiaire pré-réforme peut avoir **deux dépôts** (un GRANT_15_17 puis un GRANT_18). Ne pas compter `COUNT(deposit_id)` comme nombre de bénéficiaires — utiliser `COUNT(DISTINCT user_id)`.
+description: Types de crédits (GRANT_15_17, GRANT_18, GRANT_17_18, GRANT_FREE), règles d'expiration, recrédit et colonnes
+  de dépense.
+display_name: Crédits & dépôts

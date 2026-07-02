@@ -1,0 +1,150 @@
+columns:
+- data_type: string
+  description: 'Type de réservation : individual ou collective.'
+  name: booking_type
+  ordinal: 0
+  source: manual
+- data_type: string
+  description: Identifiant de la réservation collective (null si individuelle).
+  name: collective_booking_id
+  ordinal: 1
+  source: manual
+- data_type: string
+  description: Identifiant de la réservation individuelle (null si collective).
+  name: booking_id
+  ordinal: 2
+  source: manual
+- data_type: string
+  description: Statut de la réservation.
+  name: booking_status
+  ordinal: 3
+  source: manual
+- data_type: datetime
+  description: Date de création de la réservation.
+  name: booking_creation_date
+  ordinal: 4
+  source: manual
+- data_type: datetime
+  description: Date d'annulation.
+  name: booking_cancellation_date
+  ordinal: 5
+  source: manual
+- data_type: datetime
+  description: Date de consommation de la réservation.
+  name: booking_used_date
+  ordinal: 6
+  source: manual
+- data_type: string
+  description: Identifiant du lieu.
+  name: venue_id
+  ordinal: 7
+  source: manual
+- data_type: string
+  description: Identifiant de la structure.
+  name: offerer_id
+  ordinal: 8
+  source: manual
+- data_type: string
+  description: Identifiant de l'établissement scolaire (réservations collectives).
+  name: educational_institution_id
+  ordinal: 9
+  source: manual
+- data_type: string
+  description: Identifiant du pricing.
+  name: pricing_id
+  ordinal: 10
+  source: manual
+- data_type: string
+  description: Statut du pricing.
+  name: pricing_status
+  ordinal: 11
+  source: manual
+- data_type: datetime
+  description: Date de création du pricing.
+  name: pricing_creation_date
+  ordinal: 12
+  source: manual
+- data_type: number
+  description: Montant du pricing.
+  name: pricing_amount
+  ordinal: 13
+  source: manual
+  unit: €
+- data_type: string
+  description: Règle de tarification appliquée.
+  name: pricing_rule
+  ordinal: 14
+  source: manual
+- data_type: number
+  description: Revenu de la structure pour cette réservation.
+  name: offerer_revenue
+  ordinal: 15
+  source: manual
+  unit: €
+- data_type: number
+  description: Contribution de la structure (part non remboursée par l'État).
+  name: offerer_contribution
+  ordinal: 16
+  source: manual
+- data_type: string
+  description: Identifiant du cashflow.
+  name: cashflow_id
+  ordinal: 17
+  source: manual
+- data_type: datetime
+  description: Date de création du cashflow.
+  name: cashflow_creation_date
+  ordinal: 18
+  source: manual
+- data_type: string
+  description: Statut du cashflow.
+  name: cashflow_status
+  ordinal: 19
+  source: manual
+- data_type: number
+  description: Montant du cashflow.
+  name: cashflow_amount
+  ordinal: 20
+  source: manual
+  unit: €
+- data_type: datetime
+  description: Date de création du lot de cashflow.
+  name: cashflow_batch_creation_date
+  ordinal: 21
+  source: manual
+- data_type: string
+  description: Libellé du lot de cashflow.
+  name: cashflow_batch_label
+  ordinal: 22
+  source: manual
+- data_type: string
+  description: Identifiant de la facture.
+  name: invoice_id
+  ordinal: 23
+  source: manual
+- data_type: string
+  description: Référence de la facture.
+  name: invoice_reference
+  ordinal: 24
+  source: manual
+- data_type: datetime
+  description: Date de création de la facture.
+  name: invoice_creation_date
+  ordinal: 25
+  source: manual
+- data_type: number
+  description: Montant de la facture.
+  name: invoice_amount
+  ordinal: 26
+  source: manual
+  unit: €
+description: 'Chaîne financière complète : réservation → pricing → cashflow → facture, avec statuts et montants à chaque étape
+  pour les réservations individuelles et collectives.'
+domain_path: core/reservations
+grain:
+- Une ligne par réservation enrichie (booking_id)
+schema_name: analytics_prod
+synonyms:
+- remboursement
+- chaîne financière
+table_name: enriched_reimbursement_data

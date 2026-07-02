@@ -1,0 +1,55 @@
+columns:
+- data_type: date
+  description: Date de la réponse à l'enquête NPS.
+  name: response_date
+  ordinal: 0
+- data_type: string
+  description: Identifiant unique du bénéficiaire.
+  name: user_id
+  ordinal: 1
+- data_type: string
+  description: Identifiant de la réponse à l'enquête NPS.
+  name: response_id
+  ordinal: 2
+- data_type: string
+  description: 'Type de crédit du bénéficiaire : GRANT_18, GRANT_15_17, GRANT_17_18 ou GRANT_FREE.'
+  name: deposit_type
+  ordinal: 3
+- data_type: string
+  description: Civilité déclarée du bénéficiaire (M./Mme.), collectée lors de l'inscription.
+  name: user_civility
+  ordinal: 4
+- data_type: string
+  description: Nom de la région de l'adresse déclarée du bénéficiaire.
+  name: user_region_name
+  ordinal: 5
+- data_type: string
+  description: Activité déclarée du bénéficiaire (lycéen, apprenti, sans emploi, etc.), renseignée lors du premier crédit
+    et mise à jour à l'octroi du GRANT_18.
+  name: user_activity
+  ordinal: 6
+- data_type: boolean
+  description: Booléen indiquant si l'adresse déclarée du bénéficiaire se situe en QPV.
+  name: user_is_in_qpv
+  ordinal: 7
+- data_type: number
+  description: Nombre total de réservations, individuelles et collectives confondues.
+  name: total_bookings
+  ordinal: 8
+- data_type: number
+  description: Note attribuée dans la réponse à l'enquête NPS.
+  name: response_rating
+  ordinal: 9
+- data_type: number
+  description: Nombre de jours entre la date de création du compte et la date du jour.
+  name: user_seniority
+  ordinal: 10
+description: Score NPS (Net Promoter Score) des bénéficiaires — enquêtes Qualtrics in-app.
+domain_path: tracking/natif
+grain:
+- Une ligne par réponse NPS bénéficiaire (user_id)
+schema_name: analytics_prod
+synonyms:
+- NPS bénéficiaire
+- satisfaction jeune
+table_name: native_nps_beneficiary

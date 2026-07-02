@@ -1,0 +1,89 @@
+columns:
+- data_type: date
+  description: Mois d'expiration du crédit du bénéficiaire.
+  name: deposit_expiration_month
+  ordinal: 1
+  source: manual
+- data_type: string
+  description: Nom de la région de résidence.
+  name: region_name
+  ordinal: 2
+  source: manual
+- data_type: number
+  description: Code de la région de résidence.
+  name: region_code
+  ordinal: 3
+  source: manual
+- data_type: string
+  description: Nom du département de résidence.
+  name: department_name
+  ordinal: 4
+  source: manual
+- data_type: string
+  description: Code du département de résidence.
+  name: department_code
+  ordinal: 5
+  source: manual
+- data_type: string
+  description: Nom de l'EPCI de résidence.
+  name: epci_name
+  ordinal: 6
+  source: manual
+- data_type: string
+  description: Code de l'EPCI de résidence.
+  name: epci_code
+  ordinal: 7
+  source: manual
+- data_type: string
+  description: Nom de la commune de résidence.
+  name: city_name
+  ordinal: 8
+  source: manual
+- data_type: string
+  description: Code de la commune de résidence.
+  name: city_code
+  ordinal: 9
+  source: manual
+- data_type: boolean
+  description: Indique si le bénéficiaire réside en Quartier Prioritaire de la Ville.
+  name: is_in_qpv
+  ordinal: 10
+  source: manual
+- data_type: string
+  description: Niveau de densité macro (urbain, rural).
+  name: macro_density_label
+  ordinal: 11
+  source: manual
+- data_type: string
+  description: Niveau de densité micro (détaillé).
+  name: micro_density_label
+  ordinal: 12
+  source: manual
+- data_type: string
+  description: Identifiant de la catégorie d'offre.
+  name: offer_category_id
+  ordinal: 13
+  source: manual
+- data_type: number
+  description: Bénéficiaires ayant réservé dans cette catégorie. Perturbé.
+  name: total_category_booked_beneficiaries
+  ordinal: 14
+  source: manual
+- data_type: number
+  description: Clé de perturbation pour total_category_booked_beneficiaries.
+  name: cell_key_category
+  ordinal: 15
+  source: manual
+description: Nombre de bénéficiaires ayant réservé dans chaque catégorie d'offre à l'expiration du crédit. Le dénominateur
+  (total_expired_credit_beneficiaries) est dans metrics_diversity — ne pas joindre cellule à cellule, agréger séparément avant
+  de diviser.
+domain_path: reporting/indicateurs-cles
+grain:
+- Une ligne par mois d'expiration × géo × QPV × densité × catégorie (deposit_expiration_month, department_code, is_in_qpv,
+  offer_category_id)
+schema_name: metrics_prod
+synonyms:
+- répartition par catégorie
+- part par catégorie
+- booking share
+table_name: metrics_diversity_by_category

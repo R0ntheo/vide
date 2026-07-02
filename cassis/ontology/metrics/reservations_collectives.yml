@@ -1,0 +1,13 @@
+description: Volume de réservations collectives validées (non annulées).
+display_name: Réservations collectives
+domain_path: core/eac
+expression: COUNT(DISTINCT collective_booking_id)
+filters: collective_booking_status != 'CANCELLED'
+name: reservations_collectives
+precomputed_in: external_reporting_eac
+synonyms:
+- bookings collectifs
+- réservations EAC
+table_name: global_collective_booking
+table_schema: analytics_prod
+unit: count

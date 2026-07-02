@@ -1,0 +1,34 @@
+columns:
+- data_type: string
+  description: Identifiant unique de l'accomplissement.
+  name: achievement_id
+  ordinal: 0
+- data_type: string
+  description: Identifiant unique de l'utilisateur.
+  name: user_id
+  ordinal: 1
+- data_type: string
+  description: Identifiant unique d'une réservation.
+  name: booking_id
+  ordinal: 2
+- data_type: string
+  description: Nom de l'accomplissement.
+  name: achievement_name
+  ordinal: 3
+- data_type: date
+  description: Date à laquelle l'accomplissement a été débloqué.
+  name: achievement_unlocked_date
+  ordinal: 4
+- data_type: date
+  description: Date à laquelle l'accomplissement a été vu par l'utilisateur après avoir été débloqué.
+  name: achievement_seen_date
+  ordinal: 5
+description: Badges et accomplissements in-app des bénéficiaires liés aux réservations (premier concert, 5 livres, etc.).
+domain_path: tracking/natif
+grain:
+- Une ligne par réservation validée (booking_id)
+schema_name: analytics_prod
+synonyms:
+- achievement
+- badge utilisateur
+table_name: native_achievement

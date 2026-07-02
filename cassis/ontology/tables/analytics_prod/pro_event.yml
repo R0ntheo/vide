@@ -1,0 +1,280 @@
+columns:
+- data_type: string
+  description: Nom de l'événement ; pour les vues d'écran, concatène le nom de l'événement avec le nom d'écran Firebase.
+  name: event_name
+  ordinal: 0
+- data_type: string
+  description: Nom de la page sur laquelle l'événement s'est produit.
+  name: page_name
+  ordinal: 1
+- data_type: string
+  description: Pseudo-identifiant de l'utilisateur à des fins de tracking.
+  name: user_pseudo_id
+  ordinal: 2
+- data_type: string
+  description: Identifiant unique de l'utilisateur.
+  name: user_id
+  ordinal: 3
+- data_type: date
+  description: Date à laquelle l'événement s'est produit, utilisée pour le partitionnement des données.
+  name: event_date
+  ordinal: 4
+- data_type: datetime
+  description: Horodatage exact de l'enregistrement de l'événement.
+  name: event_timestamp
+  ordinal: 5
+- data_type: number
+  description: Numéro de la session lors de laquelle la visite a eu lieu.
+  name: session_number
+  ordinal: 6
+- data_type: number
+  description: 'Déprécié : utiliser unique_session_id. Identifiant de la session lors de laquelle l''événement a été enregistré.'
+  name: session_id
+  ordinal: 7
+- data_type: string
+  description: Identifiant unique de la session, sans doublon.
+  name: unique_session_id
+  ordinal: 8
+- data_type: string
+  description: Origine de l'événement, indiquant d'où il a été déclenché.
+  name: origin
+  ordinal: 9
+- data_type: string
+  description: Destination associée à l'événement, le cas échéant.
+  name: destination
+  ordinal: 10
+- data_type: string
+  description: Nom de la campagne marketing ayant généré la session.
+  name: traffic_campaign
+  ordinal: 11
+- data_type: string
+  description: Canal de la campagne marketing ayant généré la session (email, notification push…).
+  name: traffic_medium
+  ordinal: 12
+- data_type: string
+  description: Source de la campagne marketing ayant généré la session (Instagram, Snapchat…).
+  name: traffic_source
+  ordinal: 13
+- data_type: string
+  description: Plateforme sur laquelle l'événement a été enregistré (iOS, Android…).
+  name: platform
+  ordinal: 14
+- data_type: string
+  description: Catégorie de l'appareil de l'utilisateur (mobile, tablette, ordinateur de bureau).
+  name: user_device_category
+  ordinal: 15
+- data_type: string
+  description: Système d'exploitation de l'appareil de l'utilisateur (Windows, macOS, iOS, Android…).
+  name: user_device_operating_system
+  ordinal: 16
+- data_type: string
+  description: Version du système d'exploitation de l'appareil de l'utilisateur.
+  name: user_device_operating_system_version
+  ordinal: 17
+- data_type: string
+  description: Navigateur web utilisé par l'utilisateur (Chrome, Firefox, Safari…).
+  name: user_web_browser
+  ordinal: 18
+- data_type: string
+  description: Version du navigateur web utilisé par l'utilisateur.
+  name: user_web_browser_version
+  ordinal: 19
+- data_type: string
+  description: URL ou chemin de la page sur laquelle l'événement s'est produit.
+  name: page_location
+  ordinal: 20
+- data_type: string
+  description: Chemin extrait de l'URL où l'événement s'est produit.
+  name: url_path_extract
+  ordinal: 21
+- data_type: string
+  description: Page référente ayant conduit à la page courante de l'événement.
+  name: page_referrer
+  ordinal: 22
+- data_type: number
+  description: Numéro de la page dans une séquence, le cas échéant.
+  name: page_number
+  ordinal: 23
+- data_type: string
+  description: Indiqué si l'événement est lié à une édition ou une mise à jour.
+  name: is_edition
+  ordinal: 24
+- data_type: string
+  description: Indiqué si l'événement est lié à une version brouillon.
+  name: is_draft
+  ordinal: 25
+- data_type: string
+  description: Identifiant unique de la structure.
+  name: offerer_id
+  ordinal: 26
+- data_type: string
+  description: Identifiant unique du lieu.
+  name: venue_id
+  ordinal: 27
+- data_type: string
+  description: Identifiant unique de l'offre.
+  name: offer_id
+  ordinal: 28
+- data_type: string
+  description: Deprecated.
+  name: offer_type
+  ordinal: 29
+- data_type: string
+  description: Indiqué si l'événement est associé à une requête sauvegardée.
+  name: has_saved_query
+  ordinal: 30
+- data_type: string
+  description: Indiqué si la modale "mauvais élève" a été ouverte lors de l'événement.
+  name: has_opened_wrong_student_modal
+  ordinal: 31
+- data_type: string
+  description: Indiqué si le formulaire ou les données de l'événement ont été remplis.
+  name: filled
+  ordinal: 32
+- data_type: string
+  description: Indiqué si le formulaire ou les données de l'événement ont été remplis avec des erreurs.
+  name: filled_with_errors
+  ordinal: 33
+- data_type: number
+  description: The legal category selected during onboarding, if applicable.
+  name: onboarding_selected_legal_category
+  ordinal: 34
+- data_type: string
+  description: Format du téléchargement associé à l'événement, le cas échéant.
+  name: download_format
+  ordinal: 35
+- data_type: string
+  description: Statut de réservation du téléchargement associé à l'événement, le cas échéant.
+  name: download_booking_status
+  ordinal: 36
+- data_type: string
+  description: Chemin URL agrégé associé à l'événement.
+  name: url_path_agg
+  ordinal: 37
+- data_type: string
+  description: Type de bouton de téléchargement utilisé lors de l'événement, le cas échéant.
+  name: download_button_type
+  ordinal: 38
+- data_type: string
+  description: Type de fichier téléchargé lors de l'événement, le cas échéant.
+  name: download_file_type
+  ordinal: 39
+- data_type: number
+  description: Nombre de fichiers téléchargés lors de l'événement, le cas échéant.
+  name: download_files_cnt
+  ordinal: 40
+- data_type: string
+  description: Nom de la structure.
+  name: offerer_name
+  ordinal: 41
+- data_type: date
+  description: Date de création de la première offre individuelle de la structure.
+  name: offerer_first_individual_offer_creation_date
+  ordinal: 42
+- data_type: date
+  description: Date de création de la première offre collective de la structure.
+  name: offerer_first_collective_offer_creation_date
+  ordinal: 43
+- data_type: string
+  description: Libellé de l'activité économique de la structure.
+  name: offerer_business_activity_label
+  ordinal: 44
+- data_type: string
+  description: Libellé de la catégorie juridique de la structure.
+  name: offerer_legal_category_label
+  ordinal: 45
+- data_type: boolean
+  description: Indiqué si la structure est une collectivité territoriale.
+  name: is_local_authority
+  ordinal: 46
+- data_type: boolean
+  description: Indiqué si la structure est synchronisée avec ADAGE.
+  name: is_synchro_adage
+  ordinal: 47
+- data_type: datetime
+  description: Date d'acceptation de la structure dans DMS.
+  name: dms_accepted_at
+  ordinal: 48
+- data_type: string
+  description: Premier statut DMS ADAGE de la structure.
+  name: first_dms_adage_status
+  ordinal: 49
+- data_type: string
+  description: Nom du lieu.
+  name: venue_name
+  ordinal: 50
+- data_type: boolean
+  description: Indiqué si le lieu possède un SIRET.
+  name: venue_has_siret
+  ordinal: 51
+- data_type: boolean
+  description: Indiqué si le lieu est permanent (peut accueillir le public en continu, proposer des offres et est géré par
+    le partenaire culturel).
+  name: venue_is_permanent
+  ordinal: 52
+- data_type: string
+  description: Type du lieu ('Musée', 'Cinéma', 'Librairie'…), sélectionné par le partenaire culturel lors de l'inscription.
+  name: venue_type_label
+  ordinal: 53
+- data_type: string
+  description: Identifiant unique du partenaire culturel.
+  name: partner_id
+  ordinal: 54
+- data_type: string
+  description: Nom du partenaire culturel.
+  name: partner_name
+  ordinal: 55
+- data_type: string
+  description: Type du partenaire culturel, déduit du type de lieu ou des tags lieu/structure.
+  name: partner_type
+  ordinal: 56
+- data_type: string
+  description: Secteur culturel associé au type de partenaire culturel.
+  name: partner_cultural_sector
+  ordinal: 57
+- data_type: number
+  description: Nombre total de lieux permanents gérés par la collectivité territoriale.
+  name: total_permanent_managed_venues
+  ordinal: 58
+- data_type: number
+  description: Nombre total d'offres individuelles créées par le partenaire culturel.
+  name: total_partner_created_individual_offers
+  ordinal: 59
+- data_type: number
+  description: Nombre total d'offres collectives créées par le partenaire culturel.
+  name: total_partner_created_collective_offers
+  ordinal: 60
+- data_type: string
+  description: Identifiant de la sous-catégorie de l'offre, choisi par le partenaire culturel parmi une liste prédéfinie.
+  name: offer_subcategory_id
+  ordinal: 61
+- data_type: string
+  description: Indiqué si une sous-catégorie d'offre suggérée a été sélectionnée lors de l'événement.
+  name: suggested_offer_subcategory_selected
+  ordinal: 62
+- data_type: string
+  description: Étape du téléversement d'image lors de la création ou modification d'une offre ou d'une page partenaire.
+  name: image_creation_stage
+  ordinal: 63
+- data_type: string
+  description: Type d'action sur l'offre mise en avant (création, modification, suppression).
+  name: headline_offer_action_type
+  ordinal: 64
+- data_type: string
+  description: 'Catégorie sélectionnée lors de la phase initiale d''inscription du partenaire culturel : jeune, partenaire
+    culturel, enseignant.'
+  name: subscription_user_type
+  ordinal: 65
+- data_type: string
+  description: Type d'action d'une fonctionnalité, pouvant être partagé par plusieurs event_name.
+  name: action_type
+  ordinal: 66
+description: Événements Firebase du portail pro — actions des partenaires (création d'offre, gestion de réservation, navigation).
+domain_path: tracking/pro
+grain:
+- Une ligne par événement pro (event_date, event_timestamp, user_id)
+schema_name: analytics_prod
+synonyms:
+- événement pro
+- event Firebase pro
+table_name: pro_event

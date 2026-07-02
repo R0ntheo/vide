@@ -1,0 +1,6 @@
+context_md: |-
+  Ce groupe rassemble les tables pré-agrégées pour le reporting institutionnel, les référentiels géographiques et le monitoring technique.
+
+  Ces tables sont en lecture seule pour la plupart des analyses — elles servent de sources de vérité pour les indicateurs officiels et les dimensions géographiques.
+description: KPIs institutionnels agrégés, référentiels géographiques et monitoring technique.
+display_name: Reporting & Référentiels

@@ -1,0 +1,9 @@
+context_md: |-
+  Ce domaine couvre les indicateurs marketing du pass Culture.
+
+  - daily_install_acquisition_campaign : attribution des installations de l'app native par campagne (AppsFlyer), avec coûts et conversions.
+  - retention_pro : suivi de la rétention des partenaires pro (activité mensuelle, retour après inactivité).
+  - social_network_publication : publications sur les réseaux sociaux (Instagram, TikTok) avec métriques d'engagement (likes, commentaires, vues, reach).
+  - transactional_pro : emails transactionnels envoyés aux partenaires via Brevo (taux d'ouverture, clics, désabonnements).
+description: Acquisition utilisateurs, rétention partenaires, réseaux sociaux et emails transactionnels.
+display_name: Marketing

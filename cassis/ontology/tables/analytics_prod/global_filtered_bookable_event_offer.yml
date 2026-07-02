@@ -1,0 +1,66 @@
+columns:
+- data_type: string
+  description: Identifiant unique de l'offre.
+  name: offer_id
+  ordinal: 0
+- data_type: string
+  description: Nom de l'offre tel qu'affiché dans l'application.
+  name: offer_name
+  ordinal: 1
+- data_type: date
+  description: Date de création de l'offre.
+  name: offer_creation_date
+  ordinal: 2
+- data_type: string
+  description: Identifiant unique du lieu.
+  name: venue_id
+  ordinal: 3
+- data_type: string
+  description: Nom du lieu.
+  name: venue_name
+  ordinal: 4
+- data_type: string
+  description: URL de l'offre sur le portail professionnel pass Culture.
+  name: passculture_pro_url
+  ordinal: 5
+- data_type: string
+  description: URL de l'offre sur l'application web pass Culture.
+  name: webapp_url
+  ordinal: 6
+- data_type: string
+  description: Code département du lieu.
+  name: venue_department_code
+  ordinal: 7
+- data_type: string
+  description: Nom de la région du lieu.
+  name: venue_region_name
+  ordinal: 8
+- data_type: string
+  description: Type de lieu (Musée, Cinéma, Librairie, etc.).
+  name: venue_type_label
+  ordinal: 9
+- data_type: string
+  description: Label qualité attribué par le ministère au lieu.
+  name: venue_label
+  ordinal: 10
+- data_type: string
+  description: Description textuelle de l'offre.
+  name: offer_description
+  ordinal: 11
+- data_type: number
+  description: Dernier prix du stock associé à l'offre.
+  name: last_stock_price
+  ordinal: 12
+- data_type: string
+  description: Identifiant de la catégorie de l'offre.
+  name: offer_category_id
+  ordinal: 13
+description: Offres événementielles réservables après filtrage (offres actives avec stock disponible).
+domain_path: core/offre-et-catalogue
+grain:
+- Une ligne par offre (offer_id)
+schema_name: analytics_prod
+synonyms:
+- offre événement réservable
+- offre événement filtrée
+table_name: global_filtered_bookable_event_offer

@@ -1,0 +1,1204 @@
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: deposit_id
+    to_column: deposit_id
+  condition_sql: aggregated_weekly_user_data.deposit_id = global_deposit.deposit_id
+  description: Crédit associé.
+  from_schema: analytics_prod
+  from_table: aggregated_weekly_user_data
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_deposit
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: user_id
+    to_column: user_id
+  condition_sql: aggregated_weekly_user_data.user_id = global_user_beneficiary.user_id
+  description: Profil du bénéficiaire.
+  from_schema: analytics_prod
+  from_table: aggregated_weekly_user_data
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_user_beneficiary
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: collective_booking_id
+    to_column: collective_booking_id
+  condition_sql: collective_adage_log.collective_booking_id = global_collective_booking.collective_booking_id
+  description: Réservation collective liée à l'événement Adage.
+  from_schema: analytics_prod
+  from_table: collective_adage_log
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_collective_booking
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: collective_offer_id
+    to_column: collective_offer_id
+  condition_sql: collective_adage_log.collective_offer_id = global_collective_offer.collective_offer_id
+  description: Offre collective concernée par le log Adage.
+  from_schema: analytics_prod
+  from_table: collective_adage_log
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_collective_offer
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: partner_id
+    to_column: partner_id
+  condition_sql: collective_adage_log.partner_id = global_cultural_partner.partner_id
+  description: Partenaire culturel consulté sur Adage.
+  from_schema: analytics_prod
+  from_table: collective_adage_log
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_cultural_partner
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: uai
+    to_column: institution_external_id
+  condition_sql: collective_adage_log.uai = global_educational_institution.institution_external_id
+  description: Établissement concerné par le log Adage.
+  from_schema: analytics_prod
+  from_table: collective_adage_log
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_educational_institution
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: venue_id
+    to_column: venue_id
+  condition_sql: collective_adage_log.venue_id = global_venue.venue_id
+  description: Lieu concerné par le log Adage.
+  from_schema: analytics_prod
+  from_table: collective_adage_log
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_venue
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: institution_id
+    to_column: institution_id
+  condition_sql: collective_eple_aggregated.institution_id = global_educational_institution.institution_id
+  description: Établissement agrégé.
+  from_schema: analytics_prod
+  from_table: collective_eple_aggregated
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_educational_institution
+- cardinality: one_to_one
+  column_pairs:
+  - from_column: booking_id
+    to_column: booking_id
+  condition_sql: diversification_booking.booking_id = global_booking.booking_id
+  description: Réservation associée.
+  from_schema: analytics_prod
+  from_table: diversification_booking
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_booking
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: offer_id
+    to_column: offer_id
+  condition_sql: diversification_booking.offer_id = global_offer.offer_id
+  description: Offre réservée.
+  from_schema: analytics_prod
+  from_table: diversification_booking
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_offer
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: user_id
+    to_column: user_id
+  condition_sql: diversification_booking.user_id = global_user_beneficiary.user_id
+  description: Bénéficiaire.
+  from_schema: analytics_prod
+  from_table: diversification_booking
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_user_beneficiary
+- cardinality: one_to_many
+  column_pairs:
+  - from_column: item_id
+    to_column: item_id
+  condition_sql: enriched_monthly_bookable_item_discoverability.item_id = global_offer.item_id
+  description: Offres de cet item.
+  from_schema: analytics_prod
+  from_table: enriched_monthly_bookable_item_discoverability
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_offer
+- cardinality: one_to_one
+  column_pairs:
+  - from_column: partner_id
+    to_column: partner_id
+  condition_sql: enriched_partner_activation_activity.partner_id = global_cultural_partner.partner_id
+  description: Partenaire culturel associé.
+  from_schema: analytics_prod
+  from_table: enriched_partner_activation_activity
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_cultural_partner
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: offerer_id
+    to_column: offerer_id
+  condition_sql: enriched_partner_activation_activity.offerer_id = global_offerer.offerer_id
+  description: Structure juridique du partenaire.
+  from_schema: analytics_prod
+  from_table: enriched_partner_activation_activity
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_offerer
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: cultural_sector
+    to_column: cultural_sector
+  condition_sql: enriched_partner_retention_data.cultural_sector = cultural_sector_bookability_frequency.cultural_sector
+  description: Benchmark de réservabilité du secteur.
+  from_schema: analytics_prod
+  from_table: enriched_partner_retention_data
+  source: manual
+  to_schema: analytics_prod
+  to_table: cultural_sector_bookability_frequency
+- cardinality: one_to_one
+  column_pairs:
+  - from_column: partner_id
+    to_column: partner_id
+  condition_sql: enriched_partner_retention_data.partner_id = global_cultural_partner.partner_id
+  description: Partenaire culturel associé.
+  from_schema: analytics_prod
+  from_table: enriched_partner_retention_data
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_cultural_partner
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: partner_type
+    to_column: partner_type
+  condition_sql: enriched_partner_retention_data.partner_type = partner_type_bookability_frequency.partner_type
+  description: Benchmark de réservabilité du type de partenaire.
+  from_schema: analytics_prod
+  from_table: enriched_partner_retention_data
+  source: manual
+  to_schema: analytics_prod
+  to_table: partner_type_bookability_frequency
+- cardinality: one_to_one
+  column_pairs:
+  - from_column: booking_id
+    to_column: booking_id
+  condition_sql: enriched_reimbursement_data.booking_id = global_booking.booking_id
+  description: Réservation individuelle associée.
+  from_schema: analytics_prod
+  from_table: enriched_reimbursement_data
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_booking
+- cardinality: one_to_one
+  column_pairs:
+  - from_column: collective_booking_id
+    to_column: collective_booking_id
+  condition_sql: enriched_reimbursement_data.collective_booking_id = global_collective_booking.collective_booking_id
+  description: Réservation collective associée.
+  from_schema: analytics_prod
+  from_table: enriched_reimbursement_data
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_collective_booking
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: offerer_id
+    to_column: offerer_id
+  condition_sql: enriched_reimbursement_data.offerer_id = global_offerer.offerer_id
+  description: Structure recevant le remboursement.
+  from_schema: analytics_prod
+  from_table: enriched_reimbursement_data
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_offerer
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: venue_id
+    to_column: venue_id
+  condition_sql: enriched_reimbursement_data.venue_id = global_venue.venue_id
+  description: Lieu de la réservation.
+  from_schema: analytics_prod
+  from_table: enriched_reimbursement_data
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_venue
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: venue_id
+    to_column: venue_id
+  condition_sql: external_reporting_top_labeled_venue.venue_id = global_venue.venue_id
+  description: Lieu labellisé du classement.
+  from_schema: analytics_prod
+  from_table: external_reporting_top_labeled_venue
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_venue
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: venue_id
+    to_column: venue_id
+  condition_sql: external_reporting_top_venue.venue_id = global_venue.venue_id
+  description: Lieu du classement.
+  from_schema: analytics_prod
+  from_table: external_reporting_top_venue
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_venue
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: unique_session_id
+    to_column: unique_session_id
+  condition_sql: firebase_aggregated_search_events.unique_session_id = firebase_visits.unique_session_id
+  description: Session app dans laquelle la recherche a eu lieu.
+  from_schema: analytics_prod
+  from_table: firebase_aggregated_search_events
+  source: manual
+  to_schema: analytics_prod
+  to_table: firebase_visits
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: user_id
+    to_column: user_id
+  condition_sql: firebase_aggregated_search_events.user_id = global_user_beneficiary.user_id
+  description: Rattache chaque session de recherche au profil bénéficiaire pour segmenter par type d'utilisateur.
+  from_schema: analytics_prod
+  from_table: firebase_aggregated_search_events
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_user_beneficiary
+- cardinality: one_to_one
+  column_pairs:
+  - from_column: booking_id
+    to_column: booking_id
+  condition_sql: firebase_booking_origin.booking_id = global_booking.booking_id
+  description: Réservation attribuée.
+  from_schema: analytics_prod
+  from_table: firebase_booking_origin
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_booking
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: deposit_id
+    to_column: deposit_id
+  condition_sql: firebase_booking_origin.deposit_id = global_deposit.deposit_id
+  description: Crédit utilisé.
+  from_schema: analytics_prod
+  from_table: firebase_booking_origin
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_deposit
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: offer_id
+    to_column: offer_id
+  condition_sql: firebase_booking_origin.offer_id = global_offer.offer_id
+  description: Offre réservée.
+  from_schema: analytics_prod
+  from_table: firebase_booking_origin
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_offer
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: user_id
+    to_column: user_id
+  condition_sql: firebase_booking_origin.user_id = global_user_beneficiary.user_id
+  description: Rattache chaque attribution de réservation au profil bénéficiaire pour segmenter par âge, géographie, QPV,
+    densité.
+  from_schema: analytics_prod
+  from_table: firebase_booking_origin
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_user_beneficiary
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: user_id
+    to_column: user_id
+  condition_sql: firebase_visits.user_id = global_user_beneficiary.user_id
+  description: Bénéficiaire de la session (si connecté).
+  from_schema: analytics_prod
+  from_table: firebase_visits
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_user_beneficiary
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: partner_id
+    to_column: partner_id
+  condition_sql: global_booking.partner_id = global_cultural_partner.partner_id
+  description: Partenaire culturel associé à la réservation.
+  from_schema: analytics_prod
+  from_table: global_booking
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_cultural_partner
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: deposit_id
+    to_column: deposit_id
+  condition_sql: global_booking.deposit_id = global_deposit.deposit_id
+  description: Crédit utilisé pour la réservation.
+  from_schema: analytics_prod
+  from_table: global_booking
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_deposit
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: offer_id
+    to_column: offer_id
+  condition_sql: global_booking.offer_id = global_offer.offer_id
+  description: Offre réservée.
+  from_schema: analytics_prod
+  from_table: global_booking
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_offer
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: offerer_id
+    to_column: offerer_id
+  condition_sql: global_booking.offerer_id = global_offerer.offerer_id
+  description: Structure proposant l'offre réservée.
+  from_schema: analytics_prod
+  from_table: global_booking
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_offerer
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: stock_id
+    to_column: stock_id
+  condition_sql: global_booking.stock_id = global_stock.stock_id
+  description: Stock réservé (prix, quantité, dates).
+  from_schema: analytics_prod
+  from_table: global_booking
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_stock
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: user_id
+    to_column: user_id
+  condition_sql: global_booking.user_id = global_user_beneficiary.user_id
+  description: Bénéficiaire ayant effectué la réservation.
+  from_schema: analytics_prod
+  from_table: global_booking
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_user_beneficiary
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: venue_id
+    to_column: venue_id
+  condition_sql: global_booking.venue_id = global_venue.venue_id
+  description: Lieu où l'offre réservée est proposée.
+  from_schema: analytics_prod
+  from_table: global_booking
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_venue
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: collective_offer_id
+    to_column: collective_offer_id
+  condition_sql: global_collective_booking.collective_offer_id = global_collective_offer.collective_offer_id
+  description: Offre collective réservée.
+  from_schema: analytics_prod
+  from_table: global_collective_booking
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_collective_offer
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: partner_id
+    to_column: partner_id
+  condition_sql: global_collective_booking.partner_id = global_cultural_partner.partner_id
+  description: Partenaire culturel associé à la réservation collective.
+  from_schema: analytics_prod
+  from_table: global_collective_booking
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_cultural_partner
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: educational_deposit_id
+    to_column: educational_deposit_id
+  condition_sql: global_collective_booking.educational_deposit_id = global_educational_deposit.educational_deposit_id
+  description: Crédit collectif utilisé.
+  from_schema: analytics_prod
+  from_table: global_collective_booking
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_educational_deposit
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: educational_institution_id
+    to_column: institution_id
+  condition_sql: global_collective_booking.educational_institution_id = global_educational_institution.institution_id
+  description: Établissement scolaire ayant réservé.
+  from_schema: analytics_prod
+  from_table: global_collective_booking
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_educational_institution
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: offerer_id
+    to_column: offerer_id
+  condition_sql: global_collective_booking.offerer_id = global_offerer.offerer_id
+  description: Structure proposant l'offre collective.
+  from_schema: analytics_prod
+  from_table: global_collective_booking
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_offerer
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: venue_id
+    to_column: venue_id
+  condition_sql: global_collective_booking.venue_id = global_venue.venue_id
+  description: Lieu proposant l'offre collective.
+  from_schema: analytics_prod
+  from_table: global_collective_booking
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_venue
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: partner_id
+    to_column: partner_id
+  condition_sql: global_collective_offer.partner_id = global_cultural_partner.partner_id
+  description: Partenaire culturel proposant l'offre collective.
+  from_schema: analytics_prod
+  from_table: global_collective_offer
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_cultural_partner
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: institution_id
+    to_column: institution_id
+  condition_sql: global_collective_offer.institution_id = global_educational_institution.institution_id
+  description: Établissement ciblé par l'offre collective.
+  from_schema: analytics_prod
+  from_table: global_collective_offer
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_educational_institution
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: offerer_id
+    to_column: offerer_id
+  condition_sql: global_collective_offer.offerer_id = global_offerer.offerer_id
+  description: Structure proposant l'offre collective.
+  from_schema: analytics_prod
+  from_table: global_collective_offer
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_offerer
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: venue_id
+    to_column: venue_id
+  condition_sql: global_collective_offer.venue_id = global_venue.venue_id
+  description: Lieu proposant l'offre collective.
+  from_schema: analytics_prod
+  from_table: global_collective_offer
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_venue
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: collective_offer_id
+    to_column: collective_offer_id
+  condition_sql: global_collective_offer_domain.collective_offer_id = global_collective_offer.collective_offer_id
+  description: Offre collective associée au domaine artistique.
+  from_schema: analytics_prod
+  from_table: global_collective_offer_domain
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_collective_offer
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: offerer_id
+    to_column: offerer_id
+  condition_sql: global_cultural_partner.offerer_id = global_offerer.offerer_id
+  description: Structure juridique du partenaire.
+  from_schema: analytics_prod
+  from_table: global_cultural_partner
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_offerer
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: user_id
+    to_column: user_id
+  condition_sql: global_deposit.user_id = global_user_beneficiary.user_id
+  description: Bénéficiaire titulaire du crédit.
+  from_schema: analytics_prod
+  from_table: global_deposit
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_user_beneficiary
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: institution_id
+    to_column: institution_id
+  condition_sql: global_educational_deposit.institution_id = global_educational_institution.institution_id
+  description: Établissement titulaire du crédit collectif.
+  from_schema: analytics_prod
+  from_table: global_educational_deposit
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_educational_institution
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: offer_id
+    to_column: offer_id
+  condition_sql: global_favorite.offer_id = global_offer.offer_id
+  description: Offre mise en favori.
+  from_schema: analytics_prod
+  from_table: global_favorite
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_offer
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: user_id
+    to_column: user_id
+  condition_sql: global_favorite.user_id = global_user_beneficiary.user_id
+  description: Bénéficiaire ayant mis en favori.
+  from_schema: analytics_prod
+  from_table: global_favorite
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_user_beneficiary
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: venue_id
+    to_column: venue_id
+  condition_sql: global_favorite.venue_id = global_venue.venue_id
+  description: Lieu de l'offre mise en favori.
+  from_schema: analytics_prod
+  from_table: global_favorite
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_venue
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: offer_id
+    to_column: offer_id
+  condition_sql: global_filtered_bookable_event_offer.offer_id = global_offer.offer_id
+  description: Offre événement réservable.
+  from_schema: analytics_prod
+  from_table: global_filtered_bookable_event_offer
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_offer
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: venue_id
+    to_column: venue_id
+  condition_sql: global_filtered_bookable_event_offer.venue_id = global_venue.venue_id
+  description: Lieu de l'offre événement réservable.
+  from_schema: analytics_prod
+  from_table: global_filtered_bookable_event_offer
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_venue
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: booking_id
+    to_column: booking_id
+  condition_sql: global_fraudulent_booking_tag.booking_id = global_booking.booking_id
+  description: Réservation taguée comme frauduleuse.
+  from_schema: analytics_prod
+  from_table: global_fraudulent_booking_tag
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_booking
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: partner_id
+    to_column: partner_id
+  condition_sql: global_offer.partner_id = global_cultural_partner.partner_id
+  description: Partenaire culturel proposant l'offre.
+  from_schema: analytics_prod
+  from_table: global_offer
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_cultural_partner
+- cardinality: one_to_one
+  column_pairs:
+  - from_column: offer_id
+    to_column: offer_id
+  condition_sql: global_offer.offer_id = global_offer_metadata.offer_id
+  description: Métadonnées enrichies de l'offre.
+  from_schema: analytics_prod
+  from_table: global_offer
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_offer_metadata
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: offerer_id
+    to_column: offerer_id
+  condition_sql: global_offer.offerer_id = global_offerer.offerer_id
+  description: Structure proposant l'offre.
+  from_schema: analytics_prod
+  from_table: global_offer
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_offerer
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: offerer_address_id
+    to_column: offerer_address_id
+  condition_sql: global_offer.offerer_address_id = global_offerer_address.offerer_address_id
+  description: Adresse de la structure liée à l'offre.
+  from_schema: analytics_prod
+  from_table: global_offer
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_offerer_address
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: venue_id
+    to_column: venue_id
+  condition_sql: global_offer.venue_id = global_venue.venue_id
+  description: Lieu proposant l'offre.
+  from_schema: analytics_prod
+  from_table: global_offer
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_venue
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: offer_id
+    to_column: offer_id
+  condition_sql: global_offer_criterion.offer_id = global_offer.offer_id
+  description: Offre associée au critère de mise en avant.
+  from_schema: analytics_prod
+  from_table: global_offer_criterion
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_offer
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: offer_id
+    to_column: offer_id
+  condition_sql: global_offer_reminder.offer_id = global_offer.offer_id
+  description: Offre associée au rappel.
+  from_schema: analytics_prod
+  from_table: global_offer_reminder
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_offer
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: address_id
+    to_column: address_id
+  condition_sql: global_offerer_address.address_id = global_address.address_id
+  description: Adresse normalisée.
+  from_schema: analytics_prod
+  from_table: global_offerer_address
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_address
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: offerer_id
+    to_column: offerer_id
+  condition_sql: global_offerer_address.offerer_id = global_offerer.offerer_id
+  description: Structure associée à l'adresse.
+  from_schema: analytics_prod
+  from_table: global_offerer_address
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_offerer
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: offerer_id
+    to_column: offerer_id
+  condition_sql: global_offerer_tag.offerer_id = global_offerer.offerer_id
+  description: Structure associée au tag.
+  from_schema: analytics_prod
+  from_table: global_offerer_tag
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_offerer
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: offerer_id
+    to_column: offerer_id
+  condition_sql: global_special_event.offerer_id = global_offerer.offerer_id
+  description: Structure organisant l'événement spécial.
+  from_schema: analytics_prod
+  from_table: global_special_event
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_offerer
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: venue_id
+    to_column: venue_id
+  condition_sql: global_special_event.venue_id = global_venue.venue_id
+  description: Lieu accueillant l'événement spécial.
+  from_schema: analytics_prod
+  from_table: global_special_event
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_venue
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: offer_id
+    to_column: offer_id
+  condition_sql: global_stock.offer_id = global_offer.offer_id
+  description: Offre à laquelle appartient le stock.
+  from_schema: analytics_prod
+  from_table: global_stock
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_offer
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: user_iris_internal_id
+    to_column: iris_internal_id
+  condition_sql: global_user_beneficiary.user_iris_internal_id = global_iris_socio_demographics.iris_internal_id
+  description: Données socio-démographiques IRIS du bénéficiaire.
+  from_schema: analytics_prod
+  from_table: global_user_beneficiary
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_iris_socio_demographics
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: user_id
+    to_column: user_id
+  condition_sql: global_user_beneficiary_information_history.user_id = global_user_beneficiary.user_id
+  description: Bénéficiaire dont l'historique est tracé.
+  from_schema: analytics_prod
+  from_table: global_user_beneficiary_information_history
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_user_beneficiary
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: offerer_id
+    to_column: offerer_id
+  condition_sql: global_user_offerer.offerer_id = global_offerer.offerer_id
+  description: Structure à laquelle l'utilisateur pro est rattaché.
+  from_schema: analytics_prod
+  from_table: global_user_offerer
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_offerer
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: user_id
+    to_column: user_id
+  condition_sql: global_user_offerer.user_id = global_user.user_id
+  description: Utilisateur pro rattaché à la structure.
+  from_schema: analytics_prod
+  from_table: global_user_offerer
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_user
+- cardinality: one_to_one
+  column_pairs:
+  - from_column: venue_id
+    to_column: venue_id
+  condition_sql: global_venue.venue_id = global_cultural_partner.venue_id
+  description: Vue partenaire culturel consolidée du lieu.
+  from_schema: analytics_prod
+  from_table: global_venue
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_cultural_partner
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: offerer_id
+    to_column: offerer_id
+  condition_sql: global_venue.offerer_id = global_offerer.offerer_id
+  description: Structure juridique gérant le lieu.
+  from_schema: analytics_prod
+  from_table: global_venue
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_offerer
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: venue_id
+    to_column: venue_id
+  condition_sql: global_venue_provider.venue_id = global_venue.venue_id
+  description: Lieu synchronisé avec le fournisseur.
+  from_schema: analytics_prod
+  from_table: global_venue_provider
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_venue
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: venue_id
+    to_column: venue_id
+  condition_sql: global_venue_tag.venue_id = global_venue.venue_id
+  description: Lieu associé au tag.
+  from_schema: analytics_prod
+  from_table: global_venue_tag
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_venue
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: venue_id
+    to_column: venue_id
+  condition_sql: mapping_venue_domain.venue_id = global_venue.venue_id
+  description: Lieu associé au domaine artistique.
+  from_schema: analytics_prod
+  from_table: mapping_venue_domain
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_venue
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: booking_id
+    to_column: booking_id
+  condition_sql: native_achievement.booking_id = global_booking.booking_id
+  description: Réservation liée à l'accomplissement.
+  from_schema: analytics_prod
+  from_table: native_achievement
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_booking
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: user_id
+    to_column: user_id
+  condition_sql: native_achievement.user_id = global_user_beneficiary.user_id
+  description: Bénéficiaire ayant obtenu le badge.
+  from_schema: analytics_prod
+  from_table: native_achievement
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_user_beneficiary
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: offer_id
+    to_column: offer_id
+  condition_sql: native_consultation.offer_id = global_offer.offer_id
+  description: Offre consultée.
+  from_schema: analytics_prod
+  from_table: native_consultation
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_offer
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: user_id
+    to_column: user_id
+  condition_sql: native_consultation.user_id = global_user_beneficiary.user_id
+  description: Bénéficiaire ayant consulté l'offre.
+  from_schema: analytics_prod
+  from_table: native_consultation
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_user_beneficiary
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: venue_id
+    to_column: venue_id
+  condition_sql: native_consultation.venue_id = global_venue.venue_id
+  description: Lieu de l'offre consultée.
+  from_schema: analytics_prod
+  from_table: native_consultation
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_venue
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: offer_id
+    to_column: offer_id
+  condition_sql: native_daily_home_offer_displayed.offer_id = global_offer.offer_id
+  description: Rattache chaque offre affichée sur l'accueil à sa fiche offre pour obtenir catégorie, sous-catégorie, nom.
+  from_schema: analytics_prod
+  from_table: native_daily_home_offer_displayed
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_offer
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: venue_id
+    to_column: venue_id
+  condition_sql: native_daily_home_offer_displayed.venue_id = global_venue.venue_id
+  description: Rattache chaque offre affichée sur l'accueil au lieu pour obtenir géographie, type de lieu.
+  from_schema: analytics_prod
+  from_table: native_daily_home_offer_displayed
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_venue
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: unique_session_id
+    to_column: unique_session_id
+  condition_sql: native_daily_home_recommendation_offer.unique_session_id = firebase_visits.unique_session_id
+  description: Rattache chaque recommandation à sa session de visite.
+  from_schema: analytics_prod
+  from_table: native_daily_home_recommendation_offer
+  source: manual
+  to_schema: analytics_prod
+  to_table: firebase_visits
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: offer_id
+    to_column: offer_id
+  condition_sql: native_daily_home_recommendation_offer.offer_id = global_offer.offer_id
+  description: Rattache chaque recommandation à sa fiche offre.
+  from_schema: analytics_prod
+  from_table: native_daily_home_recommendation_offer
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_offer
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: user_id
+    to_column: user_id
+  condition_sql: native_daily_home_recommendation_offer.user_id = global_user_beneficiary.user_id
+  description: Rattache chaque recommandation au profil bénéficiaire pour segmentation démographique.
+  from_schema: analytics_prod
+  from_table: native_daily_home_recommendation_offer
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_user_beneficiary
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: unique_session_id
+    to_column: unique_session_id
+  condition_sql: native_daily_user_home_module.unique_session_id = firebase_visits.unique_session_id
+  description: Rattache l'interaction module à sa session de visite.
+  from_schema: analytics_prod
+  from_table: native_daily_user_home_module
+  source: manual
+  to_schema: analytics_prod
+  to_table: firebase_visits
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: offer_id
+    to_column: offer_id
+  condition_sql: native_daily_user_home_module.offer_id = global_offer.offer_id
+  description: Rattache l'interaction module à l'offre consultée ou réservée.
+  from_schema: analytics_prod
+  from_table: native_daily_user_home_module
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_offer
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: user_id
+    to_column: user_id
+  condition_sql: native_daily_user_home_module.user_id = global_user_beneficiary.user_id
+  description: Rattache chaque interaction module au profil bénéficiaire.
+  from_schema: analytics_prod
+  from_table: native_daily_user_home_module
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_user_beneficiary
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: venue_id
+    to_column: venue_id
+  condition_sql: native_daily_user_home_module.venue_id = global_venue.venue_id
+  description: Rattache l'interaction module au lieu consulté.
+  from_schema: analytics_prod
+  from_table: native_daily_user_home_module
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_venue
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: unique_session_id
+    to_column: unique_session_id
+  condition_sql: native_daily_venue_map_conversion.unique_session_id = firebase_visits.unique_session_id
+  description: Rattache la session carte des lieux à sa session de visite globale.
+  from_schema: analytics_prod
+  from_table: native_daily_venue_map_conversion
+  source: manual
+  to_schema: analytics_prod
+  to_table: firebase_visits
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: user_id
+    to_column: user_id
+  condition_sql: native_daily_venue_map_conversion.user_id = global_user_beneficiary.user_id
+  description: Rattache chaque session carte des lieux au profil bénéficiaire.
+  from_schema: analytics_prod
+  from_table: native_daily_venue_map_conversion
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_user_beneficiary
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: artist_id
+    to_column: artist_id
+  condition_sql: native_event.artist_id = global_artist.artist_id
+  description: Rattache chaque événement natif impliquant un artiste à sa fiche artiste.
+  from_schema: analytics_prod
+  from_table: native_event
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_artist
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: offer_id
+    to_column: offer_id
+  condition_sql: native_event.offer_id = global_offer.offer_id
+  description: Offre consultée lors de l'événement.
+  from_schema: analytics_prod
+  from_table: native_event
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_offer
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: user_id
+    to_column: user_id
+  condition_sql: native_event.user_id = global_user_beneficiary.user_id
+  description: Bénéficiaire ayant déclenché l'événement.
+  from_schema: analytics_prod
+  from_table: native_event
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_user_beneficiary
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: venue_id
+    to_column: venue_id
+  condition_sql: native_event.venue_id = global_venue.venue_id
+  description: Lieu consulté lors de l'événement.
+  from_schema: analytics_prod
+  from_table: native_event
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_venue
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: user_id
+    to_column: user_id
+  condition_sql: native_nps_beneficiary.user_id = global_user_beneficiary.user_id
+  description: Bénéficiaire ayant répondu au NPS.
+  from_schema: analytics_prod
+  from_table: native_nps_beneficiary
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_user_beneficiary
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: offerer_id
+    to_column: offerer_id
+  condition_sql: pro_event.offerer_id = global_offerer.offerer_id
+  description: Structure concernée par l'événement pro.
+  from_schema: analytics_prod
+  from_table: pro_event
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_offerer
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: venue_id
+    to_column: venue_id
+  condition_sql: pro_event.venue_id = global_venue.venue_id
+  description: Lieu concerné par l'événement pro.
+  from_schema: analytics_prod
+  from_table: pro_event
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_venue
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: offerer_id
+    to_column: offerer_id
+  condition_sql: pro_log.offerer_id = global_offerer.offerer_id
+  description: Structure concernée par le log pro.
+  from_schema: analytics_prod
+  from_table: pro_log
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_offerer
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: venue_id
+    to_column: venue_id
+  condition_sql: pro_log.venue_id = global_venue.venue_id
+  description: Lieu concerné par le log pro.
+  from_schema: analytics_prod
+  from_table: pro_log
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_venue
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: venue_id
+    to_column: venue_id
+  condition_sql: pro_nps_venue.venue_id = global_venue.venue_id
+  description: Lieu évalué dans le NPS pro.
+  from_schema: analytics_prod
+  from_table: pro_nps_venue
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_venue
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: offer_id
+    to_column: offer_id
+  condition_sql: pro_offer_highlight.offer_id = global_offer.offer_id
+  description: Offre mise en avant par l'équipe éditoriale.
+  from_schema: analytics_prod
+  from_table: pro_offer_highlight
+  source: manual
+  to_schema: analytics_prod
+  to_table: global_offer
+- cardinality: many_to_many
+  column_pairs:
+  - from_column: partition_month
+    to_column: partition_month
+  - from_column: department_code
+    to_column: department_code
+  - from_column: milestone_age
+    to_column: milestone_age
+  condition_sql: metrics_beneficiary_coverage.partition_month = metrics_population_coverage.partition_month AND metrics_beneficiary_coverage.department_code
+    = metrics_population_coverage.department_code AND metrics_beneficiary_coverage.milestone_age = metrics_population_coverage.milestone_age
+  description: 'Jointure couverture : numérateur bénéficiaires / dénominateur population INSEE, par mois × département × âge
+    jalon.'
+  from_schema: metrics_prod
+  from_table: metrics_beneficiary_coverage
+  source: manual
+  to_schema: metrics_prod
+  to_table: metrics_population_coverage
+- cardinality: many_to_one
+  column_pairs:
+  - from_column: deposit_expiration_month
+    to_column: deposit_expiration_month
+  - from_column: department_code
+    to_column: department_code
+  - from_column: is_in_qpv
+    to_column: is_in_qpv
+  - from_column: macro_density_label
+    to_column: macro_density_label
+  condition_sql: metrics_diversity_by_category.deposit_expiration_month = metrics_diversity.deposit_expiration_month AND metrics_diversity_by_category.department_code
+    = metrics_diversity.department_code AND metrics_diversity_by_category.is_in_qpv = metrics_diversity.is_in_qpv AND metrics_diversity_by_category.macro_density_label
+    = metrics_diversity.macro_density_label
+  description: 'Jointure diversité par catégorie : numérateur par catégorie / dénominateur total crédits expirés. ATTENTION
+    : agréger chaque côté séparément avant de joindre pour éviter de surestimer les catégories rares.'
+  from_schema: metrics_prod
+  from_table: metrics_diversity_by_category
+  source: manual
+  to_schema: metrics_prod
+  to_table: metrics_diversity

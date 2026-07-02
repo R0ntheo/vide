@@ -1,0 +1,72 @@
+columns:
+- data_type: string
+  description: Tag de l'email transactionnel Brevo, permettant d'identifier la campagne.
+  name: brevo_tag
+  ordinal: 0
+- data_type: string
+  description: Identifiant unique de la structure.
+  name: offerer_id
+  ordinal: 1
+- data_type: string
+  description: Nom de la structure.
+  name: offerer_name
+  ordinal: 2
+- data_type: date
+  description: Date de creation de la dernière offre individuelle.
+  name: last_individual_offer_creation_date
+  ordinal: 3
+- data_type: date
+  description: Date de creation de la dernière offre collective.
+  name: last_collective_offer_creation_date
+  ordinal: 4
+- data_type: date
+  description: Date de la dernière offre individuelle réservable.
+  name: last_individual_bookable_offer_date
+  ordinal: 5
+- data_type: date
+  description: Date de la dernière offre collective réservable.
+  name: last_collective_bookable_offer_date
+  ordinal: 6
+- data_type: date
+  description: Date de la dernière réservation individuelle.
+  name: last_individual_booking_date
+  ordinal: 7
+- data_type: date
+  description: Date de la dernière réservation collective.
+  name: last_collective_booking_date
+  ordinal: 8
+- data_type: date
+  description: Date de creation de la structure, correspondant a la date d'inscription sur le portail professionnel.
+  name: offerer_creation_date
+  ordinal: 9
+- data_type: date
+  description: Première date a laquelle un utilisateur de cette structure a ouvert un email de la campagne (tag Brevo).
+  name: first_open_date
+  ordinal: 10
+- data_type: date
+  description: Dernière date a laquelle un utilisateur de cette structure a ouvert un email de la campagne (tag Brevo).
+  name: last_open_date
+  ordinal: 11
+- data_type: number
+  description: Nombre de jours distincts ou un utilisateur de cette structure a ouvert un email de la campagne (tag Brevo).
+  name: nb_open_days
+  ordinal: 12
+- data_type: date
+  description: Premier jour ou la structure a eu une offre individuelle réservable apres l'ouverture d'un email de la campagne
+    (tag Brevo).
+  name: first_individual_bookable_date_after_mail
+  ordinal: 13
+- data_type: date
+  description: Premier jour ou la structure a eu une offre collective réservable apres l'ouverture d'un email de la campagne
+    (tag Brevo).
+  name: first_collective_bookable_date_after_mail
+  ordinal: 14
+description: Rétention des partenaires pro — activité mensuelle, retour après inactivité, cohortes.
+domain_path: tracking/marketing
+grain:
+- Une ligne par combinaison (brevo_tag, offerer_id, offerer_name, last_individual_offer_creation_date)
+schema_name: analytics_prod
+synonyms:
+- rétention pro
+- relance partenaire
+table_name: marketing_retention_pro

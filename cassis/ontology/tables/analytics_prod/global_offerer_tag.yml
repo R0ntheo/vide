@@ -1,0 +1,46 @@
+columns:
+- data_type: string
+  description: Identifiant unique du mapping entre une structure et un tag.
+  name: offerer_tag_mapping_id
+  ordinal: 0
+- data_type: string
+  description: Identifiant unique de la structure.
+  name: offerer_id
+  ordinal: 1
+- data_type: string
+  description: Identifiant unique du tag.
+  name: tag_id
+  ordinal: 2
+- data_type: string
+  description: Nom du tag associé a la structure (tel qu'affiche dans le back-office pass Culture).
+  name: tag_name
+  ordinal: 3
+- data_type: string
+  description: Libelle du tag associé a la structure (pour l'affichage).
+  name: tag_label
+  ordinal: 4
+- data_type: string
+  description: Description du tag associé a la structure.
+  name: tag_description
+  ordinal: 5
+- data_type: string
+  description: Identifiant unique de la catégorie du tag.
+  name: tag_category_id
+  ordinal: 6
+- data_type: string
+  description: Nom de la catégorie du tag (tel qu'affiche dans le back-office pass Culture).
+  name: tag_category_name
+  ordinal: 7
+- data_type: string
+  description: Libelle de la catégorie du tag (pour l'affichage).
+  name: tag_category_label
+  ordinal: 8
+description: Tags associés aux structures (labels ministériels, classifications internes, catégories partenaires).
+domain_path: core/partenaires-culturels
+grain:
+- Une ligne par offerer_tag_mapping (offerer_tag_mapping_id)
+schema_name: analytics_prod
+synonyms:
+- tag structure
+- label partenaire
+table_name: global_offerer_tag

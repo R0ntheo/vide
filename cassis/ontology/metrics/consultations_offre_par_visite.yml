@@ -1,0 +1,14 @@
+description: Nombre moyen de fiches offres consultées par session sur l'application.
+display_name: Consultations d'offres par visite
+domain_path: tracking/natif/parcours-decouverte
+expression: AVG(nb_consult_offer)
+name: consultations_offre_par_visite
+notes: Agrégé par first_event_date. Peut être complété par nb_consult_venue et nb_consult_artist pour une vue complète de
+  l'engagement de découverte.
+synonyms:
+- offres vues par session
+- consultations par visite
+- offers per visit
+table_name: firebase_visits
+table_schema: analytics_prod
+unit: consultations/visite

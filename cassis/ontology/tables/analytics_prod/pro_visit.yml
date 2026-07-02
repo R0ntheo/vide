@@ -1,0 +1,94 @@
+columns:
+- data_type: string
+  description: Identifiant unique du bénéficiaire.
+  name: user_id
+  ordinal: 0
+- data_type: string
+  description: Pseudo-identifiant de l'utilisateur utilisé à des fins de suivi.
+  name: user_pseudo_id
+  ordinal: 1
+- data_type: number
+  description: 'Déprécié : utiliser unique_session_id. Identifiant de la session durant laquelle l''événement a été enregistré.'
+  name: session_id
+  ordinal: 2
+- data_type: string
+  description: Identifiant unique de la session, sans doublons.
+  name: unique_session_id
+  ordinal: 3
+- data_type: number
+  description: Numéro de la session durant laquelle la visite a eu lieu, indiquant l'ordre des sessions de l'utilisateur.
+  name: session_number
+  ordinal: 4
+- data_type: date
+  description: Date du premier événement de la session, utilisée pour le partitionnement des données.
+  name: first_event_date
+  ordinal: 5
+- data_type: datetime
+  description: Horodatage précis du premier événement de la session.
+  name: first_event_timestamp
+  ordinal: 6
+- data_type: datetime
+  description: Horodatage précis du dernier événement de la session.
+  name: last_event_timestamp
+  ordinal: 7
+- data_type: number
+  description: Durée de la visite en secondes, calculée du premier au dernier événement.
+  name: visit_duration_seconds
+  ordinal: 8
+- data_type: number
+  description: Nombre total de structures distinctes avec lesquelles l'utilisateur a interagi durant la visite.
+  name: total_offerers
+  ordinal: 9
+- data_type: number
+  description: Nombre total de partenaires culturels distincts avec lesquels l'utilisateur a interagi durant la visite.
+  name: total_partners
+  ordinal: 10
+- data_type: number
+  description: Indiqué si des offres ont été gérées durant la visite.
+  name: total_managed_offers
+  ordinal: 11
+- data_type: number
+  description: Indiqué si des billets ont été gérés durant la visite.
+  name: total_managed_tickets
+  ordinal: 12
+- data_type: number
+  description: Indiqué si des réservations ont été gérées durant la visite.
+  name: total_managed_bookings
+  ordinal: 13
+- data_type: number
+  description: Indiqué si des activités financières ont été gérées durant la visite.
+  name: total_managed_finance
+  ordinal: 14
+- data_type: number
+  description: Indiqué si des lieux ont été gérés durant la visite.
+  name: total_managed_venues
+  ordinal: 15
+- data_type: number
+  description: Indiqué si des profils ont été gérés durant la visite.
+  name: total_managed_profiles
+  ordinal: 16
+- data_type: number
+  description: Nombre total de pages statistiques consultées durant la visite.
+  name: total_stat_page_views
+  ordinal: 17
+- data_type: number
+  description: Indiqué si des ressources d'aide ont été consultées durant la visite.
+  name: total_consulted_help
+  ordinal: 18
+- data_type: number
+  description: Indiqué si des pages d'offres (sur l'Espace partenaire) ont été consultées durant la visite.
+  name: total_consulted_offers
+  ordinal: 19
+- data_type: number
+  description: Indiqué si des réservations ont été téléchargées durant la visite.
+  name: total_booking_downloads
+  ordinal: 20
+description: Sessions de visite sur le portail pro — durée, pages vues, parcours de navigation.
+domain_path: tracking/pro
+grain:
+- Une ligne par session pro (unique_session_id)
+schema_name: analytics_prod
+synonyms:
+- session pro
+- visite portail pro
+table_name: pro_visit

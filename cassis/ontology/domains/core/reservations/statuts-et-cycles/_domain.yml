@@ -1,0 +1,74 @@
+context_md: |-
+  # Statuts & cycles de vie
+
+  ## Réservation individuelle (`global_booking`)
+
+  ### Cycle de vie
+
+  ```
+  Créée → Confirmée → Utilisée → Remboursée
+                    ↘ Annulée
+  ```
+
+  ### Colonnes de statut
+
+  - `booking_status` : statut textuel (CONFIRMED, USED, CANCELLED, REIMBURSED).
+  - `booking_is_cancelled` : booléen. TRUE = annulée par le bénéficiaire ou le partenaire.
+  - `booking_is_used` : booléen. TRUE = le bénéficiaire a consommé l'offre (ticket scanné, bien retiré, etc.).
+  - `reimbursed` : booléen. TRUE = le partenaire a été remboursé.
+
+  ### Définition de « réservation validée »
+
+  Dans tout le reporting pass Culture, une réservation **validée** = **non annulée**. C'est le filtre standard :
+
+  ```sql
+  WHERE booking_is_cancelled = FALSE
+  -- ou
+  WHERE booking_status != 'CANCELLED'
+  ```
+
+  Attention : "validée" ne signifie pas "utilisée". Une réservation confirmée mais pas encore utilisée est validée.
+
+  ### Montants
+
+  - `booking_amount` : prix unitaire du stock réservé.
+  - `booking_quantity` : nombre de places (2 pour une offre duo).
+  - `booking_intermediary_amount` : montant réel débité du crédit = `booking_amount × booking_quantity`. C'est **le montant de référence** pour toute analyse financière.
+
+  ## Réservation collective (`global_collective_booking`)
+
+  ### Cycle de vie
+
+  ```
+  Créée → En attente (PENDING) → Confirmée (CONFIRMED) → Utilisée (USED) → Remboursée (REIMBURSED)
+                                ↘ Annulée (CANCELLED)
+  ```
+
+  ### Colonnes de statut
+
+  - `collective_booking_status` : PENDING, CONFIRMED, USED, REIMBURSED, CANCELLED.
+  - `collective_booking_is_cancelled` : booléen.
+  - `is_used_collective_booking` : booléen.
+
+  ### Filtres courants
+
+  - Non annulée : `collective_booking_status != 'CANCELLED'`
+  - Confirmée ou plus : `collective_booking_status IN ('CONFIRMED', 'USED', 'REIMBURSED')`
+  - Année scolaire en cours : `is_current_scholar_year_booking = TRUE`
+
+  ## Offre individuelle (`global_offer`)
+
+  ### États clés
+
+  - `offer_validation` : statut de modération (APPROVED, REJECTED, PENDING, DRAFT).
+  - `offer_is_bookable` : TRUE = au moins un stock actif, non expiré, avec du stock disponible. C'est le critère « réservable maintenant ».
+  - `is_active` : TRUE = l'offre est publiée et visible.
+
+  ### Offre collective (`global_collective_offer`)
+
+  - `collective_offer_is_template` : TRUE = offre vitrine (visible sur Adage, pas directement réservable). FALSE = offre réservable.
+  - `collective_offer_is_bookable` : TRUE = réservable par un établissement.
+  - `collective_offer_is_active` : TRUE = publiée et visible sur Adage.
+description: Cycles de vie des réservations (individuelles et collectives) et des offres — statuts, transitions et définition
+  de « validé ».
+display_name: Statuts & cycles de vie

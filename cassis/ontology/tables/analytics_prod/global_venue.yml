@@ -1,0 +1,566 @@
+columns:
+- data_type: string
+  description: Identifiant unique du lieu.
+  name: venue_id
+  nullable: false
+  ordinal: 0
+  source: manual
+- data_type: string
+  description: Nom du lieu tel qu'enregistre par la structure.
+  name: venue_name
+  ordinal: 1
+  source: manual
+- data_type: string
+  description: Nom du lieu affiche sur l'application, visible par les utilisateurs.
+  name: venue_public_name
+  ordinal: 2
+  source: manual
+- data_type: string
+  description: Email affiche sur l'application, utilisable pour reserver ou contacter le partenaire.
+  name: venue_booking_email
+  ordinal: 3
+  source: manual
+- data_type: string
+  description: Adresse postale (rue) du lieu.
+  name: venue_street
+  ordinal: 4
+  source: manual
+- data_type: number
+  description: Coordonnee de latitude du lieu.
+  name: venue_latitude
+  ordinal: 5
+  source: manual
+- data_type: number
+  description: Coordonnee de longitude du lieu.
+  name: venue_longitude
+  ordinal: 6
+  source: manual
+- data_type: string
+  description: Code du département ou se situe le lieu.
+  name: venue_department_code
+  nullable: false
+  ordinal: 7
+  source: manual
+- data_type: string
+  description: Nom du département ou se situe le lieu.
+  name: venue_department_name
+  ordinal: 8
+  source: manual
+- data_type: string
+  description: Code postal du lieu.
+  name: venue_postal_code
+  nullable: false
+  ordinal: 9
+  source: manual
+- data_type: string
+  description: Ville ou se situe le lieu.
+  name: venue_city
+  ordinal: 10
+  source: manual
+  synonyms:
+  - commune
+- data_type: string
+  description: Numero SIRET du lieu.
+  name: venue_siret
+  ordinal: 11
+  source: manual
+- data_type: string
+  description: Identifiant unique de la structure (offerer) qui géré ce lieu.
+  name: offerer_id
+  nullable: false
+  ordinal: 12
+  source: manual
+- data_type: datetime
+  description: Date de creation du lieu sur l'application pass Culture.
+  name: venue_creation_date
+  ordinal: 13
+  source: manual
+- data_type: boolean
+  description: Indiqué si le lieu est permanent. Un lieu permanent peut accueillir du public en continu, proposer des offres
+    et est géré par le partenaire.
+  name: venue_is_permanent
+  ordinal: 14
+  source: manual
+- data_type: boolean
+  description: Indiqué si le lieu est un ERP (Établissement Recevant du Public). Remplacera venue_is_permanent a partir de
+    mi-2025 dans le cadre du projet offre-adresse.
+  name: venue_is_open_to_public
+  ordinal: 15
+  source: manual
+  synonyms:
+  - ERP
+- data_type: boolean
+  description: Indiqué si les informations d'accessibilite du lieu sont synchronisees.
+  name: venue_is_acessibility_synched
+  ordinal: 16
+  source: manual
+- data_type: string
+  description: Type du lieu sélectionné par le partenaire dans une liste deroulante lors de l'inscription.
+  name: venue_type_label
+  ordinal: 17
+  source: manual
+  synonyms:
+  - categorie de lieu
+- data_type: string
+  description: Nouvelle version du type de lieu (V2), sélectionnée par le partenaire lors de l'inscription.
+  name: venue_activity
+  ordinal: 18
+  source: manual
+- data_type: string
+  description: Label de qualite attribue au lieu par le Ministere de la Culture, temoignant de la qualite et du rayonnement
+    dans sa catégorie.
+  name: venue_label
+  ordinal: 19
+  source: manual
+- data_type: string
+  description: Identifiant unique encode du lieu, utilise dans certains outils internes.
+  name: venue_humanized_id
+  ordinal: 20
+  source: manual
+- data_type: string
+  description: Lien vers la page du lieu dans le backoffice interne.
+  name: venue_backoffice_link
+  ordinal: 21
+  source: manual
+- data_type: string
+  description: Nom de la region ou se situe le lieu.
+  name: venue_region_name
+  nullable: false
+  ordinal: 22
+  source: manual
+- data_type: string
+  description: Nom de l'EPCI (Établissement Public de Cooperation Intercommunale) ou se situe le lieu.
+  name: venue_epci
+  ordinal: 23
+  source: manual
+  synonyms:
+  - intercommunalite
+- data_type: string
+  description: Label de densite detaillee de la localisation du lieu (classification INSEE).
+  name: venue_density_label
+  ordinal: 24
+  source: manual
+- data_type: string
+  description: Label de densite macro de la localisation du lieu.
+  name: venue_macro_density_label
+  ordinal: 25
+  source: manual
+- data_type: number
+  description: Identifiant numérique du niveau de densite du lieu.
+  name: venue_density_level
+  ordinal: 26
+  source: manual
+- data_type: string
+  description: Nom de l'academie (Education nationale) ou se situe le lieu.
+  name: venue_academy_name
+  ordinal: 27
+  source: manual
+- data_type: boolean
+  description: Indiqué si le lieu est situe dans un Quartier Prioritaire de la politique de la Ville (QPV).
+  name: venue_in_qpv
+  ordinal: 28
+  source: manual
+  synonyms:
+  - quartier prioritaire
+- data_type: boolean
+  description: Indiqué si le lieu est situe dans une Zone de Revitalisation Rurale (ZRR).
+  name: venue_in_zrr
+  ordinal: 29
+  source: manual
+- data_type: string
+  description: Classification du type de commune rurale ou se situe le lieu.
+  name: venue_rural_city_type
+  ordinal: 30
+  source: manual
+- data_type: string
+  description: Public vise par le lieu.
+  name: venue_targeted_audience
+  ordinal: 31
+  source: manual
+- data_type: string
+  description: URL de l'image de banniere du lieu.
+  name: banner_url
+  ordinal: 32
+  source: manual
+- data_type: string
+  description: URL ou les utilisateurs peuvent trouver les informations de benevolat pour le lieu.
+  name: venue_volunteering_url
+  ordinal: 33
+  source: manual
+- data_type: string
+  description: Description du lieu redigee par le partenaire.
+  name: venue_description
+  ordinal: 34
+  source: manual
+- data_type: string
+  description: Description facultative des modalites de retrait au lieu.
+  name: venue_withdrawal_details
+  ordinal: 35
+  source: manual
+- data_type: string
+  description: Numero de telephone de contact du lieu affiche sur l'application.
+  name: venue_contact_phone_number
+  ordinal: 36
+  source: manual
+- data_type: string
+  description: Email de contact du lieu affiche sur l'application (page du lieu).
+  name: venue_contact_email
+  ordinal: 37
+  source: manual
+- data_type: string
+  description: Site web de contact du lieu affiche sur l'application.
+  name: venue_contact_website
+  ordinal: 38
+  source: manual
+- data_type: number
+  description: Nombre total de réservations individuelles (tous statuts confondus).
+  name: total_individual_bookings
+  ordinal: 39
+  source: manual
+- data_type: number
+  description: Nombre total de réservations collectives (tous statuts confondus).
+  name: total_collective_bookings
+  ordinal: 40
+  source: manual
+- data_type: number
+  description: Nombre total de réservations, individuelles et collectives confondues (tous statuts).
+  name: total_bookings
+  ordinal: 41
+  source: manual
+- data_type: number
+  description: Nombre total de réservations individuelles non annulees.
+  name: total_non_cancelled_individual_bookings
+  ordinal: 42
+  source: manual
+- data_type: number
+  description: Nombre total de réservations collectives non annulees.
+  name: total_non_cancelled_collective_bookings
+  ordinal: 43
+  source: manual
+- data_type: date
+  description: Date de la première réservation individuelle sur ce lieu.
+  name: first_individual_booking_date
+  ordinal: 44
+  source: manual
+- data_type: date
+  description: Date de la dernière réservation individuelle sur ce lieu.
+  name: last_individual_booking_date
+  ordinal: 45
+  source: manual
+- data_type: date
+  description: Date de la première réservation collective sur ce lieu.
+  name: first_collective_booking_date
+  ordinal: 46
+  source: manual
+- data_type: date
+  description: Date de la dernière réservation collective sur ce lieu.
+  name: last_collective_booking_date
+  ordinal: 47
+  source: manual
+- data_type: number
+  description: Nombre total de réservations non annulees, individuelles et collectives confondues.
+  name: total_non_cancelled_bookings
+  ordinal: 48
+  source: manual
+- data_type: number
+  description: Nombre total de réservations utilisees (consommees), individuelles et collectives confondues.
+  name: total_used_bookings
+  ordinal: 49
+  source: manual
+- data_type: number
+  description: Nombre total de réservations individuelles utilisees.
+  name: total_used_individual_bookings
+  ordinal: 50
+  source: manual
+- data_type: number
+  description: Nombre total de réservations collectives utilisees.
+  name: total_used_collective_bookings
+  ordinal: 51
+  source: manual
+- data_type: number
+  description: Revenu theorique total des réservations individuelles (somme des montants des réservations non annulees).
+  name: total_individual_theoretic_revenue
+  ordinal: 52
+  source: manual
+  unit: €
+- data_type: number
+  description: Revenu réel total des réservations individuelles (somme des montants des réservations utilisees).
+  name: total_individual_real_revenue
+  ordinal: 53
+  source: manual
+  unit: €
+- data_type: number
+  description: Revenu theorique total des réservations collectives.
+  name: total_collective_theoretic_revenue
+  ordinal: 54
+  source: manual
+  unit: €
+- data_type: number
+  description: Revenu réel total des réservations collectives.
+  name: total_collective_real_revenue
+  ordinal: 55
+  source: manual
+  unit: €
+- data_type: number
+  description: Revenu theorique total de toutes les réservations (individuelles + collectives).
+  name: total_theoretic_revenue
+  ordinal: 56
+  source: manual
+  unit: €
+- data_type: number
+  description: Revenu réel total de toutes les réservations (individuelles + collectives).
+  name: total_real_revenue
+  ordinal: 57
+  source: manual
+  synonyms:
+  - chiffre d'affaires
+  unit: €
+- data_type: date
+  description: Date de creation de la première offre individuelle du lieu.
+  name: first_individual_offer_creation_date
+  ordinal: 58
+  source: manual
+- data_type: date
+  description: Date de creation de la dernière offre individuelle du lieu.
+  name: last_individual_offer_creation_date
+  ordinal: 59
+  source: manual
+- data_type: number
+  description: Nombre total d'offres individuelles créées par le lieu.
+  name: total_created_individual_offers
+  ordinal: 60
+  source: manual
+- data_type: date
+  description: Date de creation de la première offre collective du lieu.
+  name: first_collective_offer_creation_date
+  ordinal: 61
+  source: manual
+- data_type: date
+  description: Date de creation de la dernière offre collective du lieu.
+  name: last_collective_offer_creation_date
+  ordinal: 62
+  source: manual
+- data_type: number
+  description: Nombre total d'offres collectives créées par le lieu.
+  name: total_created_collective_offers
+  ordinal: 63
+  source: manual
+- data_type: number
+  description: Nombre total d'offres créées, individuelles et collectives confondues.
+  name: total_created_offers
+  ordinal: 64
+  source: manual
+- data_type: date
+  description: Date de la première offre réservable du lieu (individuelle ou collective).
+  name: first_bookable_offer_date
+  ordinal: 65
+  source: manual
+- data_type: date
+  description: Date de la dernière offre réservable du lieu (individuelle ou collective).
+  name: last_bookable_offer_date
+  ordinal: 66
+  source: manual
+- data_type: date
+  description: Date de la première offre individuelle réservable du lieu.
+  name: first_individual_bookable_offer_date
+  ordinal: 67
+  source: manual
+- data_type: date
+  description: Date de la dernière offre individuelle réservable du lieu.
+  name: last_individual_bookable_offer_date
+  ordinal: 68
+  source: manual
+- data_type: date
+  description: Date de la première offre collective réservable du lieu.
+  name: first_collective_bookable_offer_date
+  ordinal: 69
+  source: manual
+- data_type: date
+  description: Date de la dernière offre collective réservable du lieu.
+  name: last_collective_bookable_offer_date
+  ordinal: 70
+  source: manual
+- data_type: date
+  description: Date de la première réservation du lieu (individuelle ou collective).
+  name: first_booking_date
+  ordinal: 71
+  source: manual
+- data_type: date
+  description: Date de la dernière réservation du lieu (individuelle ou collective).
+  name: last_booking_date
+  ordinal: 72
+  source: manual
+- data_type: date
+  description: Date de creation de la première offre du lieu (individuelle ou collective).
+  name: first_offer_creation_date
+  ordinal: 73
+  source: manual
+- data_type: date
+  description: Date de creation de la dernière offre du lieu (individuelle ou collective).
+  name: last_offer_creation_date
+  ordinal: 74
+  source: manual
+- data_type: number
+  description: Nombre total d'offres individuelles actuellement réservables.
+  name: total_bookable_individual_offers
+  ordinal: 75
+  source: manual
+- data_type: number
+  description: Nombre total d'offres collectives actuellement réservables.
+  name: total_bookable_collective_offers
+  ordinal: 76
+  source: manual
+- data_type: number
+  description: Nombre total d'offres actuellement réservables, individuelles et collectives confondues.
+  name: total_bookable_offers
+  ordinal: 77
+  source: manual
+- data_type: number
+  description: Nombre total de billets non annules.
+  name: total_non_cancelled_tickets
+  ordinal: 78
+  source: manual
+- data_type: number
+  description: Nombre total de billets non annules pour l'annee en cours.
+  name: total_current_year_non_cancelled_tickets
+  ordinal: 79
+  source: manual
+- data_type: boolean
+  description: Champ analytique indiquant si le lieu a eu de l'activite dans les 30 derniers jours.
+  name: is_active_last_30days
+  ordinal: 80
+  source: manual
+- data_type: boolean
+  description: Champ analytique indiquant si le lieu a eu de l'activite durant l'annee en cours.
+  name: is_active_current_year
+  ordinal: 81
+  source: manual
+- data_type: boolean
+  description: Champ analytique indiquant si le lieu a eu de l'activite individuelle dans les 30 derniers jours.
+  name: is_individual_active_last_30days
+  ordinal: 82
+  source: manual
+- data_type: boolean
+  description: Champ analytique indiquant si le lieu a eu de l'activite individuelle durant l'annee en cours.
+  name: is_individual_active_current_year
+  ordinal: 83
+  source: manual
+- data_type: boolean
+  description: Champ analytique indiquant si le lieu a eu de l'activite collective dans les 30 derniers jours.
+  name: is_collective_active_last_30days
+  ordinal: 84
+  source: manual
+- data_type: boolean
+  description: Champ analytique indiquant si le lieu a eu de l'activite collective durant l'annee en cours.
+  name: is_collective_active_current_year
+  ordinal: 85
+  source: manual
+- data_type: string
+  description: Nom de la structure (offerer) qui géré ce lieu.
+  name: offerer_name
+  ordinal: 86
+  source: manual
+- data_type: string
+  description: Statut de validation de la structure.
+  name: offerer_validation_status
+  ordinal: 87
+  source: manual
+- data_type: boolean
+  description: Indiqué si la structure est active.
+  name: offerer_is_active
+  ordinal: 88
+  source: manual
+- data_type: datetime
+  description: Date a laquelle la structure a ete acceptee dans le système DMS (Demarches Simplifiees).
+  name: dms_accepted_at
+  ordinal: 89
+  source: manual
+- data_type: string
+  description: Premier statut DMS ADAGE de la structure.
+  name: first_dms_adage_status
+  ordinal: 90
+  source: manual
+- data_type: boolean
+  description: Indiqué si la structure est referencee dans ADAGE.
+  name: is_reference_adage
+  ordinal: 91
+  source: manual
+- data_type: boolean
+  description: Indiqué si la structure est synchronisee avec ADAGE.
+  name: is_synchro_adage
+  ordinal: 92
+  source: manual
+- data_type: string
+  description: Lien vers la page du lieu dans l'interface PC Pro (portail professionnel).
+  name: venue_pc_pro_link
+  ordinal: 93
+  source: manual
+- data_type: string
+  description: Identifiant unique du partenaire culturel associé a ce lieu.
+  name: partner_id
+  nullable: false
+  ordinal: 94
+  source: manual
+- data_type: string
+  description: Identifiant interne de la maille IRIS du lieu (unite infra-communale INSEE d'environ 2000 habitants).
+  name: venue_iris_internal_id
+  ordinal: 95
+  source: manual
+- data_type: number
+  description: Rang de la structure en ordre descendant.
+  name: offerer_rank_desc
+  ordinal: 96
+  source: manual
+- data_type: number
+  description: Rang de la structure en ordre ascendant.
+  name: offerer_rank_asc
+  ordinal: 97
+  source: manual
+- data_type: string
+  description: Origine de l'image du lieu.
+  name: venue_image_source
+  ordinal: 98
+  source: manual
+- data_type: number
+  description: Nombre d'offres distinctes ayant ete mises a la une sur la page du lieu dans l'application.
+  name: total_distinct_headline_offers
+  ordinal: 99
+  source: manual
+- data_type: boolean
+  description: Indiqué si une offre est actuellement mise a la une sur la page du lieu dans l'application.
+  name: has_headline_offer
+  ordinal: 100
+  source: manual
+- data_type: datetime
+  description: Date de la première mise a la une d'une offre sur la page du lieu.
+  name: first_headline_offer_date
+  ordinal: 101
+  source: manual
+- data_type: datetime
+  description: Date de la dernière mise a la une d'une offre sur la page du lieu.
+  name: last_headline_offer_date
+  ordinal: 102
+  source: manual
+- data_type: datetime
+  description: Date a laquelle le lieu a ete synchronise sur ADAGE (permettant la publication d'offres collectives).
+  name: venue_adage_inscription_date
+  ordinal: 103
+  source: manual
+- data_type: boolean
+  description: Indiqué si la structure est un Établissement Public National (rattaché au Ministere de la Culture).
+  name: offerer_is_epn
+  ordinal: 104
+  source: manual
+  synonyms:
+  - etablissement public national
+description: Lieu physique (bibliothèque, cinéma, théâtre) ou plateforme numérique gérée par une structure (offerer).
+domain_path: core/partenaires-culturels
+grain:
+- Une ligne par lieu (venue_id)
+schema_name: analytics_prod
+synonyms:
+- lieu culturel
+- etablissement
+- salle
+- espace culturel
+table_name: global_venue

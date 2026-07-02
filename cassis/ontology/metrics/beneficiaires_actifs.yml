@@ -1,0 +1,17 @@
+description: 'Nombre de bénéficiaires ayant ouvert l''application au moins une fois dans la semaine. Définition canonique
+  : un bénéficiaire est considéré actif sur une semaine s''il a au moins une visite (nb_visits > 0) dans aggregated_weekly_user_data.
+  Pour un DAU, utiliser firebase_visits avec COUNT(DISTINCT user_id) sur un jour donné.'
+display_name: Bénéficiaires actifs (semaine)
+domain_path: core/beneficiaires
+expression: COUNT(DISTINCT user_id) WHERE nb_visits > 0
+name: beneficiaires_actifs
+notes: Pour segmenter rural/urbain, joindre sur user_id vers global_user_beneficiary et filtrer sur user_macro_density_label.
+  Pour DAU/MAU, agréger firebase_visits par jour/mois.
+synonyms:
+- utilisateurs actifs
+- WAU
+- bénéficiaires connectés
+- active users
+table_name: aggregated_weekly_user_data
+table_schema: analytics_prod
+unit: bénéficiaires

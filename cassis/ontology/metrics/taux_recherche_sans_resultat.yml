@@ -1,0 +1,13 @@
+description: Part des sessions de recherche ayant produit au moins une itération sans résultat.
+display_name: Taux de recherches sans résultat
+domain_path: tracking/natif
+expression: SAFE_DIVIDE(COUNTIF(total_searches_with_no_result > 0), COUNT(*))
+name: taux_recherche_sans_resultat
+notes: Indicateur de qualité du catalogue et de la pertinence du moteur de recherche. Segmentable par search_type et query_input.
+synonyms:
+- recherches vides
+- zero results rate
+- taux d'échec recherche
+table_name: firebase_aggregated_search_events
+table_schema: analytics_prod
+unit: '%'

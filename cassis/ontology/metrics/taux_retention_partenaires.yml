@@ -1,0 +1,16 @@
+description: Part des partenaires culturels classés 'active' parmi l'ensemble des partenaires ayant eu une activité passée.
+  Basé sur la segmentation active/at_risk/churned de enriched_partner_retention_data. Un partenaire est 'active' s'il a créé
+  au moins une offre réservable dans la fenêtre définie par son groupe de fréquence (cultural_sector_bookability_frequency).
+display_name: Taux de rétention des partenaires culturels
+domain_path: core/partenaires-culturels
+expression: SAFE_DIVIDE(COUNTIF(partner_segmentation = 'active'), COUNT(*))
+name: taux_retention_partenaires
+notes: Segmentation disponible par cultural_sector (secteur culturel) et partner_type (type de partenaire). Le dénominateur
+  exclut les partenaires n'ayant jamais eu d'offre réservable.
+synonyms:
+- rétention pro
+- churn partenaires
+- fidélisation partenaires
+table_name: enriched_partner_retention_data
+table_schema: analytics_prod
+unit: ratio

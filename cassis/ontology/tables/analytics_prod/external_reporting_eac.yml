@@ -1,0 +1,47 @@
+columns:
+- data_type: date
+  description: Premier jour du mois auquel se rapporte le KPI.
+  name: partition_month
+  nullable: false
+  ordinal: 0
+- data_type: datetime
+  description: Date effective du rafraichissement des donnees.
+  name: updated_at
+  ordinal: 1
+- data_type: string
+  description: 'Agregation geographique du KPI : national, regional ou departemental.'
+  name: dimension_name
+  nullable: false
+  ordinal: 2
+- data_type: string
+  description: Nom de l'agregation geographique (nom de la region ou du département), si applicable.
+  name: dimension_value
+  ordinal: 3
+- data_type: string
+  description: Nom du KPI.
+  name: kpi_name
+  nullable: false
+  ordinal: 4
+- data_type: number
+  description: Numerateur du KPI calculé.
+  name: numerator
+  nullable: false
+  ordinal: 5
+- data_type: number
+  description: Denominateur du KPI calculé.
+  name: denominator
+  nullable: false
+  ordinal: 6
+- data_type: number
+  description: Valeur du KPI, egale au numerateur divise par le denominateur.
+  name: kpi
+  nullable: false
+  ordinal: 7
+description: KPIs globaux du volet collectif EAC au format pivot institutionnel (dimension_name/dimension_value/kpi_name).
+domain_path: reporting/institutionnel/eac
+grain:
+- Une ligne par mois × dimension × KPI (partition_month, dimension_name, kpi_name)
+schema_name: analytics_prod
+synonyms:
+- KPI EAC global
+table_name: external_reporting_eac

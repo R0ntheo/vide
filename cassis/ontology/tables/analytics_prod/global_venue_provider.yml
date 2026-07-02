@@ -1,0 +1,91 @@
+columns:
+- data_type: string
+  description: Identifiant unique du fournisseur de synchronisation.
+  name: provider_id
+  ordinal: 0
+- data_type: string
+  description: Nom du fournisseur de synchronisation.
+  name: provider_name
+  ordinal: 1
+- data_type: boolean
+  description: Indiqué si le fournisseur de synchronisation est actuellement actif (possède des synchronisations actives).
+  name: provider_is_active
+  ordinal: 2
+- data_type: boolean
+  description: Indiqué si la synchronisation entre ce lieu et ce fournisseur spécifique est actuellement active.
+  name: venue_provider_is_active
+  ordinal: 3
+- data_type: string
+  description: Identifiant unique du lieu.
+  name: venue_id
+  ordinal: 4
+- data_type: datetime
+  description: Date de la dernière synchronisation entre le lieu et le fournisseur.
+  name: last_sync_date
+  ordinal: 5
+- data_type: datetime
+  description: Date de création de la synchronisation entre le lieu et le fournisseur.
+  name: creation_date
+  ordinal: 6
+- data_type: string
+  description: Nom du lieu.
+  name: venue_name
+  ordinal: 7
+- data_type: string
+  description: Code du département du lieu.
+  name: venue_department_code
+  ordinal: 8
+- data_type: string
+  description: Nom du département du lieu.
+  name: venue_department_name
+  ordinal: 9
+- data_type: datetime
+  description: Date de création du lieu sur l'application.
+  name: venue_creation_date
+  ordinal: 10
+- data_type: boolean
+  description: Indiqué si le lieu est permanent (peut accueillir le public en continu, proposer des offres et est géré par
+    le partenaire culturel).
+  name: venue_is_permanent
+  ordinal: 11
+- data_type: string
+  description: Label du lieu, attribué par le Ministère comme gage de qualité dans sa catégorie.
+  name: venue_label
+  ordinal: 12
+- data_type: string
+  description: URL externe du fournisseur pour la gestion des réservations.
+  name: booking_external_url
+  ordinal: 13
+- data_type: string
+  description: URL externe du fournisseur pour la gestion des annulations de réservation.
+  name: cancel_external_url
+  ordinal: 14
+- data_type: string
+  description: URL externe du fournisseur pour les notifications.
+  name: notification_external_url
+  ordinal: 15
+- data_type: number
+  description: Nombre total d'offres individuelles.
+  name: total_individual_offers
+  ordinal: 16
+- data_type: number
+  description: Nombre total d'offres collectives.
+  name: total_collective_offers
+  ordinal: 17
+- data_type: date
+  description: Date de création de la première offre individuelle.
+  name: first_individual_offer_creation_date
+  ordinal: 18
+- data_type: date
+  description: Date de création de la première offre collective.
+  name: first_collective_offer_creation_date
+  ordinal: 19
+description: Fournisseurs de données synchronisés avec les lieux (Allociné, Fnac, Titelive, etc.) — source et statut de synchronisation.
+domain_path: core/partenaires-culturels
+grain:
+- Une ligne par provider (provider_id)
+schema_name: analytics_prod
+synonyms:
+- synchronisation lieu
+- provider technique
+table_name: global_venue_provider

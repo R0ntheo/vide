@@ -1,0 +1,176 @@
+columns:
+- data_type: string
+  description: Identifiant unique de la recherche.
+  name: unique_search_id
+  ordinal: 0
+  source: manual
+- data_type: string
+  description: Identifiant unique de la session.
+  name: unique_session_id
+  ordinal: 1
+  source: manual
+- data_type: string
+  description: Identifiant du bénéficiaire.
+  name: user_id
+  ordinal: 2
+  source: manual
+- data_type: date
+  description: Date de la recherche.
+  name: first_date
+  ordinal: 3
+  source: manual
+- data_type: datetime
+  description: Horodatage de la recherche.
+  name: first_timestamp
+  ordinal: 4
+  source: manual
+- data_type: string
+  description: Version de l'application.
+  name: app_version
+  ordinal: 5
+  source: manual
+- data_type: string
+  description: Texte saisi par l'utilisateur.
+  name: query_input
+  ordinal: 6
+  source: manual
+- data_type: string
+  description: Type de recherche effectuée.
+  name: search_type
+  ordinal: 7
+  source: manual
+- data_type: string
+  description: Filtre de date appliqué.
+  name: search_date_filter
+  ordinal: 8
+  source: manual
+- data_type: string
+  description: Filtre de localisation appliqué.
+  name: search_location_filter
+  ordinal: 9
+  source: manual
+- data_type: string
+  description: Filtre de catégorie appliqué.
+  name: search_categories_filter
+  ordinal: 10
+  source: manual
+- data_type: string
+  description: Filtre de genre appliqué.
+  name: search_genre_types_filter
+  ordinal: 11
+  source: manual
+- data_type: string
+  description: Filtre de prix maximum appliqué.
+  name: search_max_price_filter
+  ordinal: 12
+  source: manual
+- data_type: number
+  description: Indique si l'autocomplétion a été utilisée.
+  name: search_is_autocomplete
+  ordinal: 13
+  source: manual
+- data_type: number
+  description: Indique si la recherche est basée sur l'historique.
+  name: search_is_based_on_history
+  ordinal: 14
+  source: manual
+- data_type: number
+  description: Indique si le filtre duo est activé.
+  name: search_offer_is_duo_filter
+  ordinal: 15
+  source: manual
+- data_type: string
+  description: Filtre de catégorie native appliqué.
+  name: search_native_categories_filter
+  ordinal: 16
+  source: manual
+- data_type: string
+  description: Filtre d'accessibilité appliqué.
+  name: search_accessibility_filter
+  ordinal: 17
+  source: manual
+- data_type: string
+  description: Type de localisation utilisateur (GPS, manuel, etc.).
+  name: user_location_type
+  ordinal: 18
+  source: manual
+- data_type: string
+  description: Premier filtre appliqué dans la recherche.
+  name: first_filter_applied
+  ordinal: 19
+  source: manual
+- data_type: number
+  description: Nombre total d'offres consultées depuis cette recherche.
+  name: total_offers_consulted
+  ordinal: 20
+  source: manual
+- data_type: number
+  description: Nombre total d'offres mises en favori.
+  name: total_offers_added_to_favorites
+  ordinal: 21
+  source: manual
+- data_type: number
+  description: Nombre de recherches sans résultat dans cette session.
+  name: total_searches_with_no_result
+  ordinal: 22
+  source: manual
+- data_type: number
+  description: Nombre total d'itérations de recherche.
+  name: total_search_iterations
+  ordinal: 23
+  source: manual
+- data_type: number
+  description: Nombre de playlists de lieux affichées dans les résultats.
+  name: total_venue_playlists_displayed_in_search
+  ordinal: 24
+  source: manual
+- data_type: number
+  description: Nombre de lieux consultés depuis la recherche.
+  name: total_venues_consulted
+  ordinal: 25
+  source: manual
+- data_type: number
+  description: Nombre d'artistes consultés depuis la recherche.
+  name: total_artists_consulted
+  ordinal: 26
+  source: manual
+- data_type: boolean
+  description: Indique si le rayon de recherche a été étendu.
+  name: has_extended_search_radius
+  ordinal: 27
+  source: manual
+- data_type: boolean
+  description: Indique si l'utilisateur a fait une autre recherche dans la session.
+  name: made_another_search
+  ordinal: 28
+  source: manual
+- data_type: boolean
+  description: Indique si la requête de recherche est générique (non spécifique).
+  name: search_query_input_is_generic
+  ordinal: 29
+  source: manual
+- data_type: number
+  description: Nombre total d'offres réservées depuis cette recherche.
+  name: total_offers_booked
+  ordinal: 30
+  source: manual
+- data_type: number
+  description: Score de diversification total des actions.
+  name: total_diversification
+  ordinal: 31
+  source: manual
+- data_type: string
+  description: 'Classification de l''objectif : spécifique ou découverte.'
+  name: search_objective
+  ordinal: 32
+  source: manual
+description: 'Comportement de recherche dans l''app native : texte saisi, filtres appliqués (catégorie, date, prix, localisation,
+  accessibilité), et métriques de conversion (offres consultées, mises en favori, réservées).'
+domain_path: tracking/natif
+grain:
+- Une ligne par session de recherche (unique_search_id)
+schema_name: analytics_prod
+synonyms:
+- recherche app
+- funnel recherche
+table_name: firebase_aggregated_search_events

@@ -1,0 +1,44 @@
+columns:
+- data_type: string
+  description: Identifiant unique du mapping entre une structure et une adresse ou elle a créé des offres.
+  name: offerer_address_id
+  nullable: false
+  ordinal: 0
+- data_type: string
+  description: Libelle de l'adresse.
+  name: offerer_address_label
+  ordinal: 1
+- data_type: string
+  description: Identifiant unique de l'adresse.
+  name: address_id
+  nullable: false
+  ordinal: 2
+- data_type: string
+  description: Identifiant unique de la structure.
+  name: offerer_id
+  ordinal: 3
+- data_type: string
+  description: Nom de la rue de l'adresse.
+  name: address_street
+  ordinal: 4
+- data_type: string
+  description: Code postal de l'adresse.
+  name: address_postal_code
+  ordinal: 5
+- data_type: string
+  description: Ville de l'adresse.
+  name: address_city
+  ordinal: 6
+- data_type: string
+  description: Code de département de l'adresse.
+  name: address_department_code
+  ordinal: 7
+description: Adresses associées aux structures juridiques — lien structure-adresse avec coordonnées.
+domain_path: core/partenaires-culturels
+grain:
+- Une ligne par combinaison (offerer_address_id, address_id)
+schema_name: analytics_prod
+synonyms:
+- adresse structure
+- siège social
+table_name: global_offerer_address

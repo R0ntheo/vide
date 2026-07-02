@@ -1,0 +1,52 @@
+columns:
+- data_type: date
+  description: Mois d'observation.
+  name: partition_month
+  ordinal: 1
+  source: manual
+- data_type: string
+  description: Nom de la région de résidence.
+  name: region_name
+  ordinal: 2
+  source: manual
+- data_type: number
+  description: Code de la région de résidence.
+  name: region_code
+  ordinal: 3
+  source: manual
+- data_type: string
+  description: Nom du département de résidence.
+  name: department_name
+  ordinal: 4
+  source: manual
+- data_type: string
+  description: Code du département de résidence.
+  name: department_code
+  ordinal: 5
+  source: manual
+- data_type: number
+  description: Âge jalon au moment de l'activation du crédit (16, 17, 18, 19, 20).
+  name: milestone_age
+  ordinal: 6
+  source: manual
+- data_type: number
+  description: Bénéficiaires crédités sur les 12 derniers mois glissants. Perturbé.
+  name: total_beneficiaries_last_12_months
+  ordinal: 7
+  source: manual
+- data_type: number
+  description: Clé de perturbation statistique pour total_beneficiaries.
+  name: cell_key_beneficiaries
+  ordinal: 8
+  source: manual
+description: 'Numérateur du taux de couverture : nombre de bénéficiaires crédités sur 12 mois glissants, par département et
+  âge jalon. À joindre avec metrics_population_coverage pour calculer le taux.'
+domain_path: reporting/indicateurs-cles
+grain:
+- Une ligne par mois × département × âge jalon (partition_month, department_code, milestone_age)
+schema_name: metrics_prod
+synonyms:
+- couverture bénéficiaires
+- numérateur couverture
+- taux activation
+table_name: metrics_beneficiary_coverage

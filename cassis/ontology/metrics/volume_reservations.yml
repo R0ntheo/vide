@@ -1,0 +1,13 @@
+description: Volume des réservations individuelles validées (non annulées).
+display_name: Nombre de réservations individuelles
+domain_path: core/reservations
+expression: COUNT(DISTINCT booking_id)
+filters: booking_is_cancelled IS FALSE
+name: volume_reservations
+synonyms:
+- réservations
+- bookings
+- nombre de réservations
+table_name: global_booking
+table_schema: analytics_prod
+unit: count

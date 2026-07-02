@@ -1,0 +1,265 @@
+columns:
+- data_type: string
+  description: Identifiant unique du lieu sous-jacent au partenaire culturel.
+  name: venue_id
+  ordinal: 0
+  source: manual
+- data_type: string
+  description: Identifiant unique de la structure (offerer) a laquelle appartient le partenaire.
+  name: offerer_id
+  ordinal: 1
+  source: manual
+- data_type: string
+  description: Identifiant unique du partenaire culturel.
+  name: partner_id
+  nullable: false
+  ordinal: 2
+  source: manual
+- data_type: datetime
+  description: Date de creation du partenaire culturel (correspond a la date de creation du lieu ou de la structure).
+  name: partner_creation_date
+  ordinal: 3
+  source: manual
+- data_type: boolean
+  description: Booleen analytique indiquant si le partenaire etait inscrit au moins un an avant la date courante.
+  name: was_registered_last_year
+  ordinal: 4
+  source: manual
+- data_type: string
+  description: Nom du partenaire culturel.
+  name: partner_name
+  ordinal: 5
+  source: manual
+- data_type: string
+  description: Nom de l'academie (Education nationale) associée au partenaire culturel.
+  name: partner_academy_name
+  ordinal: 6
+  source: manual
+- data_type: string
+  description: Nom de la region ou se situe le partenaire culturel.
+  name: partner_region_name
+  ordinal: 7
+  source: manual
+- data_type: string
+  description: Code du département ou se situe le partenaire culturel.
+  name: partner_department_code
+  ordinal: 8
+  source: manual
+- data_type: string
+  description: Nom du département ou se situe le partenaire culturel.
+  name: partner_department_name
+  ordinal: 9
+  source: manual
+- data_type: string
+  description: Nom de l'EPCI (Établissement Public de Cooperation Intercommunale) ou se situe le partenaire culturel.
+  name: partner_epci
+  ordinal: 10
+  source: manual
+  synonyms:
+  - intercommunalite
+- data_type: string
+  description: Code de l'EPCI ou se situe le partenaire culturel.
+  name: partner_epci_code
+  ordinal: 11
+  source: manual
+- data_type: string
+  description: Nom de la ville ou se situe le partenaire culturel.
+  name: partner_city
+  ordinal: 12
+  source: manual
+  synonyms:
+  - commune
+- data_type: string
+  description: Code commune (INSEE) du partenaire culturel.
+  name: partner_city_code
+  ordinal: 13
+  source: manual
+  synonyms:
+  - code INSEE
+- data_type: string
+  description: Code postal du partenaire culturel.
+  name: partner_postal_code
+  ordinal: 14
+  source: manual
+- data_type: string
+  description: Type du partenaire culturel, derive du type de lieu ou des tags lieu/structure.
+  name: partner_type
+  ordinal: 15
+  source: manual
+- data_type: string
+  description: Origine de la classification du type de partenaire, indiquant si elle provient des types de lieu, des tags
+    lieu ou des tags structure.
+  name: partner_type_origin
+  ordinal: 16
+  source: manual
+- data_type: string
+  description: Secteur culturel associé au type de partenaire.
+  name: cultural_sector
+  ordinal: 17
+  source: manual
+- data_type: datetime
+  description: Date a laquelle la structure a ete acceptee dans le système DMS (Demarches Simplifiees).
+  name: dms_accepted_at
+  ordinal: 18
+  source: manual
+- data_type: string
+  description: Premier statut DMS ADAGE de la structure.
+  name: first_dms_adage_status
+  ordinal: 19
+  source: manual
+- data_type: boolean
+  description: Indiqué si la structure est referencee dans ADAGE.
+  name: is_reference_adage
+  ordinal: 20
+  source: manual
+- data_type: boolean
+  description: Indiqué si la structure est synchronisee avec ADAGE.
+  name: is_synchro_adage
+  ordinal: 21
+  source: manual
+- data_type: boolean
+  description: Champ analytique indiquant si le partenaire a eu de l'activite dans les 30 derniers jours.
+  name: is_active_last_30days
+  ordinal: 22
+  source: manual
+- data_type: boolean
+  description: Champ analytique indiquant si le partenaire a eu de l'activite durant l'annee en cours.
+  name: is_active_current_year
+  ordinal: 23
+  source: manual
+- data_type: boolean
+  description: Champ analytique indiquant si le partenaire a eu de l'activite individuelle dans les 30 derniers jours.
+  name: is_individual_active_last_30days
+  ordinal: 24
+  source: manual
+- data_type: boolean
+  description: Champ analytique indiquant si le partenaire a eu de l'activite individuelle durant l'annee en cours.
+  name: is_individual_active_current_year
+  ordinal: 25
+  source: manual
+- data_type: boolean
+  description: Champ analytique indiquant si le partenaire a eu de l'activite collective dans les 30 derniers jours.
+  name: is_collective_active_last_30days
+  ordinal: 26
+  source: manual
+- data_type: boolean
+  description: Champ analytique indiquant si le partenaire a eu de l'activite collective durant l'annee en cours.
+  name: is_collective_active_current_year
+  ordinal: 27
+  source: manual
+- data_type: number
+  description: Nombre total d'offres individuelles créées par le partenaire.
+  name: total_created_individual_offers
+  ordinal: 28
+  source: manual
+- data_type: number
+  description: Nombre total d'offres collectives créées par le partenaire.
+  name: total_created_collective_offers
+  ordinal: 29
+  source: manual
+- data_type: number
+  description: Nombre total d'offres créées, individuelles et collectives confondues.
+  name: total_created_offers
+  ordinal: 30
+  source: manual
+- data_type: date
+  description: Date de creation de la première offre du partenaire.
+  name: first_offer_creation_date
+  ordinal: 31
+  source: manual
+- data_type: date
+  description: Date de creation de la première offre individuelle du partenaire.
+  name: first_individual_offer_creation_date
+  ordinal: 32
+  source: manual
+- data_type: date
+  description: Date de creation de la première offre collective du partenaire.
+  name: first_collective_offer_creation_date
+  ordinal: 33
+  source: manual
+- data_type: date
+  description: Date de la dernière offre réservable du partenaire.
+  name: last_bookable_offer_date
+  ordinal: 34
+  source: manual
+- data_type: date
+  description: Date de la première offre réservable du partenaire.
+  name: first_bookable_offer_date
+  ordinal: 35
+  source: manual
+- data_type: date
+  description: Date de la première offre individuelle réservable du partenaire.
+  name: first_individual_bookable_offer_date
+  ordinal: 36
+  source: manual
+- data_type: date
+  description: Date de la dernière offre individuelle réservable du partenaire.
+  name: last_individual_bookable_offer_date
+  ordinal: 37
+  source: manual
+- data_type: date
+  description: Date de la première offre collective réservable du partenaire.
+  name: first_collective_bookable_offer_date
+  ordinal: 38
+  source: manual
+- data_type: date
+  description: Date de la dernière offre collective réservable du partenaire.
+  name: last_collective_bookable_offer_date
+  ordinal: 39
+  source: manual
+- data_type: number
+  description: Nombre total de réservations individuelles non annulees du partenaire.
+  name: total_non_cancelled_individual_bookings
+  ordinal: 40
+  source: manual
+- data_type: number
+  description: Nombre total de réservations individuelles utilisees du partenaire.
+  name: total_used_individual_bookings
+  ordinal: 41
+  source: manual
+- data_type: number
+  description: Nombre total de réservations collectives non annulees du partenaire.
+  name: total_non_cancelled_collective_bookings
+  ordinal: 42
+  source: manual
+- data_type: number
+  description: Nombre total de réservations collectives utilisees du partenaire.
+  name: total_used_collective_bookings
+  ordinal: 43
+  source: manual
+- data_type: number
+  description: Revenu réel total des réservations individuelles du partenaire.
+  name: total_individual_real_revenue
+  ordinal: 44
+  source: manual
+  unit: €
+- data_type: number
+  description: Revenu réel total des réservations collectives du partenaire.
+  name: total_collective_real_revenue
+  ordinal: 45
+  source: manual
+  unit: €
+- data_type: number
+  description: Revenu réel total de toutes les réservations du partenaire (individuelles + collectives).
+  name: total_real_revenue
+  ordinal: 46
+  source: manual
+  synonyms:
+  - chiffre d'affaires
+  unit: €
+- data_type: string
+  description: Statut du partenaire culturel indiquant s'il s'agit d'un lieu permanent (ERP) ou non.
+  name: partner_status
+  ordinal: 47
+  source: manual
+description: Concept intermédiaire entre lieu et structure, créé pour mieux suivre l'activite des institutions et entreprises
+  culturelles inscrites au pass Culture.
+domain_path: core/partenaires-culturels
+grain:
+- Une ligne par lieu (venue_id)
+schema_name: analytics_prod
+synonyms:
+- partenaire
+- acteur culturel
+- institution culturelle
+table_name: global_cultural_partner

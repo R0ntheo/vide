@@ -1,0 +1,16 @@
+description: Part des bénéficiaires résidant en Quartier Prioritaire de la Politique de la Ville, par date d'octroi du premier
+  crédit.
+display_name: Part des inscrits résidant en QPV
+domain_path: core/beneficiaires
+expression: SAFE_DIVIDE(COUNTIF(user_is_in_qpv), COUNT(DISTINCT user_id))
+name: part_inscrits_qpv
+notes: 'Adresse déclarative à l''inscription. Seuls les bénéficiaires ayant renseigné une adresse sont comptés. Population
+  15-24 ans en QPV : ~772k / 8,2M (~9,4%).'
+precomputed_in: external_reporting_individual
+synonyms:
+- QPV
+- quartiers prioritaires
+- publics prioritaires QPV
+table_name: global_user_beneficiary
+table_schema: analytics_prod
+unit: '%'

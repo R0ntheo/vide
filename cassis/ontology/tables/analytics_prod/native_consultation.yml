@@ -1,0 +1,173 @@
+columns:
+- data_type: string
+  description: Identifiant unique de l'événement de consultation.
+  name: consultation_id
+  nullable: false
+  ordinal: 0
+- data_type: date
+  description: Date à laquelle la consultation a eu lieu.
+  name: consultation_date
+  ordinal: 1
+- data_type: string
+  description: Origine de l'événement, indiquant d'où il a été déclenché.
+  name: origin
+  ordinal: 2
+- data_type: string
+  description: Identifiant unique de l'offre.
+  name: offer_id
+  ordinal: 3
+- data_type: string
+  description: Identifiant unique de l'utilisateur.
+  name: user_id
+  ordinal: 4
+- data_type: string
+  description: Identifiant unique de la session, sans doublon.
+  name: unique_session_id
+  ordinal: 5
+- data_type: number
+  description: Incrément du score de découverte lié à la découverte d'un nouvel item_id (1 si l'utilisateur consulte une nouvelle
+    offre, 0 sinon).
+  name: item_discovery_score
+  ordinal: 6
+- data_type: number
+  description: Incrément du score de découverte lié à la découverte d'une nouvelle sous-catégorie (1 si l'utilisateur consulte
+    une offre d'une nouvelle sous-catégorie, 0 sinon).
+  name: subcategory_discovery_score
+  ordinal: 7
+- data_type: number
+  description: Incrément du score de découverte lié à la découverte d'une nouvelle catégorie culturelle (1 si l'utilisateur
+    consulte une offre d'une nouvelle catégorie, 0 sinon).
+  name: category_discovery_score
+  ordinal: 8
+- data_type: string
+  description: Identifiant de l'item associé à l'offre, utilisé en interne par l'équipe data science.
+  name: item_id
+  ordinal: 9
+- data_type: string
+  description: Identifiant de la sous-catégorie de l'offre, choisi par le partenaire culturel parmi une liste prédéfinie.
+  name: offer_subcategory_id
+  ordinal: 10
+- data_type: string
+  description: Identifiant de la catégorie de l'offre, choisi par le partenaire culturel parmi une liste prédéfinie.
+  name: offer_category_id
+  ordinal: 11
+- data_type: string
+  description: Nom de l'offre tel qu'il apparaît dans l'application.
+  name: offer_name
+  ordinal: 12
+- data_type: string
+  description: Identifiant unique du lieu.
+  name: venue_id
+  ordinal: 13
+- data_type: string
+  description: Nom du lieu.
+  name: venue_name
+  ordinal: 14
+- data_type: string
+  description: Type du lieu ('Musée', 'Cinéma', 'Librairie'…), sélectionné par le partenaire culturel lors de l'inscription.
+  name: venue_type_label
+  ordinal: 15
+- data_type: string
+  description: Identifiant unique du partenaire culturel.
+  name: partner_id
+  ordinal: 16
+- data_type: string
+  description: Identifiant unique de la structure.
+  name: offerer_id
+  ordinal: 17
+- data_type: string
+  description: Nom de la région de l'adresse déclarée de l'utilisateur.
+  name: user_region_name
+  ordinal: 18
+- data_type: string
+  description: Code du département de l'adresse déclarée de l'utilisateur.
+  name: user_department_code
+  ordinal: 19
+- data_type: string
+  description: Activité déclarée de l'utilisateur (étudiant, apprenti, sans emploi…), renseignée lors du premier dépôt de
+    crédit et mise à jour lors de la demande de GRANT_18.
+  name: user_activity
+  ordinal: 20
+- data_type: boolean
+  description: Indiqué si l'utilisateur est considéré comme un public prioritaire pass Culture (zone rurale, QPV ou sans formation).
+  name: user_is_priority_public
+  ordinal: 21
+- data_type: boolean
+  description: Indiqué si l'utilisateur est sans emploi selon son activité déclarée.
+  name: user_is_unemployed
+  ordinal: 22
+- data_type: boolean
+  description: Indiqué si l'utilisateur est en formation (collégien, lycéen, étudiant, apprenti, alternant).
+  name: user_is_in_education
+  ordinal: 23
+- data_type: boolean
+  description: Indiqué si l'adresse déclarée de l'utilisateur se situe dans un QPV.
+  name: user_is_in_qpv
+  ordinal: 24
+- data_type: string
+  description: Catégorie macroscopique de densité de l'adresse déclarée de l'utilisateur.
+  name: user_macro_density_label
+  ordinal: 25
+- data_type: string
+  description: Canal de la campagne marketing ayant généré la session (email, notification push…).
+  name: traffic_medium
+  ordinal: 26
+- data_type: string
+  description: Nom de la campagne marketing ayant généré la session.
+  name: traffic_campaign
+  ordinal: 27
+- data_type: string
+  description: Source de la campagne marketing ayant généré la session (Instagram, Snapchat…).
+  name: traffic_source
+  ordinal: 28
+- data_type: string
+  description: Identifiant du module associé à la consultation.
+  name: module_id
+  ordinal: 29
+- data_type: string
+  description: Identifiant de l'entrée associée à la consultation.
+  name: entry_id
+  ordinal: 30
+- data_type: string
+  description: Nom de la page d'accueil associée à la consultation.
+  name: home_name
+  ordinal: 31
+- data_type: string
+  description: Type d'audience de la page d'accueil.
+  name: home_audience
+  ordinal: 32
+- data_type: string
+  description: Étape du cycle de vie de l'utilisateur par rapport à la page d'accueil.
+  name: user_lifecycle_home
+  ordinal: 33
+- data_type: number
+  description: Score de découverte total, somme de item_discovery_score, subcategory_discovery_score et category_discovery_score.
+  name: discovery_score
+  ordinal: 34
+- data_type: boolean
+  description: Indiqué si une catégorie a été découverte lors de la consultation.
+  name: is_category_discovered
+  ordinal: 35
+- data_type: boolean
+  description: Indiqué si une sous-catégorie a été découverte lors de la consultation.
+  name: is_subcategory_discovered
+  ordinal: 36
+- data_type: string
+  description: Origine macroscopique de la consultation (recherche, accueil, offre similaire, deeplink…).
+  name: consultation_macro_origin
+  ordinal: 37
+- data_type: string
+  description: Origine détaillée de la consultation (type d'accueil, type de recherche, origine de la consultation de lieu
+    depuis une offre…).
+  name: consultation_micro_origin
+  ordinal: 38
+description: Consultations détaillées d'offres sur l'app native — parcours de découverte, contexte utilisateur, source de
+  navigation.
+domain_path: tracking/natif
+grain:
+- Une ligne par consultation d'offre (consultation_id)
+schema_name: analytics_prod
+synonyms:
+- consultation offre
+- fiche offre vue
+table_name: native_consultation

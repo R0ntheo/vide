@@ -1,0 +1,444 @@
+columns:
+- data_type: string
+  description: Identifiant unique de la réservation.
+  name: booking_id
+  nullable: false
+  ordinal: 0
+  source: manual
+- data_type: date
+  description: Date (jour) de création de la réservation.
+  name: booking_creation_date
+  ordinal: 1
+  source: manual
+- data_type: datetime
+  description: Horodatage précis de la création de la réservation.
+  name: booking_created_at
+  ordinal: 2
+  source: manual
+- data_type: number
+  description: Quantité d'offre réservée.
+  name: booking_quantity
+  ordinal: 3
+  source: manual
+- data_type: number
+  description: Montant de la réservation pour une quantité.
+  name: booking_amount
+  ordinal: 4
+  source: manual
+  unit: €
+- data_type: string
+  description: Statut actuel de la réservation.
+  name: booking_status
+  ordinal: 5
+  source: manual
+- data_type: boolean
+  description: Indiqué si la réservation est annulée.
+  name: booking_is_cancelled
+  ordinal: 6
+  source: manual
+- data_type: boolean
+  description: Indiqué si la réservation a été consommée.
+  name: booking_is_used
+  ordinal: 7
+  source: manual
+- data_type: datetime
+  description: Date d'annulation de la réservation.
+  name: booking_cancellation_date
+  ordinal: 8
+  source: manual
+- data_type: string
+  description: Raison de l'annulation de la réservation.
+  name: booking_cancellation_reason
+  ordinal: 9
+  source: manual
+- data_type: string
+  description: Identifiant unique du bénéficiaire ayant effectué la réservation.
+  name: user_id
+  nullable: false
+  ordinal: 10
+  source: manual
+- data_type: number
+  description: Âge du bénéficiaire au moment de la réservation, calculé comme DATE_DIFF(booking_creation_date, user_birth_date).
+    Valeur figée — ne change pas dans le temps. Utiliser ce champ (et non user_age) pour toute analyse de réservations par
+    âge.
+  name: user_age_at_booking
+  ordinal: 11
+  source: manual
+- data_type: string
+  description: Identifiant unique du crédit utilisé pour cette réservation.
+  name: deposit_id
+  nullable: false
+  ordinal: 12
+  source: manual
+- data_type: string
+  description: Type du crédit utilisé pour cette réservation.
+  name: deposit_type
+  ordinal: 13
+  source: manual
+- data_type: string
+  description: Catégorie de réforme du crédit, permettant de distinguer les bénéficiaires avant et après la réforme.
+  name: deposit_reform_category
+  ordinal: 14
+  source: manual
+- data_type: boolean
+  description: Indiqué si le montant de la réservation a été remboursé au partenaire.
+  name: reimbursed
+  ordinal: 15
+  source: manual
+- data_type: number
+  description: Montant de la réservation multiplié par la quantité. Utilisé pour calculer le chiffre d'affaires.
+  name: booking_intermediary_amount
+  ordinal: 16
+  source: manual
+  synonyms:
+  - montant CA
+  unit: €
+- data_type: number
+  description: Rang de la réservation dans l'historique global de l'utilisateur.
+  name: booking_rank
+  ordinal: 17
+  source: manual
+- data_type: datetime
+  description: Date à laquelle la réservation a été consommée.
+  name: booking_used_date
+  ordinal: 18
+  source: manual
+- data_type: string
+  description: Type de recrédit associé à la réservation, liant une réservation à une cohorte d'utilisateurs spécifique.
+  name: booking_used_recredit_type
+  ordinal: 19
+  source: manual
+- data_type: datetime
+  description: Horodatage du début de l'événement. Renseigné uniquement pour les offres de type événement.
+  name: stock_beginning_date
+  ordinal: 20
+  source: manual
+- data_type: string
+  description: Identifiant unique du stock.
+  name: stock_id
+  nullable: false
+  ordinal: 21
+  source: manual
+- data_type: string
+  description: Identifiant unique de l'offre réservée.
+  name: offer_id
+  nullable: false
+  ordinal: 22
+  source: manual
+- data_type: string
+  description: Nom de l'offre tel qu'il apparaît dans l'application.
+  name: offer_name
+  ordinal: 23
+  source: manual
+- data_type: string
+  description: Nom du lieu culturel.
+  name: venue_name
+  ordinal: 24
+  source: manual
+- data_type: string
+  description: Label du lieu, attribué par le Ministère comme gage de qualité dans sa catégorie.
+  name: venue_label
+  ordinal: 25
+  source: manual
+- data_type: string
+  description: Type du lieu (Musée, Cinéma, Librairie, etc.).
+  name: venue_type_label
+  ordinal: 26
+  source: manual
+- data_type: string
+  description: Identifiant unique du lieu culturel.
+  name: venue_id
+  nullable: false
+  ordinal: 27
+  source: manual
+- data_type: string
+  description: Code postal du lieu culturel.
+  name: venue_postal_code
+  ordinal: 28
+  source: manual
+- data_type: string
+  description: Code du département du lieu culturel.
+  name: venue_department_code
+  ordinal: 29
+  source: manual
+- data_type: string
+  description: Nom du département du lieu culturel.
+  name: venue_department_name
+  ordinal: 30
+  source: manual
+- data_type: string
+  description: Nom de la région du lieu culturel.
+  name: venue_region_name
+  ordinal: 31
+  source: manual
+- data_type: string
+  description: Ville du lieu culturel.
+  name: venue_city
+  ordinal: 32
+  source: manual
+- data_type: string
+  description: Code commune du lieu culturel.
+  name: venue_city_code
+  ordinal: 33
+  source: manual
+- data_type: string
+  description: Nom de l'EPCI du lieu culturel.
+  name: venue_epci
+  ordinal: 34
+  source: manual
+- data_type: string
+  description: Code EPCI du lieu culturel.
+  name: venue_epci_code
+  ordinal: 35
+  source: manual
+- data_type: string
+  description: Libellé de densité détaillé du lieu culturel.
+  name: venue_density_label
+  ordinal: 36
+  source: manual
+- data_type: string
+  description: Libellé de densité macro du lieu culturel (urbain, rural).
+  name: venue_macro_density_label
+  ordinal: 37
+  source: manual
+- data_type: number
+  description: Niveau de densité du lieu culturel.
+  name: venue_density_level
+  ordinal: 38
+  source: manual
+- data_type: string
+  description: Nom de l'académie du lieu culturel.
+  name: venue_academy_name
+  ordinal: 39
+  source: manual
+- data_type: boolean
+  description: Indiqué si le lieu est permanent (peut accueillir du public en continu et proposer des offres).
+  name: venue_is_permanent
+  ordinal: 40
+  source: manual
+- data_type: string
+  description: Identifiant unique de la structure (offerer).
+  name: offerer_id
+  nullable: false
+  ordinal: 41
+  source: manual
+- data_type: string
+  description: Nom de la structure (offerer).
+  name: offerer_name
+  ordinal: 42
+  source: manual
+- data_type: boolean
+  description: Indiqué si la structure est une collectivité territoriale.
+  name: is_local_authority
+  ordinal: 43
+  source: manual
+- data_type: string
+  description: Identifiant unique du partenaire culturel.
+  name: partner_id
+  ordinal: 44
+  source: manual
+- data_type: string
+  description: Identifiant de la sous-catégorie de l'offre, déterminé par le partenaire culturel.
+  name: offer_subcategory_id
+  nullable: false
+  ordinal: 45
+  source: manual
+- data_type: boolean
+  description: Indiqué si l'offre est un bien physique.
+  name: physical_goods
+  ordinal: 46
+  source: manual
+- data_type: boolean
+  description: Indiqué si l'offre est un bien numérique.
+  name: digital_goods
+  ordinal: 47
+  source: manual
+- data_type: boolean
+  description: Indiqué si l'offre est un événement.
+  name: event
+  ordinal: 48
+  source: manual
+  synonyms:
+  - sortie
+- data_type: string
+  description: Identifiant de la catégorie de l'offre, déterminé par le partenaire culturel.
+  name: offer_category_id
+  nullable: false
+  ordinal: 49
+  source: manual
+- data_type: string
+  description: Identifiant de l'item associé à l'offre, utilisé en interne par l'équipe data science.
+  name: item_id
+  ordinal: 50
+  source: manual
+- data_type: number
+  description: Rang de la réservation de l'utilisateur au sein de la même catégorie d'offre.
+  name: same_category_booking_rank
+  ordinal: 51
+  source: manual
+- data_type: number
+  description: Rang global de la réservation pour cet utilisateur.
+  name: user_booking_rank
+  ordinal: 52
+  source: manual
+- data_type: string
+  description: Identifiant IRIS interne du lieu culturel.
+  name: venue_iris_internal_id
+  ordinal: 53
+  source: manual
+- data_type: string
+  description: URL vers l'offre.
+  name: offer_url
+  ordinal: 54
+  source: manual
+- data_type: string
+  description: ISBN du livre, le cas échéant.
+  name: isbn
+  ordinal: 55
+  source: manual
+- data_type: string
+  description: Genre de l'offre pour la musique, les livres et les films. Type de spectacle pour les spectacles.
+  name: offer_type_label
+  ordinal: 56
+  source: manual
+- data_type: string
+  description: Sous-genre de l'offre pour la musique, les livres et les films. Sous-type de spectacle pour les spectacles.
+  name: offer_sub_type_label
+  ordinal: 57
+  source: manual
+- data_type: number
+  description: Score attribué à une réservation en fonction de son rang et du type d'entité, avec un multiplicateur appliqué.
+  name: diversity_score
+  ordinal: 58
+  source: manual
+- data_type: string
+  description: Identifiant IRIS interne associé à l'adresse du bénéficiaire.
+  name: user_iris_internal_id
+  ordinal: 59
+  source: manual
+- data_type: string
+  description: Code postal de l'adresse déclarée du bénéficiaire.
+  name: user_postal_code
+  ordinal: 60
+  source: manual
+- data_type: string
+  description: Code du département de l'adresse déclarée du bénéficiaire.
+  name: user_department_code
+  ordinal: 61
+  source: manual
+- data_type: string
+  description: Nom du département de l'adresse déclarée du bénéficiaire.
+  name: user_department_name
+  ordinal: 62
+  source: manual
+- data_type: string
+  description: Nom de la région de l'adresse déclarée du bénéficiaire.
+  name: user_region_name
+  ordinal: 63
+  source: manual
+- data_type: string
+  description: Ville de l'adresse déclarée du bénéficiaire.
+  name: user_city
+  ordinal: 64
+  source: manual
+- data_type: string
+  description: Nom de l'EPCI de l'adresse déclarée du bénéficiaire.
+  name: user_epci
+  ordinal: 65
+  source: manual
+- data_type: string
+  description: Nom de l'académie de l'adresse déclarée du bénéficiaire.
+  name: user_academy_name
+  ordinal: 66
+  source: manual
+- data_type: string
+  description: Libellé de densité détaillé de l'adresse du bénéficiaire.
+  name: user_density_label
+  ordinal: 67
+  source: manual
+- data_type: string
+  description: Libellé de densité macro de l'adresse du bénéficiaire.
+  name: user_macro_density_label
+  ordinal: 68
+  source: manual
+- data_type: number
+  description: Niveau de densité de l'adresse du bénéficiaire, de 1 (très urbain) à 7 (très rural).
+  name: user_density_level
+  ordinal: 69
+  source: manual
+- data_type: datetime
+  description: Date de création du compte utilisateur.
+  name: user_creation_date
+  ordinal: 70
+  source: manual
+- data_type: datetime
+  description: Date d'activation du compte du bénéficiaire.
+  name: user_activation_date
+  ordinal: 71
+  source: manual
+- data_type: string
+  description: Activité déclarée du bénéficiaire (étudiant, apprenti, sans emploi, etc.).
+  name: user_activity
+  ordinal: 72
+  source: manual
+- data_type: string
+  description: Civilité déclarée du bénéficiaire (male, female).
+  name: user_civility
+  ordinal: 73
+  source: manual
+- data_type: number
+  description: Âge actuel de l'utilisateur, recalculé quotidiennement par le pipeline dbt. Change chaque jour — ne pas utiliser
+    pour analyser l'âge au moment d'un événement (utiliser user_age_at_booking pour les réservations, ou calculer manuellement
+    avec user_birth_date).
+  name: user_age
+  ordinal: 74
+  source: manual
+- data_type: datetime
+  description: Date de naissance du bénéficiaire.
+  name: user_birth_date
+  ordinal: 75
+  source: manual
+- data_type: boolean
+  description: Indiqué si le compte du bénéficiaire est actuellement actif.
+  name: user_is_active
+  ordinal: 76
+  source: manual
+- data_type: boolean
+  description: Indiqué si l'adresse du bénéficiaire est dans un quartier prioritaire (QPV).
+  name: user_is_in_qpv
+  ordinal: 77
+  source: manual
+- data_type: boolean
+  description: Indiqué si le bénéficiaire est sans emploi.
+  name: user_is_unemployed
+  ordinal: 78
+  source: manual
+- data_type: boolean
+  description: Indiqué si le bénéficiaire est en formation.
+  name: user_is_in_education
+  ordinal: 79
+  source: manual
+- data_type: boolean
+  description: Indiqué si le bénéficiaire fait partie des publics prioritaires du pass Culture.
+  name: user_is_priority_public
+  ordinal: 80
+  source: manual
+- data_type: datetime
+  description: Date de création du premier crédit du bénéficiaire.
+  name: first_deposit_creation_date
+  ordinal: 81
+  source: manual
+- data_type: boolean
+  description: Indiqué si la structure est un Établissement Public National (rattaché au Ministère de la Culture).
+  name: offerer_is_epn
+  ordinal: 82
+  source: manual
+description: Contient toutes les réservations individuelles des bénéficiaires, quel que soit leur statut, avec les informations
+  de l'offre, du lieu, du partenaire et du bénéficiaire.
+domain_path: core/reservations
+grain:
+- Une ligne par réservation (booking_id)
+schema_name: analytics_prod
+synonyms:
+- résa
+table_name: global_booking

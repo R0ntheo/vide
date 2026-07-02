@@ -1,0 +1,16 @@
+description: 'Part des consultations d''offre ayant mené à une réservation. Entonnoir : affichage → consultation (native_consultation)
+  → réservation (firebase_booking_origin). Métrique proche de la NSM de la squad Conversion.'
+display_name: Taux de conversion consultation → réservation
+domain_path: tracking/natif
+expression: SAFE_DIVIDE(COUNT(DISTINCT CASE WHEN booking_id IS NOT NULL THEN consultation_id END), COUNT(DISTINCT consultation_id))
+name: taux_conversion_consultation_reservation
+notes: native_consultation contient consultation_id et booking_id (NULL si pas de réservation). Pour le funnel complet affichage
+  → clic → consultation → réservation, combiner native_daily_home_module_conversion (affichage/clic) et native_consultation
+  (consultation/réservation).
+synonyms:
+- funnel conversion
+- NSM conversion
+- taux transformation offre
+table_name: native_consultation
+table_schema: analytics_prod
+unit: ratio

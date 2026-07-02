@@ -1,0 +1,13 @@
+description: Nombre moyen de réservations par session de recherche.
+display_name: Taux de conversion recherche → réservation
+domain_path: tracking/natif
+expression: SAFE_DIVIDE(SUM(total_offers_booked), COUNT(*))
+name: taux_conversion_recherche
+notes: Une session de recherche = un unique_search_id. Comprend les recherches par texte et par filtres. Segmentable par search_type.
+synonyms:
+- conversion recherche
+- search to booking rate
+- taux de transformation recherche
+table_name: firebase_aggregated_search_events
+table_schema: analytics_prod
+unit: réservations/recherche

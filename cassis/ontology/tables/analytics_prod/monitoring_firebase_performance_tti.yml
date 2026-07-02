@@ -1,0 +1,47 @@
+columns:
+- data_type: datetime
+  description: Horodatage précis de l'enregistrement de l'événement.
+  name: event_timestamp
+  ordinal: 0
+- data_type: string
+  description: Système d'exploitation de l'appareil (Windows, macOS, iOS, Android, etc.).
+  name: operating_system
+  ordinal: 1
+- data_type: string
+  description: Type de connexion réseau (WIFI, LTE, 5G, etc.).
+  name: radio_type
+  ordinal: 2
+- data_type: string
+  description: Version de l'application lors de l'enregistrement de l'événement.
+  name: app_display_version
+  ordinal: 3
+- data_type: string
+  description: Version du système d'exploitation de l'appareil.
+  name: os_version
+  ordinal: 4
+- data_type: string
+  description: Mobile carrier or network provider.
+  name: carrier
+  ordinal: 5
+- data_type: string
+  description: Nom ou modèle de l'appareil.
+  name: device_name
+  ordinal: 6
+- data_type: string
+  description: Pays de l'utilisateur.
+  name: country
+  ordinal: 7
+- data_type: number
+  description: Temps avant interactivité (TTI) en millisecondes pour le conteneur d'accueil, du lancement de l'app à la disponibilité
+    de la page d'accueil.
+  name: home_time_to_interactive_container_in_ms
+  ordinal: 8
+description: Suivi des performances Firebase — temps de chargement (TTI) de l'app native.
+domain_path: reporting/monitoring
+grain:
+- Une ligne par combinaison (event_timestamp, operating_system, radio_type, app_display_version)
+schema_name: analytics_prod
+synonyms:
+- performance app
+- TTI Firebase
+table_name: monitoring_firebase_performance_tti

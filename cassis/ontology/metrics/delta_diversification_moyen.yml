@@ -1,0 +1,15 @@
+description: Score moyen de diversification apporté par chaque réservation. Mesure la contribution marginale à la diversité
+  culturelle du bénéficiaire.
+display_name: Score moyen de diversification par réservation
+domain_path: core/reservations
+expression: AVG(delta_diversification)
+name: delta_diversification_moyen
+notes: Le delta_diversification combine category_diversification, sub_category_diversification, format_diversification et
+  venue_type_label_diversification. Plus le score est élevé, plus la réservation élargit les pratiques culturelles du bénéficiaire.
+synonyms:
+- diversification par réservation
+- score diversification
+- marginal diversity score
+table_name: diversification_booking
+table_schema: analytics_prod
+unit: points

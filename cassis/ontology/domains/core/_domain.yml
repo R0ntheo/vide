@@ -1,0 +1,6 @@
+context_md: |-
+  Ce groupe rassemble les tables transactionnelles et référentielles au cœur du dispositif pass Culture.
+
+  Cinq sous-domaines couvrent le cycle complet : qui consomme (bénéficiaires), qui propose (partenaires culturels), quoi (offre & catalogue), les transactions (réservations), et le volet collectif scolaire (EAC).
+description: Entités métier fondamentales du pass Culture — bénéficiaires, partenaires, offres, réservations et volet EAC.
+display_name: Core

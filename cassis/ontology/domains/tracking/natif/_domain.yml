@@ -1,0 +1,15 @@
+context_md: |-
+  Ce domaine regroupe les données d'usage de l'application native (mobile/web) destinée aux jeunes bénéficiaires.
+
+  Sources principales : Firebase Analytics (événements in-app) et logs backend.
+
+  - native_event : événements bruts (consultation, recherche, réservation, navigation…) avec contexte utilisateur et technique.
+  - native_consultation : consultations détaillées d'offres avec parcours de découverte.
+  - native_daily_home_* : performance des modules de la page d'accueil (conversion, affichage, recommandation).
+  - native_daily_venue_map_conversion : conversion de la carte des lieux.
+  - native_nps_beneficiary : score NPS des bénéficiaires (enquête Qualtrics).
+  - native_outgoing_cohort : cohortes de sortie (bénéficiaires dont le crédit expire).
+  - native_monthly_beneficiary_coverage : couverture mensuelle de la base bénéficiaire active.
+  - native_achievement : badges et accomplissements in-app.
+description: Analytics de l'application mobile/web jeunes — événements, consultations, modules home, NPS et cohortes.
+display_name: Tracking natif

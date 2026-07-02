@@ -1,0 +1,15 @@
+description: Nombre de réservations non annulées dont le premier point de contact est un module de l'écran d'accueil.
+display_name: Réservations depuis les écrans d'accueil
+domain_path: tracking/natif/parcours-decouverte
+expression: COUNT(*)
+filters: home_name_first_touch IS NOT NULL AND booking_is_cancelled = FALSE
+name: reservations_via_home
+notes: Attribution first-touch. Segmentable par home_name_first_touch pour identifier les écrans les plus performants. Agrégé
+  par booking_date.
+synonyms:
+- réservations home
+- bookings from home
+- conversions accueil
+table_name: firebase_booking_origin
+table_schema: analytics_prod
+unit: réservations

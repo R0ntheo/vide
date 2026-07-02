@@ -1,0 +1,190 @@
+columns:
+- data_type: string
+  description: Environnement dans lequel l'entrée de log a été enregistrée (production, staging, etc.).
+  name: environement
+  ordinal: 0
+- data_type: number
+  description: Identifiant unique de l'utilisateur.
+  name: user_id
+  ordinal: 1
+- data_type: number
+  description: Identifiant unique de la structure.
+  name: offerer_id
+  ordinal: 2
+- data_type: string
+  description: Contenu du message de log décrivant l'événement ou l'action.
+  name: message
+  ordinal: 3
+- data_type: string
+  description: Identifiant unique de la réservation.
+  name: booking_id
+  ordinal: 4
+- data_type: string
+  description: Identifiant unique de l'offre.
+  name: offer_id
+  ordinal: 5
+- data_type: string
+  description: Identifiant unique du lieu.
+  name: venue_id
+  ordinal: 6
+- data_type: number
+  description: Identifiant unique du fournisseur de synchronisation.
+  name: provider_id
+  ordinal: 7
+- data_type: string
+  description: Identifiant du produit associé à l'offre.
+  name: product_id
+  ordinal: 8
+- data_type: string
+  description: Identifiant unique du stock.
+  name: stock_id
+  ordinal: 9
+- data_type: number
+  description: Quantité précédente du stock avant l'événement logué.
+  name: stock_old_quantity
+  ordinal: 10
+- data_type: number
+  description: Nouvelle quantité du stock après l'événement logué.
+  name: stock_new_quantity
+  ordinal: 11
+- data_type: number
+  description: Prix précédent du stock avant l'événement logué.
+  name: stock_old_price
+  ordinal: 12
+- data_type: number
+  description: Nouveau prix du stock après l'événement logué.
+  name: stock_new_price
+  ordinal: 13
+- data_type: number
+  description: Quantité de stock réservée lors de l'événement logué.
+  name: stock_booking_quantity
+  ordinal: 14
+- data_type: number
+  description: Adresse précédente (lieu de représentation) de l'offre/stock avant modification.
+  name: offerer_address_old_value
+  ordinal: 15
+- data_type: number
+  description: Nouvelle adresse (lieu de représentation) de l'offre/stock après modification.
+  name: offerer_address_new_value
+  ordinal: 16
+- data_type: string
+  description: Date de publication précédente de l'offre avant modification.
+  name: publication_date_old_value
+  ordinal: 17
+- data_type: string
+  description: Nouvelle date de publication de l'offre après modification.
+  name: publication_date_new_value
+  ordinal: 18
+- data_type: string
+  description: Date limite de réservation précédente de l'offre avant modification.
+  name: booking_limit_date_old_value
+  ordinal: 19
+- data_type: string
+  description: Nouvelle date limite de réservation de l'offre après modification.
+  name: booking_limit_date_new_value
+  ordinal: 20
+- data_type: string
+  description: Date de début précédente du stock avant modification.
+  name: stock_beginning_date_old_value
+  ordinal: 21
+- data_type: string
+  description: Nouvelle date de début du stock après modification.
+  name: stock_beginning_date_new_value
+  ordinal: 22
+- data_type: string
+  description: Modalités de retrait précédentes de l'offre avant modification.
+  name: offer_withdrawal_details_old_value
+  ordinal: 23
+- data_type: string
+  description: Nouvelles modalités de retrait de l'offre après modification.
+  name: offer_withdrawal_details_new_value
+  ordinal: 24
+- data_type: string
+  description: Liste des EAN (European Article Numbers) non trouvés lors de la création ou de la synchronisation de l'offre.
+  name: list_of_eans_not_found
+  ordinal: 25
+- data_type: datetime
+  description: Horodatage de l'enregistrement de l'entrée de log.
+  name: log_timestamp
+  ordinal: 26
+- data_type: date
+  description: Date utilisée pour le partitionnement des données de log.
+  name: partition_date
+  ordinal: 27
+- data_type: boolean
+  description: Retour sur la praticité de la navigation du nouveau site pro, collecté lors du bêta-test (04/2024-11/2024).
+  name: beta_test_new_nav_is_convenient
+  ordinal: 28
+- data_type: boolean
+  description: Retour sur l'agrément de la navigation du nouveau site pro, collecté lors du bêta-test (04/2024-11/2024).
+  name: beta_test_new_nav_is_pleasant
+  ordinal: 29
+- data_type: string
+  description: Avis textuels sur l'interface du nouveau site pro, collectés lors du bêta-test (04/2024-11/2024).
+  name: beta_test_new_nav_comment
+  ordinal: 30
+- data_type: string
+  description: Identifiant technique du message associé à l'entrée de log.
+  name: technical_message_id
+  ordinal: 31
+- data_type: string
+  description: Horodatage de l'enregistrement du consentement aux cookies.
+  name: choice_datetime
+  ordinal: 32
+- data_type: string
+  description: Identifiant de l'appareil utilisé lors de l'événement logué.
+  name: device_id
+  ordinal: 33
+- data_type: string
+  description: Source des données analytiques ("adage", "backoffice", "app-pro", "native") associée à l'entrée de log.
+  name: analytics_source
+  ordinal: 34
+- data_type: string
+  description: Indiqué si le consentement aux cookies est obligatoire pour l'utilisateur.
+  name: cookies_consent_mandatory
+  ordinal: 35
+- data_type: string
+  description: Indiqué si l'utilisateur a accepté le consentement aux cookies.
+  name: cookies_consent_accepted
+  ordinal: 36
+- data_type: string
+  description: Indiqué si l'utilisateur a refusé le consentement aux cookies.
+  name: cookies_consent_refused
+  ordinal: 37
+- data_type: string
+  description: Avis textuels sur l'interface et la navigation du site pro, collectés depuis novembre 2024.
+  name: user_satisfaction
+  ordinal: 38
+- data_type: string
+  description: Retour à choix multiples sur le site pro (de très mauvais à excellent), collecté depuis novembre 2024.
+  name: user_comment
+  ordinal: 39
+- data_type: string
+  description: ID d'appel API du modèle prédictif de suggestion de sous-catégories lors de la création individuelle d'offre.
+  name: suggested_offer_api_id
+  ordinal: 40
+- data_type: string
+  description: Sous-catégorie choisie par le partenaire lors de la création individuelle d'offre (modèle prédictif).
+  name: suggested_offer_api_subcategory
+  ordinal: 41
+- data_type: string
+  description: Sous-catégories suggérées au partenaire lors de la création individuelle d'offre (modèle prédictif).
+  name: suggested_offer_api_subcategories
+  ordinal: 42
+- data_type: string
+  description: SIRET renseigné par le partenaire culturel lors de son inscription.
+  name: siret
+  ordinal: 43
+- data_type: boolean
+  description: Indiqué si le SIRET avec lequel le partenaire culturel s'est inscrit est diffusible.
+  name: siret_is_diffusible
+  ordinal: 44
+description: Logs backend des actions pro — appels API, modifications d'offres, validations, consentements.
+domain_path: tracking/pro
+grain:
+- Une ligne par entrée de log pro (user_id, offerer_id, message)
+schema_name: analytics_prod
+synonyms:
+- log pro
+- journal API pro
+table_name: pro_log

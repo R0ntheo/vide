@@ -1,0 +1,156 @@
+columns:
+- data_type: date
+  description: Date de l'evenement, utilisee pour le partitionnement des donnees.
+  name: event_date
+  ordinal: 0
+- data_type: string
+  description: Nom de l'evenement ; pour les vues d'ecran, concatene le nom de l'evenement avec le nom d'ecran Firebase.
+  name: event_name
+  ordinal: 1
+- data_type: datetime
+  description: Horodatage exact de l'enregistrement de l'evenement.
+  name: event_timestamp
+  ordinal: 2
+- data_type: string
+  description: Identifiant unique de l'utilisateur.
+  name: user_id
+  ordinal: 3
+- data_type: string
+  description: Pseudo-identifiant de l'utilisateur, utilise a des fins de tracking.
+  name: user_pseudo_id
+  ordinal: 4
+- data_type: string
+  description: Origine de l'evenement, indiquant d'ou il a ete declenche.
+  name: origin
+  ordinal: 5
+- data_type: string
+  description: Plateforme sur laquelle l'evenement a ete enregistre (iOS ou Android).
+  name: platform
+  ordinal: 6
+- data_type: string
+  description: Version de l'application lors de l'enregistrement de l'evenement.
+  name: app_version
+  ordinal: 7
+- data_type: string
+  description: Nom de la campagne marketing ayant généré la session.
+  name: traffic_campaign
+  ordinal: 8
+- data_type: string
+  description: Source de la campagne marketing (Instagram, Snapchat…) ayant généré la session.
+  name: traffic_source
+  ordinal: 9
+- data_type: string
+  description: Medium de la campagne marketing (email, notification push…) ayant généré la session.
+  name: traffic_medium
+  ordinal: 10
+- data_type: string
+  description: Identifiant unique de l'offre.
+  name: offer_id
+  ordinal: 11
+- data_type: string
+  description: Identifiant unique de session, sans doublons.
+  name: unique_session_id
+  ordinal: 12
+- data_type: string
+  description: Type de geolocalisation utilise par l'utilisateur (via GPS, saisie manuelle, ou indisponible).
+  name: user_location_type
+  ordinal: 13
+- data_type: string
+  description: Requete de recherche associée a l'evenement, le cas echeant.
+  name: query
+  ordinal: 14
+- data_type: string
+  description: Identifiant unique du lieu.
+  name: venue_id
+  ordinal: 15
+- data_type: string
+  description: Identifiant unique d'une réservation.
+  name: booking_id
+  ordinal: 16
+- data_type: string
+  description: Etape du processus d'annulation de réservation, le cas echeant.
+  name: booking_cancellation_step
+  ordinal: 17
+- data_type: string
+  description: Identifiant de la recherche associée a l'evenement.
+  name: search_id
+  ordinal: 18
+- data_type: string
+  description: Nom du module dans lequel l'entree est affichee.
+  name: module_name
+  ordinal: 19
+- data_type: string
+  description: Identifiant du module associé a la consultation.
+  name: module_id
+  ordinal: 20
+- data_type: string
+  description: Identifiant de l'entree associée a la consultation.
+  name: entry_id
+  ordinal: 21
+- data_type: string
+  description: Age sélectionné par l'utilisateur lors de l'onboarding.
+  name: onboarding_user_selected_age
+  ordinal: 22
+- data_type: string
+  description: Nom de l'offre tel qu'il apparait dans l'application.
+  name: offer_name
+  ordinal: 23
+- data_type: string
+  description: Identifiant de la catégorie de l'offre, choisi par le partenaire culturel dans une liste predeterminee.
+  name: offer_category_id
+  ordinal: 24
+- data_type: string
+  description: Nom du lieu.
+  name: venue_name
+  ordinal: 25
+- data_type: string
+  description: Type du lieu (Musee, Cinéma, Librairie, etc.), sélectionné par le partenaire lors de l'inscription ; preferer
+    les catégories d'offres pour analyser les réservations par secteur culturel.
+  name: venue_type_label
+  ordinal: 26
+- data_type: string
+  description: Type de contenu associé a l'evenement.
+  name: content_type
+  ordinal: 27
+- data_type: string
+  description: Type du credit actuel de l'utilisateur.
+  name: user_current_deposit_type
+  ordinal: 28
+- data_type: number
+  description: Montant du dernier credit recu par l'utilisateur.
+  name: user_last_deposit_amount
+  ordinal: 29
+- data_type: string
+  description: Type du premier credit de l'utilisateur (GRANT_18, GRANT_15_17, GRANT_17_18, GRANT_FREE).
+  name: user_first_deposit_type
+  ordinal: 30
+- data_type: number
+  description: 'Deprecie : utiliser unique_session_id. Identifiant de session lors de l''enregistrement de l''evenement.'
+  name: session_id
+  ordinal: 31
+- data_type: string
+  description: Identifiant de la sous-categorie de l'offre, choisi par le partenaire culturel dans une liste predeterminee.
+  name: offer_subcategory_id
+  ordinal: 32
+- data_type: string
+  description: Identifiant unique du partenaire culturel.
+  name: partner_id
+  ordinal: 33
+- data_type: number
+  description: Montant du premier credit recu par l'utilisateur.
+  name: user_first_deposit_amount
+  ordinal: 34
+- data_type: string
+  description: Identifiant unique de l'artiste.
+  name: artist_id
+  ordinal: 35
+description: Événements bruts de l'app native — actions utilisateur (recherche, navigation, consultation, réservation, scroll,
+  clic).
+domain_path: tracking/natif
+grain:
+- Une ligne par événement natif (event_date, event_timestamp, user_pseudo_id)
+schema_name: analytics_prod
+synonyms:
+- événement app
+- event Firebase natif
+table_name: native_event

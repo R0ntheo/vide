@@ -1,0 +1,54 @@
+columns:
+- data_type: date
+  description: Premier jour du mois auquel se rapporte le KPI.
+  name: partition_month
+  ordinal: 0
+- data_type: datetime
+  description: Date effective du rafraichissement des donnees.
+  name: updated_at
+  ordinal: 1
+- data_type: string
+  description: 'Agregation geographique du KPI : national, regional ou departemental.'
+  name: dimension_name
+  ordinal: 2
+- data_type: string
+  description: Nom de l'agregation geographique (nom de la region ou du département), si applicable.
+  name: dimension_value
+  ordinal: 3
+- data_type: string
+  description: Identifiant de l'item associé a l'offre, utilise en interne par l'equipe data science.
+  name: item_id
+  ordinal: 4
+- data_type: string
+  description: Identifiant de la catégorie de l'offre, choisi par le partenaire culturel dans une liste predeterminee.
+  name: offer_category_id
+  ordinal: 5
+- data_type: string
+  description: Identifiant de la sous-categorie de l'offre, choisi par le partenaire culturel dans une liste predeterminee.
+  name: offer_subcategory_id
+  ordinal: 6
+- data_type: string
+  description: Nom de l'offre tel qu'il apparait dans l'application.
+  name: offer_name
+  ordinal: 7
+- data_type: number
+  description: Montant total généré par les réservations.
+  name: total_booking_amount
+  ordinal: 8
+- data_type: number
+  description: Quantite totale d'articles reserves.
+  name: total_booking_quantity
+  ordinal: 9
+- data_type: number
+  description: Rang du montant total de réservations par rapport aux autres catégories.
+  name: total_booking_amount_ranked
+  ordinal: 10
+description: Classement Top 50 des catégories d'offres par montant total de réservations.
+domain_path: reporting/institutionnel/classements
+grain:
+- Une ligne par entrée du classement (partition_month, dimension_name, dimension_value)
+schema_name: analytics_prod
+synonyms:
+- top offres par catégorie
+- classement catégories
+table_name: external_reporting_top_offer_category

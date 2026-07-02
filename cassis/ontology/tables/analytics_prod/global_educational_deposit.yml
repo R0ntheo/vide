@@ -1,0 +1,65 @@
+columns:
+- data_type: string
+  description: Identifiant unique du crédit EAC.
+  name: educational_deposit_id
+  nullable: false
+  ordinal: 0
+- data_type: string
+  description: Identifiant unique de l'établissement scolaire.
+  name: institution_id
+  ordinal: 1
+- data_type: string
+  description: Identifiant unique de l'année scolaire.
+  name: educational_year_id
+  ordinal: 2
+- data_type: datetime
+  description: Date de versement du crédit EAC.
+  name: educational_deposit_creation_date
+  ordinal: 3
+- data_type: string
+  description: Année scolaire associée au crédit.
+  name: scholar_year
+  ordinal: 4
+- data_type: number
+  description: Année civile associée au crédit.
+  name: calendar_year
+  ordinal: 5
+- data_type: string
+  description: 'Période associée au crédit : sept-déc, janv-août ou toute l''année (sept-août).'
+  name: educational_deposit_period
+  ordinal: 6
+- data_type: string
+  description: Code du département de l'établissement scolaire.
+  name: institution_department_code
+  ordinal: 7
+- data_type: string
+  description: Nom de l'académie de l'établissement scolaire.
+  name: institution_academy_name
+  ordinal: 8
+- data_type: number
+  description: Montant du crédit EAC reçu par l'établissement pour cette année scolaire, en euros.
+  name: educational_deposit_amount
+  ordinal: 9
+- data_type: boolean
+  description: Booléen indiquant si le crédit correspond à l'année scolaire en cours (du 1er septembre au 31 août).
+  name: is_current_scholar_year
+  ordinal: 10
+- data_type: boolean
+  description: Booléen indiquant si le crédit correspond à l'année civile en cours (du 1er janvier au 31 décembre).
+  name: is_current_calendar_year
+  ordinal: 11
+- data_type: boolean
+  description: Booléen indiquant si le crédit correspond à la période en cours.
+  name: is_current_deposit
+  ordinal: 12
+description: Crédits collectifs alloués aux établissements scolaires — montant, date d'allocation, année scolaire, type de
+  dépôt.
+domain_path: core/eac/etablissements
+grain:
+- Une ligne par educational_deposit (educational_deposit_id)
+schema_name: analytics_prod
+synonyms:
+- crédit collectif
+- crédit EAC
+- dotation scolaire
+table_name: global_educational_deposit

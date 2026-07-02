@@ -1,0 +1,22 @@
+columns:
+- data_type: string
+  description: Identifiant de l'offre collective.
+  name: collective_offer_id
+  ordinal: 0
+- data_type: string
+  description: Identifiant numérique du domaine éducatif.
+  name: educational_domain_id
+  ordinal: 1
+- data_type: string
+  description: Nom du domaine éducatif (Arts visuels, Spectacle vivant, Musique, Patrimoine, etc.).
+  name: educational_domain_name
+  ordinal: 2
+description: Association entre offre collective et domaine éducatif. Une offre peut couvrir plusieurs domaines artistiques.
+domain_path: core/eac/adage
+grain:
+- Une ligne par collective_offer (collective_offer_id)
+schema_name: analytics_prod
+synonyms:
+- domaine EAC
+- domaine artistique collectif
+table_name: global_collective_offer_domain

@@ -1,0 +1,90 @@
+columns:
+- data_type: string
+  description: Identifiant unique de l'utilisateur.
+  name: user_id
+  nullable: false
+  ordinal: 0
+- data_type: datetime
+  description: Date de création du compte utilisateur.
+  name: user_creation_date
+  ordinal: 1
+- data_type: boolean
+  description: Indiqué si l'utilisateur a accepté de recevoir des emails marketing.
+  name: user_has_enabled_marketing_email
+  ordinal: 2
+- data_type: string
+  description: Activité déclarée de l'utilisateur (étudiant, apprenti, sans emploi…), renseignée lors du premier dépôt de
+    crédit et mise à jour lors de la demande de GRANT_18.
+  name: user_activity
+  ordinal: 3
+- data_type: string
+  description: Civilité déclarée de l'utilisateur (masculin, féminin), collectée lors de l'inscription.
+  name: user_civility
+  ordinal: 4
+- data_type: datetime
+  description: Date de naissance de l'utilisateur.
+  name: user_birth_date
+  ordinal: 5
+- data_type: number
+  description: Âge actuel de l'utilisateur, recalculé quotidiennement par le pipeline dbt. Change chaque jour — ne pas utiliser
+    pour analyser l'âge au moment d'un événement (utiliser user_age_at_booking pour les réservations, ou calculer manuellement
+    avec user_birth_date).
+  name: user_age
+  ordinal: 6
+- data_type: number
+  description: Âge de l'utilisateur au moment de la création de son profil.
+  name: user_age_at_creation
+  ordinal: 7
+- data_type: string
+  description: Type d'établissement scolaire de l'utilisateur (CFA, collège privé, collège public, lycée agricole, lycée maritime,
+    lycée militaire, lycée privé, lycée public, à domicile…).
+  name: user_school_type
+  ordinal: 8
+- data_type: boolean
+  description: Indiqué si le compte de l'utilisateur est actuellement actif, indépendamment du statut de crédit.
+  name: user_is_active
+  ordinal: 9
+- data_type: string
+  description: Rôle attribué à l'utilisateur (GRANT_18, GRANT_15_17, PRO, ADMIN).
+  name: user_role
+  ordinal: 10
+- data_type: boolean
+  description: Indiqué si l'adresse email de l'utilisateur est validée.
+  name: user_is_email_validated
+  ordinal: 11
+- data_type: string
+  description: Statut de l'étape de validation du téléphone de l'utilisateur.
+  name: user_phone_validation_status
+  ordinal: 12
+- data_type: boolean
+  description: Indiqué si l'utilisateur a validé son adresse email.
+  name: user_has_validated_email
+  ordinal: 13
+- data_type: boolean
+  description: Indiqué si l'utilisateur a accepté de recevoir des notifications push marketing.
+  name: user_has_enabled_marketing_push
+  ordinal: 14
+- data_type: string
+  description: Users themes subscribed. Users can subscribe to themes (cinéma, music) to receive custom communication related
+    to those themes.
+  name: user_subscribed_themes
+  ordinal: 15
+- data_type: boolean
+  description: Indiqué si l'utilisateur est abonné à au moins un thème.
+  name: is_theme_subscribed
+  ordinal: 16
+- data_type: string
+  description: Catégorie de l'utilisateur dérivée de son rôle et de son âge (« 15-16 », « general_public » ou « beneficiary
+    »).
+  name: user_category
+  ordinal: 17
+description: Référentiel des utilisateurs de la plateforme pass Culture (bénéficiaires, pros, admins) — données de compte
+  et préférences.
+domain_path: core/beneficiaires
+grain:
+- Une ligne par utilisateur (user_id)
+schema_name: analytics_prod
+synonyms:
+- utilisateur
+- compte utilisateur
+table_name: global_user

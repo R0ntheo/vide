@@ -1,0 +1,136 @@
+columns:
+- data_type: date
+  description: Date à laquelle l'événement s'est produit, utilisée pour le partitionnement des données.
+  name: event_date
+  ordinal: 0
+- data_type: string
+  description: Identifiant unique de l'offre.
+  name: offer_id
+  ordinal: 1
+- data_type: string
+  description: Identifiant du module associé à la consultation.
+  name: module_id
+  ordinal: 2
+- data_type: string
+  description: Identifiant de l'entrée associée à la consultation.
+  name: entry_id
+  ordinal: 3
+- data_type: string
+  description: Nom du module dans lequel l'entrée est affichée.
+  name: module_name
+  ordinal: 4
+- data_type: string
+  description: Type du module dans lequel l'entrée est affichée (algolia, recommendation, video…).
+  name: module_type
+  ordinal: 5
+- data_type: string
+  description: Identifiant de la catégorie de l'offre, choisi par le partenaire culturel parmi une liste prédéfinie.
+  name: offer_category_id
+  ordinal: 6
+- data_type: string
+  description: Identifiant de la sous-catégorie de l'offre, choisi par le partenaire culturel parmi une liste prédéfinie.
+  name: offer_subcategory_id
+  ordinal: 7
+- data_type: string
+  description: Nom du lieu.
+  name: venue_name
+  ordinal: 8
+- data_type: string
+  description: Identifiant unique du lieu.
+  name: venue_id
+  ordinal: 9
+- data_type: string
+  description: Libellé détaillé de densité de la localisation du lieu.
+  name: venue_density_label
+  ordinal: 10
+- data_type: string
+  description: Catégorie macroscopique de densité de la localisation du lieu (urbain, rural).
+  name: venue_macro_density_label
+  ordinal: 11
+- data_type: string
+  description: Identifiant unique du partenaire culturel.
+  name: partner_id
+  ordinal: 12
+- data_type: string
+  description: Identifiant unique de la structure.
+  name: offerer_id
+  ordinal: 13
+- data_type: string
+  description: Nom de la structure.
+  name: offerer_name
+  ordinal: 14
+- data_type: string
+  description: Type du lieu ('Musée', 'Cinéma', 'Librairie'…), sélectionné par le partenaire culturel lors de l'inscription.
+  name: venue_type_label
+  ordinal: 15
+- data_type: number
+  description: Nombre d'affichages distincts d'une offre sur la page d'accueil à une date donnée.
+  name: total_displays
+  ordinal: 16
+- data_type: number
+  description: Nombre d'affichages distincts d'une offre en positions 0 à 3 de la playlist d'accueil à une date donnée.
+  name: total_position_0_3_displays
+  ordinal: 17
+- data_type: number
+  description: Nombre d'affichages distincts d'une offre en positions 4 à 10 de la playlist d'accueil à une date donnée.
+  name: total_position_4_10_displays
+  ordinal: 18
+- data_type: number
+  description: Nombre d'affichages distincts d'une offre en positions 11 à 20 de la playlist d'accueil à une date donnée.
+  name: total_position_11_20_displays
+  ordinal: 19
+- data_type: number
+  description: Nombre d'affichages distincts d'une offre en positions 21 à 30 de la playlist d'accueil à une date donnée.
+  name: total_position_21_30_displays
+  ordinal: 20
+- data_type: number
+  description: Nombre d'affichages distincts d'une offre en positions 31 à 40 de la playlist d'accueil à une date donnée.
+  name: total_position_31_40_displays
+  ordinal: 21
+- data_type: number
+  description: Nombre d'affichages distincts d'une offre en positions 41 à 50 de la playlist d'accueil à une date donnée.
+  name: total_position_41_50_displays
+  ordinal: 22
+- data_type: number
+  description: Nombre de consultations distinctes d'une offre depuis les playlists d'accueil à une date donnée.
+  name: total_consultations
+  ordinal: 23
+- data_type: number
+  description: Nombre de consultations distinctes d'une offre affichée en positions 0 à 3 des playlists d'accueil à une date
+    donnée.
+  name: total_position_0_3_consultations
+  ordinal: 24
+- data_type: number
+  description: Nombre de consultations distinctes d'une offre affichée en positions 4 à 10 des playlists d'accueil à une date
+    donnée.
+  name: total_position_4_10_consultations
+  ordinal: 25
+- data_type: number
+  description: Nombre de consultations distinctes d'une offre affichée en positions 11 à 20 des playlists d'accueil à une
+    date donnée.
+  name: total_position_11_20_consultations
+  ordinal: 26
+- data_type: number
+  description: Nombre de consultations distinctes d'une offre affichée en positions 21 à 30 des playlists d'accueil à une
+    date donnée.
+  name: total_position_21_30_consultations
+  ordinal: 27
+- data_type: number
+  description: Nombre de consultations distinctes d'une offre affichée en positions 31 à 40 des playlists d'accueil à une
+    date donnée.
+  name: total_position_31_40_consultations
+  ordinal: 28
+- data_type: number
+  description: Nombre de consultations distinctes d'une offre affichée en positions 41 à 50 des playlists d'accueil à une
+    date donnée.
+  name: total_position_41_50_consultations
+  ordinal: 29
+description: Offres affichées dans les modules de la page d'accueil de l'app native, agrégées par jour.
+domain_path: tracking/natif
+grain:
+- Une ligne par offre affichée × jour (event_date, offer_id)
+schema_name: analytics_prod
+synonyms:
+- offres affichées accueil
+- impressions home
+table_name: native_daily_home_offer_displayed

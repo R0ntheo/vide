@@ -1,0 +1,95 @@
+context_md: |-
+  # Indicateurs clés (KPIs)
+
+  Définitions officielles utilisées dans le reporting au Ministère de la Culture et aux DRAC. Ces définitions font foi en cas d'ambiguïté dans une question utilisateur.
+
+  ## Volet individuel
+
+  ### Couverture (`taux_de_couverture`)
+
+  Part de la population éligible (jeunes de 15 à 20 ans) ayant activé un crédit pass Culture.
+
+  ```
+  couverture = bénéficiaires activés / population éligible INSEE
+  ```
+
+  Source : `external_reporting_coverage` (kpi_name = 'taux_de_couverture').
+
+  ### Taux d'utilisation du crédit
+
+  Part du crédit dépensée par les bénéficiaires.
+
+  ```
+  taux_utilisation = montant_dépensé / montant_alloué
+  ```
+
+  Deux variantes :
+  - **Théorique** : inclut les réservations confirmées non encore utilisées (`total_theoretical_amount_spent`).
+  - **Réel** : uniquement les réservations utilisées (`total_actual_amount_spent`).
+
+  ### Diversité culturelle
+
+  Score de 0 à 1 mesurant la variété des sous-catégories réservées par un bénéficiaire.
+
+  - `total_diversity_score` sur `global_user_beneficiary`.
+  - Un score de 1 = le bénéficiaire a réservé dans toutes les sous-catégories possibles.
+  - Source agrégée : `external_reporting_diversity`.
+
+  ### Chiffre d'affaires
+
+  Montant total des réservations validées (non annulées).
+
+  ```sql
+  SUM(booking_intermediary_amount) WHERE booking_is_cancelled = FALSE
+  ```
+
+  Attention : `booking_intermediary_amount` est le montant de référence, pas `booking_amount` (qui est le prix unitaire).
+
+  ## Volet collectif (EAC)
+
+  ### Taux d'activation EAC
+
+  Part des établissements crédités ayant fait au moins une réservation utilisée.
+
+  ```sql
+  SAFE_DIVIDE(
+    COUNT(DISTINCT CASE WHEN total_current_year_used_collective_bookings > 0 THEN institution_id END),
+    COUNT(DISTINCT institution_id)
+  )
+  ```
+
+  Source : `global_educational_institution`.
+
+  ### Taux d'utilisation du crédit collectif
+
+  ```
+  taux = montant_engagé / crédit_alloué
+  ```
+
+  - Par établissement : `ratio_current_scholar_year_credit_utilization` sur `global_educational_institution`.
+  - Agrégé par ministère : grouper par `ministry`.
+
+  ### Montant engagé vs montant réel
+
+  - **Engagé** (`total_current_scholar_year_theoretic_amount_spent`) : réservations confirmées, y compris en attente d'utilisation.
+  - **Réel** (`total_current_scholar_year_real_amount_spent`) : réservations effectivement utilisées.
+
+  ## Partenaires
+
+  ### Partenaire actif
+
+  Un partenaire est **actif** s'il a eu au moins une offre réservable dans les 365 derniers jours.
+
+  - `is_active_current_year` sur `global_cultural_partner` ou `global_venue`.
+  - `is_active_last_30days` : actif dans les 30 derniers jours (indicateur de dynamisme).
+
+  ### Partenaire deux volets
+
+  Actif à la fois sur l'individuel ET le collectif :
+
+  ```sql
+  WHERE is_individual_active_current_year = TRUE
+    AND is_collective_active_current_year = TRUE
+  ```
+description: 'Définitions officielles des KPIs pass Culture : taux d''activation, couverture, diversité, chiffre d''affaires.'
+display_name: Indicateurs clés (KPIs)

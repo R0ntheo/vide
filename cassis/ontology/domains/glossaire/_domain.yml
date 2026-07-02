@@ -1,0 +1,88 @@
+context_md: |
+  # Glossaire pass Culture
+
+  ---
+
+  ## Entités et statuts
+
+  | Terme | Définition |
+  |---|---|
+  | **Bénéficiaire** | Utilisateur ayant reçu un crédit, hors suspensions pour fraude. |
+  | **Bénéficiaire actuel** | Crédit non expiré ET réservations validées cumulées < montant initial du crédit. Filtre : `user_is_current_beneficiary = TRUE`. |
+  | **Bénéficiaire total (cumulé)** | Tous les bénéficiaires crédités depuis 2019, hors comptes désactivés (sauf suspensions demandées par l'utilisateur). |
+  | **Nouveau bénéficiaire** | Compté par la date d'octroi du **premier** crédit. |
+  | **Crédit (Deposit)** | Dotation financière octroyée à un bénéficiaire. Le type (`deposit_type`) et le montant varient selon la période et l'âge. |
+  | **Offre** | Bien ou service culturel proposé par un partenaire sur le pass Culture. |
+  | **Catégorie d'offre** | Classification renseignée par le partenaire lors de la création (`offer_category_id`). Sous-catégorie : `offer_subcategory_id`. |
+  | **Réservation (Booking)** | Utilisation d'un crédit pour une offre. `booking_intermediary_amount` = prix unitaire × quantité = champ pour le CA. |
+  | **Réservation validée (individuelle)** | Non annulée : `booking_is_cancelled = FALSE`. Inclut les statuts "utilisé" et "confirmé". |
+  | **Réservation validée (collective)** | `collective_booking_status IN ('CONFIRMED', 'USED', 'REIMBURSED')`. |
+  | **Unité vs place** | Une unité ≠ une place. Carte 5 places = 1 unité, 2 billets = 2 unités. |
+  | **Option duo** | Réservation pour 2 personnes en une transaction. `booking_quantity = 2`, `offer_is_duo = TRUE`. |
+  | **Réservation gratuite** | `booking_amount = 0`. |
+
+  ## Acteurs de l'offre
+
+  | Terme | Définition |
+  |---|---|
+  | **Structure (Offerer)** | Entité juridique identifiée par un SIREN. Peut gérer un ou plusieurs lieux. |
+  | **Lieu (Venue)** | Espace culturel physique (bibliothèque, cinéma) ou virtuel, géré par une structure. Identifié par SIRET ou non. |
+  | **Partenaire culturel** | Vue consolidée d'un acteur culturel inscrit au dispositif. 1 SIREN = 1 ou plusieurs partenaires (SIRET / sans SIRET). |
+  | **Partenaire activé** | A publié au moins une offre validée (`offer_validation = 'VALIDATED'`). |
+  | **Partenaire actif** | A eu une offre réservable dans les 365 derniers jours. `is_active_current_year` / `is_active_last_30days` sur `cultural_partner`. |
+  | **Partenaire biface** | Actif à la fois sur le volet individuel ET collectif. |
+  | **EPN** | Établissement Public National, rattaché au Ministère de la Culture. `offerer_is_epn = TRUE`. |
+  | **Label du MC** | Appellation qualité décernée par le Ministère de la Culture. `venue_label` sur la table `venue`. |
+
+  ## Volet collectif (EAC)
+
+  | Terme | Définition |
+  |---|---|
+  | **EAC** | Éducation Artistique et Culturelle — volet collectif/scolaire du pass Culture. Les établissements reçoivent un crédit collectif. |
+  | **EPLE** | Établissement Public Local d'Enseignement (collège, lycée public). |
+  | **Adage** | Plateforme numérique de l'Éducation nationale pour les offres collectives. `is_reference_adage` = référencé, `is_synchro_adage` = synchronisé. Ce sont deux colonnes distinctes. |
+  | **Offre vitrine (collective)** | `collective_offer_is_template = TRUE`. Description de l'activité du partenaire, non directement réservable. |
+  | **Offre réservable (collective)** | `collective_offer_is_template = FALSE AND collective_offer_is_bookable = TRUE`. |
+  | **Année scolaire** | Du 1er septembre au 31 août. `is_current_scholar_year_booking = TRUE`. Métriques `total_current_scholar_year_*`. |
+  | **Crédit scindé (EAC)** | Crédit d'un établissement divisé en deux périodes : septembre-décembre et janvier-août. `is_split_deposit`. |
+
+  ## Géographie et populations
+
+  | Terme | Définition |
+  |---|---|
+  | **QPV** | Quartier Prioritaire de la politique de la Ville. `user_is_in_qpv` (bénéficiaire), `institution_in_qpv` (établissement). Basé sur l'adresse déclarée à l'inscription. ~9,4 % des 15-24 ans. |
+  | **Zone rurale** | Segmentation INSEE par densité. `user_macro_density_label = 'rural'`. ~31 % de la pop. 15-18 ans. |
+  | **IRIS** | Unité infra-communale INSEE (~2 000 habitants). `*_iris_internal_id` dans les tables. |
+  | **DRAC** | Direction Régionale des Affaires Culturelles. Autorité culturelle régionale. |
+  | **Public prioritaire** | Bénéficiaire en QPV, OU en zone rurale, OU non scolarisé. `user_is_priority_public = TRUE`. |
+
+  ## Métriques et indicateurs
+
+  | Terme | Définition |
+  |---|---|
+  | **Chiffre d'affaires** | Montant total des réservations validées. ≠ montant perçu par le partenaire (des barèmes de remboursement s'appliquent). |
+  | **Contribution** | Part conservée par le pass Culture, non remboursée au partenaire après application des barèmes. |
+  | **Montant remboursé** | CA − contribution. Montant effectivement perçu par le partenaire. |
+  | **Taux de couverture** | Nb bénéficiaires / nb jeunes éligibles, par tranche d'âge. Numérateur : adresse d'inscription. Dénominateur : recensement INSEE. Biais : surestimation dans les départements universitaires. |
+  | **Diversité des pratiques** | Part des bénéficiaires ayant réservé dans ≥ 3 catégories d'offre différentes, à l'expiration du crédit. Instruments et beaux-arts exclus du calcul. |
+  | **Revenu théorique vs réel** | Théorique = réservations non annulées (y compris non encore consommées). Réel = uniquement les réservations consommées/remboursées. `total_*_theoretic_revenue` vs `total_*_real_revenue`. |
+
+  ## Historique des crédits
+
+  | Période | Type | Montant | Durée |
+  |---|---|---|---|
+  | 2019-2021 (expérimentation) | GRANT_18 | 500 € à 18 ans | 24 mois |
+  | 2021-2025 (généralisation) | GRANT_15_17 | 20 € (15 ans), 30 € (16 ans), 30 € (17 ans) | Cumulables, RAZ à 18 ans |
+  | 2021-2025 (généralisation) | GRANT_18 | 300 € à 18 ans | 24 mois |
+  | Mars 2025+ (réforme) | GRANT_17_18 | 50 € (17 ans), 150 € (18 ans) | Jusqu'à la veille des 21 ans |
+
+  `deposit_reform_category` distingue les cohortes pré/post réforme.
+
+  ## Alertes et biais connus
+
+  - **Biais diversité post-réforme** : entre mars 2025 et mars 2026, forte chute du nombre de crédits expirant → les bénéficiaires dont le crédit expire durant cette période ne sont pas représentatifs. Biais fort sur les indicateurs de diversité et de montant dépensé.
+  - **Gel collectif février 2025** : pause des réservations collectives face à l'afflux de demandes. Pré-réservations rouvertes le 15 septembre, réservations le 1er octobre. Impact sur les volumes EAC du S1 2025.
+  - **Adresse déclarative** : la localisation des bénéficiaires (QPV, rural) est basée sur l'adresse déclarée à l'inscription, mise à jour à chaque octroi de crédit. Non vérifiée.
+description: Glossaire métier et contexte global du pass Culture — définitions, acronymes, règles de calcul, historique des
+  crédits et biais connus.
+display_name: Glossaire pass Culture

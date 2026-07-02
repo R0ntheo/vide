@@ -1,0 +1,14 @@
+context_md: |-
+  Ce domaine regroupe tout ce qui concerne le volet collectif (EAC) du pass Culture, destiné aux établissements scolaires.
+
+  Un établissement (educational_institution) est un EPLE (Établissement Public Local d'Enseignement) identifié par un UAI. Il reçoit un crédit collectif annuel via la plateforme Adage.
+
+  Le crédit peut être scindé (is_split_deposit) en deux périodes : sept-déc et jan-août.
+
+  Les logs Adage (collective_adage_log) tracent les interactions des enseignants avec la plateforme. L'agrégation EPLE (collective_eple_aggregated) consolide les indicateurs par établissement.
+
+  Les tables external_reporting_eac_* portent les KPIs institutionnels du volet collectif au format pivot (dimension_name/dimension_value/kpi_name).
+
+  Gel collectif février 2025 : pause des réservations collectives. Reprise des pré-réservations le 15 septembre, réservations le 1er octobre.
+description: Volet collectif scolaire — établissements, crédits EAC, logs Adage et reporting institutionnel EAC.
+display_name: Éducation Artistique et Culturelle (EAC)

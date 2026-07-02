@@ -1,0 +1,265 @@
+columns:
+- data_type: string
+  description: Identifiant interne de l'établissement scolaire dans le pass Culture.
+  name: institution_id
+  nullable: false
+  ordinal: 0
+  source: manual
+- data_type: string
+  description: Identifiant externe de l'établissement scolaire (code UAI).
+  name: institution_external_id
+  nullable: false
+  ordinal: 1
+  source: manual
+  synonyms:
+  - UAI
+  - code établissement
+- data_type: string
+  description: Nom officiel de l'établissement scolaire.
+  name: institution_name
+  ordinal: 2
+  source: manual
+- data_type: string
+  description: Ministère auquel l'établissement est rattaché.
+  name: ministry
+  ordinal: 3
+  source: manual
+- data_type: string
+  description: Type détaillé de l'établissement scolaire.
+  name: institution_type
+  ordinal: 4
+  source: manual
+- data_type: string
+  description: Nom du programme EAC auquel l'établissement participe.
+  name: institution_program_name
+  ordinal: 5
+  source: manual
+- data_type: datetime
+  description: Date de création du tout premier crédit EAC reçu par l'établissement.
+  name: first_deposit_creation_date
+  ordinal: 6
+  source: manual
+- data_type: datetime
+  description: Date de création du crédit EAC en cours pour l'établissement.
+  name: current_deposit_creation_date
+  ordinal: 7
+  source: manual
+- data_type: number
+  description: Montant total du crédit EAC alloué pour l'année scolaire en cours.
+  name: total_current_scholar_year_deposit_amount
+  ordinal: 8
+  source: manual
+  unit: €
+- data_type: number
+  description: Montant total du crédit EAC alloué pour l'année civile en cours.
+  name: total_current_calendar_year_deposit_amount
+  ordinal: 9
+  source: manual
+  unit: €
+- data_type: date
+  description: Date de la première réservation collective effectuée par l'établissement.
+  name: first_booking_date
+  ordinal: 10
+  source: manual
+- data_type: date
+  description: Date de la dernière réservation collective effectuée par l'établissement.
+  name: last_booking_date
+  ordinal: 11
+  source: manual
+- data_type: number
+  description: Effectif total d'élèves de l'établissement.
+  name: total_students
+  ordinal: 12
+  source: manual
+  synonyms:
+  - effectifs
+- data_type: string
+  description: 'Classification macro de l''établissement : collège, école ou lycée.'
+  name: macro_institution_type
+  ordinal: 13
+  source: manual
+- data_type: string
+  description: Code INSEE de la commune où se situe l'établissement.
+  name: institution_city_code
+  ordinal: 14
+  source: manual
+  synonyms:
+  - code INSEE commune
+- data_type: string
+  description: Nom de la commune où se situe l'établissement.
+  name: institution_city
+  ordinal: 15
+  source: manual
+  synonyms:
+  - ville
+- data_type: string
+  description: Code de l'EPCI (intercommunalité) de l'établissement.
+  name: institution_epci_code
+  ordinal: 16
+  source: manual
+- data_type: string
+  description: Nom de l'EPCI (intercommunalité) de l'établissement.
+  name: institution_epci
+  ordinal: 17
+  source: manual
+  synonyms:
+  - intercommunalité
+- data_type: string
+  description: Libellé détaillé de la densité de la zone de l'établissement (grille INSEE).
+  name: institution_density_label
+  ordinal: 18
+  source: manual
+- data_type: string
+  description: 'Classification macro de la densité de la zone : rural ou urbain.'
+  name: institution_macro_density_label
+  ordinal: 19
+  source: manual
+- data_type: number
+  description: Niveau numérique de densité de la zone de l'établissement.
+  name: institution_density_level
+  ordinal: 20
+  source: manual
+- data_type: number
+  description: Latitude géographique de l'établissement.
+  name: institution_latitude
+  ordinal: 21
+  source: manual
+- data_type: number
+  description: Longitude géographique de l'établissement.
+  name: institution_longitude
+  ordinal: 22
+  source: manual
+- data_type: string
+  description: Nom de l'académie de rattachement de l'établissement.
+  name: institution_academy_name
+  ordinal: 23
+  source: manual
+- data_type: string
+  description: Nom de la région de l'établissement.
+  name: institution_region_name
+  ordinal: 24
+  source: manual
+- data_type: boolean
+  description: Indiqué si l'établissement est situé dans un Quartier Prioritaire de la politique de la Ville (QPV).
+  name: institution_in_qpv
+  ordinal: 25
+  source: manual
+  synonyms:
+  - quartier prioritaire
+- data_type: string
+  description: Code du département de l'établissement.
+  name: institution_department_code
+  ordinal: 26
+  source: manual
+- data_type: string
+  description: Nom du département de l'établissement.
+  name: institution_department_name
+  ordinal: 27
+  source: manual
+- data_type: string
+  description: Identifiant IRIS interne pour l'établissement (maille infra-communale INSEE).
+  name: institution_internal_iris_id
+  ordinal: 28
+  source: manual
+- data_type: string
+  description: Code postal de l'établissement.
+  name: institution_postal_code
+  ordinal: 29
+  source: manual
+- data_type: number
+  description: Montant du crédit EAC en cours pour l'établissement.
+  name: current_deposit_amount
+  ordinal: 30
+  source: manual
+  unit: €
+- data_type: number
+  description: Montant cumulé de tous les crédits EAC reçus par l'établissement depuis le premier dépôt.
+  name: total_deposit_amount
+  ordinal: 31
+  source: manual
+  unit: €
+- data_type: number
+  description: Nombre total de crédits EAC reçus par l'établissement.
+  name: total_deposits
+  ordinal: 32
+  source: manual
+- data_type: number
+  description: Nombre total de réservations collectives non annulées depuis le premier crédit.
+  name: total_non_cancelled_collective_bookings
+  ordinal: 33
+  source: manual
+  synonyms:
+  - pré-réservations non annulées
+- data_type: number
+  description: Nombre de réservations collectives non annulées pour l'année scolaire en cours.
+  name: total_current_year_non_cancelled_collective_bookings
+  ordinal: 34
+  source: manual
+- data_type: number
+  description: Montant théorique total dépensé par l'établissement depuis le premier crédit, c'est-à-dire la somme des pré-réservations
+    non annulées.
+  name: total_theoretic_amount_spent
+  ordinal: 35
+  source: manual
+  unit: €
+- data_type: number
+  description: Montant théorique dépensé par l'établissement pendant l'année scolaire en cours (pré-réservations non annulées).
+  name: total_current_scholar_year_theoretic_amount_spent
+  ordinal: 36
+  source: manual
+  unit: €
+- data_type: number
+  description: Nombre total de réservations collectives effectivement utilisées (la sortie a eu lieu) depuis le premier crédit.
+  name: total_used_collective_bookings
+  ordinal: 37
+  source: manual
+- data_type: number
+  description: Nombre de réservations collectives utilisées pendant l'année scolaire en cours.
+  name: total_current_year_used_collective_bookings
+  ordinal: 38
+  source: manual
+- data_type: number
+  description: 'Montant réel total dépensé par l''établissement depuis le premier crédit : uniquement les réservations utilisées
+    et remboursées.'
+  name: total_real_amount_spent
+  ordinal: 39
+  source: manual
+  unit: €
+- data_type: number
+  description: Montant réel dépensé par l'établissement pendant l'année scolaire en cours (réservations utilisées et remboursées
+    uniquement).
+  name: total_current_scholar_year_real_amount_spent
+  ordinal: 40
+  source: manual
+  unit: €
+- data_type: number
+  description: Ratio entre le montant réel dépensé et le montant du crédit alloué pour l'année scolaire en cours.
+  name: ratio_current_scholar_year_credit_utilization
+  ordinal: 41
+  source: manual
+  synonyms:
+  - taux de consommation
+  unit: '%'
+- data_type: number
+  description: Nombre total de places (tickets) réservées par l'établissement depuis le premier crédit.
+  name: total_tickets
+  ordinal: 42
+  source: manual
+- data_type: number
+  description: Nombre de places réservées pendant l'année scolaire en cours.
+  name: total_current_scholar_year_tickets
+  ordinal: 43
+  source: manual
+description: Recense tous les établissements ayant reçu un crédit EAC depuis le lancement du volet collectif (fin 2021 - début
+  2022).
+domain_path: core/eac/etablissements
+grain:
+- Une ligne par combinaison (institution_id, institution_external_id)
+schema_name: analytics_prod
+synonyms:
+- école
+- collège
+- lycée
+- EPLE
+- établissement
+table_name: global_educational_institution

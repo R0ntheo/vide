@@ -1,0 +1,344 @@
+columns:
+- data_type: string
+  description: Identifiant unique de la structure.
+  name: offerer_id
+  nullable: false
+  ordinal: 0
+  source: manual
+- data_type: string
+  description: Identifiant unique du partenaire culturel associé a la structure.
+  name: partner_id
+  nullable: false
+  ordinal: 1
+  source: manual
+- data_type: string
+  description: Nom de la structure tel qu'enregistre sur le portail professionnel.
+  name: offerer_name
+  ordinal: 2
+  source: manual
+- data_type: datetime
+  description: Date de creation de la structure, correspondant a la date d'inscription sur le portail professionnel.
+  name: offerer_creation_date
+  ordinal: 3
+  source: manual
+  synonyms:
+  - date d'inscription
+- data_type: datetime
+  description: Date a laquelle la structure a ete validée (validation_status = 'VALIDATED').
+  name: offerer_validation_date
+  ordinal: 4
+  source: manual
+- data_type: datetime
+  description: Date de creation du premier stock de la structure.
+  name: first_stock_creation_date
+  ordinal: 5
+  source: manual
+- data_type: string
+  description: Statut de validation de la structure juridique (VALIDATED, NEW, PENDING, REJECTED).
+  name: offerer_validation_status
+  ordinal: 5
+  source: manual
+- data_type: date
+  description: Date de creation de la première offre individuelle de la structure.
+  name: first_individual_offer_creation_date
+  ordinal: 6
+  source: manual
+- data_type: date
+  description: Date de creation de la dernière offre individuelle de la structure.
+  name: last_individual_offer_creation_date
+  ordinal: 7
+  source: manual
+- data_type: date
+  description: Date de creation de la première offre collective de la structure.
+  name: first_collective_offer_creation_date
+  ordinal: 8
+  source: manual
+- data_type: date
+  description: Date de creation de la dernière offre collective de la structure.
+  name: last_collective_offer_creation_date
+  ordinal: 9
+  source: manual
+- data_type: date
+  description: Date de creation de la première offre de la structure (individuelle ou collective).
+  name: first_offer_creation_date
+  ordinal: 10
+  source: manual
+- data_type: date
+  description: Date de creation de la dernière offre de la structure (individuelle ou collective).
+  name: last_offer_creation_date
+  ordinal: 11
+  source: manual
+- data_type: date
+  description: Date de la première réservation individuelle de la structure.
+  name: first_individual_booking_date
+  ordinal: 12
+  source: manual
+- data_type: date
+  description: Date de la dernière réservation individuelle de la structure.
+  name: last_individual_booking_date
+  ordinal: 13
+  source: manual
+- data_type: date
+  description: Date de la première offre réservable de la structure.
+  name: first_bookable_offer_date
+  ordinal: 14
+  source: manual
+- data_type: date
+  description: Date de la dernière offre collective réservable de la structure.
+  name: last_collective_bookable_offer_date
+  ordinal: 15
+  source: manual
+- data_type: date
+  description: Date de la première offre individuelle réservable de la structure.
+  name: first_individual_bookable_offer_date
+  ordinal: 16
+  source: manual
+- data_type: date
+  description: Date de la dernière offre individuelle réservable de la structure.
+  name: last_individual_bookable_offer_date
+  ordinal: 17
+  source: manual
+- data_type: date
+  description: Date de la première offre collective réservable de la structure.
+  name: first_collective_bookable_offer_date
+  ordinal: 18
+  source: manual
+- data_type: date
+  description: Date de la première réservation de la structure (individuelle ou collective).
+  name: first_booking_date
+  ordinal: 19
+  source: manual
+- data_type: date
+  description: Date de la dernière réservation de la structure (individuelle ou collective).
+  name: last_booking_date
+  ordinal: 20
+  source: manual
+- data_type: date
+  description: Date de la dernière offre réservable de la structure (individuelle ou collective).
+  name: last_bookable_offer_date
+  ordinal: 21
+  source: manual
+- data_type: number
+  description: Nombre total de réservations individuelles non annulees de la structure.
+  name: total_non_cancelled_individual_bookings
+  ordinal: 22
+  source: manual
+- data_type: number
+  description: Nombre total de réservations collectives non annulees de la structure.
+  name: total_non_cancelled_collective_bookings
+  ordinal: 23
+  source: manual
+- data_type: number
+  description: Nombre total de réservations non annulees, individuelles et collectives confondues.
+  name: total_non_cancelled_bookings
+  ordinal: 24
+  source: manual
+- data_type: number
+  description: Nombre total de réservations utilisees (consommees).
+  name: total_used_bookings
+  ordinal: 25
+  source: manual
+- data_type: number
+  description: Nombre total de réservations individuelles utilisees.
+  name: total_used_individual_bookings
+  ordinal: 26
+  source: manual
+- data_type: number
+  description: Nombre total de réservations collectives utilisees.
+  name: total_used_collective_bookings
+  ordinal: 27
+  source: manual
+- data_type: number
+  description: Revenu theorique total des réservations individuelles.
+  name: total_individual_theoretic_revenue
+  ordinal: 28
+  source: manual
+  unit: €
+- data_type: number
+  description: Revenu réel total des réservations individuelles (réservations utilisees uniquement).
+  name: total_individual_real_revenue
+  ordinal: 29
+  source: manual
+  unit: €
+- data_type: number
+  description: Revenu theorique total des réservations collectives.
+  name: total_collective_theoretic_revenue
+  ordinal: 30
+  source: manual
+  unit: €
+- data_type: number
+  description: Revenu réel total des réservations collectives.
+  name: total_collective_real_revenue
+  ordinal: 31
+  source: manual
+  unit: €
+- data_type: number
+  description: Revenu theorique total de toutes les réservations (individuelles + collectives).
+  name: total_theoretic_revenue
+  ordinal: 32
+  source: manual
+  unit: €
+- data_type: number
+  description: Revenu réel total de toutes les réservations (individuelles + collectives).
+  name: total_real_revenue
+  ordinal: 33
+  source: manual
+  synonyms:
+  - chiffre d'affaires
+  unit: €
+- data_type: number
+  description: Revenu réel total pour l'annee en cours.
+  name: total_current_year_real_revenue
+  ordinal: 34
+  source: manual
+  unit: €
+- data_type: date
+  description: Date de la première réservation collective de la structure.
+  name: first_collective_booking_date
+  ordinal: 35
+  source: manual
+- data_type: date
+  description: Date de la dernière réservation collective de la structure.
+  name: last_collective_booking_date
+  ordinal: 36
+  source: manual
+- data_type: number
+  description: Nombre total d'offres individuelles créées par la structure.
+  name: total_created_individual_offers
+  ordinal: 37
+  source: manual
+- data_type: number
+  description: Nombre total d'offres collectives créées par la structure.
+  name: total_created_collective_offers
+  ordinal: 38
+  source: manual
+- data_type: number
+  description: Nombre total d'offres créées, individuelles et collectives confondues.
+  name: total_created_offers
+  ordinal: 39
+  source: manual
+- data_type: number
+  description: Nombre total d'offres individuelles actuellement réservables.
+  name: total_bookable_individual_offers
+  ordinal: 40
+  source: manual
+- data_type: number
+  description: Nombre total d'offres collectives actuellement réservables.
+  name: total_bookable_collective_offers
+  ordinal: 41
+  source: manual
+- data_type: number
+  description: Nombre total d'offres actuellement réservables, individuelles et collectives confondues.
+  name: total_bookable_offers
+  ordinal: 42
+  source: manual
+- data_type: string
+  description: Numero SIREN de la structure (identifiant legal a 9 chiffres).
+  name: offerer_siren
+  nullable: false
+  ordinal: 43
+  source: manual
+- data_type: string
+  description: Code d'activite economique (APE/NAF) de l'unite légale de la structure.
+  name: legal_unit_business_activity_code
+  ordinal: 44
+  source: manual
+  synonyms:
+  - code APE
+  - code NAF
+- data_type: string
+  description: Libelle de l'activite economique de l'unite légale de la structure.
+  name: legal_unit_business_activity_label
+  ordinal: 45
+  source: manual
+- data_type: string
+  description: Code de la catégorie juridique de l'unite légale de la structure.
+  name: legal_unit_legal_category_code
+  ordinal: 46
+  source: manual
+- data_type: string
+  description: 'Libelle de la catégorie juridique de l''unite légale de la structure (ex : association, SARL, collectivite
+    territoriale).'
+  name: legal_unit_legal_category_label
+  ordinal: 47
+  source: manual
+- data_type: boolean
+  description: Indiqué si la structure est une collectivite territoriale.
+  name: is_local_authority
+  ordinal: 48
+  source: manual
+  synonyms:
+  - collectivite
+- data_type: string
+  description: Type de la collectivite territoriale quand la structure en est une.
+  name: local_authority_type
+  ordinal: 49
+  source: manual
+- data_type: boolean
+  description: Indiqué si la collectivite territoriale est considérée comme un partenaire prioritaire en interne.
+  name: local_authority_is_priority
+  ordinal: 50
+  source: manual
+- data_type: number
+  description: Nombre total de lieux geres par la structure.
+  name: total_managed_venues
+  ordinal: 51
+  source: manual
+- data_type: number
+  description: Nombre total de lieux permanents geres par la structure.
+  name: total_permanent_managed_venues
+  ordinal: 52
+  source: manual
+- data_type: number
+  description: Nombre total de lieux associes a la structure.
+  name: total_venues
+  ordinal: 53
+  source: manual
+- data_type: string
+  description: Identifiant unique encode de la structure, utilise dans Flaskadmin et Matomo.
+  name: offerer_humanized_id
+  ordinal: 54
+  source: manual
+- data_type: string
+  description: Premier statut DMS ADAGE de la structure.
+  name: first_dms_adage_status
+  ordinal: 55
+  source: manual
+- data_type: datetime
+  description: Date a laquelle la structure a soumis son premier dossier DMS.
+  name: dms_submitted_at
+  ordinal: 56
+  source: manual
+- data_type: datetime
+  description: Date a laquelle la structure a ete acceptee dans le système DMS (Demarches Simplifiees).
+  name: dms_accepted_at
+  ordinal: 57
+  source: manual
+- data_type: boolean
+  description: Indiqué si la structure est referencee dans ADAGE.
+  name: is_reference_adage
+  ordinal: 58
+  source: manual
+- data_type: boolean
+  description: Indiqué si la structure est synchronisee avec ADAGE.
+  name: is_synchro_adage
+  ordinal: 59
+  source: manual
+- data_type: boolean
+  description: Indiqué si la structure est un Établissement Public National (rattaché au Ministere de la Culture).
+  name: offerer_is_epn
+  ordinal: 60
+  source: manual
+  synonyms:
+  - etablissement public national
+description: Entité juridique identifiée par un SIREN, inscrite sur le pass Culture.
+domain_path: core/partenaires-culturels
+grain:
+- Une ligne par combinaison (offerer_id, offerer_siren)
+schema_name: analytics_prod
+synonyms:
+- structure culturelle
+- offerer
+- entite juridique
+- SIREN
+table_name: global_offerer

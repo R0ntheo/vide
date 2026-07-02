@@ -1,0 +1,14 @@
+description: Part des bénéficiaires actifs s'étant connectés au moins une fois sur l'application dans la semaine.
+display_name: Taux de connexion hebdomadaire
+domain_path: tracking/natif
+expression: SAFE_DIVIDE(COUNTIF(nb_visits > 0), COUNT(*))
+name: taux_connexion_hebdomadaire
+notes: Agrégé par active_week et deposit_reform_category. Utilisé dans les dashboards Metabase de suivi d'engagement (dashboards
+  968, 1036).
+synonyms:
+- taux de connexion
+- part des connectés
+- weekly connection rate
+table_name: aggregated_weekly_user_data
+table_schema: analytics_prod
+unit: '%'

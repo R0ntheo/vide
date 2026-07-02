@@ -1,0 +1,42 @@
+columns:
+- data_type: date
+  description: Premier jour du mois auquel le KPI se rapporte.
+  name: partition_month
+  ordinal: 0
+- data_type: datetime
+  description: Date effective de rafraîchissement des données.
+  name: updated_at
+  ordinal: 1
+- data_type: string
+  description: 'Agrégation géographique du KPI : nationale, régionale ou départementale.'
+  name: dimension_name
+  ordinal: 2
+- data_type: string
+  description: Nom de l'agrégation géographique du KPI si elle existe (nom de région, nom de département).
+  name: dimension_value
+  ordinal: 3
+- data_type: string
+  description: Identifiant unique du lieu.
+  name: venue_id
+  ordinal: 4
+- data_type: string
+  description: Nom du lieu.
+  name: venue_name
+  ordinal: 5
+- data_type: string
+  description: Nom de la structure.
+  name: offerer_name
+  ordinal: 6
+- data_type: number
+  description: Rang du lieu par montant total généré par ses réservations.
+  name: total_venue_booking_amount_ranked
+  ordinal: 7
+description: Classement Top 50 des lieux par chiffre d'affaires individuel.
+domain_path: reporting/institutionnel/classements
+grain:
+- Une ligne par entrée du classement (partition_month, dimension_name, dimension_value)
+schema_name: analytics_prod
+synonyms:
+- top lieux
+- classement lieux
+table_name: external_reporting_top_venue

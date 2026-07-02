@@ -1,0 +1,7 @@
+context_md: |-
+  Tables de reporting institutionnel du volet individuel au format pivot. Couvre les bénéficiaires, réservations, couverture, partenaires culturels, utilisation des crédits, diversité culturelle et finance.
+
+  La table `external_reporting_individual` est l'union des 7 tables thématiques ci-dessous — elle contient tous les KPIs individuels dans une seule source.
+description: KPIs institutionnels du volet individuel — bénéficiaires, réservations, couverture, partenaires, crédits, diversité,
+  finance.
+display_name: Reporting individuel

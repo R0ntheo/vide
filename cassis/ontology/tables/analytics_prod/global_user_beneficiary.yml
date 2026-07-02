@@ -1,0 +1,403 @@
+columns:
+- data_type: string
+  description: Identifiant unique du bénéficiaire.
+  name: user_id
+  nullable: false
+  ordinal: 0
+  source: manual
+- data_type: string
+  description: Code du département de l'adresse déclarée par le bénéficiaire.
+  name: user_department_code
+  ordinal: 1
+  source: manual
+- data_type: string
+  description: Nom du département de l'adresse déclarée par le bénéficiaire.
+  name: user_department_name
+  nullable: false
+  ordinal: 2
+  source: manual
+- data_type: string
+  description: Code postal de l'adresse déclarée par le bénéficiaire.
+  name: user_postal_code
+  nullable: false
+  ordinal: 3
+  source: manual
+- data_type: string
+  description: Ville de l'adresse déclarée par le bénéficiaire.
+  name: user_city
+  ordinal: 4
+  source: manual
+- data_type: string
+  description: Code INSEE de la commune de l'adresse déclarée par le bénéficiaire.
+  name: user_city_code
+  ordinal: 5
+  source: manual
+  synonyms:
+  - code commune
+- data_type: string
+  description: Activité déclarée du bénéficiaire (étudiant, apprenti, sans emploi, etc.).
+  name: user_activity
+  ordinal: 6
+  source: manual
+  synonyms:
+  - situation
+- data_type: string
+  description: Civilité déclarée du bénéficiaire (male, female).
+  name: user_civility
+  ordinal: 7
+  source: manual
+  synonyms:
+  - genre
+  - sexe
+- data_type: string
+  description: Type d'établissement scolaire dans lequel le bénéficiaire est inscrit.
+  name: user_school_type
+  ordinal: 8
+  source: manual
+- data_type: boolean
+  description: Indiqué si le compte du bénéficiaire est actuellement actif (accès possible, indépendamment du statut du crédit).
+  name: user_is_active
+  ordinal: 9
+  source: manual
+- data_type: number
+  description: Âge actuel de l'utilisateur, recalculé quotidiennement par le pipeline dbt. Change chaque jour — ne pas utiliser
+    pour analyser l'âge au moment d'un événement (utiliser user_age_at_booking pour les réservations, ou calculer manuellement
+    avec user_birth_date).
+  name: user_age
+  ordinal: 10
+  source: manual
+- data_type: datetime
+  description: Date de naissance du bénéficiaire.
+  name: user_birth_date
+  ordinal: 11
+  source: manual
+- data_type: number
+  description: Âge du bénéficiaire à la date de création de son profil.
+  name: user_age_at_creation
+  ordinal: 12
+  source: manual
+- data_type: boolean
+  description: Indiqué si le bénéficiaire a accepté de recevoir des emails marketing.
+  name: user_has_enabled_marketing_email
+  ordinal: 13
+  source: manual
+- data_type: boolean
+  description: Indiqué si le bénéficiaire a accepté de recevoir des notifications push marketing.
+  name: user_has_enabled_marketing_push
+  ordinal: 14
+  source: manual
+- data_type: string
+  description: Identifiant IRIS interne associé à l'adresse du bénéficiaire. Les IRIS sont des unités géographiques INSEE
+    d'environ 2 000 habitants.
+  name: user_iris_internal_id
+  nullable: false
+  ordinal: 15
+  source: manual
+- data_type: boolean
+  description: Indiqué si le bénéficiaire fait partie des publics prioritaires du pass Culture.
+  name: user_is_priority_public
+  ordinal: 16
+  source: manual
+- data_type: boolean
+  description: Indiqué si le bénéficiaire est sans emploi d'après son activité déclarée.
+  name: user_is_unemployed
+  ordinal: 17
+  source: manual
+  synonyms:
+  - chômeur
+- data_type: boolean
+  description: Indiqué si le bénéficiaire est en formation, d'après son activité déclarée.
+  name: user_is_in_education
+  ordinal: 18
+  source: manual
+  synonyms:
+  - scolarisé
+- data_type: boolean
+  description: Indiqué si l'adresse déclarée du bénéficiaire est dans un quartier prioritaire de la politique de la ville
+    (QPV).
+  name: user_is_in_qpv
+  ordinal: 19
+  source: manual
+  synonyms:
+  - quartier prioritaire
+- data_type: string
+  description: Nom de l'EPCI associé à l'adresse du bénéficiaire.
+  name: user_epci
+  ordinal: 20
+  source: manual
+  synonyms:
+  - intercommunalité
+- data_type: string
+  description: Code de l'EPCI associé à l'adresse du bénéficiaire.
+  name: user_epci_code
+  ordinal: 21
+  source: manual
+- data_type: string
+  description: Libellé de densité détaillé (urbain, rural, etc.) de l'adresse du bénéficiaire.
+  name: user_density_label
+  ordinal: 22
+  source: manual
+- data_type: string
+  description: Libellé de densité macro (urbain, rural) de l'adresse du bénéficiaire.
+  name: user_macro_density_label
+  ordinal: 23
+  source: manual
+- data_type: number
+  description: Niveau de densité de l'adresse du bénéficiaire, de 1 (très urbain) à 7 (très rural).
+  name: user_density_level
+  ordinal: 24
+  source: manual
+- data_type: string
+  description: Nom de la région de l'adresse du bénéficiaire.
+  name: user_region_name
+  nullable: false
+  ordinal: 25
+  source: manual
+- data_type: string
+  description: Nom de l'académie associée à l'adresse du bénéficiaire.
+  name: user_academy_name
+  ordinal: 26
+  source: manual
+- data_type: string
+  description: Identifiant lisible par un humain pour le bénéficiaire.
+  name: user_humanized_id
+  ordinal: 27
+  source: manual
+- data_type: string
+  description: Thèmes auxquels le bénéficiaire est actuellement abonné (cinéma, musique, etc.) pour recevoir des communications
+    personnalisées.
+  name: currently_subscribed_themes
+  ordinal: 28
+  source: manual
+- data_type: boolean
+  description: Indiqué si le bénéficiaire est abonné à au moins un thème.
+  name: is_theme_subscribed
+  ordinal: 29
+  source: manual
+- data_type: datetime
+  description: Date de création du premier crédit. NULL si aucun crédit n'a été octroyé.
+  name: first_deposit_creation_date
+  ordinal: 30
+  source: manual
+- data_type: string
+  description: Type du premier crédit reçu par le bénéficiaire.
+  name: first_deposit_type
+  ordinal: 31
+  source: manual
+- data_type: number
+  description: Montant total cumulé des crédits déposés pour le bénéficiaire.
+  name: total_deposit_amount
+  ordinal: 32
+  source: manual
+  unit: €
+- data_type: string
+  description: Type du crédit actuel du bénéficiaire.
+  name: current_deposit_type
+  ordinal: 33
+  source: manual
+- data_type: string
+  description: Catégorie de réforme associée au premier crédit du bénéficiaire.
+  name: user_first_deposit_reform_category
+  ordinal: 34
+  source: manual
+- data_type: string
+  description: Catégorie de réforme associée au crédit actuel du bénéficiaire.
+  name: user_current_deposit_reform_category
+  ordinal: 35
+  source: manual
+- data_type: date
+  description: Date de la première réservation individuelle. NULL si le bénéficiaire n'a jamais réservé. Pour compter les
+    bénéficiaires ayant réservé, filtrer sur IS NOT NULL (évite un JOIN sur global_booking).
+  name: first_individual_booking_date
+  ordinal: 36
+  source: manual
+- data_type: number
+  description: Nombre total de réservations individuelles non annulées du bénéficiaire.
+  name: total_non_cancelled_individual_bookings
+  ordinal: 37
+  source: manual
+- data_type: number
+  description: Nombre total de réservations duo non annulées du bénéficiaire.
+  name: total_non_cancelled_duo_bookings
+  ordinal: 38
+  source: manual
+- data_type: number
+  description: Nombre total de réservations gratuites du bénéficiaire.
+  name: total_free_bookings
+  ordinal: 39
+  source: manual
+- data_type: number
+  description: Montant réel total dépensé par le bénéficiaire, reflétant les transactions effectives.
+  name: total_actual_amount_spent
+  ordinal: 40
+  source: manual
+  unit: €
+- data_type: number
+  description: Montant théorique total qui aurait été dépensé par le bénéficiaire sur la base des transactions attendues.
+  name: total_theoretical_amount_spent
+  ordinal: 41
+  source: manual
+  unit: €
+- data_type: number
+  description: Montant théorique total dépensé en biens numériques par le bénéficiaire.
+  name: total_theoretical_digital_goods_amount_spent
+  ordinal: 42
+  source: manual
+  unit: €
+- data_type: number
+  description: Montant théorique total dépensé en biens physiques par le bénéficiaire.
+  name: total_theoretical_physical_goods_amount_spent
+  ordinal: 43
+  source: manual
+  unit: €
+- data_type: number
+  description: Montant théorique total dépensé en sorties par le bénéficiaire.
+  name: total_theoretical_outings_amount_spent
+  ordinal: 44
+  source: manual
+  unit: €
+- data_type: number
+  description: Montant total dépensé en biens numériques sur le dernier crédit du bénéficiaire.
+  name: total_last_deposit_digital_goods_amount_spent
+  ordinal: 45
+  source: manual
+  unit: €
+- data_type: number
+  description: Montant théorique total dépensé sur le dernier crédit du bénéficiaire.
+  name: total_last_deposit_theoretical_amount_spent
+  ordinal: 46
+  source: manual
+  unit: €
+- data_type: number
+  description: Montant réel total dépensé à partir des crédits du bénéficiaire.
+  name: total_deposit_actual_amount_spent
+  ordinal: 47
+  source: manual
+  unit: €
+- data_type: number
+  description: Score de diversité total du bénéficiaire, mesurant la variété des consommations culturelles.
+  name: total_diversity_score
+  ordinal: 48
+  source: manual
+- data_type: number
+  description: Montant du dernier crédit reçu par le bénéficiaire.
+  name: last_deposit_amount
+  ordinal: 49
+  source: manual
+  unit: €
+- data_type: number
+  description: Crédit théorique restant total pour le bénéficiaire.
+  name: total_theoretical_remaining_credit
+  ordinal: 50
+  source: manual
+  synonyms:
+  - solde
+  unit: €
+- data_type: datetime
+  description: Date de création du compte utilisateur.
+  name: user_creation_date
+  ordinal: 51
+  source: manual
+- data_type: date
+  description: Date de la dernière réservation du bénéficiaire.
+  name: last_booking_date
+  ordinal: 52
+  source: manual
+- data_type: number
+  description: Nombre de jours entre la date d'activation du compte et la date de la première réservation.
+  name: days_between_activation_date_and_first_booking_date
+  ordinal: 53
+  source: manual
+- data_type: number
+  description: Nombre de jours entre la date d'activation du compte et la première réservation payante.
+  name: days_between_activation_date_and_first_booking_paid
+  ordinal: 54
+  source: manual
+- data_type: datetime
+  description: Date d'activation du compte du bénéficiaire.
+  name: user_activation_date
+  ordinal: 55
+  source: manual
+- data_type: number
+  description: Âge du bénéficiaire à la date du premier crédit.
+  name: user_age_at_first_deposit
+  ordinal: 56
+  source: manual
+- data_type: number
+  description: Âge du bénéficiaire à la date du dernier crédit.
+  name: user_age_at_last_deposit
+  ordinal: 57
+  source: manual
+- data_type: string
+  description: Catégorie d'offre de la première réservation du bénéficiaire.
+  name: first_booking_type
+  ordinal: 58
+  source: manual
+- data_type: string
+  description: Catégorie d'offre de la première réservation payante du bénéficiaire.
+  name: first_paid_booking_type
+  ordinal: 59
+  source: manual
+- data_type: number
+  description: Nombre total de sous-catégories distinctes réservées sur le crédit GRANT_18.
+  name: total_grant_18_subcategory_booked
+  ordinal: 60
+  source: manual
+- data_type: number
+  description: Nombre total de sous-catégories distinctes réservées sur le crédit GRANT_15_17.
+  name: total_grant_15_17_subcategory_booked
+  ordinal: 61
+  source: manual
+- data_type: string
+  description: Raison de la suspension du compte du bénéficiaire.
+  name: user_suspension_reason
+  ordinal: 62
+  source: manual
+- data_type: number
+  description: Montant du premier crédit reçu par le bénéficiaire.
+  name: first_deposit_amount
+  ordinal: 63
+  source: manual
+  unit: €
+- data_type: datetime
+  description: Date d'expiration du dernier crédit du bénéficiaire.
+  name: last_deposit_expiration_date
+  ordinal: 64
+  source: manual
+- data_type: boolean
+  description: Indiqué si le bénéficiaire dispose encore de crédit utilisable.
+  name: user_is_current_beneficiary
+  ordinal: 65
+  source: manual
+- data_type: date
+  description: Date la plus récente à laquelle le bénéficiaire a reçu un recrédit.
+  name: last_recredit_date
+  ordinal: 66
+  source: manual
+- data_type: number
+  description: Nombre total de fois où le bénéficiaire a reçu un recrédit.
+  name: total_recredit
+  ordinal: 67
+  source: manual
+- data_type: number
+  description: Montant total recréditéau bénéficiaire.
+  name: total_recredit_amount
+  ordinal: 68
+  source: manual
+  unit: €
+- data_type: number
+  description: Nombre de jours entre la date de création du compte et la date du jour.
+  name: user_seniority
+  ordinal: 69
+  source: manual
+description: 'Vue complète des bénéficiaires du pass Culture : données démographiques, statut d''activité, informations de
+  crédit et métriques d''engagement.'
+domain_path: core/beneficiaires
+grain:
+- Une ligne par utilisateur (user_id)
+schema_name: analytics_prod
+synonyms:
+- utilisateur
+- jeune
+- usager
+table_name: global_user_beneficiary

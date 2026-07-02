@@ -1,0 +1,58 @@
+context_md: |-
+  # Année scolaire & crédit collectif
+
+  ## Année scolaire ≠ année civile
+
+  Toutes les données EAC sont indexées sur l'**année scolaire** (septembre N → août N+1), pas sur l'année civile.
+
+  ### Colonnes clés
+
+  - `is_current_scholar_year_booking` (sur `global_collective_booking`) : TRUE si la réservation appartient à l'année scolaire en cours.
+  - `scholar_year` (sur `global_collective_booking`, `collective_eple_aggregated`) : identifiant de l'année scolaire (ex : "2024-2025").
+  - `is_current_deposit_booking` : TRUE si la réservation utilise le dépôt en cours de l'établissement.
+
+  ### Piège
+
+  Filtrer `WHERE YEAR(collective_booking_creation_date) = 2025` mélange deux années scolaires (2024-2025 de sept à août, 2025-2026 à partir de sept). Toujours utiliser `is_current_scholar_year_booking` ou `scholar_year`.
+
+  ## Crédit collectif
+
+  Chaque établissement scolaire reçoit un crédit annuel pour réserver des offres collectives.
+
+  ### Allocation
+
+  - `current_deposit_amount` (sur `global_educational_institution`) : montant du crédit de l'année scolaire en cours.
+  - `total_current_scholar_year_deposit_amount` : montant total alloué cette année scolaire.
+  - Le crédit peut être **scindé** (`is_split_deposit` sur `collective_eple_aggregated`) en deux périodes :
+    - Sept-Déc : `sept_dec_deposit`
+    - Jan-Août : `jan_aug_deposit`
+
+  ### Utilisation
+
+  - `total_current_scholar_year_theoretic_amount_spent` : montant engagé (réservations confirmées, pas encore utilisées).
+  - `total_current_scholar_year_real_amount_spent` : montant réellement consommé (réservations utilisées).
+  - `ratio_current_scholar_year_credit_utilization` : taux d'utilisation = engagé / alloué.
+
+  ### Taux d'activation
+
+  Le **taux d'activation** est le KPI principal du volet EAC :
+
+  ```sql
+  SAFE_DIVIDE(
+    COUNT(DISTINCT CASE WHEN total_current_year_used_collective_bookings > 0 THEN institution_id END),
+    COUNT(DISTINCT institution_id)
+  )
+  ```
+
+  = pourcentage d'établissements crédités ayant fait au moins une réservation utilisée.
+
+  ## Gel collectif février 2025
+
+  En février 2025, les réservations collectives ont été temporairement gelées (pause du dispositif).
+
+  - Reprise des **pré-réservations** : 15 septembre 2025.
+  - Reprise des **réservations** : 1er octobre 2025.
+
+  Impact : trou dans les séries temporelles de réservations collectives entre février et septembre 2025. Ne pas interpréter comme une baisse d'activité.
+description: Fonctionnement de l'année scolaire EAC, du crédit collectif scindable et du gel de février 2025.
+display_name: Année scolaire & crédit collectif

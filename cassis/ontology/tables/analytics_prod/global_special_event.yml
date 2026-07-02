@@ -1,0 +1,59 @@
+columns:
+- data_type: string
+  description: Identifiant unique d'un événement spécial.
+  name: special_event_id
+  nullable: false
+  ordinal: 0
+- data_type: string
+  description: Titre de l'événement spécial.
+  name: special_event_title
+  ordinal: 1
+- data_type: string
+  description: Identifiant unique de la structure.
+  name: offerer_id
+  ordinal: 2
+- data_type: string
+  description: Identifiant unique du lieu.
+  name: venue_id
+  ordinal: 3
+- data_type: string
+  description: ID Typeform lié à un identifiant d'événement spécial unique, utilisé pour relier les données Contentful.
+  name: typeform_id
+  ordinal: 4
+- data_type: date
+  description: Date de création de l'événement spécial.
+  name: special_event_creation_date
+  ordinal: 5
+- data_type: date
+  description: Date à laquelle l'événement spécial aura lieu.
+  name: special_event_date
+  ordinal: 6
+- data_type: string
+  description: Identifiant unique de la réponse d'un utilisateur à un événement spécial.
+  name: special_event_response_id
+  ordinal: 7
+- data_type: string
+  description: Identifiant unique de l'utilisateur.
+  name: user_id
+  ordinal: 8
+- data_type: string
+  description: Statut de la réponse à la candidature de l'utilisateur à un événement spécial.
+  name: special_event_response_status
+  ordinal: 9
+- data_type: date
+  description: Date à laquelle la réponse a été communiquée à l'utilisateur.
+  name: special_event_response_submitted_date
+  ordinal: 10
+- data_type: date
+  description: Date de fin de l'événement spécial.
+  name: special_event_end_date
+  ordinal: 11
+description: Événements spéciaux organisés par les partenaires — opérations exceptionnelles avec dates, description et lieu.
+domain_path: core/offre-et-catalogue
+grain:
+- Une ligne par special_event (special_event_id)
+schema_name: analytics_prod
+synonyms:
+- événement spécial
+- opération spéciale
+table_name: global_special_event

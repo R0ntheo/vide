@@ -1,0 +1,19 @@
+context_md: '# Catégorisation des offres ## Hiérarchie de classification ``` Catégorie (offer_category_id) ← 13 valeurs └─
+  Sous-catégorie (offer_subcategory_id) ← ~40 valeurs └─ Type de bien (digital_goods / physical_goods / event) ``` ## Catégories
+  (`offer_category_id`) Les 13 catégories principales : - Cinéma, MUSIQUE_LIVE, MUSIQUE_ENREGISTREE, SPECTACLE, LIVRE - FILM,
+  MEDIA, MUSEE, BEAUX_ARTS, CARTE_JEUNES - INSTRUMENT, CONFERENCE, PRATIQUE_ARTISTIQUE ## Sous-catégories (`offer_subcategory_id`)
+  Niveau granulaire. Exemples : SEANCE_CINE, CONCERT, LIVRE_PAPIER, SUPPORT_PHYSIQUE_MUSIQUE, FESTIVAL_SPECTACLE, VISITE,
+  ABO_PLATEFORME_MUSIQUE. ## Flags de type Trois flags booléens mutuellement exclusifs sur `global_offer` et `global_booking`
+  : - `digital_goods` : bien numérique (streaming, ebook, VOD). - `physical_goods` : bien physique (livre papier, vinyle,
+  instrument). - `event` : événement (concert, séance ciné, spectacle, visite). Ces flags sont utiles pour filtrer les biens
+  numériques, souvent exclus des analyses (question type : "hors biens numériques"). ## Rayon (`rayon`) Classification fine
+  des livres uniquement. Correspond aux rayons des librairies : Roman, BD, Manga, Sciences humaines, Jeunesse, etc. NULL pour
+  les offres non-livre. Colonne `titelive_gtl_id` : identifiant GTL (Genre Titelive), classification professionnelle du livre.
+  ## Offres collectives Les offres collectives ont leur propre classification : - `collective_offer_format` : format de l''intervention
+  (Atelier de pratique, Concert, Projection audiovisuelle, Représentation, Visite guidée, etc.). - Domaine éducatif via `global_collective_offer_domain.educational_domain_name`
+  : Arts visuels, Cinéma audiovisuel, Danse, Lecture écriture, Musique, Patrimoine, Spectacle vivant, Théâtre, etc. ## Quel
+  niveau utiliser ? | Besoin | Colonne | |--------|---------| | Vue macro (13 valeurs) | `offer_category_id` | | Vue détaillée
+  | `offer_subcategory_id` | | Filtrer le numérique | `digital_goods = FALSE` | | Rayons librairie | `rayon` | | Format EAC
+  | `collective_offer_format` | | Domaine éducatif EAC | `educational_domain_name` (via join) |'
+description: 'Taxonomie des offres : catégories, sous-catégories, biens physiques/numériques, et classification GTL livres.'
+display_name: Catégorisation des offres

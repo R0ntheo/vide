@@ -1,0 +1,14 @@
+description: Nombre total de sessions (visites) sur l'application mobile pass Culture.
+display_name: Nombre de visites sur l'application
+domain_path: tracking/natif
+expression: COUNT(*)
+name: nombre_visites_app
+notes: Une visite = une session Firebase. Peut être segmenté par user_id (connecté vs non connecté) via jointure à global_user_beneficiary.
+  Agrégé par first_event_date.
+synonyms:
+- visites app
+- sessions
+- app visits
+table_name: firebase_visits
+table_schema: analytics_prod
+unit: visites

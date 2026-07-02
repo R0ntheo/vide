@@ -1,0 +1,14 @@
+description: Montant des réservations conservé par le pass Culture et non remboursé aux partenaires après application des
+  barèmes de remboursement.
+display_name: Contribution
+domain_path: core/reservations
+expression: SUM(total_contribution_amount)
+name: contribution
+precomputed_in: external_reporting_individual
+synonyms:
+- contribution pass Culture
+- marge
+- montant non remboursé
+table_name: finance_reimbursement
+table_schema: analytics_prod
+unit: €

@@ -1,0 +1,76 @@
+columns:
+- data_type: date
+  description: Mois de référence.
+  name: month
+  ordinal: 0
+  source: manual
+- data_type: string
+  description: Identifiant item interne (groupe d'offres similaires).
+  name: item_id
+  ordinal: 1
+  source: manual
+- data_type: string
+  description: Sous-catégorie de l'offre.
+  name: offer_subcategory_id
+  ordinal: 2
+  source: manual
+- data_type: string
+  description: Catégorie de l'offre.
+  name: offer_category_id
+  ordinal: 3
+  source: manual
+- data_type: number
+  description: Nombre d'offres réservables ce mois pour cet item.
+  name: nb_bookable_offers
+  ordinal: 4
+  source: manual
+- data_type: number
+  description: Nombre de jours où l'item était réservable.
+  name: nb_bookable_days
+  ordinal: 5
+  source: manual
+- data_type: number
+  description: Nombre total de consultations ce mois.
+  name: nb_monthly_consult
+  ordinal: 6
+  source: manual
+- data_type: number
+  description: Consultations provenant de la recherche.
+  name: nb_monthly_search_consult
+  ordinal: 7
+  source: manual
+- data_type: number
+  description: Consultations provenant de la page d'accueil.
+  name: nb_monthly_home_consult
+  ordinal: 8
+  source: manual
+- data_type: number
+  description: Consultations provenant d'une page lieu.
+  name: nb_monthly_venue_consult
+  ordinal: 9
+  source: manual
+- data_type: number
+  description: Consultations provenant des favoris.
+  name: nb_monthly_favorites_consult
+  ordinal: 10
+  source: manual
+- data_type: number
+  description: Consultations provenant des offres similaires.
+  name: nb_monthly_similar_offer_consult
+  ordinal: 11
+  source: manual
+- data_type: number
+  description: Consultations provenant d'autres canaux.
+  name: nb_monthly_other_channel_offer_consult
+  ordinal: 12
+  source: manual
+description: 'Découvrabilité mensuelle : nombre de jours réservables, d''offres réservables et de consultations ventilées
+  par canal (recherche, home, lieu, favoris, offres similaires).'
+domain_path: core/offre-et-catalogue/decouverte
+grain:
+- Une ligne par combinaison (month, item_id, offer_subcategory_id, offer_category_id)
+schema_name: analytics_prod
+synonyms:
+- découvrabilité
+- visibilité offre
+table_name: enriched_monthly_bookable_item_discoverability

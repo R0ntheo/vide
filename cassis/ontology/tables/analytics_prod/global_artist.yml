@@ -1,0 +1,100 @@
+columns:
+- data_type: string
+  description: Identifiant unique de l'artiste.
+  name: artist_id
+  nullable: false
+  ordinal: 0
+- data_type: string
+  description: Nom de l'artiste.
+  name: artist_name
+  ordinal: 1
+- data_type: string
+  description: Courte description de l'artiste.
+  name: artist_description
+  ordinal: 2
+- data_type: string
+  description: URL du fichier image provenant de Wikidata.
+  name: wikidata_image_file_url
+  ordinal: 3
+- data_type: string
+  description: Licence de l'image provenant de Wikidata.
+  name: wikidata_image_license
+  ordinal: 4
+- data_type: string
+  description: URL de la licence de l'image provenant de Wikidata.
+  name: wikidata_image_license_url
+  ordinal: 5
+- data_type: string
+  description: Auteur de l'image provenant de Wikidata.
+  name: wikidata_image_author
+  ordinal: 6
+- data_type: date
+  description: Date de création de la fiche artiste.
+  name: artist_creation_date
+  ordinal: 7
+- data_type: date
+  description: Date de la dernière modification de la fiche artiste.
+  name: artist_modification_date
+  ordinal: 8
+- data_type: number
+  description: Nombre total de consultations d'offres liées à l'artiste, depuis janvier 2025.
+  name: artist_total_consultations
+  ordinal: 9
+- data_type: number
+  description: Nombre total de consultations d'offres liées à l'artiste provenant de la recherche, depuis janvier 2025.
+  name: artist_total_consultations_from_search
+  ordinal: 10
+- data_type: number
+  description: Nombre total de consultations d'offres liées à l'artiste provenant d'une page offre, depuis janvier 2025.
+  name: artist_total_consultations_from_offer
+  ordinal: 11
+- data_type: number
+  description: Nombre total de consultations d'offres liées à l'artiste provenant d'une page lieu, depuis janvier 2025.
+  name: artist_total_consultations_from_venue
+  ordinal: 12
+- data_type: number
+  description: Nombre total de consultations d'offres liées à l'artiste provenant de l'autocomplétion de recherche, depuis
+    janvier 2025.
+  name: artist_total_consultations_from_search_auto_complete
+  ordinal: 13
+- data_type: number
+  description: Nombre total de bénéficiaires ayant consulté des offres liées à l'artiste, depuis janvier 2025.
+  name: artist_total_consulted_users
+  ordinal: 14
+- data_type: number
+  description: Nombre total de produits créés liés à l'artiste.
+  name: artist_total_products
+  ordinal: 15
+- data_type: number
+  description: Nombre total d'offres créées liées à l'artiste.
+  name: artist_total_offers
+  ordinal: 16
+- data_type: number
+  description: Nombre total d'offres réservables liées à l'artiste.
+  name: artist_total_bookable_offers
+  ordinal: 17
+- data_type: number
+  description: Nombre total de catégories distinctes d'offres liées à l'artiste.
+  name: artist_total_offer_categories
+  ordinal: 18
+- data_type: number
+  description: Nombre total de lieux ayant créé des offres liées à l'artiste.
+  name: artist_total_venues
+  ordinal: 19
+- data_type: number
+  description: Nombre total de types distincts (auteur/interprète) liés à l'artiste dans la base.
+  name: artist_total_artist_types
+  ordinal: 20
+- data_type: number
+  description: Nombre total de réservations sur les offres liées à l'artiste.
+  name: artist_total_bookings
+  ordinal: 21
+description: Référentiel des artistes associés aux offres culturelles (auteurs, interprètes, réalisateurs, metteurs en scène).
+domain_path: core/offre-et-catalogue
+grain:
+- Une ligne par artiste (artist_id)
+schema_name: analytics_prod
+synonyms:
+- artiste
+- créateur
+table_name: global_artist

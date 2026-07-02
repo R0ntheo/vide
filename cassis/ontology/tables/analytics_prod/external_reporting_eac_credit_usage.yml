@@ -1,0 +1,47 @@
+columns:
+- data_type: date
+  description: Premier jour du mois auquel se rapporte le KPI.
+  name: partition_month
+  ordinal: 0
+- data_type: datetime
+  description: Date effective d'exécution du rafraîchissement des données.
+  name: updated_at
+  ordinal: 1
+- data_type: string
+  description: Agrégation géographique du KPI (National, Régional ou Départemental).
+  name: dimension_name
+  ordinal: 2
+- data_type: string
+  description: Nom de l'agrégation géographique du KPI, si elle existe (nom de région, nom de département).
+  name: dimension_value
+  ordinal: 3
+- data_type: string
+  description: |-
+    Valeurs possibles de kpi_name :
+    - taux_d_utilisation_du_credit — taux d'utilisation du crédit collectif EAC
+    - montant_moyen_par_reservation — montant moyen par réservation collective
+    - montant_moyen_par_reservation_meme_territoire — montant moyen par réservation quand l'établissement et le lieu sont dans le même territoire
+  name: kpi_name
+  ordinal: 4
+- data_type: number
+  description: Numérateur du KPI calculé.
+  name: numerator
+  ordinal: 5
+- data_type: number
+  description: Dénominateur du KPI calculé.
+  name: denominator
+  ordinal: 6
+- data_type: number
+  description: Valeur du KPI, égale au numérateur divisé par le dénominateur.
+  name: kpi
+  ordinal: 7
+description: KPIs utilisation du crédit collectif EAC au format pivot — montants engagés, taux d'utilisation par dimension
+  géographique.
+domain_path: reporting/institutionnel/eac
+grain:
+- Une ligne par mois × dimension × KPI (partition_month, dimension_name, kpi_name)
+schema_name: analytics_prod
+synonyms:
+- KPI crédit EAC
+- consommation crédit collectif
+table_name: external_reporting_eac_credit_usage

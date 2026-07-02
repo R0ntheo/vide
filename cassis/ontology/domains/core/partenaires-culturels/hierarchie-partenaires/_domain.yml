@@ -1,0 +1,58 @@
+context_md: |-
+  # Hiérarchie des partenaires
+
+  ## Les trois niveaux
+
+  ```
+  Structure juridique (offerer)  ← entité SIREN
+    └─ Lieu (venue)              ← entité SIRET, physique ou virtuel
+         └─ Partenaire culturel (cultural_partner)  ← vue consolidée
+  ```
+
+  ### Structure (`global_offerer`)
+
+  Entité juridique identifiée par un SIREN. Exemples : une mairie, une association, une entreprise de spectacle.
+
+  - Peut gérer **plusieurs lieux** (`total_managed_venues`).
+  - `offerer_validation_status` : VALIDATED, NEW, PENDING, REJECTED.
+  - `is_local_authority` : TRUE pour les collectivités locales (mairies, communautés de communes).
+  - `local_authority_type` : type de collectivité (commune, département, région, EPCI).
+
+  ### Lieu (`global_venue`)
+
+  Espace physique ou virtuel rattaché à une structure. Un cinéma, une bibliothèque, une plateforme numérique.
+
+  - `venue_is_permanent` : TRUE = lieu physique permanent (pas un festival temporaire).
+  - `venue_type_label` : classification culturelle (Librairie, Cinéma, Musée, Festival, Cours et pratique, etc.).
+  - `venue_label` : label ministériel (Scène nationale, CDN, FRAC, etc.). NULL si pas labellisé.
+  - `venue_in_qpv` / `venue_in_zrr` : localisation en quartier prioritaire ou zone rurale.
+
+  ### Partenaire culturel (`global_cultural_partner`)
+
+  Vue consolidée au grain du lieu. Un partenaire culturel = un venue inscrit au programme pass Culture.
+
+  - `partner_type` : type de partenaire (Lieu, Festival, Plateforme numérique, etc.).
+  - `cultural_sector` : secteur culturel (Spectacle vivant, Arts visuels, Patrimoine, etc.).
+  - `is_active_last_30days` / `is_active_current_year` : activité récente.
+  - `is_synchro_adage` : synchronisé avec la plateforme Adage (volet collectif).
+
+  ## Quel niveau utiliser ?
+
+  | Question | Table |
+  |----------|-------|
+  | Combien de structures juridiques ? | `global_offerer` (grain SIREN) |
+  | Combien de lieux culturels ? | `global_venue` (grain SIRET) |
+  | Combien de partenaires actifs ? | `global_cultural_partner` (grain venue, filtré actif) |
+  | Quel type de partenaire ? | `global_cultural_partner` (partner_type, cultural_sector) |
+  | Labels ministériels ? | `global_venue` (venue_label) |
+  | Chiffre d'affaires par lieu ? | `global_booking` (venue_id dénormalisé) |
+
+  ## Pièges courants
+
+  1. **Ne pas compter les offerers comme des "partenaires"**. Un offerer peut avoir 10 venues. Compter les offerers donne un chiffre trop bas.
+  2. **Ne pas confondre venue et cultural_partner**. `global_venue` contient tous les lieux (y compris inactifs, non validés). `global_cultural_partner` est filtré aux partenaires inscrits au programme.
+  3. **Jointures** : les tables `global_booking` et `global_collective_booking` ont des colonnes venue dénormalisées (venue_id, venue_name, venue_region_name...). Pas besoin de joindre `global_venue` sauf pour des colonnes spécifiques au lieu (venue_label, venue_in_qpv, coordonnées GPS).
+  4. **partner_id** : présent sur cultural_partner, booking, collective_offer, collective_booking. C'est l'identifiant stable du partenaire. Préférer `partner_id` à `venue_id` pour joindre vers `global_cultural_partner`.
+description: Relation entre structures juridiques (offerer), lieux (venue) et partenaires culturels — quel niveau de grain
+  utiliser.
+display_name: Hiérarchie des partenaires

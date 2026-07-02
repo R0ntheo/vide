@@ -1,0 +1,15 @@
+description: Part des jeunes ayant participé à une action EAC sur le nombre total de jeunes éligibles.
+display_name: Taux de participation EAC jeunes
+domain_path: core/eac
+expression: Valeur pré-calculée dans external_reporting_eac (kpi_name = 'taux_participation_eac_jeunes')
+name: taux_participation_eac_jeunes
+notes: Le calcul brut nécessite de croiser collective_eple_aggregated (effectifs établissements) avec les réservations collectives
+  confirmées par élève — la colonne total_students_beneficiary n'existe pas dans l'entrepôt gold. Utiliser la valeur pré-calculée
+  de external_reporting_eac.
+precomputed_in: external_reporting_eac
+synonyms:
+- participation EAC
+- EAC youth participation
+table_name: collective_eple_aggregated
+table_schema: analytics_prod
+unit: '%'

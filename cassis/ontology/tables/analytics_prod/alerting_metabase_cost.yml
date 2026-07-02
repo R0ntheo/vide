@@ -1,0 +1,38 @@
+columns:
+- data_type: string
+  description: Nom de la carte Metabase.
+  name: card_name
+  ordinal: 0
+- data_type: number
+  description: Identifiant de la carte Metabase.
+  name: card_id
+  ordinal: 1
+- data_type: string
+  description: Nom du dashboard Metabase.
+  name: dashboard_name
+  ordinal: 2
+- data_type: number
+  description: Nombre total de vues de la carte.
+  name: total_views
+  ordinal: 3
+- data_type: number
+  description: Nombre total d'utilisateurs distincts ayant consulté la carte.
+  name: total_distinct_users
+  ordinal: 4
+- data_type: number
+  description: Coût total de la carte.
+  name: total_cost
+  ordinal: 5
+- data_type: number
+  description: Coût moyen de la carte.
+  name: avg_cost
+  ordinal: 6
+description: Coûts des requêtes Metabase par carte et dashboard — vues, utilisateurs distincts, coût moyen.
+domain_path: reporting/monitoring
+grain:
+- Une ligne par combinaison (card_name, card_id, dashboard_name, avg_cost)
+schema_name: analytics_prod
+synonyms:
+- coût Metabase
+- monitoring requêtes
+table_name: alerting_metabase_cost

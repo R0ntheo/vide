@@ -1,0 +1,124 @@
+columns:
+- data_type: string
+  description: Identifiant unique de l'utilisateur.
+  name: user_id
+  nullable: false
+  ordinal: 0
+- data_type: number
+  description: Rang séquentiel des modifications d'informations pour chaque utilisateur (0 = premier enregistrement, 1 = deuxième,
+    etc.).
+  name: user_information_rank
+  nullable: false
+  ordinal: 1
+- data_type: string
+  description: 'Type d''action ayant déclenché l''enregistrement (INFO_MODIFIED : modification du profil, PROFILE_COMPLETION
+    : complétion initiale à l''inscription).'
+  name: user_information_action_type
+  nullable: false
+  ordinal: 2
+- data_type: datetime
+  description: Horodatage de la modification des informations utilisateur (clé de partitionnement à granularité journalière).
+  name: user_information_created_at
+  nullable: false
+  ordinal: 3
+- data_type: string
+  description: Activité déclarée de l'utilisateur (étudiant, apprenti, sans emploi…), renseignée lors du premier dépôt de
+    crédit et mise à jour lors de la demande de GRANT_18.
+  name: user_activity
+  ordinal: 4
+- data_type: string
+  description: Ville de l'adresse déclarée de l'utilisateur.
+  name: user_city
+  ordinal: 5
+- data_type: string
+  description: Code postal de l'adresse déclarée de l'utilisateur.
+  name: user_postal_code
+  ordinal: 6
+- data_type: string
+  description: Activité de l'utilisateur avant la modification courante.
+  name: user_previous_activity
+  ordinal: 7
+- data_type: string
+  description: Ville de l'utilisateur avant la modification courante.
+  name: user_previous_city
+  ordinal: 8
+- data_type: string
+  description: Code postal de l'utilisateur avant la modification courante.
+  name: user_previous_postal_code
+  ordinal: 9
+- data_type: boolean
+  description: Indiqué si l'utilisateur a confirmé ses informations existantes sans les modifier.
+  name: user_has_confirmed_information
+  nullable: false
+  ordinal: 10
+- data_type: boolean
+  description: Indiqué si l'utilisateur a modifié au moins un champ de ses informations.
+  name: user_has_modified_information
+  nullable: false
+  ordinal: 11
+- data_type: boolean
+  description: Boolean flag indicating if user_activity changed compared to previous record.
+  name: user_has_modified_activity
+  nullable: false
+  ordinal: 12
+- data_type: boolean
+  description: Boolean flag indicating if user address changed compared to previous record (normalized comparison).
+  name: user_has_modified_address
+  nullable: false
+  ordinal: 13
+- data_type: boolean
+  description: Boolean flag indicating if user city changed compared to previous record.
+  name: user_has_modified_city
+  nullable: false
+  ordinal: 14
+- data_type: boolean
+  description: Boolean flag indicating if user postal code changed compared to previous record.
+  name: user_has_modified_postal_code
+  nullable: false
+  ordinal: 15
+- data_type: number
+  description: Code de l'EPCI (Établissement Public de Coopération Intercommunale) où se situe l'utilisateur.
+  name: user_epci_code
+  ordinal: 16
+- data_type: string
+  description: Identifiant IRIS interne associé à l'adresse déclarée de l'utilisateur (unités géographiques standardisées
+    pour l'analyse statistique en France).
+  name: user_iris_internal_id
+  ordinal: 17
+- data_type: string
+  description: Nom de la région de l'adresse déclarée de l'utilisateur.
+  name: user_region_name
+  ordinal: 18
+- data_type: string
+  description: Nom du département de l'adresse déclarée de l'utilisateur.
+  name: user_department_name
+  ordinal: 19
+- data_type: string
+  description: Libellé de densité (urbain, rural) de l'adresse déclarée de l'utilisateur.
+  name: user_density_label
+  ordinal: 20
+- data_type: string
+  description: Classification macroscopique de densité urbaine (Urbain vs Rural).
+  name: user_density_macro_level
+  ordinal: 21
+- data_type: string
+  description: Code du QPV (Quartier Prioritaire de la Ville) si l'utilisateur se situe dans un quartier prioritaire.
+  name: user_qpv_code
+  ordinal: 22
+- data_type: string
+  description: Nom du QPV (Quartier Prioritaire de la Ville) si l'utilisateur se situe dans un quartier prioritaire.
+  name: user_qpv_name
+  ordinal: 23
+- data_type: number
+  description: Âge de l'utilisateur en années au moment de la création de l'enregistrement d'information.
+  name: user_age_at_information_creation
+  ordinal: 24
+description: Historique des modifications des informations déclaratives des bénéficiaires (adresse, activité, ville).
+domain_path: core/beneficiaires
+grain:
+- Une ligne par utilisateur (user_id)
+schema_name: analytics_prod
+synonyms:
+- historique bénéficiaire
+- snapshots utilisateur
+table_name: global_user_beneficiary_information_history

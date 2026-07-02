@@ -1,0 +1,9 @@
+context_md: |-
+  Ce domaine regroupe les tables de supervision technique de l'infrastructure data.
+
+  - monitoring_bigquery_cost : coûts de requêtes BigQuery par utilisateur, projet et dataset.
+  - monitoring_firebase_performance_tti : temps de chargement (Time To Interactive) de l'app native par page et device.
+  - monitoring_metabase_cost : coûts des requêtes Metabase (durée, scans, tables touchées).
+  - alerting_metabase_cost : alertes sur les requêtes Metabase coûteuses.
+description: Supervision technique — coûts BigQuery, performance Firebase et alertes Metabase.
+display_name: Monitoring

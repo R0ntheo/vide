@@ -1,0 +1,14 @@
+description: Part des bénéficiaires résidant en zone rurale (définition INSEE), par date d'octroi du premier crédit.
+display_name: Part des inscrits en zone rurale
+domain_path: core/beneficiaires
+expression: SAFE_DIVIDE(COUNTIF(user_macro_density_label = 'rural'), COUNT(DISTINCT user_id))
+name: part_inscrits_zone_rurale
+notes: Adresse déclarative. ~31% de la population 15-18 ans est en zone rurale.
+precomputed_in: external_reporting_individual
+synonyms:
+- ruralité
+- zone rurale
+- publics prioritaires rural
+table_name: global_user_beneficiary
+table_schema: analytics_prod
+unit: '%'

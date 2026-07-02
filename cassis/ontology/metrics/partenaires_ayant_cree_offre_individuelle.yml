@@ -1,0 +1,13 @@
+description: Nombre de partenaires ayant publié au moins une offre individuelle validée.
+display_name: Partenaires ayant créé une offre individuelle
+domain_path: core/partenaires-culturels
+expression: COUNT(DISTINCT partner_id)
+filters: total_created_individual_offers > 0
+name: partenaires_ayant_cree_offre_individuelle
+precomputed_in: external_reporting_individual
+synonyms:
+- partenaires activés
+- activated partners
+table_name: global_cultural_partner
+table_schema: analytics_prod
+unit: count

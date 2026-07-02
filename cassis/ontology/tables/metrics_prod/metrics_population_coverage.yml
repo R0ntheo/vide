@@ -1,0 +1,52 @@
+columns:
+- data_type: date
+  description: Mois d'observation.
+  name: partition_month
+  ordinal: 1
+  source: manual
+- data_type: date
+  description: Mois de naissance de la cohorte de population.
+  name: birth_month
+  ordinal: 2
+  source: manual
+- data_type: string
+  description: Âge jalon au moment de l'activation du crédit (16, 17, 18, 19, 20).
+  name: milestone_age
+  ordinal: 3
+  source: manual
+- data_type: string
+  description: Code du département de résidence.
+  name: department_code
+  ordinal: 4
+  source: manual
+- data_type: string
+  description: Nom du département de résidence.
+  name: department_name
+  ordinal: 5
+  source: manual
+- data_type: string
+  description: Nom de la région de résidence.
+  name: region_name
+  ordinal: 6
+  source: manual
+- data_type: number
+  description: Code de la région de résidence.
+  name: region_code
+  ordinal: 7
+  source: manual
+- data_type: number
+  description: Population éligible INSEE sur 12 mois glissants. Non perturbé.
+  name: total_population_last_12_months
+  ordinal: 8
+  source: manual
+description: 'Dénominateur INSEE du taux de couverture : population éligible sur 12 mois glissants, par département, mois
+  de naissance et âge jalon. Données publiques, non perturbées.'
+domain_path: reporting/indicateurs-cles
+grain:
+- Une ligne par mois × département × mois de naissance × âge jalon (partition_month, department_code, birth_month, milestone_age)
+schema_name: metrics_prod
+synonyms:
+- population éligible
+- dénominateur couverture
+- population INSEE
+table_name: metrics_population_coverage

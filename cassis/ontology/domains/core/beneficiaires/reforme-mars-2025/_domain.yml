@@ -1,0 +1,43 @@
+context_md: |-
+  # Réforme mars 2025
+
+  En mars 2025, le dispositif pass Culture a été profondément restructuré. Cette réforme impacte l'interprétation de toutes les séries temporelles et comparaisons de cohortes.
+
+  ## Avant la réforme
+
+  Deux crédits distincts :
+  - **GRANT_15_17** : 20 € à 15 ans, 30 € à 16 ans, 30 € à 17 ans. Expiration à 18 ans.
+  - **GRANT_18** : 300 € à 18 ans. Expiration à 19 ans (24 mois après activation).
+
+  Chaque crédit avait son propre dépôt (`deposit`), ses propres règles d'expiration et ses propres KPIs.
+
+  ## Après la réforme
+
+  Un crédit unique :
+  - **GRANT_17_18** : 50 € à 17 ans + 150 € à 18 ans (via recrédit). Expiration la veille des 21 ans.
+
+  Le recrédit (`recredit`) à 18 ans ajoute 150 € au même dépôt. Ce n'est pas un nouveau dépôt.
+
+  ## Impact sur les données
+
+  ### Colonnes clés
+
+  - `deposit_reform_category` sur `global_deposit` : valeurs `17_pre_reform`, `18_pre_reform`, `17_post_reform`, `18_post_reform`. Permet de séparer les cohortes.
+  - `user_current_deposit_reform_category` et `user_first_deposit_reform_category` sur `global_user_beneficiary`.
+  - `deposit_type` : `GRANT_15_17`, `GRANT_18`, `GRANT_17_18`, `GRANT_FREE`.
+
+  ### Pièges courants
+
+  1. **Séries temporelles** : toute courbe de "nombre de crédits octroyés" montre une rupture en mars 2025. Il faut filtrer par `deposit_reform_category` ou `deposit_type` pour comparer des cohortes homogènes.
+  2. **Montants moyens** : le montant moyen d'un crédit GRANT_17_18 (50 € initial + 150 € recrédit) n'est pas comparable au GRANT_18 (300 €). Comparer les montants totaux par bénéficiaire, pas par dépôt.
+  3. **Comptage de bénéficiaires** : un bénéficiaire post-réforme a un seul dépôt avec un recrédit à 18 ans. Un bénéficiaire pré-réforme pouvait avoir deux dépôts distincts (15-17 puis 18). Ne pas compter les dépôts comme proxy du nombre de bénéficiaires.
+  4. **Cohortes de transition** : les jeunes qui avaient un GRANT_15_17 actif en mars 2025 ont pu migrer vers le nouveau système. Leurs données sont hybrides.
+
+  ### Recommandation
+
+  Pour toute analyse temporelle, toujours segmenter par `deposit_reform_category` ou filtrer sur une période homogène (tout avant mars 2025, ou tout après). Ne jamais agréger pré et post-réforme sans le mentionner.
+
+  Le type `GRANT_FREE` est utilisé pour des crédits spéciaux (événements, partenariats). Il doit être **exclu** de tous les KPIs standards.
+description: 'Réforme du crédit pass Culture de mars 2025 : passage de deux crédits séparés (15-17 / 18 ans) à un crédit unique
+  17-18 ans.'
+display_name: Réforme mars 2025

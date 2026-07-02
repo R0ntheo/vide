@@ -1,0 +1,12 @@
+description: Top 50 des lieux ayant généré le plus de réservations en montant. Réservations validées uniquement.
+display_name: Top 50 lieux (en montant)
+domain_path: reporting/institutionnel
+expression: SUM(total_venue_booking_amount_ranked)
+name: top_50_lieux_montant
+precomputed_in: external_reporting_top_venue
+synonyms:
+- top lieux
+- lieux les plus réservés
+table_name: external_reporting_top_venue
+table_schema: analytics_prod
+unit: €

@@ -1,0 +1,127 @@
+columns:
+- data_type: string
+  description: Identifiant du bénéficiaire.
+  name: user_id
+  ordinal: 0
+  source: manual
+- data_type: string
+  description: Identifiant de l'offre.
+  name: offer_id
+  ordinal: 1
+  source: manual
+- data_type: string
+  description: Identifiant de la réservation.
+  name: booking_id
+  ordinal: 2
+  source: manual
+- data_type: datetime
+  description: Date de la réservation.
+  name: booking_creation_date
+  ordinal: 3
+  source: manual
+- data_type: string
+  description: Catégorie de l'offre.
+  name: category
+  ordinal: 4
+  source: manual
+- data_type: string
+  description: Sous-catégorie de l'offre.
+  name: subcategory
+  ordinal: 5
+  source: manual
+- data_type: string
+  description: Genre de l'offre (musique, livre, film, spectacle).
+  name: offer_type_label
+  ordinal: 6
+  source: manual
+- data_type: string
+  description: Nom du lieu.
+  name: venue
+  ordinal: 7
+  source: manual
+- data_type: string
+  description: Nom public du lieu.
+  name: venue_name
+  ordinal: 8
+  source: manual
+- data_type: string
+  description: Région du bénéficiaire.
+  name: user_region_name
+  ordinal: 9
+  source: manual
+- data_type: string
+  description: Code département du bénéficiaire.
+  name: user_department_code
+  ordinal: 10
+  source: manual
+- data_type: string
+  description: Activité du bénéficiaire.
+  name: user_activity
+  ordinal: 11
+  source: manual
+- data_type: string
+  description: Civilité du bénéficiaire.
+  name: user_civility
+  ordinal: 12
+  source: manual
+- data_type: number
+  description: Montant de la réservation.
+  name: booking_amount
+  ordinal: 13
+  source: manual
+  unit: €
+- data_type: datetime
+  description: Date de création du premier crédit.
+  name: first_deposit_creation_date
+  ordinal: 14
+  source: manual
+- data_type: string
+  description: Format de l'offre.
+  name: format
+  ordinal: 15
+  source: manual
+- data_type: number
+  description: Points de diversification gagnés pour cette catégorie (1 si nouvelle, 0 sinon).
+  name: category_diversification
+  ordinal: 16
+  source: manual
+- data_type: number
+  description: Points pour cette sous-catégorie.
+  name: sub_category_diversification
+  ordinal: 17
+  source: manual
+- data_type: number
+  description: Points pour ce format.
+  name: format_diversification
+  ordinal: 18
+  source: manual
+- data_type: number
+  description: Points pour ce lieu.
+  name: venue_id_diversification
+  ordinal: 19
+  source: manual
+- data_type: number
+  description: Points bonus de diversification supplémentaires.
+  name: extra_category_diversification
+  ordinal: 20
+  source: manual
+- data_type: number
+  description: Points de diversification pour ce type de lieu (1 si nouveau, 0 sinon).
+  name: venue_type_label_diversification
+  ordinal: 21
+  source: manual
+- data_type: number
+  description: Score total de diversification de cette réservation.
+  name: delta_diversification
+  ordinal: 22
+  source: manual
+description: 'Décomposition du score de diversification culturelle : points attribués pour chaque nouvelle dimension explorée
+  (catégorie, sous-catégorie, format, lieu, type de lieu), enrichie des informations du bénéficiaire.'
+domain_path: core/beneficiaires
+grain:
+- Une ligne par réservation avec score de diversification (booking_id)
+schema_name: analytics_prod
+synonyms:
+- diversification culturelle
+- score diversification
+table_name: diversification_booking

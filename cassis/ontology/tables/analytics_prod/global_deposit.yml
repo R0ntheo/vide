@@ -1,0 +1,231 @@
+columns:
+- data_type: string
+  description: Identifiant unique du crédit.
+  name: deposit_id
+  nullable: false
+  ordinal: 0
+  source: manual
+- data_type: number
+  description: Montant total du crédit alloué.
+  name: deposit_amount
+  ordinal: 1
+  source: manual
+  unit: €
+- data_type: string
+  description: Identifiant unique du bénéficiaire du crédit.
+  name: user_id
+  nullable: false
+  ordinal: 2
+  source: manual
+- data_type: string
+  description: Civilité déclarée du bénéficiaire (male, female).
+  name: user_civility
+  ordinal: 3
+  source: manual
+- data_type: string
+  description: Nom de la région de l'adresse du bénéficiaire.
+  name: user_region_name
+  ordinal: 4
+  source: manual
+- data_type: string
+  description: Code postal de l'adresse déclarée du bénéficiaire.
+  name: user_postal_code
+  ordinal: 5
+  source: manual
+- data_type: string
+  description: Ville de l'adresse déclarée du bénéficiaire.
+  name: user_city
+  ordinal: 6
+  source: manual
+- data_type: string
+  description: Nom de l'EPCI de l'adresse déclarée du bénéficiaire.
+  name: user_epci
+  ordinal: 7
+  source: manual
+- data_type: string
+  description: Nom de l'académie de l'adresse déclarée du bénéficiaire.
+  name: user_academy_name
+  ordinal: 8
+  source: manual
+- data_type: string
+  description: Libellé de densité détaillé de l'adresse du bénéficiaire.
+  name: user_density_label
+  ordinal: 9
+  source: manual
+- data_type: string
+  description: Libellé de densité macro de l'adresse du bénéficiaire.
+  name: user_macro_density_label
+  ordinal: 10
+  source: manual
+- data_type: number
+  description: Niveau de densité de l'adresse du bénéficiaire, de 1 (très urbain) à 7 (très rural).
+  name: user_density_level
+  ordinal: 11
+  source: manual
+- data_type: boolean
+  description: Indiqué si l'adresse du bénéficiaire est dans un quartier prioritaire (QPV).
+  name: user_is_in_qpv
+  ordinal: 12
+  source: manual
+- data_type: boolean
+  description: Indiqué si le bénéficiaire est sans emploi.
+  name: user_is_unemployed
+  ordinal: 13
+  source: manual
+- data_type: boolean
+  description: Indiqué si le bénéficiaire est en formation.
+  name: user_is_in_education
+  ordinal: 14
+  source: manual
+- data_type: boolean
+  description: Indiqué si le bénéficiaire fait partie des publics prioritaires du pass Culture.
+  name: user_is_priority_public
+  ordinal: 15
+  source: manual
+- data_type: string
+  description: Code du département de l'adresse déclarée du bénéficiaire.
+  name: user_department_code
+  ordinal: 16
+  source: manual
+- data_type: string
+  description: Nom du département de l'adresse déclarée du bénéficiaire.
+  name: user_department_name
+  ordinal: 17
+  source: manual
+- data_type: number
+  description: Âge actuel de l'utilisateur, recalculé quotidiennement par le pipeline dbt. Change chaque jour — ne pas utiliser
+    pour analyser l'âge au moment d'un événement (utiliser user_age_at_booking pour les réservations, ou calculer manuellement
+    avec user_birth_date).
+  name: user_age
+  ordinal: 18
+  source: manual
+- data_type: datetime
+  description: Date de création du compte utilisateur.
+  name: user_creation_date
+  ordinal: 19
+  source: manual
+- data_type: number
+  description: Âge du bénéficiaire au moment de l'attribution du crédit.
+  name: user_age_at_deposit
+  ordinal: 20
+  source: manual
+- data_type: string
+  description: Source de création du crédit.
+  name: deposit_source
+  ordinal: 21
+  source: manual
+- data_type: datetime
+  description: Date de création du crédit.
+  name: deposit_creation_date
+  ordinal: 22
+  source: manual
+- data_type: datetime
+  description: Date de dernière mise à jour du crédit.
+  name: deposit_update_date
+  ordinal: 23
+  source: manual
+- data_type: datetime
+  description: Date d'expiration du crédit.
+  name: deposit_expiration_date
+  ordinal: 24
+  source: manual
+- data_type: string
+  description: Type du crédit.
+  name: deposit_type
+  ordinal: 25
+  source: manual
+- data_type: string
+  description: Catégorie de réforme du crédit, permettant de distinguer les bénéficiaires avant et après la réforme.
+  name: deposit_reform_category
+  ordinal: 26
+  source: manual
+- data_type: number
+  description: Rang ascendant du crédit dans l'historique du bénéficiaire.
+  name: deposit_rank_asc
+  ordinal: 27
+  source: manual
+- data_type: number
+  description: Rang descendant du crédit dans l'historique du bénéficiaire.
+  name: deposit_rank_desc
+  ordinal: 28
+  source: manual
+- data_type: date
+  description: Date la plus récente à laquelle le bénéficiaire a reçu un recrédit sur ce crédit.
+  name: last_recredit_date
+  ordinal: 29
+  source: manual
+- data_type: number
+  description: Nombre total de fois où le bénéficiaire a reçu un recrédit sur ce crédit.
+  name: total_recredit
+  ordinal: 30
+  source: manual
+- data_type: number
+  description: Montant total recrédité sur ce crédit.
+  name: total_recredit_amount
+  ordinal: 31
+  source: manual
+  unit: €
+- data_type: number
+  description: Montant théorique total dépensé sur ce crédit.
+  name: total_theoretical_amount_spent
+  ordinal: 32
+  source: manual
+  unit: €
+- data_type: number
+  description: Montant réel total dépensé sur ce crédit, reflétant les transactions effectives.
+  name: total_actual_amount_spent
+  ordinal: 33
+  source: manual
+  unit: €
+- data_type: number
+  description: Montant théorique total dépensé en biens numériques sur ce crédit.
+  name: total_theoretical_amount_spent_in_digital_goods
+  ordinal: 34
+  source: manual
+  unit: €
+- data_type: number
+  description: Nombre total de réservations individuelles non annulées sur ce crédit.
+  name: total_non_cancelled_individual_bookings
+  ordinal: 35
+  source: manual
+- data_type: number
+  description: Score de diversité total sur ce crédit.
+  name: total_diversity_score
+  ordinal: 36
+  source: manual
+- data_type: date
+  description: Date de la première réservation individuelle sur ce crédit.
+  name: first_individual_booking_date
+  ordinal: 37
+  source: manual
+- data_type: date
+  description: Date de la dernière réservation individuelle sur ce crédit.
+  name: last_individual_booking_date
+  ordinal: 38
+  source: manual
+- data_type: datetime
+  description: Date de naissance du bénéficiaire.
+  name: user_birth_date
+  ordinal: 39
+  source: manual
+- data_type: number
+  description: Nombre de jours entre la date de création du crédit et la date du jour.
+  name: deposit_seniority
+  ordinal: 40
+  source: manual
+- data_type: number
+  description: Nombre de jours entre la création du compte utilisateur et la création du crédit.
+  name: days_between_user_creation_and_deposit_creation
+  ordinal: 41
+  source: manual
+description: Vue détaillée des crédits culturels (dépôts financiers) alloués aux bénéficiaires, incluant les informations
+  du bénéficiaire et les métriques de consommation.
+domain_path: core/beneficiaires
+grain:
+- Une ligne par dépôt (deposit_id)
+schema_name: analytics_prod
+synonyms:
+- dépôt
+- allocation
+- enveloppe
+table_name: global_deposit

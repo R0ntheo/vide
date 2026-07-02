@@ -1,0 +1,12 @@
+description: Nombre d'offres individuelles réservables à prix zéro.
+display_name: Offres gratuites réservables
+domain_path: core/offre-et-catalogue
+expression: COUNTIF(offer_is_bookable AND last_stock_price = 0)
+name: offres_gratuites_reservables
+precomputed_in: external_reporting_individual
+synonyms:
+- offres gratuites
+- free bookable offers
+table_name: global_offer
+table_schema: analytics_prod
+unit: count

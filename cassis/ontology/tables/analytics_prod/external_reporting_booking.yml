@@ -1,0 +1,47 @@
+columns:
+- data_type: date
+  description: Premier jour du mois auquel le KPI se rapporte.
+  name: partition_month
+  ordinal: 0
+- data_type: datetime
+  description: Date effective de rafraîchissement des données.
+  name: updated_at
+  ordinal: 1
+- data_type: string
+  description: 'Agrégation géographique du KPI : nationale, régionale ou départementale.'
+  name: dimension_name
+  ordinal: 2
+- data_type: string
+  description: Nom de l'agrégation géographique du KPI si elle existe (nom de région, nom de département).
+  name: dimension_value
+  ordinal: 3
+- data_type: string
+  description: |-
+    Valeurs possibles de kpi_name :
+    - part_beneficiaires_dans_conso_partenaires_territoire_montant / _volume — part des bénéficiaires dans la consommation des partenaires du territoire
+    - part_partenaires_dans_conso_beneficiaires_territoire_montant / _volume — part des partenaires dans la consommation des bénéficiaires du territoire
+    - total_reservations_gratuites — nombre de réservations gratuites
+    - total_offres_gratuites_reservables — nombre d'offres gratuites réservables
+  name: kpi_name
+  ordinal: 4
+- data_type: number
+  description: Numérateur du KPI calculé.
+  name: numerator
+  ordinal: 5
+- data_type: number
+  description: Dénominateur du KPI calculé.
+  name: denominator
+  ordinal: 6
+- data_type: number
+  description: Valeur du KPI, égale au numérateur divisé par le dénominateur.
+  name: kpi
+  ordinal: 7
+description: KPIs réservations individuelles au format pivot — nombre, montant, catégories par dimension géographique.
+domain_path: reporting/institutionnel/individuel
+grain:
+- Une ligne par mois × dimension × KPI (partition_month, dimension_name, kpi_name)
+schema_name: analytics_prod
+synonyms:
+- KPI réservations
+- reporting réservations
+table_name: external_reporting_booking

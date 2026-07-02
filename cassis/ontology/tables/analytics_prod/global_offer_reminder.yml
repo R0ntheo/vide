@@ -1,0 +1,22 @@
+columns:
+- data_type: string
+  description: Identifiant unique du rappel d'offre.
+  name: offer_reminder_id
+  ordinal: 0
+- data_type: string
+  description: Identifiant unique de l'utilisateur.
+  name: user_id
+  ordinal: 1
+- data_type: string
+  description: Identifiant unique de l'offre.
+  name: offer_id
+  ordinal: 2
+description: Rappels d'offres configurés par les bénéficiaires — notification programmée pour une offre.
+domain_path: core/offre-et-catalogue
+grain:
+- Une ligne par offer_reminder (offer_reminder_id)
+schema_name: analytics_prod
+synonyms:
+- rappel offre
+- alerte offre
+table_name: global_offer_reminder

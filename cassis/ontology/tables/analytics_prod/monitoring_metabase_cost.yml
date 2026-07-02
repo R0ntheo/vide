@@ -1,0 +1,62 @@
+columns:
+- data_type: string
+  description: Hash unique de la requete Metabase.
+  name: metabase_hash
+  ordinal: 0
+- data_type: number
+  description: Identifiant du dashboard Metabase.
+  name: dashboard_id
+  ordinal: 1
+- data_type: number
+  description: Identifiant de la carte Metabase.
+  name: card_id
+  ordinal: 2
+- data_type: string
+  description: Email du dernier editeur de la carte.
+  name: card_id_last_editor_email
+  ordinal: 3
+- data_type: date
+  description: Date de la dernière modification de la carte.
+  name: card_id_last_edition_date
+  ordinal: 4
+- data_type: number
+  description: Identifiant de l'utilisateur Metabase.
+  name: metabase_user_id
+  ordinal: 5
+- data_type: string
+  description: Nom de la carte Metabase.
+  name: card_name
+  ordinal: 6
+- data_type: string
+  description: Nom du dashboard Metabase.
+  name: dashboard_name
+  ordinal: 7
+- data_type: date
+  description: Date d'execution de la requete.
+  name: execution_date
+  ordinal: 8
+- data_type: number
+  description: Nombre moyen de lignes retournees par la requete.
+  name: mean_result_rows
+  ordinal: 9
+- data_type: number
+  description: Total d'octets factures pour les requetes.
+  name: total_bytes
+  ordinal: 10
+- data_type: number
+  description: Nombre total de requetes executees.
+  name: total_queries
+  ordinal: 11
+- data_type: number
+  description: Cout en euros associé a l'utilisation Metabase.
+  name: cost_euro
+  ordinal: 12
+description: Suivi des coûts Metabase par carte, dashboard et utilisateur.
+domain_path: reporting/monitoring
+grain:
+- Une ligne par combinaison (metabase_hash, dashboard_id, card_id, card_id_last_editor_email)
+schema_name: analytics_prod
+synonyms:
+- coût Metabase détaillé
+- monitoring BI
+table_name: monitoring_metabase_cost

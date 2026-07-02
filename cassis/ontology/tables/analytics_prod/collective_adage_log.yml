@@ -1,0 +1,180 @@
+columns:
+- data_type: date
+  description: Date de l'evenement, utilisee pour le partitionnement des donnees.
+  name: event_date
+  ordinal: 0
+- data_type: string
+  description: Nom de l'evenement ; pour les vues d'ecran, concatene le nom de l'evenement avec le nom d'ecran Firebase.
+  name: event_name
+  ordinal: 1
+- data_type: datetime
+  description: Horodatage exact de l'enregistrement de l'evenement.
+  name: event_timestamp
+  ordinal: 2
+- data_type: string
+  description: Identifiant unique de l'utilisateur.
+  name: user_id
+  ordinal: 3
+- data_type: string
+  description: 'Deprecie : utiliser unique_session_id. Identifiant de session lors de l''enregistrement de l''evenement.'
+  name: session_id
+  ordinal: 4
+- data_type: number
+  description: Nombre total de résultats retournes par la requete associée a l'evenement.
+  name: total_results
+  ordinal: 5
+- data_type: string
+  description: Origine de l'evenement, indiquant d'ou il a ete declenche.
+  name: origin
+  ordinal: 6
+- data_type: string
+  description: Identifiant du stock collectif associé a la réservation.
+  name: collective_stock_id
+  ordinal: 7
+- data_type: string
+  description: Identifiant de l'offre collective.
+  name: collective_offer_id
+  ordinal: 8
+- data_type: string
+  description: Nom du lien d'en-tete clique lors de l'evenement, le cas echeant.
+  name: header_link_name
+  ordinal: 9
+- data_type: string
+  description: Identifiant unique d'une réservation collective.
+  name: collective_booking_id
+  ordinal: 10
+- data_type: string
+  description: Identifiant de la requete associée a l'evenement.
+  name: query_id
+  ordinal: 11
+- data_type: string
+  description: Filtre de type d'adresse applique lors de l'evenement, le cas echeant.
+  name: address_type_filter
+  ordinal: 12
+- data_type: string
+  description: Filtre textuel applique lors de l'evenement, le cas echeant.
+  name: text_filter
+  ordinal: 13
+- data_type: string
+  description: Filtre de département applique lors de l'evenement, le cas echeant.
+  name: department_filter
+  ordinal: 14
+- data_type: string
+  description: Filtre d'academie applique lors de l'evenement, le cas echeant.
+  name: academy_filter
+  ordinal: 15
+- data_type: string
+  description: Filtre de domaine artistique applique lors de l'evenement, le cas echeant.
+  name: artistic_domain_filter
+  ordinal: 16
+- data_type: string
+  description: Filtre eleve applique lors de l'evenement, le cas echeant.
+  name: student_filter
+  ordinal: 17
+- data_type: string
+  description: Type de suggestion proposee lors de l'evenement, le cas echeant.
+  name: suggestion_type
+  ordinal: 18
+- data_type: string
+  description: Valeur de la suggestion proposee lors de l'evenement, le cas echeant.
+  name: suggestion_value
+  ordinal: 19
+- data_type: boolean
+  description: Indiqué si l'evenement est marque comme favori.
+  name: is_favorite
+  ordinal: 20
+- data_type: string
+  description: Filtre de lieu applique lors de l'evenement, le cas echeant.
+  name: venue_filter
+  ordinal: 21
+- data_type: string
+  description: Filtre de format applique lors de l'evenement, le cas echeant.
+  name: format_filter
+  ordinal: 22
+- data_type: string
+  description: Identifiant de la playlist associée a l'evenement, le cas echeant.
+  name: playlist_id
+  ordinal: 23
+- data_type: string
+  description: Identifiant du domaine associé a l'evenement, le cas echeant.
+  name: domain_id
+  ordinal: 24
+- data_type: number
+  description: Rang de l'element clique lors de l'evenement, le cas echeant.
+  name: rank_clicked
+  ordinal: 25
+- data_type: string
+  description: Identifiant du lieu associé a l'evenement ADAGE.
+  name: adage_venue_id
+  ordinal: 26
+- data_type: string
+  description: Identifiant du lieu associé a l'offre.
+  name: offer_venue_id
+  ordinal: 27
+- data_type: string
+  description: Identifiant unique du lieu.
+  name: venue_id
+  ordinal: 28
+- data_type: string
+  description: Identifiant unique du partenaire culturel.
+  name: partner_id
+  ordinal: 29
+- data_type: string
+  description: Nombre d'eleves associes a l'offre collective.
+  name: offer_students
+  ordinal: 30
+- data_type: string
+  description: Format de l'offre collective associée a l'evenement.
+  name: offer_format
+  ordinal: 31
+- data_type: string
+  description: Nom du partenaire culturel.
+  name: partner_name
+  ordinal: 32
+- data_type: string
+  description: Type du partenaire culturel, derive du type de lieu ou des tags du lieu/de la structure.
+  name: partner_type
+  ordinal: 33
+- data_type: string
+  description: 'Statut du partenaire culturel : lieu permanent (ERP) ou structure sans lieu permanent.'
+  name: partner_status
+  ordinal: 34
+- data_type: string
+  description: Secteur culturel associé au type de partenaire.
+  name: cultural_sector
+  ordinal: 35
+- data_type: number
+  description: Nombre total de réservations collectives confirmees par le partenaire.
+  name: partner_confirmed_collective_bookings
+  ordinal: 36
+- data_type: string
+  description: Code du département ou se trouve le partenaire culturel.
+  name: partner_department_code
+  ordinal: 37
+- data_type: string
+  description: UAI (Identifiant Unique d'Etablissement academique) associé a l'evenement.
+  name: uai
+  ordinal: 38
+- data_type: string
+  description: Role attribue a l'utilisateur (GRANT_18, GRANT_15_17, PRO, ADMIN).
+  name: user_role
+  ordinal: 39
+- data_type: string
+  description: Lors de l'evenement OfferListSwitch, indiqué la vue initiale de la liste d'offres (grille, carte).
+  name: source
+  ordinal: 40
+- data_type: number
+  description: Filtre de distance applique lors de la recherche (rayon maximal autour de l'etablissement scolaire, en km),
+    le cas echeant.
+  name: geoloc_radius_filter
+  ordinal: 41
+description: Logs de navigation et d'interaction sur la plateforme Adage — recherches, consultations, clics, réservations
+  par les enseignants.
+domain_path: core/eac/adage
+grain:
+- Une ligne par combinaison (event_date, event_name, event_timestamp, user_id)
+schema_name: analytics_prod
+synonyms:
+- log Adage
+- journal Adage
+table_name: collective_adage_log

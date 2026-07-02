@@ -1,0 +1,481 @@
+columns:
+- data_type: string
+  description: Identifiant unique de l'offre.
+  name: offer_id
+  nullable: false
+  ordinal: 0
+  source: manual
+- data_type: string
+  description: Identifiant du produit associé à l'offre.
+  name: offer_product_id
+  ordinal: 1
+  source: manual
+- data_type: string
+  description: Identifiant lisible par un humain du produit associé à l'offre.
+  name: offer_product_humanized_id
+  ordinal: 2
+  source: manual
+- data_type: string
+  description: Identifiant de l'offre chez les fournisseurs externes.
+  name: offer_id_at_providers
+  ordinal: 3
+  source: manual
+- data_type: string
+  description: Identifiant du dernier fournisseur de l'offre.
+  name: offer_last_provider_id
+  ordinal: 4
+  source: manual
+- data_type: boolean
+  description: Indiqué si l'offre est synchronisée avec les systèmes API et possède un product_id.
+  name: is_synchronised
+  ordinal: 5
+  source: manual
+- data_type: string
+  description: Nom de l'offre tel qu'il apparaît dans l'application.
+  name: offer_name
+  ordinal: 6
+  source: manual
+  synonyms:
+  - titre
+- data_type: string
+  description: Description de l'offre (synopsis, détails) telle que fournie par le partenaire culturel et affichée dans l'application.
+  name: offer_description
+  ordinal: 7
+  source: manual
+- data_type: string
+  description: Identifiant de la catégorie de l'offre, déterminé par le partenaire culturel via un menu déroulant.
+  name: offer_category_id
+  nullable: false
+  ordinal: 8
+  source: manual
+- data_type: number
+  description: Dernier prix de stock enregistré pour l'offre.
+  name: last_stock_price
+  ordinal: 9
+  source: manual
+  synonyms:
+  - prix
+  unit: €
+- data_type: date
+  description: Date (jour) de création de l'offre.
+  name: offer_creation_date
+  ordinal: 10
+  source: manual
+- data_type: datetime
+  description: Horodatage précis de la création de l'offre.
+  name: offer_created_at
+  ordinal: 11
+  source: manual
+- data_type: datetime
+  description: Horodatage de la dernière mise à jour de l'offre.
+  name: offer_updated_date
+  ordinal: 12
+  source: manual
+- data_type: boolean
+  description: Indiqué si l'offre peut être réservée en duo.
+  name: offer_is_duo
+  ordinal: 13
+  source: manual
+- data_type: string
+  description: Identifiant de l'item associé à l'offre, utilisé en interne par l'équipe data science.
+  name: item_id
+  nullable: false
+  ordinal: 14
+  source: manual
+- data_type: boolean
+  description: Indiqué si l'offre est accessible aux utilisateurs mineurs.
+  name: offer_is_underage_selectable
+  ordinal: 15
+  source: manual
+- data_type: string
+  description: 'Type de catégorie de l''offre : BOOK, MUSIC, SHOW ou MOVIE.'
+  name: offer_type_domain
+  ordinal: 16
+  source: manual
+- data_type: boolean
+  description: Indiqué si l'offre est actuellement réservable.
+  name: offer_is_bookable
+  ordinal: 17
+  source: manual
+- data_type: boolean
+  description: Indiqué si l'offre est un bien numérique.
+  name: digital_goods
+  ordinal: 18
+  source: manual
+- data_type: boolean
+  description: Indiqué si l'offre est un bien physique.
+  name: physical_goods
+  ordinal: 19
+  source: manual
+- data_type: boolean
+  description: Indiqué si l'offre est un événement.
+  name: event
+  ordinal: 20
+  source: manual
+  synonyms:
+  - sortie
+- data_type: string
+  description: Identifiant lisible par un humain de l'offre.
+  name: offer_humanized_id
+  ordinal: 21
+  source: manual
+- data_type: string
+  description: URL vers l'offre sur PassCulture Pro (interface partenaire).
+  name: passculture_pro_url
+  ordinal: 22
+  source: manual
+- data_type: string
+  description: URL vers l'offre sur l'application web.
+  name: webapp_url
+  ordinal: 23
+  source: manual
+- data_type: string
+  description: Identifiant de la sous-catégorie de l'offre, déterminé par le partenaire culturel.
+  name: offer_subcategory_id
+  nullable: false
+  ordinal: 24
+  source: manual
+- data_type: string
+  description: URL vers l'offre.
+  name: offer_url
+  ordinal: 25
+  source: manual
+- data_type: boolean
+  description: Indiqué si l'offre est disponible au niveau national.
+  name: is_national
+  ordinal: 26
+  source: manual
+- data_type: boolean
+  description: Indiqué si l'offre est active (visible dans l'application).
+  name: is_active
+  ordinal: 27
+  source: manual
+- data_type: string
+  description: Statut de validation de l'offre par les équipes internes.
+  name: offer_validation
+  ordinal: 28
+  source: manual
+- data_type: string
+  description: Auteur de l'offre (auteur d'un livre, chanteur, réalisateur d'un film).
+  name: author
+  ordinal: 29
+  source: manual
+  synonyms:
+  - écrivain
+  - réalisateur
+- data_type: string
+  description: Interprètes impliqués dans l'offre.
+  name: performer
+  ordinal: 30
+  source: manual
+  synonyms:
+  - artiste
+- data_type: string
+  description: Metteur en scène, le cas échéant.
+  name: stage_director
+  ordinal: 31
+  source: manual
+- data_type: string
+  description: Identifiant Allociné du film, le cas échéant.
+  name: theater_movie_id
+  ordinal: 32
+  source: manual
+- data_type: string
+  description: Identifiant Allociné de la salle de cinéma, le cas échéant.
+  name: theater_room_id
+  ordinal: 33
+  source: manual
+- data_type: string
+  description: Intervenant ou professeur, le cas échéant.
+  name: speaker
+  ordinal: 34
+  source: manual
+  synonyms:
+  - conférencier
+- data_type: string
+  description: Type de film (long métrage, court métrage, etc.), le cas échéant.
+  name: movie_type
+  ordinal: 35
+  source: manual
+- data_type: string
+  description: Numéro de visa du film, le cas échéant.
+  name: visa
+  ordinal: 36
+  source: manual
+- data_type: string
+  description: Date de sortie, le cas échéant.
+  name: release_date
+  ordinal: 37
+  source: manual
+- data_type: string
+  description: Genres du film, le cas échéant.
+  name: genres
+  ordinal: 38
+  source: manual
+- data_type: string
+  description: Sociétés impliquées dans la production ou la distribution du film, le cas échéant.
+  name: companies
+  ordinal: 39
+  source: manual
+- data_type: string
+  description: Pays de production du film, le cas échéant.
+  name: countries
+  ordinal: 40
+  source: manual
+- data_type: string
+  description: Acteurs du film, le cas échéant.
+  name: casting
+  ordinal: 41
+  source: manual
+  synonyms:
+  - acteurs
+- data_type: string
+  description: ISBN du livre, le cas échéant.
+  name: isbn
+  ordinal: 42
+  source: manual
+- data_type: string
+  description: Identifiant unique du Genre Tite Live (GTL) associé à l'offre.
+  name: titelive_gtl_id
+  ordinal: 43
+  source: manual
+- data_type: string
+  description: Genre littéraire, le cas échéant.
+  name: rayon
+  ordinal: 44
+  source: manual
+- data_type: string
+  description: Éditeur du livre, le cas échéant.
+  name: book_editor
+  ordinal: 45
+  source: manual
+  synonyms:
+  - maison d'édition
+- data_type: string
+  description: Type de l'offre.
+  name: type
+  ordinal: 46
+  source: manual
+- data_type: string
+  description: Sous-type de l'offre.
+  name: sub_type
+  ordinal: 47
+  source: manual
+- data_type: string
+  description: Identifiant lisible par un humain pour la médiation.
+  name: mediation_humanized_id
+  ordinal: 48
+  source: manual
+- data_type: number
+  description: Nombre total de réservations individuelles pour cette offre.
+  name: total_individual_bookings
+  ordinal: 49
+  source: manual
+- data_type: number
+  description: Nombre total de réservations individuelles annulées pour cette offre.
+  name: total_cancelled_individual_bookings
+  ordinal: 50
+  source: manual
+- data_type: number
+  description: Nombre total de réservations individuelles consommées pour cette offre.
+  name: total_used_individual_bookings
+  ordinal: 51
+  source: manual
+- data_type: number
+  description: Nombre total de fois où cette offre a été ajoutée en favori.
+  name: total_favorites
+  ordinal: 52
+  source: manual
+- data_type: number
+  description: Quantité de stock restante totale pour cette offre.
+  name: total_stock_quantity
+  ordinal: 53
+  source: manual
+- data_type: number
+  description: Nombre total de réservations qui sont des premières réservations (d'un utilisateur).
+  name: total_first_bookings
+  ordinal: 54
+  source: manual
+- data_type: string
+  description: Identifiant unique du lieu culturel proposant l'offre.
+  name: venue_id
+  nullable: false
+  ordinal: 55
+  source: manual
+- data_type: string
+  description: Nom du lieu culturel.
+  name: venue_name
+  ordinal: 56
+  source: manual
+- data_type: string
+  description: Code du département du lieu culturel.
+  name: venue_department_code
+  ordinal: 57
+  source: manual
+- data_type: string
+  description: Nom du département du lieu culturel.
+  name: venue_department_name
+  ordinal: 58
+  source: manual
+- data_type: string
+  description: Nom de la région du lieu culturel.
+  name: venue_region_name
+  ordinal: 59
+  source: manual
+- data_type: string
+  description: Code postal du lieu culturel.
+  name: venue_postal_code
+  ordinal: 60
+  source: manual
+- data_type: string
+  description: Ville du lieu culturel.
+  name: venue_city
+  ordinal: 61
+  source: manual
+- data_type: string
+  description: Code commune du lieu culturel.
+  name: venue_city_code
+  ordinal: 62
+  source: manual
+- data_type: string
+  description: Nom de l'EPCI du lieu culturel.
+  name: venue_epci
+  ordinal: 63
+  source: manual
+- data_type: string
+  description: Code EPCI du lieu culturel.
+  name: venue_epci_code
+  ordinal: 64
+  source: manual
+- data_type: string
+  description: Nom de l'académie du lieu culturel.
+  name: venue_academy_name
+  ordinal: 65
+  source: manual
+- data_type: string
+  description: Libellé de densité détaillé du lieu culturel.
+  name: venue_density_label
+  ordinal: 66
+  source: manual
+- data_type: string
+  description: Libellé de densité macro du lieu culturel (urbain, rural).
+  name: venue_macro_density_label
+  ordinal: 67
+  source: manual
+- data_type: number
+  description: Niveau de densité du lieu culturel.
+  name: venue_density_level
+  ordinal: 68
+  source: manual
+- data_type: string
+  description: Label du lieu, attribué par le Ministère comme gage de qualité dans sa catégorie.
+  name: venue_label
+  ordinal: 69
+  source: manual
+- data_type: boolean
+  description: Indiqué si le lieu est permanent.
+  name: venue_is_permanent
+  ordinal: 70
+  source: manual
+- data_type: string
+  description: Identifiant unique du partenaire culturel.
+  name: partner_id
+  ordinal: 71
+  source: manual
+- data_type: string
+  description: Identifiant unique de la structure (offerer).
+  name: offerer_id
+  nullable: false
+  ordinal: 72
+  source: manual
+- data_type: string
+  description: Nom de la structure (offerer).
+  name: offerer_name
+  ordinal: 73
+  source: manual
+- data_type: string
+  description: Type du lieu (Musée, Cinéma, Librairie, etc.).
+  name: venue_type_label
+  ordinal: 74
+  source: manual
+- data_type: string
+  description: Identifiant IRIS interne du lieu culturel.
+  name: venue_iris_internal_id
+  ordinal: 75
+  source: manual
+- data_type: string
+  description: Identifiant unique du lien entre une structure et une adresse où elle a créé des offres.
+  name: offerer_address_id
+  ordinal: 76
+  source: manual
+- data_type: boolean
+  description: Indiqué si la structure est une collectivité territoriale.
+  name: is_local_authority
+  ordinal: 77
+  source: manual
+- data_type: datetime
+  description: Date de publication de l'offre dans l'application, qu'elle soit réservable ou non (coming soon).
+  name: offer_publication_date
+  ordinal: 78
+  source: manual
+- data_type: boolean
+  description: Indiqué si la publication de l'offre est programmée dans le futur.
+  name: is_future_scheduled
+  ordinal: 79
+  source: manual
+- data_type: boolean
+  description: Indiqué si l'offre est publiée dans l'application mais pas encore réservable (coming soon).
+  name: is_coming_soon
+  ordinal: 80
+  source: manual
+- data_type: number
+  description: Nombre de fois où l'offre a été mise en avant sur la page du lieu dans l'application.
+  name: total_headlines
+  ordinal: 81
+  source: manual
+- data_type: boolean
+  description: Indiqué si l'offre est actuellement mise en avant sur la page du lieu dans l'application.
+  name: is_headlined
+  ordinal: 82
+  source: manual
+- data_type: datetime
+  description: Date de la première mise en avant de l'offre sur la page du lieu.
+  name: first_headline_date
+  ordinal: 83
+  source: manual
+- data_type: datetime
+  description: Date de la dernière mise en avant de l'offre sur la page du lieu.
+  name: last_headline_date
+  ordinal: 84
+  source: manual
+- data_type: datetime
+  description: Date de finalisation de la création de l'offre.
+  name: offer_finalization_date
+  ordinal: 85
+  source: manual
+- data_type: datetime
+  description: Date de réservabilité de l'offre. Renseigné uniquement si l'offre est programmée.
+  name: scheduled_offer_bookability_date
+  ordinal: 86
+  source: manual
+- data_type: boolean
+  description: Indiqué si la structure est un Établissement Public National.
+  name: offerer_is_epn
+  ordinal: 87
+  source: manual
+- data_type: string
+  description: Recommandation du partenaire culturel pour l'offre, accessible directement dans l'application.
+  name: offer_advice_content
+  ordinal: 88
+  source: manual
+  synonyms:
+  - conseil
+description: Catalogue complet des offres culturelles proposées par les partenaires, incluant les métadonnées de l'offre,
+  les informations du lieu, du partenaire et les statistiques de réservation.
+domain_path: core/offre-et-catalogue
+grain:
+- Une ligne par offre (offer_id)
+schema_name: analytics_prod
+synonyms:
+- proposition culturelle
+table_name: global_offer

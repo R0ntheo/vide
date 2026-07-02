@@ -1,0 +1,207 @@
+columns:
+- data_type: string
+  description: Identifiant du crédit du bénéficiaire.
+  name: deposit_id
+  ordinal: 0
+  source: manual
+- data_type: date
+  description: Lundi de la semaine d'activité.
+  name: active_week
+  ordinal: 1
+  source: manual
+- data_type: string
+  description: Identifiant unique du bénéficiaire.
+  name: user_id
+  ordinal: 2
+  source: manual
+- data_type: string
+  description: Code département du bénéficiaire.
+  name: user_department_code
+  ordinal: 3
+  source: manual
+- data_type: string
+  description: Région du bénéficiaire.
+  name: user_region_name
+  ordinal: 4
+  source: manual
+- data_type: number
+  description: Âge actuel de l'utilisateur, recalculé quotidiennement par le pipeline dbt. Change chaque jour — ne pas utiliser
+    pour analyser l'âge au moment d'un événement (utiliser user_age_at_booking pour les réservations, ou calculer manuellement
+    avec user_birth_date).
+  name: user_age
+  ordinal: 5
+  source: manual
+- data_type: datetime
+  description: Semaine de création du crédit.
+  name: deposit_creation_week
+  ordinal: 6
+  source: manual
+- data_type: string
+  description: Type de crédit (GRANT_18, GRANT_15_17, etc.).
+  name: deposit_type
+  ordinal: 7
+  source: manual
+- data_type: string
+  description: Catégorie de réforme du crédit.
+  name: deposit_reform_category
+  ordinal: 8
+  source: manual
+- data_type: number
+  description: Montant initial du crédit.
+  name: deposit_amount
+  ordinal: 9
+  source: manual
+  unit: €
+- data_type: number
+  description: Ancienneté en semaines depuis le début du suivi.
+  name: seniority_weeks
+  ordinal: 10
+  source: manual
+- data_type: number
+  description: Semaines écoulées depuis la création du crédit.
+  name: weeks_since_deposit_created
+  ordinal: 11
+  source: manual
+- data_type: number
+  description: Mois écoulés depuis la création du crédit.
+  name: months_since_deposit_created
+  ordinal: 12
+  source: manual
+- data_type: number
+  description: Montant dépensé cette semaine.
+  name: amount_spent
+  ordinal: 13
+  source: manual
+  unit: €
+- data_type: number
+  description: Nombre de réservations non annulées cette semaine.
+  name: cnt_no_cancelled_bookings
+  ordinal: 14
+  source: manual
+- data_type: number
+  description: Montant dépensé cumulé depuis le début du crédit.
+  name: cumulative_amount_spent
+  ordinal: 15
+  source: manual
+  unit: €
+- data_type: number
+  description: Réservations cumulées non annulées.
+  name: cumulative_cnt_no_cancelled_bookings
+  ordinal: 16
+  source: manual
+- data_type: number
+  description: Score de diversification gagné cette semaine (nouvelles dimensions explorées).
+  name: delta_diversification
+  ordinal: 17
+  source: manual
+- data_type: number
+  description: Score de diversification cumulé depuis le début du crédit.
+  name: delta_diversification_cumsum
+  ordinal: 18
+  source: manual
+- data_type: number
+  description: Nombre de visites app cette semaine.
+  name: nb_visits
+  ordinal: 19
+  source: manual
+- data_type: number
+  description: Nombre de jours distincts de visite.
+  name: nb_distinct_days_visits
+  ordinal: 20
+  source: manual
+- data_type: number
+  description: Visites provenant de campagnes marketing.
+  name: nb_visits_marketing
+  ordinal: 21
+  source: manual
+- data_type: number
+  description: Nombre de consultations d'offres.
+  name: nb_consult_offer
+  ordinal: 22
+  source: manual
+- data_type: number
+  description: Nombre de confirmations de réservation.
+  name: nb_booking_confirmation
+  ordinal: 23
+  source: manual
+- data_type: number
+  description: Nombre d'ajouts aux favoris.
+  name: nb_add_to_favorites
+  ordinal: 24
+  source: manual
+- data_type: number
+  description: Durée totale des visites en secondes.
+  name: visit_duration_seconds
+  ordinal: 25
+  source: manual
+  unit: s
+- data_type: number
+  description: Rang de la visite dans la séquence du bénéficiaire.
+  name: visit_rank
+  ordinal: 26
+  source: manual
+- data_type: number
+  description: Nombre de visites la semaine précédente.
+  name: visits_previous_week
+  ordinal: 27
+  source: manual
+- data_type: number
+  description: Consultations d'offres la semaine précédente.
+  name: consult_previous_week
+  ordinal: 28
+  source: manual
+- data_type: number
+  description: Consultations d'offres sur les 4 dernières semaines.
+  name: nb_co_last_4_weeks
+  ordinal: 29
+  source: manual
+- data_type: number
+  description: Consultations d'offres il y a 3 mois.
+  name: nb_co_3_months_ago
+  ordinal: 30
+  source: manual
+- data_type: number
+  description: Consultations d'offres il y a 2 mois.
+  name: nb_co_2_months_ago
+  ordinal: 31
+  source: manual
+- data_type: number
+  description: Consultations d'offres sur les 3 derniers mois.
+  name: nb_co_last_3_months
+  ordinal: 32
+  source: manual
+- data_type: string
+  description: 'Niveau d''engagement : power (≥4 visites), core (2-3), casual (1), dead (0).'
+  name: user_engagement_level
+  ordinal: 33
+  source: manual
+- data_type: string
+  description: État du cycle de vie mensuel.
+  name: user_lifecycle_monthly_state
+  ordinal: 34
+  source: manual
+- data_type: string
+  description: 'État du cycle de vie hebdomadaire : new, current, resurrected, dormant, churned.'
+  name: user_lifecycle_weekly_state
+  ordinal: 35
+  source: manual
+- data_type: string
+  description: Niveau d'engagement sur les 8 premières semaines du crédit.
+  name: user_first_8_weeks_engagement_level
+  ordinal: 36
+  source: manual
+- data_type: string
+  description: Niveau d'engagement de la semaine précédente.
+  name: user_last_week_engagement_level
+  ordinal: 37
+  source: manual
+description: 'Panel longitudinal hebdomadaire : dépenses cumulées, score de diversification, visites app, niveau d''engagement
+  (power/core/casual/dead) et état du cycle de vie (new/current/dormant/resurrected/churned).'
+domain_path: core/beneficiaires/engagement
+grain:
+- Une ligne par crédit × semaine d'activité (deposit_id, active_week)
+schema_name: analytics_prod
+synonyms:
+- engagement hebdomadaire
+- panel utilisateur
+table_name: aggregated_weekly_user_data

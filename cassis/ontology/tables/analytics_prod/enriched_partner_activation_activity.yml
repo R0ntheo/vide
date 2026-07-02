@@ -1,0 +1,180 @@
+columns:
+- data_type: string
+  description: Identifiant unique du partenaire culturel.
+  name: partner_id
+  ordinal: 0
+  source: manual
+- data_type: string
+  description: Identifiant du lieu principal du partenaire.
+  name: venue_id
+  ordinal: 1
+  source: manual
+- data_type: string
+  description: Identifiant de la structure juridique.
+  name: offerer_id
+  ordinal: 2
+  source: manual
+- data_type: datetime
+  description: Date de création du partenaire sur le pass Culture.
+  name: partner_creation_date
+  ordinal: 3
+  source: manual
+- data_type: string
+  description: Nom du partenaire.
+  name: partner_name
+  ordinal: 4
+  source: manual
+- data_type: string
+  description: Académie du partenaire.
+  name: partner_academy_name
+  ordinal: 5
+  source: manual
+- data_type: string
+  description: Code département du partenaire.
+  name: partner_department_code
+  ordinal: 6
+  source: manual
+- data_type: string
+  description: Région du partenaire.
+  name: partner_region_name
+  ordinal: 7
+  source: manual
+- data_type: string
+  description: Statut du partenaire (lieu permanent ou structure sans lieu).
+  name: partner_status
+  ordinal: 8
+  source: manual
+- data_type: string
+  description: Type de partenaire.
+  name: partner_type
+  ordinal: 9
+  source: manual
+- data_type: string
+  description: Secteur culturel.
+  name: cultural_sector
+  ordinal: 10
+  source: manual
+- data_type: string
+  description: Libellé de l'activité économique (code APE).
+  name: legal_unit_business_activity_label
+  ordinal: 11
+  source: manual
+- data_type: string
+  description: Catégorie juridique de l'unité légale.
+  name: legal_unit_legal_category_label
+  ordinal: 12
+  source: manual
+- data_type: date
+  description: Date de première activation (individuelle ou collective, la plus ancienne).
+  name: first_activation_date
+  ordinal: 13
+  source: manual
+- data_type: number
+  description: Réservations individuelles après la première activation.
+  name: individual_bookings_after_first_activation
+  ordinal: 14
+  source: manual
+- data_type: number
+  description: Réservations collectives après la première activation.
+  name: collective_bookings_after_first_activation
+  ordinal: 15
+  source: manual
+- data_type: boolean
+  description: Indique si le partenaire a activé des offres individuelles.
+  name: has_activated_individual_part
+  ordinal: 16
+  source: manual
+- data_type: boolean
+  description: Indique si le partenaire a activé des offres collectives.
+  name: has_activated_collective_part
+  ordinal: 17
+  source: manual
+- data_type: date
+  description: Date de première offre individuelle réservable.
+  name: individual_activation_date
+  ordinal: 18
+  source: manual
+- data_type: date
+  description: Date de première offre collective réservable.
+  name: collective_activation_date
+  ordinal: 19
+  source: manual
+- data_type: string
+  description: 'Première partie activée : individual ou collective.'
+  name: first_activated_part
+  ordinal: 20
+  source: manual
+- data_type: date
+  description: Date de seconde activation (l'autre partie, individuelle ou collective).
+  name: second_activation_date
+  ordinal: 21
+  source: manual
+- data_type: number
+  description: Nombre de jours entre la première et la seconde activation.
+  name: days_between_second_activation
+  ordinal: 22
+  source: manual
+- data_type: string
+  description: 'État d''activation : individual_only, collective_only, individual_then_collective, collective_then_individual.'
+  name: activation_state
+  ordinal: 23
+  source: manual
+- data_type: number
+  description: Réservations individuelles après la seconde activation.
+  name: individual_bookings_after_second_activation
+  ordinal: 24
+  source: manual
+- data_type: number
+  description: Réservations collectives après la seconde activation.
+  name: collective_bookings_after_second_activation
+  ordinal: 25
+  source: manual
+- data_type: number
+  description: Offres individuelles créées après la première activation.
+  name: individual_offers_created_after_first_activation
+  ordinal: 26
+  source: manual
+- data_type: number
+  description: Offres individuelles créées après la seconde activation.
+  name: individual_offers_created_after_second_activation
+  ordinal: 27
+  source: manual
+- data_type: number
+  description: Offres collectives créées après la première activation.
+  name: collective_offers_created_after_first_activation
+  ordinal: 28
+  source: manual
+- data_type: number
+  description: Offres collectives créées après la seconde activation.
+  name: collective_offers_created_after_second_activation
+  ordinal: 29
+  source: manual
+- data_type: number
+  description: Réservations individuelles entre les deux activations.
+  name: individual_bookings_between_activations
+  ordinal: 30
+  source: manual
+- data_type: number
+  description: Réservations collectives entre les deux activations.
+  name: collective_bookings_between_activations
+  ordinal: 31
+  source: manual
+- data_type: number
+  description: Offres individuelles créées entre les deux activations.
+  name: individual_offers_created_between_activations
+  ordinal: 32
+  source: manual
+- data_type: number
+  description: Offres collectives créées entre les deux activations.
+  name: collective_offers_created_between_activations
+  ordinal: 33
+  source: manual
+description: 'Parcours d''activation : quand le partenaire a activé ses offres individuelles et collectives, dans quel ordre,
+  et les métriques de réservations/offres avant et après chaque activation.'
+domain_path: core/partenaires-culturels/cycle-de-vie
+grain:
+- Une ligne par partenaire culturel (partner_id)
+schema_name: analytics_prod
+synonyms:
+- activation partenaire
+table_name: enriched_partner_activation_activity

@@ -1,0 +1,108 @@
+columns:
+- data_type: string
+  description: Identifiant unique du stock.
+  name: stock_id
+  nullable: false
+  ordinal: 0
+- data_type: datetime
+  description: Horodatage du début de l'événement, uniquement pour les offres de type événement.
+  name: stock_beginning_date
+  ordinal: 1
+- data_type: string
+  description: Identifiant du fournisseur ayant synchronisé ce stock, uniquement pour les offres synchronisées.
+  name: stock_last_provider_id
+  ordinal: 2
+- data_type: datetime
+  description: Horodatage au-delà duquel il n'est plus possible de réserver l'offre liée à ce stock.
+  name: stock_booking_limit_date
+  ordinal: 3
+- data_type: datetime
+  description: Date de création du stock.
+  name: stock_creation_date
+  ordinal: 4
+- data_type: string
+  description: 'Caractéristiques du film pour les offres cinéma synchronisées (ex : VO, VF, 3D) ; peut être une liste si plusieurs
+    caractéristiques s''appliquent.'
+  name: stock_features
+  ordinal: 5
+- data_type: number
+  description: Prix du stock ; 0 si gratuit.
+  name: stock_price
+  ordinal: 6
+- data_type: number
+  description: 'Quantité totale disponible à la création du stock (constante) ; null si illimitée (ex : offres numériques).'
+  name: stock_quantity
+  ordinal: 7
+- data_type: number
+  description: Quantité de stock restante (stock_quantity moins les réservations non annulées).
+  name: total_available_stock
+  ordinal: 8
+- data_type: number
+  description: Nombre total de réservations annulées.
+  name: total_cancelled_bookings
+  ordinal: 9
+- data_type: number
+  description: Nombre total de réservations non annulées, individuelles et collectives.
+  name: total_non_cancelled_bookings
+  ordinal: 10
+- data_type: number
+  description: Nombre total de réservations payantes.
+  name: total_paid_bookings
+  ordinal: 11
+- data_type: number
+  description: Nombre total de réservations, individuelles et collectives.
+  name: total_bookings
+  ordinal: 12
+- data_type: string
+  description: Identifiant unique de l'offre.
+  name: offer_id
+  nullable: false
+  ordinal: 13
+- data_type: string
+  description: Nom de l'offre tel qu'il apparaît dans l'application.
+  name: offer_name
+  ordinal: 14
+- data_type: string
+  description: Identifiant de la sous-catégorie de l'offre, défini par le partenaire culturel via une liste de choix prédéfinis.
+  name: offer_subcategory_id
+  ordinal: 15
+- data_type: string
+  description: Identifiant unique de la structure.
+  name: offerer_id
+  nullable: false
+  ordinal: 16
+- data_type: string
+  description: Identifiant unique du partenaire.
+  name: partner_id
+  ordinal: 17
+- data_type: string
+  description: Identifiant de la catégorie tarifaire.
+  name: price_category_id
+  ordinal: 18
+- data_type: string
+  description: 'Libellé de la catégorie tarifaire rédigé par le partenaire culturel (ex : "Pass 2 jours", "Prix +18 ans")
+    ; null si aucune catégorie tarifaire spécifique.'
+  name: price_category_label
+  ordinal: 19
+- data_type: string
+  description: Identifiant du libellé de la catégorie tarifaire.
+  name: price_category_label_id
+  ordinal: 20
+- data_type: string
+  description: Code de département du lieu.
+  name: venue_department_code
+  ordinal: 21
+- data_type: boolean
+  description: Vrai si la structure est identifiée comme un établissement public national.
+  name: offerer_is_epn
+  ordinal: 22
+description: Stocks associés aux offres individuelles — prix, quantité, dates de début et de fin, disponibilité.
+domain_path: core/offre-et-catalogue
+grain:
+- Une ligne par stock (stock_id)
+schema_name: analytics_prod
+synonyms:
+- stock
+- jauge
+- places disponibles
+table_name: global_stock

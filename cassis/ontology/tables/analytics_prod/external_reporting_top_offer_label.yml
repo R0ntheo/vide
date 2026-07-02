@@ -1,0 +1,58 @@
+columns:
+- data_type: date
+  description: Premier jour du mois auquel le KPI se rapporte.
+  name: partition_month
+  ordinal: 0
+- data_type: datetime
+  description: Date effective de rafraîchissement des données.
+  name: updated_at
+  ordinal: 1
+- data_type: string
+  description: 'Agrégation géographique du KPI : nationale, régionale ou départementale.'
+  name: dimension_name
+  ordinal: 2
+- data_type: string
+  description: Nom de l'agrégation géographique du KPI si elle existe (nom de région, nom de département).
+  name: dimension_value
+  ordinal: 3
+- data_type: string
+  description: Identifiant de l'item associé à l'offre, utilisé en interne par l'équipe data science.
+  name: item_id
+  ordinal: 4
+- data_type: string
+  description: Identifiant de la catégorie de l'offre, défini par le partenaire culturel via une liste de choix prédéfinis.
+  name: offer_category_id
+  ordinal: 5
+- data_type: string
+  description: Identifiant de la sous-catégorie de l'offre, défini par le partenaire culturel via une liste de choix prédéfinis.
+  name: offer_subcategory_id
+  ordinal: 6
+- data_type: string
+  description: Nom de l'offre tel qu'il apparaît dans l'application.
+  name: offer_name
+  ordinal: 7
+- data_type: string
+  description: Nom du tag du lieu.
+  name: venue_tag_name
+  ordinal: 8
+- data_type: number
+  description: Montant total généré par les réservations.
+  name: total_booking_amount
+  ordinal: 9
+- data_type: number
+  description: Quantité totale d'articles réservés.
+  name: total_booking_quantity
+  ordinal: 10
+- data_type: number
+  description: Rang du montant total généré par les réservations par rapport aux autres catégories.
+  name: total_booking_amount_ranked
+  ordinal: 11
+description: Classement Top 50 des offres par label éditorial et montant de réservations.
+domain_path: reporting/institutionnel/classements
+grain:
+- Une ligne par entrée du classement (partition_month, dimension_name, dimension_value)
+schema_name: analytics_prod
+synonyms:
+- top offres par label
+- classement labels
+table_name: external_reporting_top_offer_label

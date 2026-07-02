@@ -1,0 +1,63 @@
+columns:
+- data_type: date
+  description: Mois du snapshot de population pour suivre les évolutions mensuelles estimées de la population française.
+  name: population_snapshot_month
+  ordinal: 0
+- data_type: date
+  description: Mois de naissance estimé des individus selon les tendances de natalité observées.
+  name: population_birth_month
+  ordinal: 1
+- data_type: string
+  description: Âge estimé de la population en format décimal pour une granularité mensuelle.
+  name: population_decimal_age
+  ordinal: 2
+- data_type: boolean
+  description: 'Indicateur booléen précisant si l''âge tombe sur une valeur décimale fixe (ex : 15, 15,5, 16).'
+  name: population_age_decimal_set
+  ordinal: 3
+- data_type: string
+  description: 'Catégorisation de la population par tranche d''âge : `15_17` (15-17 ans), `18_19` (18-19 ans), `20_25` (20-25
+    ans).'
+  name: population_age_bracket
+  ordinal: 4
+- data_type: string
+  description: The official department code in France.
+  name: population_department_code
+  ordinal: 5
+- data_type: string
+  description: Nom officiel du département.
+  name: population_department_name
+  ordinal: 6
+- data_type: string
+  description: Nom de la région dans laquelle se situe le département.
+  name: population_region_name
+  ordinal: 7
+- data_type: string
+  description: Nom de l'académie associée au département.
+  name: population_academy_name
+  ordinal: 8
+- data_type: number
+  description: Nombre total d'utilisateurs.
+  name: total_users
+  ordinal: 9
+- data_type: number
+  description: Population totale française.
+  name: total_population
+  ordinal: 10
+- data_type: number
+  description: Somme glissante des utilisateurs distincts sur les 12 derniers mois pour un âge et un département donnés.
+  name: total_users_last_12_months
+  ordinal: 11
+- data_type: number
+  description: Somme glissante de la population française sur les 12 derniers mois pour un âge et un département donnés.
+  name: total_population_last_12_months
+  ordinal: 12
+description: Couverture mensuelle de la base bénéficiaire active — part des bénéficiaires ayant ouvert l'app dans le mois.
+domain_path: tracking/natif
+grain:
+- Une ligne par mois × département × tranche d'âge (population_snapshot_month, population_department_code, population_decimal_age)
+schema_name: analytics_prod
+synonyms:
+- couverture bénéficiaires mensuelle
+- taux d'activation mensuel
+table_name: native_monthly_beneficiary_coverage

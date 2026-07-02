@@ -1,0 +1,17 @@
+context_md: |-
+  Ce domaine porte les tables de référence géographique et démographique.
+
+  - global_address : table d'adresses normalisées (coordonnées, commune, code postal, IRIS, QPV).
+  - global_iris_socio_demographics : données socio-démographiques INSEE à la maille IRIS (~2 000 habitants). Contient la population par tranche d'âge, le niveau de vie médian, les indicateurs de précarité, la densité.
+
+  Dimensions géographiques clés utilisées dans tout le data warehouse :
+  - Région (region_name/code)
+  - Département (department_name/code)
+  - EPCI (epci/code)
+  - Commune (city/code)
+  - IRIS (iris_internal_id)
+  - QPV (Quartier Prioritaire de la Politique de la Ville)
+  - Densité : macro_density_label (urbain/rural), density_label (détail fin)
+  - ZRR (Zone de Revitalisation Rurale)
+description: Référentiels géographiques — adresses, IRIS, données socio-démographiques INSEE et QPV.
+display_name: Géographie & Population

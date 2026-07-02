@@ -1,0 +1,294 @@
+columns:
+- data_type: string
+  description: Identifiant unique de l'offre collective.
+  name: collective_offer_id
+  nullable: false
+  ordinal: 0
+  source: manual
+- data_type: string
+  description: Identifiant lisible (human-readable) de l'offre collective.
+  name: collective_offer_humanized_id
+  ordinal: 1
+  source: manual
+- data_type: string
+  description: Nom de l'offre collective tel que saisi par le partenaire culturel.
+  name: collective_offer_name
+  ordinal: 2
+  source: manual
+- data_type: string
+  description: Identifiant unique du lieu culturel proposant l'offre.
+  name: venue_id
+  ordinal: 3
+  source: manual
+- data_type: string
+  description: Identifiant unique du partenaire culturel proposant l'offre.
+  name: partner_id
+  ordinal: 4
+  source: manual
+- data_type: string
+  description: Identifiant de l'établissement scolaire auquel l'offre est exclusivement destinée.
+  name: institution_id
+  ordinal: 5
+  source: manual
+- data_type: string
+  description: Nom du programme EAC de l'établissement cible.
+  name: institution_program_name
+  ordinal: 6
+  source: manual
+- data_type: string
+  description: Nom du lieu culturel proposant l'offre.
+  name: venue_name
+  ordinal: 7
+  source: manual
+- data_type: string
+  description: Nom de la région du lieu culturel.
+  name: venue_region_name
+  ordinal: 8
+  source: manual
+- data_type: string
+  description: Code du département du lieu culturel.
+  name: venue_department_code
+  ordinal: 9
+  source: manual
+- data_type: string
+  description: Nom du département du lieu culturel.
+  name: venue_department_name
+  ordinal: 10
+  source: manual
+- data_type: string
+  description: Code postal du lieu culturel.
+  name: venue_postal_code
+  ordinal: 11
+  source: manual
+- data_type: string
+  description: Commune du lieu culturel.
+  name: venue_city
+  ordinal: 12
+  source: manual
+- data_type: string
+  description: Nom de l'EPCI (intercommunalité) du lieu culturel.
+  name: venue_epci
+  ordinal: 13
+  source: manual
+- data_type: string
+  description: Nom de l'académie du lieu culturel.
+  name: venue_academy_name
+  ordinal: 14
+  source: manual
+- data_type: string
+  description: Libellé détaillé de la densité de la zone du lieu culturel.
+  name: venue_density_label
+  ordinal: 15
+  source: manual
+- data_type: string
+  description: 'Densité macro de la zone du lieu : urbain ou rural.'
+  name: venue_macro_density_label
+  ordinal: 16
+  source: manual
+- data_type: number
+  description: Niveau numérique de densité de la zone du lieu.
+  name: venue_density_level
+  ordinal: 17
+  source: manual
+- data_type: string
+  description: Type du lieu culturel (Musée, Cinéma, Librairie, etc.), sélectionné par le partenaire lors de son inscription.
+  name: venue_type_label
+  ordinal: 18
+  source: manual
+- data_type: boolean
+  description: Indiqué si le lieu est permanent (accueil du public en permanence, ex. bibliothèque, cinéma).
+  name: venue_is_permanent
+  ordinal: 19
+  source: manual
+- data_type: string
+  description: Identifiant unique de la structure (offreur) proposant l'offre.
+  name: offerer_id
+  ordinal: 20
+  source: manual
+- data_type: string
+  description: Nom de la structure (offreur) proposant l'offre.
+  name: offerer_name
+  ordinal: 21
+  source: manual
+- data_type: boolean
+  description: Indiqué si la structure (offreur) est une collectivité territoriale.
+  name: is_local_authority
+  ordinal: 22
+  source: manual
+- data_type: string
+  description: Identifiant IRIS interne pour le lieu (maille infra-communale INSEE).
+  name: venue_iris_internal_id
+  ordinal: 23
+  source: manual
+- data_type: date
+  description: Date de création de l'offre collective.
+  name: collective_offer_creation_date
+  ordinal: 24
+  source: manual
+- data_type: datetime
+  description: Date et heure de la dernière mise à jour de l'offre collective.
+  name: collective_offer_date_updated
+  ordinal: 25
+  source: manual
+- data_type: string
+  description: Format culturel de l'offre collective (atelier, spectacle, visite, etc.).
+  name: collective_offer_format
+  ordinal: 26
+  source: manual
+  synonyms:
+  - format culturel
+- data_type: string
+  description: Niveaux scolaires des élèves ciblés par l'offre collective.
+  name: collective_offer_students
+  ordinal: 27
+  source: manual
+- data_type: boolean
+  description: Indiqué si l'offre collective est active (n'a pas été désactivée par le partenaire).
+  name: collective_offer_is_active
+  ordinal: 28
+  source: manual
+- data_type: boolean
+  description: Indiqué si l'offre collective est réservable (visible dans l'application et pouvant être réservée par les enseignants).
+  name: collective_offer_is_bookable
+  ordinal: 29
+  source: manual
+- data_type: number
+  description: Nombre total de réservations collectives pour cette offre (tous statuts confondus).
+  name: total_collective_bookings
+  ordinal: 30
+  source: manual
+- data_type: number
+  description: Nombre total de réservations collectives non annulées pour cette offre.
+  name: total_non_cancelled_collective_bookings
+  ordinal: 31
+  source: manual
+- data_type: number
+  description: Nombre total de réservations collectives utilisées pour cette offre.
+  name: total_used_collective_bookings
+  ordinal: 32
+  source: manual
+- data_type: string
+  description: URL de l'offre sur la plateforme pass Culture Pro (back-office partenaire).
+  name: passculture_pro_url
+  ordinal: 33
+  source: manual
+- data_type: boolean
+  description: Indiqué si l'offre est une offre vitrine (template). Les offres vitrines n'ont pas de prix ni de date fixes
+    et servent de mise en visibilité.
+  name: collective_offer_is_template
+  ordinal: 34
+  source: manual
+  synonyms:
+  - offre modèle
+  - offre template
+- data_type: string
+  description: Identifiant de l'image associée à l'offre collective.
+  name: collective_offer_image_id
+  ordinal: 35
+  source: manual
+- data_type: string
+  description: Identifiant du fournisseur de synchronisation ayant importé l'offre.
+  name: provider_id
+  ordinal: 36
+  source: manual
+- data_type: string
+  description: Identifiant du programme national associé à l'offre collective.
+  name: national_program_id
+  ordinal: 37
+  source: manual
+- data_type: string
+  description: Nom du programme national associé à l'offre collective.
+  name: national_program_name
+  ordinal: 38
+  source: manual
+- data_type: string
+  description: Identifiant de l'offre vitrine (template) dont cette offre est dérivée.
+  name: template_id
+  ordinal: 39
+  source: manual
+- data_type: string
+  description: 'Indiqué où se déroule l''offre collective : à l''école, chez le partenaire, ou dans un autre lieu.'
+  name: collective_offer_location_type
+  ordinal: 40
+  source: manual
+- data_type: string
+  description: URL de contact pour l'offre collective.
+  name: collective_offer_contact_url
+  ordinal: 41
+  source: manual
+- data_type: string
+  description: Formulaire de contact pour l'offre collective.
+  name: collective_offer_contact_form
+  ordinal: 42
+  source: manual
+- data_type: string
+  description: Adresse email de contact du propriétaire de l'offre collective.
+  name: collective_offer_contact_email
+  ordinal: 43
+  source: manual
+- data_type: string
+  description: Numéro de téléphone de contact du propriétaire de l'offre collective.
+  name: collective_offer_contact_phone
+  ordinal: 44
+  source: manual
+- data_type: string
+  description: Identifiant IRIS interne pour l'établissement scolaire cible.
+  name: institution_internal_iris_id
+  ordinal: 45
+  source: manual
+- data_type: datetime
+  description: Date et heure prévues de la sortie collective.
+  name: collective_stock_beginning_date_time
+  ordinal: 46
+  source: manual
+- data_type: datetime
+  description: Date et heure limite pour réserver cette offre collective.
+  name: collective_stock_booking_limit_date_time
+  ordinal: 47
+  source: manual
+- data_type: datetime
+  description: Date de début de publication pour les offres vitrines.
+  name: collective_offer_template_beginning_date
+  ordinal: 48
+  source: manual
+- data_type: datetime
+  description: Date de fin de publication pour les offres vitrines.
+  name: collective_offer_template_ending_date
+  ordinal: 49
+  source: manual
+- data_type: number
+  description: Prix fixé pour l'offre collective.
+  name: collective_stock_price
+  ordinal: 50
+  source: manual
+  synonyms:
+  - prix de l'offre
+  unit: €
+- data_type: string
+  description: Détail sur le prix fourni par le partenaire culturel (facultatif, texte libre).
+  name: collective_stock_price_detail
+  ordinal: 51
+  source: manual
+- data_type: number
+  description: Nombre de places (tickets) disponibles pour cette offre collective.
+  name: collective_stock_number_of_tickets
+  ordinal: 52
+  source: manual
+  synonyms:
+  - nombre d'élèves
+- data_type: string
+  description: Identifiant unique du lien entre la structure et l'adresse où l'offre a été créée.
+  name: offerer_address_id
+  ordinal: 53
+  source: manual
+description: Recense les offres culturelles proposées aux établissements scolaires dans le cadre du volet collectif du pass
+  Culture.
+domain_path: core/offre-et-catalogue
+grain:
+- Une ligne par collective_offer_id (collective_offer_id)
+schema_name: analytics_prod
+synonyms:
+- offre EAC
+- offre scolaire
+- offre collective vitrine
+table_name: global_collective_offer

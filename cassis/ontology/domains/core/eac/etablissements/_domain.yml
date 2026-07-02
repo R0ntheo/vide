@@ -1,0 +1,8 @@
+context_md: |-
+  Sous-domaine regroupant les tables liées aux établissements scolaires.
+
+  global_educational_institution : référentiel des établissements avec crédits, taux d'utilisation et indicateurs.
+  collective_eple_aggregated : vue agrégée par établissement et année scolaire (dépôts, réservations, montants).
+  global_educational_deposit : allocations de crédit collectif par établissement.
+description: Établissements scolaires (EPLE), crédits collectifs et indicateurs agrégés par établissement.
+display_name: Établissements & crédits

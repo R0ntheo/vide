@@ -1,0 +1,143 @@
+columns:
+- data_type: string
+  description: Identifiant unique de l'utilisateur.
+  name: user_id
+  ordinal: 0
+- data_type: string
+  description: Identifiant unique de la session, sans doublon.
+  name: unique_session_id
+  ordinal: 1
+- data_type: string
+  description: Identifiant de l'entrée associée à la consultation.
+  name: entry_id
+  ordinal: 2
+- data_type: string
+  description: Nom de l'entrée affichée à l'utilisateur.
+  name: entry_name
+  ordinal: 3
+- data_type: string
+  description: Identifiant du module associé à la consultation.
+  name: module_id
+  ordinal: 4
+- data_type: string
+  description: Nom du module dans lequel l'entrée est affichée.
+  name: module_name
+  ordinal: 5
+- data_type: string
+  description: ID Typeform lié à un identifiant d'événement spécial unique, utilisé pour relier les données Contentful.
+  name: typeform_id
+  ordinal: 6
+- data_type: string
+  description: Identifiant du module parent du module courant.
+  name: parent_module_id
+  ordinal: 7
+- data_type: string
+  description: Type du module parent.
+  name: parent_module_type
+  ordinal: 8
+- data_type: string
+  description: Identifiant de l'entrée parente de l'entrée courante.
+  name: parent_entry_id
+  ordinal: 9
+- data_type: string
+  description: Type de page d'accueil associé à l'entrée parente.
+  name: parent_home_type
+  ordinal: 10
+- data_type: string
+  description: Type du module dans lequel l'entrée est affichée (algolia, recommendation, video…).
+  name: module_type
+  ordinal: 11
+- data_type: string
+  description: Type de géolocalisation utilisé par l'utilisateur pendant la session (via données GPS, saisie manuelle, ou
+    information indisponible).
+  name: user_location_type
+  ordinal: 12
+- data_type: string
+  description: Identifiant de l'appel de recommandation.
+  name: reco_call_id
+  ordinal: 13
+- data_type: string
+  description: Version de l'application dans laquelle l'événement a été enregistré.
+  name: app_version
+  ordinal: 14
+- data_type: string
+  description: Type d'interaction de clic de l'utilisateur.
+  name: click_type
+  ordinal: 15
+- data_type: string
+  description: Identifiant unique de l'offre.
+  name: offer_id
+  ordinal: 16
+- data_type: string
+  description: Identifiant unique du lieu.
+  name: venue_id
+  ordinal: 17
+- data_type: string
+  description: Identifiant unique d'une réservation.
+  name: booking_id
+  ordinal: 18
+- data_type: date
+  description: Date à laquelle le module a été affiché à l'utilisateur.
+  name: module_displayed_date
+  ordinal: 19
+- data_type: datetime
+  description: Horodatage auquel le module a été affiché à l'utilisateur.
+  name: module_displayed_timestamp
+  ordinal: 20
+- data_type: datetime
+  description: Horodatage auquel le module a été cliqué par l'utilisateur.
+  name: module_clicked_timestamp
+  ordinal: 21
+- data_type: datetime
+  description: Horodatage auquel le lieu a été consulté par l'utilisateur.
+  name: consult_venue_timestamp
+  ordinal: 22
+- data_type: datetime
+  description: Horodatage auquel l'offre a été consultée par l'utilisateur.
+  name: consult_offer_timestamp
+  ordinal: 23
+- data_type: datetime
+  description: Horodatage auquel l'entrée a été ajoutée aux favoris par l'utilisateur.
+  name: fav_timestamp
+  ordinal: 24
+- data_type: datetime
+  description: Horodatage auquel la réservation a été effectuée par l'utilisateur.
+  name: booking_timestamp
+  ordinal: 25
+- data_type: string
+  description: Type d'audience de la page d'accueil.
+  name: home_audience
+  ordinal: 26
+- data_type: string
+  description: Étape du cycle de vie de l'utilisateur par rapport à la page d'accueil.
+  name: user_lifecycle_home
+  ordinal: 27
+- data_type: string
+  description: Type de page d'accueil associé à l'entrée.
+  name: home_type
+  ordinal: 28
+- data_type: string
+  description: Type de playlist associé à l'entrée.
+  name: playlist_type
+  ordinal: 29
+- data_type: string
+  description: Identifiant de la catégorie de l'offre, choisi par le partenaire culturel parmi une liste prédéfinie.
+  name: offer_category
+  ordinal: 30
+- data_type: string
+  description: Portée de la playlist associée à l'entrée.
+  name: playlist_reach
+  ordinal: 31
+- data_type: string
+  description: Fréquence de récurrence de la playlist.
+  name: playlist_recurrence
+  ordinal: 32
+description: Modules de la page d'accueil vus par chaque utilisateur, avec métriques d'engagement par jour.
+domain_path: tracking/natif
+grain:
+- Une ligne par interaction utilisateur × module (user_id, unique_session_id, module_id)
+schema_name: analytics_prod
+synonyms:
+- interaction module accueil
+- parcours home utilisateur
+table_name: native_daily_user_home_module

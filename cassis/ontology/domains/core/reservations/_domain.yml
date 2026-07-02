@@ -1,0 +1,10 @@
+context_md: |-
+  Ce domaine couvre les réservations effectuées par les bénéficiaires (volet individuel) et par les établissements scolaires (volet collectif EAC).
+
+  Une réservation individuelle (booking) lie un bénéficiaire à une offre via un stock. Statuts clés : utilisée (booking_is_used), annulée (booking_is_cancelled), validée (non annulée ET utilisée/confirmée).
+
+  Une réservation collective (collective_booking) lie un établissement scolaire à une offre collective. Le montant est débité du crédit collectif de l'établissement.
+
+  L'historique des informations bénéficiaire (user_beneficiary_information_history) permet de suivre l'évolution des données déclaratives dans le temps.
+description: Transactions de réservation — individuelles et collectives — avec leur statut, montant et historique.
+display_name: Réservations

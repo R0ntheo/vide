@@ -1,0 +1,15 @@
+description: Nombre total de consultations d'offres liées à l'artiste (depuis janvier 2025). Compteur cumulé, pas de fenêtre
+  glissante — pour un classement sur période, filtrer native_consultation par date et joindre sur artist_id via native_event.
+display_name: Popularité d'un artiste
+domain_path: core/offre-et-catalogue
+expression: artist_total_consultations
+name: popularite_artiste
+notes: 'Compteur cumulé depuis janvier 2025, pas de fenêtre glissante native. Pour un classement sur fenêtre glissante (ex:
+  30 jours), agréger native_consultation filtré par date et jointure native_event.artist_id.'
+synonyms:
+- artiste populaire
+- consultations artiste
+- top artistes
+table_name: global_artist
+table_schema: analytics_prod
+unit: consultations

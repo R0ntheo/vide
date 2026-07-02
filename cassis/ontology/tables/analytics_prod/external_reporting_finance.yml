@@ -1,0 +1,55 @@
+columns:
+- data_type: date
+  description: Premier jour du mois auquel le KPI se rapporte.
+  name: partition_month
+  ordinal: 0
+- data_type: datetime
+  description: Date effective de rafraîchissement des données.
+  name: updated_at
+  ordinal: 1
+- data_type: string
+  description: 'Agrégation géographique du KPI : nationale, régionale ou départementale.'
+  name: dimension_name
+  ordinal: 2
+- data_type: string
+  description: Nom de l'agrégation géographique du KPI si elle existe (nom de région, nom de département).
+  name: dimension_value
+  ordinal: 3
+- data_type: string
+  description: |-
+    Valeurs possibles de kpi_name :
+    KPIs globaux :
+    - total_reservations — nombre total de réservations
+    - total_quantites — nombre total de quantités (places)
+    - total_ca — chiffre d'affaires total
+    - total_montant_rembourse — montant total remboursé
+    - total_montant_contribution — montant total de contribution
+    - pct_montant_contribution — % de contribution sur le CA
+    Par catégorie ({catégorie} ∈ {livre, cinema, concert, spectacle_vivant, musee, pratique_artistique, instrument, beaux_arts, cartes_jeunes, conference, film, jeu, musique_enregistree, media, technique}) :
+    - total_reservations_{catégorie} / total_quantites_{catégorie} / total_ca_{catégorie} / total_montant_rembourse_{catégorie} / total_montant_contribution_{catégorie} / pct_montant_contribution_{catégorie}
+    EPN :
+    - total_reservations_epn / total_quantites_epn / total_ca_epn / total_montant_rembourse_epn / total_montant_contribution_epn / pct_montant_contribution_epn
+  name: kpi_name
+  ordinal: 4
+- data_type: number
+  description: Numérateur du KPI calculé.
+  name: numerator
+  ordinal: 5
+- data_type: number
+  description: Dénominateur du KPI calculé.
+  name: denominator
+  ordinal: 6
+- data_type: number
+  description: Valeur du KPI, égale au numérateur divisé par le dénominateur.
+  name: kpi
+  ordinal: 7
+description: KPIs financiers au format pivot — contribution, montant remboursé, EPN par dimension géographique.
+domain_path: reporting/institutionnel/individuel
+grain:
+- Une ligne par mois × dimension × KPI (partition_month, dimension_name, kpi_name)
+schema_name: analytics_prod
+synonyms:
+- KPI finance
+- contribution
+- remboursements
+table_name: external_reporting_finance

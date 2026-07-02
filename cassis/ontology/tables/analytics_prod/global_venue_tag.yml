@@ -1,0 +1,44 @@
+columns:
+- data_type: string
+  description: Identifiant unique du lieu.
+  name: venue_id
+  ordinal: 0
+- data_type: string
+  description: Identifiant unique de la structure.
+  name: offerer_id
+  ordinal: 1
+- data_type: string
+  description: Identifiant unique du partenaire culturel.
+  name: partner_id
+  ordinal: 2
+- data_type: number
+  description: Offerer rank in descending order.
+  name: offerer_rank_desc
+  ordinal: 3
+- data_type: string
+  description: Identifiant unique du tag du lieu.
+  name: venue_tag_id
+  nullable: false
+  ordinal: 4
+- data_type: string
+  description: Identifiant unique de la catégorie de tag du lieu.
+  name: venue_tag_category_id
+  ordinal: 5
+- data_type: string
+  description: Libellé de la catégorie de tag du lieu (Comptage partenaire label et appellation du MC, Comptage partenaire
+    sectoriel, ou Playlist lieux et offres).
+  name: venue_tag_category_label
+  ordinal: 6
+- data_type: string
+  description: Nom du tag du lieu.
+  name: venue_tag_name
+  ordinal: 7
+description: Tags associés aux lieux (labels ministériels, classifications internes).
+domain_path: core/partenaires-culturels
+grain:
+- Une ligne par lieu (venue_id)
+schema_name: analytics_prod
+synonyms:
+- tag lieu
+- label lieu
+table_name: global_venue_tag

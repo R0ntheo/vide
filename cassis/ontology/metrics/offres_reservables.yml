@@ -1,0 +1,12 @@
+description: Nombre d'offres individuelles actuellement réservables (stock disponible, non expirées).
+display_name: Offres individuelles réservables
+domain_path: core/offre-et-catalogue
+expression: COUNTIF(offer_is_bookable)
+name: offres_reservables
+synonyms:
+- offres disponibles
+- bookable offers
+- catalogue actif
+table_name: global_offer
+table_schema: analytics_prod
+unit: count

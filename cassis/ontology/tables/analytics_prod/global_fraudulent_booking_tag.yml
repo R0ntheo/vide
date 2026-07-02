@@ -1,0 +1,27 @@
+columns:
+- data_type: string
+  description: Identifiant unique d'un tag de réservation frauduleuse.
+  name: fraudulent_booking_tag_id
+  ordinal: 0
+- data_type: date
+  description: Date de creation du tag de réservation frauduleuse.
+  name: fraudulent_booking_tag_creation_date
+  ordinal: 1
+- data_type: string
+  description: Identifiant unique de l'auteur du tag (correspond a un user_id avec le role admin dans le back-office).
+  name: fraudulent_booking_tag_author_id
+  ordinal: 2
+- data_type: string
+  description: Identifiant unique de la réservation.
+  name: booking_id
+  ordinal: 3
+description: Tags de fraude associés aux réservations individuelles — identifiant de réservation et motif de signalement.
+domain_path: core/reservations
+grain:
+- Une ligne par fraudulent_booking_tag (fraudulent_booking_tag_id)
+schema_name: analytics_prod
+synonyms:
+- fraude
+- tag frauduleux
+- réservation suspecte
+table_name: global_fraudulent_booking_tag

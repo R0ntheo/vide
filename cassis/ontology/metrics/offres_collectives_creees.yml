@@ -1,0 +1,12 @@
+description: Volume d'offres collectives créées par les partenaires.
+display_name: Offres collectives créées
+domain_path: core/eac
+expression: COUNT(DISTINCT collective_offer_id)
+name: offres_collectives_creees
+precomputed_in: external_reporting_eac
+synonyms:
+- offres EAC
+- collective offers created
+table_name: global_collective_offer
+table_schema: analytics_prod
+unit: count

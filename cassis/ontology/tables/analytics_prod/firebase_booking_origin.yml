@@ -1,0 +1,187 @@
+columns:
+- data_type: string
+  description: Identifiant du bénéficiaire.
+  name: user_id
+  ordinal: 0
+  source: manual
+- data_type: string
+  description: Identifiant du crédit.
+  name: deposit_id
+  ordinal: 1
+  source: manual
+- data_type: date
+  description: Date de la réservation.
+  name: booking_date
+  ordinal: 2
+  source: manual
+- data_type: datetime
+  description: Horodatage de la réservation.
+  name: booking_timestamp
+  ordinal: 3
+  source: manual
+- data_type: number
+  description: Identifiant de session Firebase.
+  name: booking_session_id
+  ordinal: 4
+  source: manual
+- data_type: string
+  description: Version de l'application au moment de la réservation.
+  name: booking_app_version
+  ordinal: 5
+  source: manual
+- data_type: string
+  description: Identifiant unique de la session de réservation.
+  name: booking_unique_session_id
+  ordinal: 6
+  source: manual
+- data_type: string
+  description: Identifiant de l'offre réservée.
+  name: offer_id
+  ordinal: 7
+  source: manual
+- data_type: string
+  description: Identifiant item interne.
+  name: item_id
+  ordinal: 8
+  source: manual
+- data_type: string
+  description: Identifiant de la réservation.
+  name: booking_id
+  ordinal: 9
+  source: manual
+- data_type: string
+  description: Statut de la réservation.
+  name: booking_status
+  ordinal: 10
+  source: manual
+- data_type: boolean
+  description: Indique si la réservation est annulée.
+  name: booking_is_cancelled
+  ordinal: 11
+  source: manual
+- data_type: number
+  description: Montant intermédiaire (prix × quantité).
+  name: booking_intermediary_amount
+  ordinal: 12
+  source: manual
+  unit: €
+- data_type: date
+  description: Date de consultation de l'offre avant réservation.
+  name: consult_date
+  ordinal: 13
+  source: manual
+- data_type: datetime
+  description: Horodatage de la consultation avant réservation.
+  name: consult_timestamp
+  ordinal: 14
+  source: manual
+- data_type: string
+  description: Première origine de consultation (search, home, recommendation, venue, etc.).
+  name: consult_origin_first_touch
+  ordinal: 15
+  source: manual
+- data_type: string
+  description: Dernière origine de consultation avant réservation.
+  name: consult_origin_last_touch
+  ordinal: 16
+  source: manual
+- data_type: string
+  description: Plateforme (android, ios, web).
+  name: platform
+  ordinal: 17
+  source: manual
+- data_type: string
+  description: Identifiant d'appel recommandation first-touch.
+  name: reco_call_id_first_touch
+  ordinal: 18
+  source: manual
+- data_type: string
+  description: Identifiant d'appel recommandation last-touch.
+  name: reco_call_id_last_touch
+  ordinal: 19
+  source: manual
+- data_type: string
+  description: Identifiant de recherche first-touch.
+  name: search_id_first_touch
+  ordinal: 20
+  source: manual
+- data_type: string
+  description: Identifiant de recherche last-touch.
+  name: search_id_last_touch
+  ordinal: 21
+  source: manual
+- data_type: string
+  description: Identifiant du module first-touch.
+  name: module_id_first_touch
+  ordinal: 22
+  source: manual
+- data_type: string
+  description: Nom du module first-touch.
+  name: module_name_first_touch
+  ordinal: 23
+  source: manual
+- data_type: string
+  description: Identifiant de la page home first-touch.
+  name: home_id_first_touch
+  ordinal: 24
+  source: manual
+- data_type: string
+  description: Nom de la page home first-touch.
+  name: home_name_first_touch
+  ordinal: 25
+  source: manual
+- data_type: string
+  description: Type de contenu du module first-touch (Contentful).
+  name: content_type_first_touch
+  ordinal: 26
+  source: manual
+- data_type: string
+  description: Identifiant du module last-touch.
+  name: module_id_last_touch
+  ordinal: 27
+  source: manual
+- data_type: string
+  description: Nom du module last-touch.
+  name: module_name_last_touch
+  ordinal: 28
+  source: manual
+- data_type: string
+  description: Identifiant de la page home last-touch.
+  name: home_id_last_touch
+  ordinal: 29
+  source: manual
+- data_type: string
+  description: Nom de la page home last-touch.
+  name: home_name_last_touch
+  ordinal: 30
+  source: manual
+- data_type: string
+  description: Type de contenu du module last-touch.
+  name: content_type_last_touch
+  ordinal: 31
+  source: manual
+- data_type: string
+  description: Catégorie de l'offre.
+  name: offer_category_id
+  ordinal: 32
+  source: manual
+- data_type: string
+  description: Sous-catégorie de l'offre.
+  name: offer_subcategory_id
+  ordinal: 33
+  source: manual
+- data_type: string
+  description: Type de page home first-touch (default, masterclass, etc.).
+  name: home_type_first_touch
+  ordinal: 34
+  source: manual
+description: 'Attribution marketing : origine first-touch et last-touch de chaque réservation (recherche, module home, recommandation,
+  page lieu, etc.), avec les identifiants Contentful et recherche associés.'
+domain_path: tracking/natif
+grain:
+- Une ligne par réservation avec attribution (booking_id)
+schema_name: analytics_prod
+synonyms:
+- attribution réservation
+- origine réservation
+table_name: firebase_booking_origin

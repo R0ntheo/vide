@@ -1,0 +1,162 @@
+columns:
+- data_type: number
+  description: Montant total du crédit déposé pour le bénéficiaire.
+  name: total_deposit_amount
+  ordinal: 0
+- data_type: boolean
+  description: Booléen indiquant si le bénéficiaire est considéré comme public prioritaire du pass Culture (résidant en zone
+    rurale, en QPV ou non scolarisé).
+  name: user_is_priority_public
+  ordinal: 1
+- data_type: boolean
+  description: Booléen indiquant si l'adresse déclarée du bénéficiaire se situe en QPV.
+  name: user_is_in_qpv
+  ordinal: 2
+- data_type: boolean
+  description: Booléen indiquant si le bénéficiaire est sans emploi selon son activité déclarée.
+  name: user_is_unemployed
+  ordinal: 3
+- data_type: boolean
+  description: Booléen indiquant si le bénéficiaire est scolarisé selon son activité déclarée (collégien, lycéen, étudiant,
+    apprenti ou alternant selon la définition INSEE).
+  name: user_is_in_education
+  ordinal: 4
+- data_type: string
+  description: Libellé de densité (urbain, rural) de l'adresse déclarée du bénéficiaire.
+  name: user_density_label
+  ordinal: 5
+- data_type: string
+  description: Libellé de densité macro de l'adresse déclarée du bénéficiaire.
+  name: user_macro_density_label
+  ordinal: 6
+- data_type: string
+  description: Nom de la région de l'adresse déclarée du bénéficiaire.
+  name: user_region_name
+  ordinal: 7
+- data_type: string
+  description: Code du département de l'adresse déclarée du bénéficiaire.
+  name: user_department_code
+  ordinal: 8
+- data_type: string
+  description: Nom du département de l'adresse déclarée du bénéficiaire.
+  name: user_department_name
+  ordinal: 9
+- data_type: string
+  description: Code EPCI de l'adresse déclarée du bénéficiaire.
+  name: user_epci
+  ordinal: 10
+- data_type: string
+  description: Code EPCI du lieu de résidence de l'utilisateur.
+  name: user_epci_code
+  ordinal: 11
+- data_type: string
+  description: Ville de l'adresse déclarée du bénéficiaire.
+  name: user_city
+  ordinal: 12
+- data_type: string
+  description: Code commune du lieu de résidence de l'utilisateur.
+  name: user_city_code
+  ordinal: 13
+- data_type: string
+  description: Activité déclarée du bénéficiaire (lycéen, apprenti, sans emploi, etc.), renseignée lors du premier crédit
+    et mise à jour à l'octroi du GRANT_18.
+  name: user_activity
+  ordinal: 14
+- data_type: string
+  description: Civilité déclarée du bénéficiaire (M./Mme.), collectée lors de l'inscription.
+  name: user_civility
+  ordinal: 15
+- data_type: boolean
+  description: Booléen indiquant si le bénéficiaire est abonné à au moins un thème.
+  name: user_is_theme_subscribed
+  ordinal: 16
+- data_type: datetime
+  description: Mois d'expiration du crédit du bénéficiaire.
+  name: user_expiration_month
+  ordinal: 17
+- data_type: number
+  description: Nombre total de bénéficiaires.
+  name: total_users
+  ordinal: 18
+- data_type: number
+  description: Nombre total de bénéficiaires ayant réservé dans trois catégories ou plus.
+  name: total_3_category_booked_users
+  ordinal: 19
+- data_type: number
+  description: Clé de perturbation statistique pour le compteur total_users.
+  name: cell_key_users
+  ordinal: 20
+- data_type: number
+  description: Clé de perturbation statistique pour le compteur total_3_category_booked_users.
+  name: cell_key_3_category
+  ordinal: 21
+- data_type: number
+  description: Montant total de crédit dépensé par le bénéficiaire.
+  name: total_amount_spent
+  ordinal: 22
+- data_type: number
+  description: Montant théorique total dépensé en biens numériques par le bénéficiaire.
+  name: total_theoretical_digital_goods_amount_spent
+  ordinal: 23
+- data_type: number
+  description: Nombre total de réservations individuelles non annulées du bénéficiaire.
+  name: total_non_cancelled_individual_bookings
+  ordinal: 24
+- data_type: number
+  description: Nombre total de réservations duo non annulées du bénéficiaire.
+  name: total_non_cancelled_duo_bookings
+  ordinal: 25
+- data_type: number
+  description: Nombre total de réservations gratuites du bénéficiaire.
+  name: total_free_bookings
+  ordinal: 26
+- data_type: number
+  description: Nombre total d'offres consultées par le bénéficiaire.
+  name: total_item_consulted
+  ordinal: 27
+- data_type: number
+  description: Nombre total de lieux consultés par le bénéficiaire.
+  name: total_venue_consulted
+  ordinal: 28
+- data_type: number
+  description: Nombre total de sous-catégories réservées sur le crédit GRANT_18.
+  name: total_grant_18_subcategory_booked
+  ordinal: 29
+- data_type: number
+  description: Nombre total de sous-catégories réservées sur le crédit GRANT_15_17.
+  name: total_grant_15_17_subcategory_booked
+  ordinal: 30
+- data_type: number
+  description: Nombre total de types de lieux distincts consultés par le bénéficiaire.
+  name: total_venue_type_label_consulted
+  ordinal: 31
+- data_type: number
+  description: Nombre total de jours entre la date de création du crédit et la date de la première réservation.
+  name: total_day_between_deposit_and_first_booking
+  ordinal: 32
+- data_type: number
+  description: Score de diversification total des bénéficiaires.
+  name: total_diversification_score
+  ordinal: 33
+- data_type: number
+  description: Nombre total de lieux distincts réservés par les bénéficiaires (lieux virtuels exclus).
+  name: total_venue_id_booked
+  ordinal: 34
+- data_type: number
+  description: Nombre total de types de lieux distincts réservés par les bénéficiaires.
+  name: total_venue_type_booked
+  ordinal: 35
+- data_type: number
+  description: Nombre total de catégories distinctes réservées par les bénéficiaires.
+  name: total_category_booked
+  ordinal: 36
+description: Cohortes de sortie — bénéficiaires dont le crédit arrive à expiration, agrégés par mois d'expiration et dimensions
+  démographiques.
+domain_path: tracking/natif
+grain:
+- Une ligne par cohorte sortante (user_is_priority_public, user_is_in_qpv, user_is_unemployed, user_is_in_education)
+schema_name: analytics_prod
+synonyms:
+- cohorte sortante
+- bénéficiaires en fin de crédit
+table_name: native_outgoing_cohort

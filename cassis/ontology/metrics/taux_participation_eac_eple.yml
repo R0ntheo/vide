@@ -1,0 +1,13 @@
+description: Part des EPLE ayant utilisé le pass collectif sur le total des EPLE éligibles.
+display_name: Taux de participation EAC EPLE
+domain_path: core/eac
+expression: SAFE_DIVIDE(COUNTIF(all_year_total_confirmed_bookings > 0), COUNT(*))
+name: taux_participation_eac_eple
+notes: Part des EPLE ayant au moins une réservation collective confirmée sur l'année scolaire.
+precomputed_in: external_reporting_eac
+synonyms:
+- participation établissements
+- EPLE participation rate
+table_name: collective_eple_aggregated
+table_schema: analytics_prod
+unit: '%'

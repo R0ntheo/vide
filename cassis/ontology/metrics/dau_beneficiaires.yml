@@ -1,0 +1,15 @@
+description: Nombre de bénéficiaires uniques ayant ouvert l'application sur un jour donné. Calculé sur firebase_visits en
+  filtrant sur first_event_date.
+display_name: Bénéficiaires actifs quotidiens (DAU)
+domain_path: core/beneficiaires
+expression: COUNT(DISTINCT user_id)
+name: dau_beneficiaires
+notes: 'Pour segmentation rural/urbain, joindre firebase_visits.user_id sur global_user_beneficiary.user_id et utiliser user_macro_density_label
+  (''urbain''/''rural''). Pour QPV : user_is_in_qpv.'
+synonyms:
+- DAU
+- utilisateurs quotidiens
+- daily active users
+table_name: firebase_visits
+table_schema: analytics_prod
+unit: bénéficiaires

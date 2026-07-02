@@ -1,0 +1,52 @@
+context_md: |-
+  # Parcours Adage
+
+  ## Qu'est-ce qu'Adage ?
+
+  Adage est la plateforme du Ministère de l'Éducation Nationale sur laquelle les enseignants et chefs d'établissement découvrent et réservent des offres collectives du pass Culture. C'est l'interface côté « demande » du volet EAC.
+
+  ## Parcours type
+
+  ```
+  Recherche (filtres, texte libre)
+    → Consultation d'une offre (fiche détaillée)
+      → Pré-réservation (demande envoyée au partenaire)
+        → Confirmation (le partenaire accepte)
+          → Utilisation (l'intervention a eu lieu)
+  ```
+
+  ## Logs Adage (`collective_adage_log`)
+
+  La table `collective_adage_log` enregistre les événements de navigation sur Adage. 42 colonnes dont :
+
+  ### Événements principaux (`event_name`)
+
+  - Recherche : `SearchButtonClicked`, `HasSearched`
+  - Consultation : `CollectiveOfferDetailViewed`, `CollectiveOfferTemplateDetailViewed`
+  - Action : `CollectiveBookingStarted`, `FavoriteAdded`, `ContactModalButtonClicked`
+  - Navigation : `HeaderLinkClicked`, `PlaylistElementClicked`
+
+  ### Filtres de recherche
+
+  Les colonnes de filtre permettent d'analyser le comportement de recherche :
+  - `text_filter` : recherche en texte libre.
+  - `department_filter`, `academy_filter` : filtre géographique.
+  - `artistic_domain_filter` : filtre par domaine artistique.
+  - `format_filter` : filtre par format d'intervention.
+  - `student_filter` : filtre par niveau scolaire.
+
+  ### Contexte
+
+  - `user_role` : rôle de l'utilisateur Adage (enseignant, chef d'établissement, rédacteur de projet).
+  - `uai` : identifiant unique de l'établissement.
+  - `source` : point d'entrée (recherche, playlist, suggestion).
+
+  ## Domaines éducatifs (`global_collective_offer_domain`)
+
+  Table d'association entre offre collective et domaine éducatif. Une offre peut couvrir plusieurs domaines.
+
+  - `educational_domain_name` : Arts visuels, Cinéma audiovisuel, Culture scientifique technique et industrielle, Danse, Design, Développement durable, Économie sociale et solidaire, Lecture écriture, Médias et information, Mémoire et citoyenneté, Musique, Patrimoine, Photographie, Spectacle vivant, Théâtre.
+  - `educational_domain_id` : identifiant numérique.
+description: La plateforme Adage — parcours enseignant de la recherche à la réservation d'offre collective, et interprétation
+  des logs.
+display_name: Parcours Adage

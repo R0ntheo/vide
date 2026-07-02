@@ -1,0 +1,12 @@
+context_md: |-
+  Ce domaine regroupe les données sur les jeunes bénéficiaires du pass Culture et leurs crédits.
+
+  Un bénéficiaire (user_beneficiary) est un utilisateur ayant reçu un crédit, hors suspensions pour fraude. Il porte des données démographiques (âge, genre, activité, géographie) et des indicateurs d'engagement (dépenses, diversité, consultations).
+
+  Un crédit (deposit) est l'allocation financière octroyée. Types principaux : GRANT_15_17 (ancien dispositif 15-17 ans), GRANT_18 (ancien 18 ans), GRANT_17_18 (réforme mars 2025, 17+18 ans cumulés), GRANT_FREE (crédits spéciaux, exclus des KPIs).
+
+  Réforme mars 2025 : passage à un crédit unique 17-18 ans (50€ à 17 ans + 150€ à 18 ans) expirant la veille des 21 ans. Attention aux biais sur les cohortes de transition.
+
+  Le crédit collectif scolaire (educational_deposit) est dans ce domaine car il suit la même logique d'allocation, mais il est lié aux établissements (domaine EAC).
+description: Bénéficiaires du pass Culture — profils, crédits alloués, dépenses et indicateurs de diversité culturelle.
+display_name: Bénéficiaires

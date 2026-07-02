@@ -1,0 +1,13 @@
+description: Durée moyenne d'une session utilisateur sur l'application, en secondes.
+display_name: Durée moyenne de session
+domain_path: tracking/natif
+expression: AVG(visit_duration_seconds)
+name: duree_moyenne_session
+notes: Basé sur visit_duration_seconds. Peut être segmenté par platform (iOS/Android) et par type d'utilisateur via jointure.
+synonyms:
+- durée de visite
+- temps moyen par session
+- average session duration
+table_name: firebase_visits
+table_schema: analytics_prod
+unit: secondes

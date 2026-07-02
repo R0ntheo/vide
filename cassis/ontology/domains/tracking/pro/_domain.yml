@@ -1,0 +1,10 @@
+context_md: |-
+  Ce domaine regroupe les données d'usage du portail pro destiné aux partenaires culturels.
+
+  - pro_event : événements Firebase du portail pro (création d'offre, gestion de réservation, navigation…).
+  - pro_log : logs backend des actions pro (API calls, modifications d'offres, validations…).
+  - pro_visit : sessions de visite sur le portail pro avec durée et pages vues.
+  - pro_nps_venue : score NPS par lieu (enquête Qualtrics auprès des partenaires).
+  - pro_offer_highlight : offres mises en avant par l'équipe éditoriale.
+description: Analytics de l'application partenaires — événements, logs, visites, NPS et mises en avant.
+display_name: Tracking pro

@@ -1,0 +1,79 @@
+columns:
+- data_type: string
+  description: Identifiant unique de la structure.
+  name: offerer_id
+  nullable: false
+  ordinal: 0
+- data_type: string
+  description: Identifiant unique de l'utilisateur.
+  name: user_id
+  nullable: false
+  ordinal: 1
+- data_type: number
+  description: Rang de l'utilisateur selon l'ordre de création de son compte au sein du groupe de la structure (1 = premier
+    utilisateur inscrit pour cette structure).
+  name: user_affiliation_rank
+  ordinal: 2
+- data_type: datetime
+  description: Date de création du compte utilisateur.
+  name: user_creation_date
+  ordinal: 3
+- data_type: string
+  description: Code du département de l'adresse déclarée de l'utilisateur.
+  name: user_department_code
+  ordinal: 4
+- data_type: string
+  description: Code postal de l'adresse déclarée de l'utilisateur.
+  name: user_postal_code
+  ordinal: 5
+- data_type: string
+  description: Rôle attribué à l'utilisateur (GRANT_18, GRANT_15_17, PRO, ADMIN).
+  name: user_role
+  ordinal: 6
+- data_type: string
+  description: Adresse déclarée de l'utilisateur, renseignée lors du premier dépôt de crédit et mise à jour lors de la demande
+    de GRANT_18.
+  name: user_address
+  ordinal: 7
+- data_type: string
+  description: Ville de l'adresse déclarée de l'utilisateur.
+  name: user_city
+  ordinal: 8
+- data_type: datetime
+  description: Date de la dernière connexion de l'utilisateur.
+  name: user_last_connection_date
+  ordinal: 9
+- data_type: boolean
+  description: Indiqué si l'adresse email de l'utilisateur est validée.
+  name: user_is_email_validated
+  ordinal: 10
+- data_type: boolean
+  description: Indiqué si le compte de l'utilisateur est actuellement actif, indépendamment du statut de crédit.
+  name: user_is_active
+  ordinal: 11
+- data_type: string
+  description: Statut de l'étape de validation du téléphone de l'utilisateur.
+  name: user_phone_validation_status
+  ordinal: 12
+- data_type: boolean
+  description: Indiqué si l'utilisateur a validé son adresse email.
+  name: user_has_validated_email
+  ordinal: 13
+- data_type: boolean
+  description: Indiqué si l'utilisateur a accepté de recevoir des notifications push marketing.
+  name: user_has_enabled_marketing_push
+  ordinal: 14
+- data_type: boolean
+  description: Indiqué si l'utilisateur a accepté de recevoir des emails marketing.
+  name: user_has_enabled_marketing_email
+  ordinal: 15
+description: Association utilisateur pro–structure. Table de liaison entre les utilisateurs du portail partenaire et les structures
+  qu'ils gèrent.
+domain_path: core/partenaires-culturels
+grain:
+- Une ligne par structure (offerer_id)
+schema_name: analytics_prod
+synonyms:
+- rattachement pro
+- lien utilisateur-structure
+table_name: global_user_offerer

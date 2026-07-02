@@ -1,0 +1,13 @@
+description: Montant consommé rapporté au crédit alloué pour l'année scolaire en cours.
+display_name: Taux d'utilisation du crédit EAC
+domain_path: core/eac
+expression: SAFE_DIVIDE(SUM(all_year_real_amount_spent), SUM(total_scholar_year_deposit))
+name: taux_utilisation_credit_eac
+notes: Ratio montant réellement dépensé / crédit alloué, agrégé sur l'année scolaire.
+precomputed_in: external_reporting_eac
+synonyms:
+- consommation crédit EAC
+- EAC credit usage
+table_name: collective_eple_aggregated
+table_schema: analytics_prod
+unit: '%'

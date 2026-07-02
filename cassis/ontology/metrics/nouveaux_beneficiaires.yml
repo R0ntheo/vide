@@ -1,0 +1,12 @@
+description: Nombre de bénéficiaires par date d'octroi du premier crédit.
+display_name: Nouveaux bénéficiaires
+domain_path: core/beneficiaires
+expression: COUNT(DISTINCT user_id)
+filters: deposit_rank_asc = 1
+name: nouveaux_beneficiaires
+synonyms:
+- nouvelles inscriptions
+- premiers crédits
+table_name: global_deposit
+table_schema: analytics_prod
+unit: count

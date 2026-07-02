@@ -1,0 +1,11 @@
+description: Part des réservations annulées sur le total des réservations.
+display_name: Taux d'annulation
+domain_path: core/reservations
+expression: SAFE_DIVIDE(COUNTIF(booking_is_cancelled), COUNT(DISTINCT booking_id))
+name: taux_annulation
+synonyms:
+- annulations
+- cancellation rate
+table_name: global_booking
+table_schema: analytics_prod
+unit: '%'

@@ -1,0 +1,238 @@
+columns:
+- data_type: string
+  description: Identifiant unique du partenaire culturel.
+  name: partner_id
+  ordinal: 0
+  source: manual
+- data_type: datetime
+  description: Date de création du partenaire sur le pass Culture.
+  name: partner_creation_date
+  ordinal: 1
+  source: manual
+- data_type: number
+  description: Ancienneté du partenaire en mois depuis sa création.
+  name: seniority_month
+  ordinal: 2
+  source: manual
+- data_type: string
+  description: Secteur culturel du partenaire.
+  name: cultural_sector
+  ordinal: 3
+  source: manual
+- data_type: string
+  description: Type de partenaire (Librairie, Cinéma, Musée, etc.).
+  name: partner_type
+  ordinal: 4
+  source: manual
+- data_type: boolean
+  description: Indique si le partenaire a activé la partie offres individuelles.
+  name: activated_individual_part
+  ordinal: 5
+  source: manual
+- data_type: boolean
+  description: Indique si le partenaire a activé la partie offres collectives.
+  name: activated_collective_part
+  ordinal: 6
+  source: manual
+- data_type: number
+  description: Nombre total d'offres individuelles créées.
+  name: individual_offers_created_cnt
+  ordinal: 7
+  source: manual
+- data_type: number
+  description: Offres individuelles créées dans les 2 derniers mois.
+  name: individual_offers_created_last_2_month
+  ordinal: 8
+  source: manual
+- data_type: number
+  description: Offres individuelles créées dans les 6 derniers mois.
+  name: individual_offers_created_last_6_month
+  ordinal: 9
+  source: manual
+- data_type: number
+  description: Offres individuelles créées dans les 2 mois précédant la dernière offre réservable.
+  name: individual_offers_created_2_month_before_last_bookable
+  ordinal: 10
+  source: manual
+- data_type: number
+  description: Offres individuelles créées dans les 6 mois précédant la dernière offre réservable.
+  name: individual_offers_created_6_month_before_last_bookable
+  ordinal: 11
+  source: manual
+- data_type: number
+  description: Nombre total d'offres collectives créées.
+  name: collective_offers_created_cnt
+  ordinal: 12
+  source: manual
+- data_type: number
+  description: Offres collectives créées dans les 2 derniers mois.
+  name: collective_offers_created_last_2_month
+  ordinal: 13
+  source: manual
+- data_type: number
+  description: Offres collectives créées dans les 6 derniers mois.
+  name: collective_offers_created_last_6_month
+  ordinal: 14
+  source: manual
+- data_type: number
+  description: Offres collectives créées dans les 2 mois précédant la dernière offre réservable.
+  name: collective_offers_created_2_month_before_last_bookable
+  ordinal: 15
+  source: manual
+- data_type: number
+  description: Offres collectives créées dans les 6 mois précédant la dernière offre réservable.
+  name: collective_offers_created_6_month_before_last_bookable
+  ordinal: 16
+  source: manual
+- data_type: number
+  description: Nombre total de réservations individuelles non annulées.
+  name: individual_bookings_cnt
+  ordinal: 17
+  source: manual
+- data_type: number
+  description: Réservations individuelles des 2 derniers mois.
+  name: individual_bookings_last_2_month
+  ordinal: 18
+  source: manual
+- data_type: number
+  description: Réservations individuelles des 6 derniers mois.
+  name: individual_bookings_last_6_month
+  ordinal: 19
+  source: manual
+- data_type: number
+  description: Réservations individuelles des 2 mois précédant la dernière offre réservable.
+  name: individual_bookings_2_month_before_last_bookable
+  ordinal: 20
+  source: manual
+- data_type: number
+  description: Réservations individuelles des 6 mois précédant la dernière offre réservable.
+  name: individual_bookings_6_month_before_last_bookable
+  ordinal: 21
+  source: manual
+- data_type: number
+  description: Nombre total de réservations collectives confirmées, utilisées ou remboursées.
+  name: collective_bookings_cnt
+  ordinal: 22
+  source: manual
+- data_type: number
+  description: Réservations collectives des 2 derniers mois.
+  name: collective_bookings_last_2_month
+  ordinal: 23
+  source: manual
+- data_type: number
+  description: Réservations collectives des 6 derniers mois.
+  name: collective_bookings_last_6_month
+  ordinal: 24
+  source: manual
+- data_type: number
+  description: Réservations collectives des 2 mois précédant la dernière offre réservable.
+  name: collective_bookings_2_month_before_last_bookable
+  ordinal: 25
+  source: manual
+- data_type: number
+  description: Réservations collectives des 6 mois précédant la dernière offre réservable.
+  name: collective_bookings_6_month_before_last_bookable
+  ordinal: 26
+  source: manual
+- data_type: number
+  description: Revenu réel des réservations individuelles utilisées.
+  name: real_individual_revenue
+  ordinal: 27
+  source: manual
+  unit: €
+- data_type: number
+  description: Revenu réel des réservations collectives confirmées.
+  name: real_collective_revenue
+  ordinal: 28
+  source: manual
+  unit: €
+- data_type: number
+  description: Nombre de mises en favori d'offres du partenaire.
+  name: favorites_cnt
+  ordinal: 29
+  source: manual
+- data_type: number
+  description: Nombre total de consultations d'offres du partenaire.
+  name: total_consultation
+  ordinal: 30
+  source: manual
+- data_type: number
+  description: Consultations d'offres dans les 2 derniers mois.
+  name: consultation_last_2_month
+  ordinal: 31
+  source: manual
+- data_type: number
+  description: Consultations d'offres dans les 6 derniers mois.
+  name: consultation_last_6_month
+  ordinal: 32
+  source: manual
+- data_type: number
+  description: Consultations dans les 2 mois précédant la dernière offre réservable.
+  name: consultation_2_month_before_last_bookable
+  ordinal: 33
+  source: manual
+- data_type: number
+  description: Consultations dans les 6 mois précédant la dernière offre réservable.
+  name: consultation_6_month_before_last_bookable
+  ordinal: 34
+  source: manual
+- data_type: boolean
+  description: Indique si le SIREN du partenaire est actif selon le répertoire SIREN.
+  name: has_active_siren
+  ordinal: 35
+  source: manual
+- data_type: string
+  description: Statut de la première demande DMS Adage du partenaire.
+  name: first_dms_adage_status
+  ordinal: 36
+  source: manual
+- data_type: number
+  description: Nombre d'offres rejetées.
+  name: rejected_offers_cnt
+  ordinal: 37
+  source: manual
+- data_type: number
+  description: Pourcentage d'offres rejetées sur le total créé.
+  name: rejected_offers_pct
+  ordinal: 38
+  source: manual
+- data_type: boolean
+  description: Indique si le partenaire utilise un fournisseur de données.
+  name: has_provider
+  ordinal: 39
+  source: manual
+- data_type: boolean
+  description: Indique si le partenaire a un point de remboursement configuré.
+  name: has_reimbursement_point
+  ordinal: 40
+  source: manual
+- data_type: number
+  description: Nombre d'utilisateurs distincts suspendus pour fraude ayant réservé chez ce partenaire.
+  name: unique_fraud_users
+  ordinal: 41
+  source: manual
+- data_type: number
+  description: Pourcentage d'utilisateurs distincts suspendus pour fraude parmi les réservants.
+  name: pct_unique_fraud_users
+  ordinal: 42
+  source: manual
+- data_type: number
+  description: Nombre de jours depuis la dernière offre réservable.
+  name: days_since_last_bookable_offer
+  ordinal: 43
+  source: manual
+- data_type: string
+  description: Segmentation du partenaire basée sur son activité globale.
+  name: partner_segmentation
+  ordinal: 44
+  source: manual
+description: Modèle de rétention/churn combinant offres créées, réservations, revenus, consultations, taux de fraude, et segmentation
+  active/at_risk/churned basée sur la fréquence médiane du secteur.
+domain_path: core/partenaires-culturels/cycle-de-vie
+grain:
+- Une ligne par partenaire culturel (partner_id)
+schema_name: analytics_prod
+synonyms:
+- rétention partenaire
+- churn partenaire
+table_name: enriched_partner_retention_data

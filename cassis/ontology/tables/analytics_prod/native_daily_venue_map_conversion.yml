@@ -1,0 +1,62 @@
+columns:
+- data_type: string
+  description: Identifiant unique de session, sans doublons.
+  name: unique_session_id
+  ordinal: 0
+- data_type: string
+  description: Identifiant unique de l'utilisateur.
+  name: user_id
+  ordinal: 1
+- data_type: string
+  description: Version de l'application lors de l'enregistrement de l'evenement.
+  name: app_version
+  ordinal: 2
+- data_type: date
+  description: Date de l'evenement, utilisee pour le partitionnement des donnees.
+  name: event_date
+  ordinal: 3
+- data_type: number
+  description: Nombre total de consultations de la carte des lieux.
+  name: total_venue_map_consult
+  ordinal: 4
+- data_type: number
+  description: Nombre total d'aperçus de la carte des lieux.
+  name: total_venue_map_preview
+  ordinal: 5
+- data_type: number
+  description: Nombre total de lieux consultes depuis la carte.
+  name: total_consult_venue
+  ordinal: 6
+- data_type: number
+  description: Nombre distinct de lieux ayant conduit a une consultation d'offre.
+  name: total_distinct_venue_consult_offer
+  ordinal: 7
+- data_type: number
+  description: Nombre total de consultations d'offres.
+  name: total_consult_offer
+  ordinal: 8
+- data_type: number
+  description: Nombre total de réservations, individuelles et collectives.
+  name: total_bookings
+  ordinal: 9
+- data_type: number
+  description: Nombre total de réservations non annulees, individuelles et collectives.
+  name: total_non_cancelled_bookings
+  ordinal: 10
+- data_type: number
+  description: Total du score de diversite incremente par les réservations associees.
+  name: total_diversification
+  ordinal: 11
+- data_type: number
+  description: Durée totale en seconde pendant laquelle la venue map a été affichée au cours d’une session.
+  name: total_session_venue_map_seen_duration_seconds
+  ordinal: 12
+description: Conversion de la carte des lieux — affichages, clics, réservations par lieu et par jour.
+domain_path: tracking/natif
+grain:
+- Une ligne par session carte des lieux (unique_session_id, user_id)
+schema_name: analytics_prod
+synonyms:
+- conversion carte des lieux
+- funnel carte
+table_name: native_daily_venue_map_conversion

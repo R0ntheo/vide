@@ -1,0 +1,48 @@
+columns:
+- data_type: string
+  description: Identifiant unique de l'adresse.
+  name: address_id
+  nullable: false
+  ordinal: 0
+- data_type: string
+  description: Identifiant BAN (Base Adresse Nationale) de l'adresse.
+  name: address_ban_id
+  ordinal: 1
+- data_type: string
+  description: Code INSEE de l'adresse.
+  name: address_insee_code
+  ordinal: 2
+- data_type: string
+  description: Nom de la rue de l'adresse.
+  name: address_street
+  ordinal: 3
+- data_type: string
+  description: Code postal de l'adresse.
+  name: address_postal_code
+  nullable: false
+  ordinal: 4
+- data_type: string
+  description: Ville de l'adresse.
+  name: address_city
+  ordinal: 5
+- data_type: number
+  description: Coordonnée latitude de l'adresse.
+  name: address_latitude
+  ordinal: 6
+- data_type: number
+  description: Coordonnée longitude de l'adresse.
+  name: address_longitude
+  ordinal: 7
+- data_type: string
+  description: Code du département de l'adresse.
+  name: address_department_code
+  ordinal: 8
+description: Référentiel d'adresses normalisées — coordonnées GPS, commune, code postal, code INSEE, voie.
+domain_path: reporting/geographie
+grain:
+- Une ligne par adresse (address_id)
+schema_name: analytics_prod
+synonyms:
+- adresse
+- localisation
+table_name: global_address

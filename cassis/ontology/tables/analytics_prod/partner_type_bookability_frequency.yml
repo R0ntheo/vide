@@ -1,0 +1,29 @@
+columns:
+- data_type: string
+  description: Type de partenaire (Librairie, Cinéma, etc.).
+  name: partner_type
+  ordinal: 0
+  source: manual
+- data_type: number
+  description: Fréquence médiane (en jours) entre deux périodes de réservabilité pour ce type.
+  name: median_bookability_frequency
+  ordinal: 1
+  source: manual
+- data_type: number
+  description: Fréquence médiane de création d'offres pour ce type.
+  name: median_crea_offer_frequency
+  ordinal: 2
+  source: manual
+- data_type: number
+  description: Groupe de fréquence (1 = élevée, 2 = moyenne, 3 = faible).
+  name: cultural_sector_bookability_frequency_group
+  ordinal: 3
+  source: manual
+description: Fréquences médianes de réservabilité et de création d'offres par type de partenaire, avec groupe de fréquence.
+domain_path: core/partenaires-culturels/cycle-de-vie
+grain:
+- Une ligne par combinaison (partner_type, median_bookability_frequency, median_crea_offer_frequency, cultural_sector_bookability_frequency_group)
+schema_name: analytics_prod
+synonyms:
+- benchmark type partenaire
+table_name: partner_type_bookability_frequency

@@ -1,0 +1,66 @@
+columns:
+- data_type: date
+  description: Date de l'événement.
+  name: event_date
+  ordinal: 0
+- data_type: string
+  description: Identifiant du module vidéo.
+  name: module_id
+  ordinal: 1
+- data_type: string
+  description: Rôle de l'utilisateur (bénéficiaire, grand public, non connecté).
+  name: user_role
+  ordinal: 2
+- data_type: string
+  description: Identifiant de la page d'accueil contenant le module.
+  name: entry_id
+  ordinal: 3
+- data_type: string
+  description: Version de l'application mobile.
+  name: app_version
+  ordinal: 4
+- data_type: number
+  description: Nombre de sessions ayant affiché le module vidéo.
+  name: total_displayed_sessions
+  ordinal: 5
+- data_type: number
+  description: Nombre de sessions ayant consulté une offre après la vidéo.
+  name: total_sessions_with_consult_offer
+  ordinal: 6
+- data_type: number
+  description: Nombre de sessions ayant consulté l'accueil.
+  name: total_session_consult_home
+  ordinal: 7
+- data_type: number
+  description: Nombre de sessions ayant vu la vidéo en entier.
+  name: total_session_seen_all_video
+  ordinal: 8
+- data_type: number
+  description: Nombre total d'offres consultées suite au module vidéo.
+  name: total_consulted_offers
+  ordinal: 9
+- data_type: number
+  description: Durée totale de visionnage cumulée en secondes.
+  name: total_video_seen_duration_seconds
+  ordinal: 10
+- data_type: number
+  description: Nombre de sessions ayant vu au moins 25% de la vidéo.
+  name: total_seen_25_pct_video
+  ordinal: 11
+- data_type: number
+  description: Nombre de sessions ayant vu au moins 50% de la vidéo.
+  name: total_seen_50_pct_video
+  ordinal: 12
+- data_type: number
+  description: Nombre de sessions ayant vu au moins 75% de la vidéo.
+  name: total_seen_75_pct_video
+  ordinal: 13
+description: Conversion des modules vidéo de la page d'accueil — affichages, clics, réservations par jour.
+domain_path: tracking/natif
+grain:
+- Une ligne par jour × module vidéo (event_date, module_id, entry_id)
+schema_name: analytics_prod
+synonyms:
+- conversion vidéo
+- engagement vidéo
+table_name: native_daily_video_module_conversion

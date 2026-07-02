@@ -1,0 +1,4 @@
+context_md: Classements pré-agrégés (Top 50) destinés aux tableaux de bord institutionnels. Ces tables ne suivent PAS le format
+  pivot — elles contiennent des lignes ordonnées par rang avec les métriques associées (montant, nombre de réservations, etc.).
+description: Classements pré-agrégés — top offres, lieux, catégories, formats et académies.
+display_name: Classements (Top 50)

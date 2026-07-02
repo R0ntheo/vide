@@ -1,0 +1,43 @@
+columns:
+- data_type: string
+  description: Date de la réponse à l'enquête NPS.
+  name: response_date
+  ordinal: 0
+- data_type: string
+  description: Identifiant unique du lieu.
+  name: venue_id
+  ordinal: 1
+- data_type: string
+  description: Identifiant de la réponse à l'enquête NPS.
+  name: response_id
+  ordinal: 2
+- data_type: string
+  description: Nom de la région où se situe le lieu.
+  name: venue_region_name
+  ordinal: 3
+- data_type: string
+  description: Type du lieu ('Musée', 'Cinéma', 'Librairie', etc.), sélectionné par le partenaire lors de l'inscription.
+  name: venue_type_label
+  ordinal: 4
+- data_type: boolean
+  description: Booléen indiquant si le lieu est permanent (accueil du public en continu, proposant des offres et géré par
+    le partenaire).
+  name: venue_is_permanent
+  ordinal: 5
+- data_type: number
+  description: Note attribuée dans la réponse à l'enquête NPS.
+  name: response_rating
+  ordinal: 6
+- data_type: number
+  description: Ancienneté du lieu en jours.
+  name: venue_seniority
+  ordinal: 7
+description: Score NPS par lieu — enquêtes Qualtrics auprès des partenaires culturels.
+domain_path: tracking/pro
+grain:
+- Une ligne par réponse NPS lieu (venue_id)
+schema_name: analytics_prod
+synonyms:
+- NPS lieu
+- satisfaction partenaire
+table_name: pro_nps_venue

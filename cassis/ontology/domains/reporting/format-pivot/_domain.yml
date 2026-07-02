@@ -1,0 +1,69 @@
+context_md: |-
+  # Format pivot institutionnel
+
+  ## Structure commune
+
+  Toutes les tables `external_reporting_*` (sauf les `top_*`) suivent un schéma pivot identique :
+
+  | Colonne | Description |
+  |---------|------------|
+  | `partition_month` | Mois de référence de l'indicateur |
+  | `dimension_name` | Échelle d'agrégation géographique |
+  | `dimension_value` | Valeur dans l'échelle |
+  | `kpi_name` | Nom de l'indicateur |
+  | `numerator` | Numérateur (pour les ratios) |
+  | `denominator` | Dénominateur (pour les ratios) |
+  | `kpi` | Valeur calculée de l'indicateur |
+
+  ## Dimensions géographiques (`dimension_name`)
+
+  | Valeur | Signification | Exemple de `dimension_value` |
+  |--------|--------------|------------------------------|
+  | `NAT` | National (France entière) | `France` |
+  | `REG` | Région | `Île-de-France`, `Occitanie` |
+  | `DEP` | Département | `75 - Paris`, `34 - Hérault` |
+  | `EPCI` | Intercommunalité | nom de l'EPCI |
+  | `COM` | Commune | nom de la commune |
+
+  ## Tables disponibles
+
+  ### Volet individuel
+
+  - `external_reporting_beneficiary` : KPIs bénéficiaires (inscriptions, activations, crédits).
+  - `external_reporting_booking` : KPIs réservations individuelles (nombre, montant, catégories).
+  - `external_reporting_coverage` : couverture de la population éligible.
+  - `external_reporting_cultural_partner` : KPIs partenaires culturels.
+  - `external_reporting_deposit_usage` : utilisation des crédits.
+  - `external_reporting_diversity` : diversité culturelle des consommations.
+  - `external_reporting_finance` : indicateurs financiers (contribution, EPN).
+  - `external_reporting_individual` : union des 7 tables ci-dessus (toutes les métriques individuelles).
+
+  ### Volet collectif (EAC)
+
+  - `external_reporting_eac` : KPIs globaux EAC.
+  - `external_reporting_eac_coverage` : couverture des établissements.
+  - `external_reporting_eac_credit_usage` : utilisation du crédit collectif.
+  - `external_reporting_eac_cultural_partner` : partenaires actifs sur le collectif.
+  - `external_reporting_eac_domain` : répartition par domaine éducatif.
+  - `external_reporting_eac_institution` : indicateurs par établissement.
+  - `external_reporting_eac_offer_booking` : offres et réservations collectives.
+
+  ### Classements (top_*)
+
+  Les tables `top_*` n'utilisent **pas** le format pivot. Ce sont des classements pré-agrégés (Top-50) :
+  - `external_reporting_top_offer`, `top_offer_category`, `top_offer_label`
+  - `external_reporting_top_venue`, `top_labeled_venue`
+  - `external_reporting_top_ac`, `top_format`
+
+  ## Règle de priorité des sources
+
+  Pour répondre à une question agrégée, chercher dans cet ordre :
+
+  1. **`metrics_*`** — métriques pré-calculées (si elles existent).
+  2. **`external_reporting_*`** — données pivot institutionnelles.
+  3. **`global_*`** — tables transactionnelles au grain fin.
+
+  Descendre au niveau `global_*` uniquement si la granularité ou le filtre demandé n'est pas disponible dans les niveaux supérieurs.
+description: Comment lire les tables external_reporting_* — schéma pivot dimension_name/dimension_value/kpi_name utilisé pour
+  le reporting Ministère.
+display_name: Format pivot institutionnel

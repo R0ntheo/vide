@@ -1,0 +1,63 @@
+columns:
+- data_type: datetime
+  description: Date à laquelle la réservation a été utilisée.
+  name: booking_used_date
+  ordinal: 0
+- data_type: string
+  description: Code du département du lieu.
+  name: venue_department_code
+  ordinal: 1
+- data_type: string
+  description: Nom du département du lieu.
+  name: venue_department_name
+  ordinal: 2
+- data_type: string
+  description: Nom de la région du lieu.
+  name: venue_region_name
+  ordinal: 3
+- data_type: string
+  description: Code EPCI du lieu.
+  name: venue_epci_code
+  ordinal: 4
+- data_type: string
+  description: Code de la commune du lieu.
+  name: venue_city_code
+  ordinal: 5
+- data_type: boolean
+  description: Indiqué si la structure est identifiée comme un établissement public national.
+  name: offerer_is_epn
+  ordinal: 6
+- data_type: string
+  description: Identifiant de la catégorie de l'offre, choisi par le partenaire culturel parmi une liste prédéfinie.
+  name: offer_category_id
+  ordinal: 7
+- data_type: number
+  description: Nombre total de réservations, individuelles et collectives.
+  name: total_bookings
+  ordinal: 8
+- data_type: number
+  description: Quantité totale réservée (une réservation peut avoir une quantité de 1 ou 2).
+  name: total_quantities
+  ordinal: 9
+- data_type: number
+  description: Montant total des revenus associés aux réservations.
+  name: total_revenue_amount
+  ordinal: 10
+- data_type: number
+  description: Montant total remboursé aux structures.
+  name: total_reimbursed_amount
+  ordinal: 11
+- data_type: number
+  description: Montant total de la contribution des structures sur leurs réservations.
+  name: total_contribution_amount
+  ordinal: 12
+description: Détaille les remboursements aux partenaires pour les réservations validées, avec montant intermédiaire, contribution
+  et statut de paiement.
+domain_path: core/reservations
+grain:
+- Une ligne par combinaison (booking_used_date, venue_department_code, venue_department_name, venue_region_name)
+schema_name: analytics_prod
+synonyms:
+- remboursement
+- reversement partenaire
+table_name: finance_reimbursement
